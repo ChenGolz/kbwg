@@ -45,4 +45,23 @@ window.PRODUCTS = [
       { store: "חנות ישראלית", url: "coming-soon.html", meta: "איסוף עצמי/משלוח" }
     ]
   }
+,
+  {
+    id: "axisy-mugwort-pack",
+    brand: "AXIS-Y",
+    name: "מסכת שטיפה לניקוי נקבוביות (Mugwort Pore Clarifying Wash Off Pack)",
+    category: "face",
+    vegan: true,
+    peta: false,
+    lb: false,
+    size: "100 מ״ל",
+    storeRegion: "intl",
+    image: "https://commalax.ph/cdn/shop/files/ProductUploads_95.png?v=1713252608&width=2000",
+    storeName: "Amazon",
+    affiliateLink: "https://amzn.to/4plbYmu",
+    tags: ["Vegan"],
+    offers: [
+      { store: "Amazon", url: "https://amzn.to/4plbYmu", note: "בינלאומי · תלוי זמינות משלוח לישראל" }
+    ]
+  }
 ];
