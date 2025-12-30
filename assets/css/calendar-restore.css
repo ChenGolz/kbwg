@@ -136,3 +136,11 @@
   font-weight: 800;
   font-size: 13px;
 }
+
+/* Mobile refinements */
+@media (max-width: 520px){
+  .agendaGrid{ grid-template-columns: 1fr; }
+  .eventItem{ flex-direction: column; align-items: stretch; }
+  .eventLeft{ min-width: 0; flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .datePill, .tagPill{ width: auto; }
+}
