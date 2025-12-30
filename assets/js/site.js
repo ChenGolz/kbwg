@@ -46,4 +46,56 @@
       }
     });
   }
+
+  // Mobile nav: inject a hamburger button and collapse nav on small screens
+  const header = document.getElementById('siteHeader');
+  const headerRow = header ? header.querySelector('.headerRow') : null;
+  const nav = header ? header.querySelector('.nav') : null;
+
+  if (header && headerRow && nav) {
+    // Ensure nav has an id for aria-controls
+    if (!nav.id) nav.id = 'primaryNav';
+
+    // Inject only once
+    if (!header.querySelector('.navToggle')) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'navToggle';
+      btn.setAttribute('aria-label', 'פתיחת תפריט');
+      btn.setAttribute('aria-controls', nav.id);
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<span class="navToggleIcon" aria-hidden="true">☰</span><span class="navToggleText">תפריט</span>';
+
+      // Place next to logo (before nav)
+      headerRow.insertBefore(btn, nav);
+
+      const close = () => {
+        header.classList.remove('navOpen');
+        btn.setAttribute('aria-expanded', 'false');
+      };
+      const open = () => {
+        header.classList.add('navOpen');
+        btn.setAttribute('aria-expanded', 'true');
+      };
+
+      btn.addEventListener('click', () => {
+        const isOpen = header.classList.contains('navOpen');
+        isOpen ? close() : open();
+      });
+
+      // Close when a link is clicked
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+
+      // Close when switching to desktop width
+      const mq = window.matchMedia('(min-width: 901px)');
+      const onMq = () => { if (mq.matches) close(); };
+      mq.addEventListener ? mq.addEventListener('change', onMq) : mq.addListener(onMq);
+      onMq();
+    }
+  }
 })();
