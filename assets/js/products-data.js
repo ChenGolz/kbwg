@@ -49,14 +49,16 @@ window.PRODUCTS = [
   {
     id: "axisy-mugwort-pack",
     brand: "AXIS-Y",
-    name: "מסכת שטיפה לניקוי נקבוביות (Mugwort Pore Clarifying Wash Off Pack)",
+    name: "מסכת חימר לפנים לשטיפה, המסייעת לניקוי והבהרת נקבוביות, מטפלת בנקבוביות סתומות, ראשים שחורים ולבנים.
+טיפוח עור קוריאני טבעוני למראה עור חלק וזוהר (Glass Skin).
+",
     category: "face",
     vegan: true,
-    peta: false,
+    peta: true,
     lb: false,
     size: "100 מ״ל",
     storeRegion: "intl",
-    image: "https://commalax.ph/cdn/shop/files/ProductUploads_95.png?v=1713252608&width=2000",
+    image: "",
     storeName: "Amazon",
     affiliateLink: "https://amzn.to/4plbYmu",
     tags: ["Vegan"],
