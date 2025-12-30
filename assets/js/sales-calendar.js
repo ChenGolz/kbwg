@@ -1,146 +1,126 @@
+/* Cruelty Free / KBWG – Shopping Calendar renderer (RTL) */
+(() => {
+  const root = document.getElementById('agenda');
 
-/* ===== Patch: Restore Shopping Calendar layout (month boxes + event cards) ===== */
+  const monthNamesHe = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
 
-/* 2-column responsive grid (like screenshot) */
-.agendaGrid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-@media (max-width: 920px){
-  .agendaGrid{ grid-template-columns: 1fr; }
-}
+  const pad2 = (n) => String(n).padStart(2, '0');
+  const parseISO = (s) => {
+    if (!s) return null;
+    const m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return null;
+    return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  };
+  const monthStartISO = (d) => `${d.getFullYear()}-${pad2(d.getMonth()+1)}-01`;
 
-/* Month container */
-.monthCard{
-  position: relative;
-  overflow: hidden;
-  border-radius: 26px;
-  background: rgba(255,255,255,.85);
-  border: 1px solid rgba(20,40,80,.10);
-  box-shadow: 0 18px 40px rgba(20,35,60,.08);
-}
+  const escapeHtml = (str) => String(str ?? '')
+    .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+    .replaceAll('"','&quot;').replaceAll("'",'&#039;');
 
-/* Subtle “printed” background wash */
-.monthCard::before{
-  content:"";
-  position:absolute;
-  inset:-40px;
-  background:
-    radial-gradient(900px 420px at 15% 20%, rgba(42,91,154,.10), transparent 60%),
-    radial-gradient(800px 420px at 85% 15%, rgba(157,195,230,.10), transparent 62%),
-    radial-gradient(760px 420px at 60% 95%, rgba(42,91,154,.06), transparent 65%);
-  opacity: .9;
-  pointer-events:none;
-}
-.monthCard > *{ position: relative; z-index: 1; }
+  const monthLabelFromISO = (iso) => {
+    const d = parseISO(iso);
+    if (!d) return '';
+    return `${monthNamesHe[d.getMonth()]} ${d.getFullYear()}`;
+  };
 
-/* Month header row */
-.monthTop{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 10px;
-  padding: 16px 18px;
-  border-bottom: 1px solid rgba(20,40,80,.08);
-}
-.monthTitle{
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: .2px;
-}
-.monthMeta{
-  font-size: 14px;
-  font-weight: 800;
-  color: rgba(17,24,39,.62);
-}
+  const asArray = (x) => Array.isArray(x) ? x : (x ? [x] : []);
+  const sortISO = (a, b) => String(a).localeCompare(String(b));
 
-/* Event list inside month */
-.eventList{
-  padding: 14px 14px 16px;
-  display:flex;
-  flex-direction:column;
-  gap: 12px;
-}
+  const splitFocus = (val) => {
+    if (!val) return [];
+    if (Array.isArray(val)) return val.filter(Boolean).map(String);
+    const s = String(val)
+      .replace(/\s*&\s*/g, ',')
+      .replace(/\s+and\s+/gi, ',')
+      .replace(/[.]/g, '');
+    return s.split(',').map(x => x.trim()).filter(Boolean);
+  };
 
-/* Event card */
-.eventItem{
-  display:flex;
-  gap: 12px;
-  align-items:flex-start;
-  padding: 14px;
-  border-radius: 20px;
-  border: 1px solid rgba(20,40,80,.10);
-  background: rgba(255,255,255,.92);
-  box-shadow: 0 10px 22px rgba(20,35,60,.06);
-}
+  const inferTag = (title) => {
+    const t = String(title || '').toLowerCase();
+    if (/(black\s*friday|cyber\s*monday|11\.11|singles)/.test(t)) return { text: 'סייל ענק', cls: 'tag-major' };
+    if (/(prime|amazon\s+prime|big\s+deal|memorial|labor|presidents)/.test(t)) return { text: 'מבצע גדול', cls: 'tag-mid' };
+    if (/(spring|easter|back\s*to\s*school|valentine|mother|father|boxing|green\s+monday)/.test(t)) return { text: 'מבצע עונתי', cls: 'tag-note' };
+    return { text: 'תזכורת', cls: 'tag-note' };
+  };
 
-/* Right column (date + tag) */
-.eventLeft{
-  min-width: 96px;
-  display:flex;
-  flex-direction:column;
-  gap: 8px;
-  text-align:right;
-}
-.datePill{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 7px 10px;
-  border-radius: 999px;
-  font-weight: 900;
-  font-size: 13px;
-  border: 1px solid rgba(20,40,80,.12);
-  background: rgba(245,248,255,.95);
-  white-space: nowrap;
-}
-.tagPill{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 900;
-  font-size: 12px;
-  border: 1px solid rgba(20,40,80,.10);
-  white-space: nowrap;
-}
-.tag-major{ background: rgba(70,130,255,.14); }
-.tag-mid  { background: rgba(40,170,140,.14); }
-.tag-note { background: rgba(255,170,60,.16); }
+  const normalizeData = (raw) => {
+    // Accept both shapes:
+    // 1) [{monthStart:'YYYY-MM-01', events:[...]}]
+    // 2) flat array of events with date/startDate/month fields
+    const arr = asArray(raw);
 
-/* Text area */
-.eventBody{ flex: 1; min-width: 0; }
-.eventName{ font-weight: 900; font-size: 16px; margin-bottom: 4px; }
-.eventDesc{ color: rgba(30,45,70,.78); font-weight: 700; font-size: 13px; line-height: 1.45; }
+    if (arr.length && typeof arr[0] === 'object' && arr[0].monthStart && arr[0].events) {
+      return arr.map(m => ({
+        monthStart: String(m.monthStart),
+        events: asArray(m.events),
+      }));
+    }
 
-/* Focus chips row (cart pills) */
-.eventBuy{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 10px; }
-.buyChip{
-  display:inline-flex;
-  align-items:center;
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(17,24,39,.12);
-  background: rgba(255,255,255,.70);
-  font-weight: 800;
-  font-size: 12px;
-  white-space: nowrap;
-}
+    // flat -> group by month
+    const groups = new Map();
+    for (const ev of arr) {
+      if (!ev || typeof ev !== 'object') continue;
+      const d = parseISO(ev.startDate || ev.date || ev.monthStart || ev.month || '');
+      if (!d) continue;
+      const key = monthStartISO(d);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(ev);
+    }
+    return Array.from(groups.entries()).map(([monthStart, events]) => ({ monthStart, events }));
+  };
 
-/* Empty state */
-.noEvents{
-  padding: 14px;
-  color: rgba(30,45,70,.65);
-  font-weight: 800;
-  font-size: 13px;
-}
+  const render = () => {
+    if (!root) return;
 
-/* Mobile refinements */
-@media (max-width: 520px){
-  .agendaGrid{ grid-template-columns: 1fr; }
-  .eventItem{ flex-direction: column; align-items: stretch; }
-  .eventLeft{ min-width: 0; flex-direction: row; flex-wrap: wrap; gap: 8px; }
-  .datePill, .tagPill{ width: auto; }
-}
+    const data = window.SALES_DATA || window.salesData || [];
+    const months = normalizeData(data);
+    months.sort((a, b) => sortISO(a.monthStart, b.monthStart));
+
+    root.innerHTML = months.map((m) => {
+      const label = monthLabelFromISO(m.monthStart);
+      const events = asArray(m.events);
+
+      const list = events.map((ev) => {
+        const title = escapeHtml(ev.title || ev.name || 'מבצע');
+        const when = escapeHtml(ev.when || ev.dateRange || ev.dates || ev.date || '');
+        const desc = escapeHtml(ev.description || ev.details || ev.typicalFocus || '');
+        const focus = splitFocus(ev.focus || ev.typicalFocus || ev.whatToBuy || ev.focusItems);
+        const tag = ev.tag ? { text: String(ev.tag), cls: 'tag-note' } : inferTag(title);
+
+        const focusHtml = focus.length ? `
+          <div class="eventBuy">
+            ${focus.slice(0, 6).map(f => `<span class="buyChip">🛒 ${escapeHtml(f)}</span>`).join('')}
+          </div>` : '';
+
+        return `
+          <article class="eventItem">
+            <div class="eventLeft">
+              ${when ? `<span class="datePill">${when}</span>` : ''}
+              <span class="tagPill ${tag.cls}">${escapeHtml(tag.text)}</span>
+            </div>
+            <div class="eventBody">
+              <div class="eventName">${title}</div>
+              ${desc ? `<div class="eventDesc">${desc}</div>` : ''}
+              ${focusHtml}
+            </div>
+          </article>
+        `;
+      }).join('') || `<div class="noEvents">אין מבצעים בחודש הזה.</div>`;
+
+      return `
+        <section class="monthCard">
+          <div class="monthTop">
+            <div class="monthMeta">${events.length} אירועים</div>
+            <div class="monthTitle">${escapeHtml(label)}</div>
+          </div>
+          <div class="eventList">
+            ${list}
+          </div>
+        </section>
+      `;
+    }).join('');
+  };
+
+  document.addEventListener('DOMContentLoaded', render);
+})();
