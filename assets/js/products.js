@@ -1,250 +1,338 @@
+// Products page logic (RTL-friendly, data-normalized, performant)
+(function () {
+  const qs = (s) => document.querySelector(s);
 
-function escapeHtml(str) {
-  return String(str ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-function escapeAttr(str) {
-  return escapeHtml(str).replace(/`/g, "&#096;");
-}
+  const q = qs("#q");
+  const grid = qs("#grid");
+  const liveCount = qs("#liveCount");
 
-function renderProductCard(p) {
-  const badges = [];
-  if (p.isVegan) badges.push('<span class="mini-badge">Vegan</span>');
-  if (p.isPeta) badges.push('<span class="mini-badge">PETA</span>');
-  if (p.isLB) badges.push('<span class="mini-badge">Leaping Bunny</span>');
+  const brandSelect = qs("#brandSelect");
+  const storeSelect = qs("#storeSelect");
+  const sortSel = qs("#sort");
+  const clearBtn = qs("#clearFilters");
 
-  // Size
-  if (p.size) badges.push(`<span class="mini-badge">${escapeHtml(p.size)}</span>`);
+  const onlyLB = qs("#onlyLB");
+  const onlyPeta = qs("#onlyPeta");
+  const onlyVegan = qs("#onlyVegan");
+  const onlyIsrael = qs("#onlyIsrael");
 
-  // Store region (IL / Intl)
-  const regionLabel = (p.israel === true) ? 'אתר ישראלי' : 'אתר בינלאומי';
-  badges.push(`<span class="mini-badge">${regionLabel}</span>`);
+  const chips = Array.from(document.querySelectorAll(".chip"));
+  let currentCat = "all";
 
-  const imgHtml = p.image
-    ? `<img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}" loading="lazy">`
-    : `<div class="product-placeholder" aria-hidden="true">🧴</div>`;
+  function escapeHtml(str) {
+    return String(str ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 
-  return `
-    <article class="product-card">
-      <div class="product-img-wrap">
-        ${imgHtml}
-      </div>
-      <div class="product-info">
-        <div class="brand-name">${escapeHtml(p.brand || '')}</div>
-        <h3 class="product-title">${escapeHtml(p.name || '')}</h3>
+  function normalizeProduct(p) {
+    const offers = Array.isArray(p?.offers) ? p.offers : [];
+    const storeRegion = String(p?.storeRegion ?? "").toLowerCase();
 
-        <div class="card-badges">
-          ${badges.join('')}
-        </div>
+    return {
+      ...p,
+      // Canonical booleans (supports old keys too)
+      isLB: Boolean(p?.isLB ?? p?.lb ?? p?.isLeapingBunny),
+      isPeta: Boolean(p?.isPeta ?? p?.peta),
+      isVegan: Boolean(p?.isVegan ?? p?.vegan),
+      isIsrael: Boolean(p?.isIsrael ?? p?.israel ?? (storeRegion === "il")),
+      // Canonical offers meta field (supports old "note")
+      offers: offers.map((o) => ({
+        ...o,
+        meta: o?.meta ?? o?.note ?? "",
+      })),
+    };
+  }
 
-        <a href="${escapeAttr(p.affiliateLink)}" target="_blank" rel="noopener" class="buy-btn">
-          לקנייה באתר ${escapeHtml(p.store || p.storeName || '')}
-        </a>
-      </div>
-    </article>
-  `;
-}
-(function(){
-  const qs = (s)=>document.querySelector(s);
-  const q = qs('#q');
-  const grid = qs('#grid');
-  const liveCount = qs('#liveCount');
-  const emptyState = qs('#emptyState');
-  const brandSelect = qs('#brandSelect');
-  const storeSelect = qs('#storeSelect');
-  const sortSel = qs('#sort');
-  const clearBtn = qs('#clearFilters');
-  const onlyLB = qs('#onlyLB');
-  const onlyPeta = qs('#onlyPeta');
-  const onlyVegan = qs('#onlyVegan');
-  const onlyIsrael = qs('#onlyIsrael');
-  const chips = Array.from(document.querySelectorAll('.chip'));
-  let currentCat = 'all';
+  const data = (window.PRODUCTS || []).map(normalizeProduct);
 
-  const data = (window.PRODUCTS || []).slice();
-
-  function unique(arr){
+  function unique(arr) {
     return Array.from(new Set(arr))
-      .filter(v=>String(v||'').trim())
-      .sort((a,b)=>String(a).localeCompare(String(b),'he'));
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "he"));
   }
 
-  // Normalization for categories coming from different data shapes
+  // --- Category normalization (fixes mismatched values like "Fragrances"/"fragrance ") ---
   const CAT_ALIASES = {
-    fragrances: 'fragrance',
-    perfume: 'fragrance',
-    perfumes: 'fragrance',
-    bodywash: 'body',
-    skincare: 'face'
+    fragrances: "fragrance",
+    perfume: "fragrance",
+    perfumes: "fragrance",
+    frag: "fragrance",
   };
-  function norm(str){
-    return String(str ?? '')
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g,'-');
+  function normCat(v) {
+    const s = String(v ?? "").trim().toLowerCase();
+    return CAT_ALIASES[s] || s;
   }
-  function normCat(str){
-    const key = norm(str);
-    return CAT_ALIASES[key] || key;
-  }
-  function getCats(p){
-    const raw = [];
-    if (p.cat) raw.push(p.cat);
-    if (p.category) raw.push(p.category);
-    if (Array.isArray(p.categories)) raw.push(...p.categories);
-    if (typeof p.categories === 'string') raw.push(p.categories);
-    const cats = raw.map(normCat).filter(Boolean);
-    return cats.length ? Array.from(new Set(cats)) : [''];
-  }
-  function pickBool(p, keys){
-    for (const k of keys){
-      if (p && typeof p[k] !== 'undefined') return !!p[k];
-    }
-    return false;
-  }
-  function getBrand(p){ return p.brand || p.brandName || p.manufacturer || ''; }
-  function getNameParts(p){
-    const raw = String(p.name || p.title || '').trim();
-    const parts = raw.split(/\n+/).map(s=>s.trim()).filter(Boolean);
-    if (!parts.length) return { title: '', desc: '' };
-    const title = parts.shift();
-    const desc = parts.join(' • ');
-    return { title, desc };
-  }
-  function getOffers(p){
-    if (Array.isArray(p.offers) && p.offers.length) return p.offers;
-    // Support single-link products
-    if (p.affiliateLink || p.url){
-      return [{ store: p.store || p.storeName || 'לצפייה', url: p.affiliateLink || p.url, meta: p.meta || '' }];
-    }
+  function getCats(p) {
+    if (Array.isArray(p?.categories)) return p.categories.map(normCat).filter(Boolean);
+    if (p?.category != null) return [normCat(p.category)].filter(Boolean);
+    if (p?.cat != null) return [normCat(p.cat)].filter(Boolean);
     return [];
   }
 
-  function buildSelects(){
-    unique(data.map(getBrand)).forEach(b=>{
-      const o=document.createElement('option'); o.value=b; o.textContent=b; brandSelect.appendChild(o);
-    });
-    unique(data.flatMap(p=>getOffers(p).map(o=>o.store))).forEach(s=>{
-      const o=document.createElement('option'); o.value=s; o.textContent=s; storeSelect.appendChild(o);
-    });
-  }
-
-  function matches(p){
-    const text=(q?.value||'').trim().toLowerCase();
-    const brand=brandSelect?.value||'';
-    const store=storeSelect?.value||'';
-    const cats = getCats(p);
-    if(currentCat!=='all' && !cats.includes(normCat(currentCat))) return false;
-    const pBrand = getBrand(p);
-    if(brand && pBrand!==brand) return false;
-    const offers = getOffers(p);
-    if(store && !offers.some(o=>o.store===store)) return false;
-    const isLB = pickBool(p, ['lb','isLB','isLb','leapingBunny']);
-    const isPeta = pickBool(p, ['peta','isPeta']);
-    const isVegan = pickBool(p, ['vegan','isVegan']);
-    const isIsrael = pickBool(p, ['israel','isIsrael']);
-    if(onlyLB?.checked && !isLB) return false;
-    if(onlyPeta?.checked && !isPeta) return false;
-    if(onlyVegan?.checked && !isVegan) return false;
-    if(onlyIsrael?.checked && !isIsrael) return false;
-    if(text){
-      const { title, desc } = getNameParts(p);
-      const hay=(pBrand+' '+title+' '+desc+' '+cats.join(' ')+' '+offers.map(o=>o.store+' '+(o.meta||'')).join(' ')).toLowerCase();
-      if(!hay.includes(text)) return false;
+  function buildSelects() {
+    if (brandSelect) {
+      unique(data.map((p) => p.brand)).forEach((b) => {
+        const o = document.createElement("option");
+        o.value = b;
+        o.textContent = b;
+        brandSelect.appendChild(o);
+      });
     }
-    return true;
+
+    if (storeSelect) {
+      unique(data.flatMap((p) => (p.offers || []).map((o) => o.store))).forEach((s) => {
+        const o = document.createElement("option");
+        o.value = s;
+        o.textContent = s;
+        storeSelect.appendChild(o);
+      });
+    }
   }
 
-  function sortList(list){
-    const v=sortSel?.value||'updated';
-    if(v==='brand-az') list.sort((a,b)=>String(getBrand(a)).localeCompare(String(getBrand(b)),'he'));
-    else if(v==='name-az') list.sort((a,b)=>String(getNameParts(a).title).localeCompare(String(getNameParts(b).title),'he'));
-    else list.sort((a,b)=>String(b.updated||b.updatedAt||'').localeCompare(String(a.updated||a.updatedAt||'')));
+  function matches(p) {
+    const text = (q?.value || "").trim().toLowerCase();
+    const brand = brandSelect?.value || "";
+    const store = storeSelect?.value || "";
+
+    const predicates = [
+      () => currentCat === "all" || getCats(p).includes(normCat(currentCat)),
+      () => !brand || p.brand === brand,
+      () => !store || (p.offers || []).some((o) => o.store === store),
+      () => !onlyLB?.checked || p.isLB,
+      () => !onlyPeta?.checked || p.isPeta,
+      () => !onlyVegan?.checked || p.isVegan,
+      () => !onlyIsrael?.checked || p.isIsrael,
+      () => {
+        if (!text) return true;
+        const hay = `${p.brand || ""} ${p.name || ""} ${getCats(p).join(" ")}`.toLowerCase();
+        return hay.includes(text);
+      },
+    ];
+
+    return predicates.every((fn) => fn());
   }
 
-  function tag(label){
-    const s=document.createElement('span'); s.className='tag'; s.textContent=label; return s;
+  function updatedTs(v) {
+    if (typeof v === "number") return v;
+    const t = Date.parse(String(v || ""));
+    return Number.isFinite(t) ? t : 0;
   }
 
-  function render(){
-    if(!grid) return;
-    const list=data.filter(matches);
+  function sortList(list) {
+    const v = sortSel?.value || "updated";
+
+    if (v === "brand-az") {
+      list.sort((a, b) =>
+        String(a.brand || "").localeCompare(String(b.brand || ""), "he") ||
+        String(a.name || "").localeCompare(String(b.name || ""), "he")
+      );
+      return;
+    }
+
+    if (v === "name-az") {
+      list.sort((a, b) =>
+        String(a.name || "").localeCompare(String(b.name || ""), "he") ||
+        String(a.brand || "").localeCompare(String(b.brand || ""), "he")
+      );
+      return;
+    }
+
+    // Default: newest first. Stable tiebreakers for consistent results.
+    list.sort((a, b) => {
+      const diff = updatedTs(b.updated) - updatedTs(a.updated);
+      if (diff) return diff;
+      return (
+        String(a.brand || "").localeCompare(String(b.brand || ""), "he") ||
+        String(a.name || "").localeCompare(String(b.name || ""), "he")
+      );
+    });
+  }
+
+  function tag(label) {
+    const s = document.createElement("span");
+    s.className = "tag";
+    s.textContent = label;
+    return s;
+  }
+
+  let renderRaf = 0;
+  function scheduleRender() {
+    cancelAnimationFrame(renderRaf);
+    renderRaf = requestAnimationFrame(render);
+  }
+
+  function render() {
+    if (!grid) return;
+
+    const list = data.filter(matches);
     sortList(list);
-    grid.innerHTML='';
 
-    if (emptyState) emptyState.hidden = list.length !== 0;
+    const frag = document.createDocumentFragment();
 
-    list.forEach(p=>{
-      const card=document.createElement('article');
-      card.className='productCard';
-      const left=document.createElement('div');
-      const pBrand = getBrand(p);
-      const { title, desc } = getNameParts(p);
-      const brand=document.createElement('div'); brand.className='pBrand'; brand.textContent=pBrand;
-      const name=document.createElement('div'); name.className='pName'; name.textContent=title;
-      left.appendChild(brand); left.appendChild(name);
+    list.forEach((p) => {
+      const card = document.createElement("article");
+      card.className = "productCard";
 
-      if (desc){
-        const d=document.createElement('div'); d.className='pDesc'; d.textContent=desc;
-        left.appendChild(d);
+      // Media (optional)
+      const media = document.createElement("div");
+      media.className = "pMedia";
+      if (p.image) {
+        const img = document.createElement("img");
+        img.src = p.image;
+        img.alt = p.name || "";
+        img.loading = "lazy";
+        img.decoding = "async";
+        // Prevent CLS even if images are missing for many products
+        img.width = 640;
+        img.height = 640;
+        media.appendChild(img);
+      } else {
+        const ph = document.createElement("div");
+        ph.className = "pPlaceholder";
+        ph.textContent = "🧴";
+        ph.setAttribute("aria-hidden", "true");
+        media.appendChild(ph);
       }
 
-      const tags=document.createElement('div'); tags.className='tags';
-      const isLB = pickBool(p, ['lb','isLB','isLb','leapingBunny']);
-      const isPeta = pickBool(p, ['peta','isPeta']);
-      const isVegan = pickBool(p, ['vegan','isVegan']);
-      const isIsrael = pickBool(p, ['israel','isIsrael']);
-      if(isLB) tags.appendChild(tag('Leaping Bunny'));
-      if(isPeta) tags.appendChild(tag('PETA'));
-      if(isVegan) tags.appendChild(tag('Vegan'));
-      if(isIsrael) tags.appendChild(tag('אתר ישראלי'));
-      left.appendChild(tags);
+      const content = document.createElement("div");
+      content.className = "pContent";
 
-      const offerList=document.createElement('div'); offerList.className='offerList';
-      const offers = getOffers(p);
-      offers.forEach(o=>{
-        const row=document.createElement('div'); row.className='offer';
-        const meta=document.createElement('div');
-        meta.innerHTML = `<div style="font-weight:900">${o.store}</div><div class="offerMeta">${o.meta||''}</div>`;
-        const a=document.createElement('a'); a.className='btn primary'; a.href=o.url||'#'; a.textContent='לצפייה';
-        row.appendChild(meta); row.appendChild(a);
+      const header = document.createElement("div");
+      header.className = "pHeader";
+
+      const titleWrap = document.createElement("div");
+      titleWrap.className = "pTitleWrap";
+
+      const brand = document.createElement("div");
+      brand.className = "pBrand";
+      brand.textContent = p.brand || "";
+
+      const name = document.createElement("div");
+      name.className = "pName";
+      name.textContent = p.name || "";
+
+      titleWrap.appendChild(brand);
+      titleWrap.appendChild(name);
+
+      const meta = document.createElement("div");
+      meta.className = "pMeta";
+
+      const cats = getCats(p);
+      if (cats.length) {
+        const c = document.createElement("span");
+        c.className = "pMetaPill";
+        c.textContent = cats[0];
+        meta.appendChild(c);
+      }
+      if (p.size) {
+        const s = document.createElement("span");
+        s.className = "pMetaPill";
+        s.textContent = p.size;
+        meta.appendChild(s);
+      }
+
+      header.appendChild(titleWrap);
+      header.appendChild(meta);
+
+      const tags = document.createElement("div");
+      tags.className = "tags";
+      if (p.isLB) tags.appendChild(tag("Leaping Bunny"));
+      if (p.isPeta) tags.appendChild(tag("PETA"));
+      if (p.isVegan) tags.appendChild(tag("Vegan"));
+      if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
+
+      // Offers
+      const offerList = document.createElement("div");
+      offerList.className = "offerList";
+
+      const offers = Array.isArray(p.offers) ? p.offers : [];
+      offers.forEach((o) => {
+        const row = document.createElement("div");
+        row.className = "offer";
+
+        const metaBox = document.createElement("div");
+        metaBox.innerHTML = `<div style="font-weight:900">${escapeHtml(o.store || "")}</div><div class="offerMeta">${escapeHtml(
+          o.meta || ""
+        )}</div>`;
+
+        const a = document.createElement("a");
+        a.className = "btn primary";
+        a.href = o.url || "#";
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = "לצפייה";
+
+        row.appendChild(metaBox);
+        row.appendChild(a);
         offerList.appendChild(row);
       });
-      card.appendChild(left);
-      card.appendChild(offerList);
-      grid.appendChild(card);
+
+      content.appendChild(header);
+      content.appendChild(tags);
+      content.appendChild(offerList);
+
+      card.appendChild(media);
+      card.appendChild(content);
+
+      frag.appendChild(card);
     });
 
-    if(liveCount) liveCount.textContent = `${list.length} מוצרים`;
+    grid.replaceChildren(frag);
+
+    if (liveCount) liveCount.textContent = `${list.length} מוצרים`;
+
+    const empty = qs("#emptyState");
+    if (empty) empty.hidden = list.length !== 0;
   }
 
-  function bind(){
-    [q, brandSelect, storeSelect, sortSel, onlyLB, onlyPeta, onlyVegan, onlyIsrael].forEach(el=>{
-      el && el.addEventListener('input', render);
-      el && el.addEventListener('change', render);
+  function bind() {
+    // Delegated filter inputs
+    const toolbar = document.querySelector(".toolbar-container");
+    toolbar?.addEventListener("input", (e) => {
+      if (
+        e.target &&
+        e.target.matches(
+          "#q, #brandSelect, #storeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael"
+        )
+      ) {
+        scheduleRender();
+      }
     });
-    chips.forEach(ch=>{
-      ch.addEventListener('click', ()=>{
-        chips.forEach(c=>c.classList.remove('active'));
-        ch.classList.add('active');
-        currentCat=ch.dataset.cat||'all';
-        render();
-      });
+    toolbar?.addEventListener("change", (e) => {
+      if (e.target && e.target.matches("#brandSelect, #storeSelect, #sort")) {
+        scheduleRender();
+      }
     });
-    clearBtn && clearBtn.addEventListener('click', ()=>{
-      if(q) q.value='';
-      if(brandSelect) brandSelect.value='';
-      if(storeSelect) storeSelect.value='';
-      if(sortSel) sortSel.value='updated';
-      [onlyLB, onlyPeta, onlyVegan, onlyIsrael].forEach(c=>{ if(c) c.checked=false; });
-      chips.forEach(c=>c.classList.remove('active'));
-      const all=chips.find(c=>c.dataset.cat==='all'); all && all.classList.add('active');
-      currentCat='all';
-      render();
+
+    // Chips + clear
+    document.addEventListener("click", (e) => {
+      const chip = e.target?.closest?.(".chip");
+      if (chip) {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        currentCat = chip.dataset.cat || "all";
+        scheduleRender();
+        return;
+      }
+
+      if (e.target?.closest?.("#clearFilters")) {
+        if (q) q.value = "";
+        if (brandSelect) brandSelect.value = "";
+        if (storeSelect) storeSelect.value = "";
+        if (sortSel) sortSel.value = "updated";
+        [onlyLB, onlyPeta, onlyVegan, onlyIsrael].forEach((c) => {
+          if (c) c.checked = false;
+        });
+        chips.forEach((c) => c.classList.remove("active"));
+        const all = chips.find((c) => c.dataset.cat === "all");
+        all && all.classList.add("active");
+        currentCat = "all";
+        scheduleRender();
+      }
     });
   }
 
