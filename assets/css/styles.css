@@ -1424,3 +1424,42 @@ body{ overflow-x: hidden; }
   .productsResults .productCard{ grid-template-columns: 1fr; }
   .productsResults .pMedia{ min-height: 72px; }
 }
+
+/* =========================================================
+   Learn + Israeli brands – enhancements (scoped & safe)
+   ========================================================= */
+
+/* Comparison table (learn.html) */
+.compareTableWrap{overflow:auto;margin-top:14px;border-radius:16px;border:1px solid rgba(20,40,80,.12);background:rgba(255,255,255,.85);}
+.compareTable{width:100%;border-collapse:separate;border-spacing:0;min-width:720px;}
+.compareTable th,.compareTable td{padding:12px 14px;text-align:right;vertical-align:top;}
+.compareTable thead th{position:sticky;top:0;background:linear-gradient(180deg,rgba(42,91,154,.14),rgba(42,91,154,.06));font-weight:900;color:#0f172a;border-bottom:1px solid rgba(20,40,80,.10);}
+.compareTable tbody tr:not(:last-child) td{border-bottom:1px solid rgba(20,40,80,.08);}
+.compareTable tbody td:first-child{font-weight:900;color:#0f172a;white-space:nowrap;}
+.compareTable td{color:#334155;}
+.comparePill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 12px;border:1px solid rgba(20,40,80,.14);background:rgba(255,255,255,.85);font-weight:900;}
+
+/* Israeli brands directory (israeli-brands.html) */
+.brandSearch{max-width:720px;margin:14px auto 0;}
+.brandSearch input{width:100%;padding:14px 16px;border-radius:999px;border:2px solid rgba(15,23,42,.10);font:inherit;font-weight:800;background:rgba(255,255,255,.96);}
+.brandSearch input:focus{outline:none;border-color:rgba(42,91,154,.55);box-shadow:0 0 0 4px rgba(42,91,154,.12);}
+.brandGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px;}
+.brandCard{background:#fff;border:1px solid rgba(31,41,55,.08);border-radius:18px;padding:16px;box-shadow:0 6px 14px rgba(0,0,0,.04);transition:.18s;}
+.brandCard:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.10);}
+.brandTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;}
+.brandName{font-weight:1000;font-size:1.05rem;color:#0f172a;}
+.brandCat{font-weight:900;color:rgba(42,91,154,.92);}
+.brandDesc{margin:10px 0 0;color:#334155;line-height:1.55;}
+.brandBadges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.brandBadge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid rgba(20,40,80,.12);background:rgba(245,248,255,.75);font-weight:900;font-size:12px;color:#0f172a;}
+.brandLinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;}
+.brandLinks a{font-weight:900;}
+
+/* Products page – premium font + subtle wow, without touching header/hero */
+.page-products main{font-family:"Assistant",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:400;}
+.page-products main p,.page-products main li,.page-products main .muted{font-weight:300;}
+.page-products main h1,.page-products main h2,.page-products main h3{font-weight:500;}
+.page-products .productsResults .productCard{transition:transform .18s, box-shadow .18s, border-color .18s;}
+.page-products .productsResults .productCard:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.10);border-color:rgba(42,91,154,.28);}
+.page-products .productsResults .pMedia{background:linear-gradient(180deg,rgba(42,91,154,.10),rgba(255,255,255,.65));}
+

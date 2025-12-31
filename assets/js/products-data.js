@@ -47,5 +47,52 @@ window.PRODUCTS = [
         note: "בינלאומי · תלוי זמינות משלוח לישראל"
       }
     ]
+  },
+
+  // -------------------------------
+  // Sample products (דוגמה בלבד)
+  // -------------------------------
+  {
+    id: "narkis-cosmetics-vitc-serum-sample",
+    brand: "נרקיס קוסמטיקס",
+    name: "סרום ויטמין C להבהרה ואחידות גוון — מוצר לדוגמה",
+    category: "face",
+    vegan: true,
+    peta: false,
+    lb: false,
+    size: "30 מ\"ל",
+    storeRegion: "il",
+    isIsrael: true,
+    image: "assets/img/photos/care-products.png",
+    updated: "2025-12-31",
+    offers: [
+      {
+        store: "אתר המותג",
+        url: "https://example.com",
+        note: "דוגמה · קישור להמחשה"
+      }
+    ]
+  },
+
+  {
+    id: "levana-beauty-mascara-sample",
+    brand: "לבנה ביוטי",
+    name: "מסקרה שחורה עמידה עם מברשת סיליקון — מוצר לדוגמה",
+    category: "makeup",
+    vegan: true,
+    peta: true,
+    lb: false,
+    size: "10 מ\"ל",
+    storeRegion: "il",
+    isIsrael: true,
+    image: "assets/img/photos/index-card.jpg",
+    updated: "2025-12-31",
+    offers: [
+      {
+        store: "אתר המותג",
+        url: "https://example.com",
+        note: "דוגמה · קישור להמחשה"
+      }
+    ]
   }
 ];

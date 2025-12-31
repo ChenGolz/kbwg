@@ -1,103 +1,131 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="he">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>חנות ומאגר מוצרים | Cruelty Free</title>
-<meta content="קטלוג קניות ללא ניסויים בבעלי חיים עם סינון חכם וקישורי קנייה" name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.css" rel="stylesheet"/>
-<link href="assets/img/logo.png" rel="icon" type="image/png"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>חנות ומאגר מוצרים | Cruelty Free</title>
+  <meta name="description" content="קטלוג קניות ללא ניסויים בבעלי חיים עם סינון חכם וקישורי קנייה"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!-- Page-only typography (does not change header/site-wide typography) -->
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <link href="assets/css/styles.css" rel="stylesheet"/>
+  <link href="assets/img/logo.png" rel="icon" type="image/png"/>
 </head>
-<body>
+
+<body class="page-products">
 <header class="siteHeader" id="siteHeader">
-<div class="wrap headerRow">
-<a aria-label="דף הבית" class="logo" href="index.html">
-<img alt="Cruelty Free" class="logoImg" height="40" src="assets/img/logo.png" width="40"/>
-<span class="logoText">Cruelty Free</span>
-<span class="logoTag">אתר עם חמלה</span>
-</a>
-<nav aria-label="ניווט ראשי" class="nav">
-<a aria-current="page" class="active" href="products.html">מוצרים</a>
-<a class="" href="shopping-calendar.html">מבצעים</a>
-<a class="" href="israeli-brands.html">מותגים ישראליים</a>
-<a class="" href="ingredient-detective.html">רכיבים</a>
-<a class="" href="learn.html">מידע</a>
-<a class="" href="about.html">אודות</a>
-<a class="" href="contact.html">צור קשר</a>
-</nav>
-</div>
+  <div class="wrap headerRow">
+    <a class="logo" href="index.html" aria-label="דף הבית">
+      <img class="logoImg" src="assets/img/logo.png" width="40" height="40" alt="Cruelty Free"/>
+      <span class="logoText">Cruelty Free</span>
+      <span class="logoTag">אתר עם חמלה</span>
+    </a>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <a aria-current="page" class="active" href="products.html">מוצרים</a>
+      <a class="" href="shopping-calendar.html">מבצעים</a>
+      <a class="" href="israeli-brands.html">מותגים ישראליים</a>
+      <a class="" href="ingredient-detective.html">רכיבים</a>
+      <a class="" href="learn.html">מידע</a>
+      <a class="" href="about.html">אודות</a>
+      <a class="" href="contact.html">צור קשר</a>
+    </nav>
+  </div>
 </header>
+
 <main id="main">
-<section class="hero product-hero heroSmall">
-<img alt="" aria-hidden="true" class="decorPhoto decorCL" src="assets/img/photos/dog-field.jpg"/>
-<div class="wrap heroInner">
-<div class="heroCopy center-text">
-<h1>הבחירה המוסרית שלך</h1>
-<p>גלי מאות מוצרים ללא ניסויים בבעלי חיים, סנני לפי העדפותייך ורכשי ישירות מהחנויות המובילות</p>
-<div class="badgeRow center-badges">
-<div class="trust-badge"><span class="icon" aria-hidden="true">🐰</span> PETA</div>
-<div class="trust-badge"><span class="icon" aria-hidden="true">🌿</span> Vegan</div>
-<div class="trust-badge"><span class="icon" aria-hidden="true">🐇</span> Leaping Bunny</div>
-</div>
-</div>
-</div>
-</section>
-<section class="panel filter-panel">
-<div class="wrap"><div class="productsLayout"><aside aria-label="סינון" class="productsFilters"><div class="toolbar-container">
-<div class="search-wrapper">
-<input aria-label="חיפוש מוצרים" autocomplete="off" id="q" placeholder="מה בא לך לחפש היום? (מותג, מוצר...)" type="search"/>
-<button aria-hidden="true" class="search-btn" type="button">🔍</button>
-</div>
-<div aria-label="קטגוריות" class="chips-scroll-container">
-<div class="chipsRow">
-<button class="chip active" data-cat="all" type="button">הכל</button>
-<button class="chip" data-cat="face" type="button">טיפוח פנים</button>
-<button class="chip" data-cat="hair" type="button">שיער</button>
-<button class="chip" data-cat="body" type="button">גוף ורחצה</button>
-<button class="chip" data-cat="makeup" type="button">איפור</button>
-<button class="chip" data-cat="fragrance" type="button">בישום</button>
-<button class="chip" data-cat="baby" type="button">תינוקות</button>
-<button class="chip" data-cat="health" type="button">בריאות</button>
-</div>
-</div>
-<div class="filters-actions">
-<div class="select-group">
-<select class="select minimal" id="brandSelect"><option value="">כל המותגים</option></select>
-<select class="select minimal" id="storeSelect"><option value="">כל החנויות</option></select>
-<select class="select minimal" id="sort">
-<option value="updated">הכי חדשים</option>
-<option value="brand-az">לפי שם מותג</option>
-<option value="name-az">לפי שם מוצר</option>
-</select>
-</div>
-<div aria-label="מסננים מהירים" class="toggles-row">
-<label class="check-pill"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
-<label class="check-pill"><input id="onlyPeta" type="checkbox"/> PETA</label>
-<label class="check-pill"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
-<label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
-</div>
-<div class="status-bar">
-<span class="count-tag" id="liveCount">0 מוצרים</span>
-<button class="btn-link" id="clearFilters" type="button">ניקוי הכל</button>
-</div>
-</div>
-</div></aside><section aria-label="תוצאות" class="productsResults"><div class="emptyState" hidden="" id="emptyState">לא נמצאו תוצאות. נסי להסיר מסננים או לחפש מילה אחרת.</div><div aria-label="רשימת מוצרים" class="product-grid" id="grid"></div></section></div></div>
-</section>
+  <section class="hero product-hero heroSmall">
+    <img class="decorPhoto decorCL" src="assets/img/photos/dog-field.jpg" alt="" aria-hidden="true"/>
+    <div class="wrap heroInner">
+      <div class="heroCopy center-text">
+        <h1>הבחירה המוסרית שלך</h1>
+        <p>גלי מוצרים ללא ניסויים בבעלי חיים, סנני לפי העדפותייך ורכשי ישירות מהחנויות המובילות</p>
+        <div class="badgeRow center-badges">
+          <div class="trust-badge"><span class="icon" aria-hidden="true">🐰</span> PETA</div>
+          <div class="trust-badge"><span class="icon" aria-hidden="true">🌿</span> Vegan</div>
+          <div class="trust-badge"><span class="icon" aria-hidden="true">🐇</span> Leaping Bunny</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel filter-panel">
+    <div class="wrap">
+      <div class="contentCard" style="margin-top:12px">
+        <h2 style="margin:0 0 6px">קטלוג לדוגמה</h2>
+        <p class="muted" style="margin:0">הנתונים בעמוד זה נועדו להמחשה בלבד וכוללים מוצרים לדוגמה.</p>
+      </div>
+
+      <div class="productsLayout">
+        <aside class="productsFilters" aria-label="סינון">
+          <div class="toolbar-container">
+            <div class="search-wrapper">
+              <input id="q" type="search" placeholder="מה בא לך לחפש היום? (מותג, מוצר...)" aria-label="חיפוש מוצרים" autocomplete="off"/>
+              <button class="search-btn" type="button" aria-hidden="true">🔍</button>
+            </div>
+
+            <div class="chips-scroll-container" aria-label="קטגוריות">
+              <div class="chipsRow">
+                <button class="chip active" data-cat="all" type="button">הכל</button>
+                <button class="chip" data-cat="face" type="button">טיפוח פנים</button>
+                <button class="chip" data-cat="hair" type="button">שיער</button>
+                <button class="chip" data-cat="body" type="button">גוף ורחצה</button>
+                <button class="chip" data-cat="makeup" type="button">איפור</button>
+                <button class="chip" data-cat="fragrance" type="button">בישום</button>
+                <button class="chip" data-cat="baby" type="button">תינוקות</button>
+                <button class="chip" data-cat="health" type="button">בריאות</button>
+              </div>
+            </div>
+
+            <div class="filters-actions">
+              <div class="select-group">
+                <select class="select minimal" id="brandSelect"><option value="">כל המותגים</option></select>
+                <select class="select minimal" id="storeSelect"><option value="">כל החנויות</option></select>
+                <select class="select minimal" id="sort">
+                  <option value="updated">הכי חדשים</option>
+                  <option value="brand-az">לפי שם מותג</option>
+                  <option value="name-az">לפי שם מוצר</option>
+                </select>
+              </div>
+
+              <div class="toggles-row" aria-label="מסננים מהירים">
+                <label class="check-pill"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
+                <label class="check-pill"><input id="onlyPeta" type="checkbox"/> PETA</label>
+                <label class="check-pill"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
+                <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
+              </div>
+
+              <div class="status-bar">
+                <span class="count-tag" id="liveCount">0 מוצרים</span>
+                <button class="btn-link" id="clearFilters" type="button">ניקוי הכל</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="productsResults" aria-label="תוצאות">
+          <div id="emptyState" class="emptyState" hidden>לא נמצאו תוצאות. נסי להסיר מסננים או לחפש מילה אחרת.</div>
+          <div id="grid" class="product-grid" aria-label="רשימת מוצרים"></div>
+        </section>
+      </div>
+    </div>
+  </section>
 </main>
-<script defer="" src="assets/js/products-data.js"></script>
-<script defer="" src="assets/js/products.js"></script>
+
+<script defer src="assets/js/products-data.js"></script>
+<script defer src="assets/js/products.js"></script>
+
 <footer class="siteFooter">
-<div class="wrap">
-<div aria-label="ציטוטים" class="footerQuotes">
-<span class="quotePill">Kindness is my religion</span><span class="quotePill">Live and let live</span><span class="quotePill">Eat like you care</span><span class="quotePill">Compassion is the best fashion</span><span class="quotePill">Be kind to all kinds</span>
-</div>
-<footer class="siteFooter"><div class="wrap">    <p class="muted">גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך. התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים. איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע. אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.</p>
-</div>
+  <div class="wrap">
+    <div class="footerQuotes" aria-label="ציטוטים">
+      <span class="quotePill">Kindness is my religion</span><span class="quotePill">Live and let live</span><span class="quotePill">Eat like you care</span><span class="quotePill">Compassion is the best fashion</span><span class="quotePill">Be kind to all kinds</span>
+    </div>
+    <p class="muted">גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך. התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים. איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע. אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.</p>
+  </div>
 </footer>
-<script defer="" src="assets/js/site.js"></script>
+
+<script defer src="assets/js/site.js"></script>
 </body>
 </html>
