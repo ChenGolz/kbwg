@@ -19,7 +19,7 @@ window.PRODUCTS = [
       {
         store: "Amazon",
         url: "https://amzn.to/4plbYmu",
-        note: "בינלאומי · תלוי זמינות משלוח לישראל"
+        note: "בינלאומי · יש משלוח לישראל"
       }
     ]
   },
@@ -44,7 +44,7 @@ window.PRODUCTS = [
       {
         store: "Amazon",
         url: "https://amzn.to/4q3CYrU",
-        note: "בינלאומי · תלוי זמינות משלוח לישראל"
+        note: "בינלאומי · יש משלוח לישראל"
       }
     ]
   },
