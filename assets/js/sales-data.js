@@ -40,7 +40,7 @@ window.SALES_DATA = [
     title: "Love Your Skin Event (Ulta)",
     when: "ינואר (מבצעים יומיים)",
     tag: "מבצע עונתי",
-    description: "דילים יומיים עד 50% על טיפוח יוקרתי (לדוגמה: Clinique, Peach & Lily).",
+    description: "דילים יומיים עד 50% על טיפוח יוקרתי.",
     focus: ["טיפוח עור יוקרתי", "דילים יומיים", "עד 50%"]
   },
   {

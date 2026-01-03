@@ -21,7 +21,7 @@
     <a class="logo" href="index.html" aria-label="דף הבית">
       <img class="logoImg" src="assets/img/logo.png" width="40" height="40" alt="Cruelty Free"/>
       <span class="logoText">Cruelty Free</span>
-      <span class="logoTag">אתר עם חמלה</span>
+      <span class="logoTag">לקנות בלי לפגוע</span>
     </a>
     <nav class="nav" aria-label="ניווט ראשי">
       <a aria-current="page" class="active" href="products.html">מוצרים</a>
@@ -40,7 +40,7 @@
     <img class="decorPhoto decorCL" src="assets/img/photos/dog-field.jpg" alt="" aria-hidden="true"/>
     <div class="wrap heroInner">
       <div class="heroCopy center-text">
-        <h1>הבחירה המוסרית שלך</h1>
+        <h1>לקנות בלי לפגוע</h1>
         <p>גלי מוצרים ללא ניסויים בבעלי חיים, סנני לפי העדפותייך ורכשי ישירות מהחנויות המובילות</p>
         <div class="badgeRow center-badges">
           <div class="trust-badge"><span class="icon" aria-hidden="true">🐰</span> PETA</div>
@@ -54,8 +54,8 @@
   <section class="panel filter-panel">
     <div class="wrap">
       <div class="contentCard" style="margin-top:12px">
-        <h2 style="margin:0 0 6px">קטלוג לדוגמה</h2>
-        <p class="muted" style="margin:0">הנתונים בעמוד זה נועדו להמחשה בלבד וכוללים מוצרים לדוגמה.</p>
+        <h2 style="margin:0 0 6px">המוצרים המופיעים פה מאושרים כמותג שלא מבצע ניסויים בבעלי חיים, חלקם גם טבעוניים</h2>
+        
       </div>
 
       <div class="productsLayout">
@@ -79,16 +79,27 @@
               </div>
             </div>
 
-            <div class="filters-actions">
-              <div class="select-group">
-                <select class="select minimal" id="brandSelect"><option value="">כל המותגים</option></select>
-                <select class="select minimal" id="storeSelect"><option value="">כל החנויות</option></select>
-                <select class="select minimal" id="sort">
-                  <option value="updated">הכי חדשים</option>
-                  <option value="brand-az">לפי שם מותג</option>
-                  <option value="name-az">לפי שם מוצר</option>
-                </select>
-              </div>
+            <div class="filters-actions"><div class="select-group">
+  <select class="select minimal" id="brandSelect">
+    <option value="">כל המותגים</option>
+  </select>
+
+  <select class="select minimal" id="storeSelect">
+    <option value="">כל החנויות</option>
+  </select>
+
+  <select class="select minimal" id="sort">
+    <option value="updated">הכי חדשים</option>
+    <option value="brand-az">לפי שם מותג</option>
+    <option value="name-az">לפי שם מוצר</option>
+  </select>
+
+  <!-- חדש: סוג מוצר (קרם פנים, סרום, קרם גוף וכו׳) -->
+  <select class="select minimal" id="typeSelect">
+    <option value="">כל סוגי המוצרים</option>
+  </select>
+</div>
+
 
               <div class="toggles-row" aria-label="מסננים מהירים">
                 <label class="check-pill"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
@@ -97,7 +108,27 @@
                 <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
               </div>
 
-              <div class="status-bar">
+              <div class="price-range-row" aria-label="טווח מחירים">
+                <span class="filter-label">טווח מחירים</span>
+                <select id="priceRange" class="price-select">
+                  <option value="">כל המחירים</option>
+                  <option value="0-50">0–50 ₪</option>
+                  <option value="50-100">50–100 ₪</option>
+                  <option value="100-150">100–150 ₪</option>
+                  <option value="150-200">150–200 ₪</option>
+                  <option value="200-300">200–300 ₪</option>
+                  <option value="300-999999">300+ ₪</option>
+                </select>
+              </div>
+
+              <div class="free-ship-row">
+                <label class="check-pill highlight">
+                  <input id="onlyFreeShip" type="checkbox"/>
+                  רק מוצרים עם משלוח חינם מעל סכום מסוים
+                </label>
+              </div>
+
+<div class="status-bar">
                 <span class="count-tag" id="liveCount">0 מוצרים</span>
                 <button class="btn-link" id="clearFilters" type="button">ניקוי הכל</button>
               </div>

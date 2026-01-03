@@ -452,6 +452,8 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   background: rgba(255,255,255,.78);
 }
 .offerMeta{ font-size: 12px; font-weight: 800; color: var(--muted); }
+.offerStore{ font-size: 14px; font-weight: 900; color: rgba(15,23,42,.95); }
+
 
 /* ------------------------------------------------------------------
    Products page (v3) – compatibility styles
@@ -530,6 +532,67 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .check-pill.highlight{
   background: rgba(42,91,154,.10);
   border-color: rgba(42,91,154,.25);
+}
+
+
+.price-range-row{
+  margin-top: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+}
+
+.price-range-row .filter-label{
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.price-input{
+  max-width: 120px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  font-size: 13px;
+}
+
+.price-select{
+  min-width: 150px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  font-size: 13px;
+  background-color: #fff;
+}
+
+
+.price-sep{
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.free-ship-row{
+  margin-top: 10px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+}
+
+.freeShipLabel{
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.freeShipInput{
+  max-width: 140px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(15,23,42,.18);
+  background: rgba(255,255,255,.96);
+  font: inherit;
+  font-weight: 750;
+  text-align: center;
 }
 
 /* RTL: keep the checkbox visually on the left for readability */
@@ -1007,7 +1070,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .product-grid{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 18px;
+  gap: 14px;
   align-items: stretch;
 }
 .productCard{ height: 100%; }
@@ -1276,7 +1339,7 @@ body{ overflow-x: hidden; }
 .productsLayout{
   display: grid;
   grid-template-columns: 360px 1fr;
-  gap: 18px;
+  gap: 14px;
   align-items: start;
 }
 
@@ -1463,3 +1526,188 @@ body{ overflow-x: hidden; }
 .page-products .productsResults .productCard:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.10);border-color:rgba(42,91,154,.28);}
 .page-products .productsResults .pMedia{background:linear-gradient(180deg,rgba(42,91,154,.10),rgba(255,255,255,.65));}
 
+
+
+/* === New product-card layout (like single tall card design) === */
+.page-products .productCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+  text-align: center;
+  padding: 10px 10px 12px; /* slightly smaller card */
+  border-radius: 18px;
+  border: 1px solid rgba(20, 40, 80, 0.08);
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+}
+
+.page-products .productCard .pMedia {
+  display: none;
+}
+
+.page-products .productCard .pContent {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* tighter vertical spacing inside card */
+  flex: 1;
+}
+
+.page-products .productCard .pHeader {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.page-products .productCard .pTitleWrap {
+  text-align: center;
+}
+
+.page-products .productCard .pBrand {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(15, 23, 42, 0.55);
+}
+
+.page-products .productCard .pName {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.95);
+}
+
+/* top pills row (size, category etc.) */
+.page-products .productCard .pMeta {
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.page-products .productCard .pMetaPill {
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 40, 80, 0.10);
+  background: #ffffff;
+  font-weight: 800;
+  font-size: 11px;
+}
+
+.page-products .productCard .pMetaPill--freeShip {
+  border-color: rgba(34, 197, 94, 0.35); /* greenish to indicate benefit */
+  background: #ecfdf3;
+}
+
+.page-products .productCard .pPriceRange {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(15, 23, 42, 0.8);
+  text-align: center;
+}
+
+
+/* badges row (Leaping Bunny, Vegan, etc.) */
+.page-products .productCard .tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  flex-wrap: nowrap;       /* try to keep all tags on one line */
+  overflow-x: auto;        /* allow horizontal scroll if really narrow */
+}
+
+
+/* offer block */
+.page-products .productCard .offerList {
+  margin-top: auto;
+}
+
+.page-products .productCard .offer {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 12px 12px;
+  border-radius: 18px;
+  border: none;
+  background: #f5f7fb;
+  text-align: center;
+}
+
+.page-products .productCard .offerMeta {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(15, 23, 42, 0.65);
+}
+
+/* “צפייה באמזון” button style */
+.page-products .productCard .offer .btn.primary {
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 999px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 800;
+  border-color: rgba(37, 99, 235, 0.25);
+  background: #e5edff;
+}
+
+
+
+/* Product grid columns: 3 on desktop, 2 on smaller screens, 4 on very wide */
+.page-products .product-grid{
+  display:grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr; /* equal height rows */
+}
+
+/* Ensure each card fills its grid cell */
+.page-products .product-grid > .productCard{
+  height: 100%;
+}
+
+@media (max-width: 1024px){
+  .page-products .product-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* tablets & small laptops */
+  }
+}
+
+@media (max-width: 600px){
+  .page-products .product-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* phones: 2 per row */
+  }
+}
+
+@media (min-width: 1440px){
+  .page-products .product-grid{
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* very wide screens */
+  }
+}
+
+}
+/* כרטיס הטקסט מעל הפילטרים בדף מוצרים – קטן יותר */
+.panel.filter-panel .contentCard{
+  padding: 10px 18px;    /* פחות רווח פנימי – ברירת מחדל הייתה 22px */
+  margin-bottom: 18px;   /* פחות מרווח מתחת לכרטיס */
+  max-width: 1000px;     /* אפשר להקטין/להגדיל לפי הטעם */
+  margin-left: auto;
+  margin-right: auto;    /* לוודא שהוא נשאר ממורכז */
+}
+
+/* כותרת קצת יותר קטנה */
+.panel.filter-panel .contentCard h2{
+  font-size: 0.8rem;     /* היה גדול יותר – אפשר גם 1.3rem אם תרצי עוד קטן */
+  margin-bottom: 4px;
+}
+
+/* טקסט הפסקה קצת יותר קטן וצפוף */
+.panel.filter-panel .contentCard p{
+  font-size: 0.95rem;
+  margin: 0;
+}
