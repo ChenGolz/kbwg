@@ -36,6 +36,7 @@
 </header>
 
 <main id="main">
+
   <section class="hero product-hero heroSmall">
     <img class="decorPhoto decorCL" src="assets/img/photos/dog-field.jpg" alt="" aria-hidden="true"/>
     <div class="wrap heroInner">
@@ -54,7 +55,42 @@
   <section class="panel filter-panel">
     <div class="wrap">
       <div class="contentCard" style="margin-top:12px">
-        <h2 style="margin:0 0 6px">המוצרים המופיעים פה מאושרים כמותג שלא מבצע ניסויים בבעלי חיים, חלקם גם טבעוניים</h2>
+<section class="amazon-short-intro">
+  <button
+    class="amazon-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="amazonInfoDetails"
+  >
+    איך זה עובד עם אמזון ארה"ב ואנגליה?
+  </button>
+
+  <div id="amazonInfoDetails" hidden>
+    <p>
+      המוצרים באתר מקושרים לחנויות אמזון בחו"ל. שימו לב להבדלים:
+    </p>
+
+    <p>
+      <strong>Amazon US:</strong>
+      משלוח חינם לישראל ברכישה מעל $49! זמן הגעה ממוצע: כשבועיים.
+    </p>
+
+    <p>
+      <strong>Amazon UK:</strong>
+      משלוח מהיר במיוחד – בדרך כלל תוך שבוע. (משלוח חינם אינו חל על אמזון אנגליה).
+    </p>
+
+    <p>
+      חשוב: המחיר הסופי והמדויק (כולל משלוח ומיסים) יופיע רק בשלב ה-Checkout באמזון.
+    </p>
+
+    <p>
+      ליותר מידע על משלוחים, מיסים, שינוי שפה ומטבע וטיפים לחיסכון במשלוח –
+      <a href="amazon-info.html">לחצו כאן למדריך המלא על קנייה מאמזון</a>.
+    </p>
+  </div>
+</section>
+
         
       </div>
 
@@ -79,60 +115,70 @@
               </div>
             </div>
 
-            <div class="filters-actions"><div class="select-group">
-  <select class="select minimal" id="brandSelect">
-    <option value="">כל המותגים</option>
-  </select>
+            <div class="filters-actions">
+        <!-- שורת כפתורי סינון מהיר (תמיד גלויה) -->
+        <div class="toggles-row" aria-label="מסננים מהירים">
+          <label class="check-pill"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
+          <label class="check-pill"><input id="onlyPeta" type="checkbox"/> PETA</label>
+          <label class="check-pill"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
+          <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
+          <label class="check-pill"><input id="onlyMen" type="checkbox"/> טיפוח לגבר</label>
+        </div>
 
-  <select class="select minimal" id="storeSelect">
-    <option value="">כל החנויות</option>
-  </select>
+        <!-- סינונים מתקדמים בקולפס -->
+        <details class="more-filters" aria-label="סינונים נוספים">
+          <summary>סינונים נוספים</summary>
+          <div class="more-filters-inner">
+            <div class="select-group">
+              <select class="select minimal" id="brandSelect">
+                <option value="">כל המותגים</option>
+              </select>
 
-  <select class="select minimal" id="sort">
-    <option value="updated">הכי חדשים</option>
-    <option value="brand-az">לפי שם מותג</option>
-    <option value="name-az">לפי שם מוצר</option>
-  </select>
+              <select class="select minimal" id="storeSelect">
+                <option value="">כל החנויות</option>
+              </select>
 
-  <!-- חדש: סוג מוצר (קרם פנים, סרום, קרם גוף וכו׳) -->
-  <select class="select minimal" id="typeSelect">
-    <option value="">כל סוגי המוצרים</option>
-  </select>
-</div>
+              <select class="select minimal" id="sort">
+                <option value="updated">הכי חדשים</option>
+                <option value="brand-az">לפי שם מותג</option>
+                <option value="name-az">לפי שם מוצר</option>
+              </select>
 
-
-              <div class="toggles-row" aria-label="מסננים מהירים">
-                <label class="check-pill"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
-                <label class="check-pill"><input id="onlyPeta" type="checkbox"/> PETA</label>
-                <label class="check-pill"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
-                <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
-              </div>
-
-              <div class="price-range-row" aria-label="טווח מחירים">
-                <span class="filter-label">טווח מחירים</span>
-                <select id="priceRange" class="price-select">
-                  <option value="">כל המחירים</option>
-                  <option value="0-50">0–50 ₪</option>
-                  <option value="50-100">50–100 ₪</option>
-                  <option value="100-150">100–150 ₪</option>
-                  <option value="150-200">150–200 ₪</option>
-                  <option value="200-300">200–300 ₪</option>
-                  <option value="300-999999">300+ ₪</option>
-                </select>
-              </div>
-
-              <div class="free-ship-row">
-                <label class="check-pill highlight">
-                  <input id="onlyFreeShip" type="checkbox"/>
-                  רק מוצרים עם משלוח חינם מעל סכום מסוים
-                </label>
-              </div>
-
-<div class="status-bar">
-                <span class="count-tag" id="liveCount">0 מוצרים</span>
-                <button class="btn-link" id="clearFilters" type="button">ניקוי הכל</button>
-              </div>
+              <!-- סוג מוצר (קרם פנים, סרום, קרם גוף וכו׳) -->
+              <select class="select minimal" id="typeSelect">
+                <option value="">כל סוגי המוצרים</option>
+              </select>
             </div>
+
+            <div class="price-range-row" aria-label="טווח מחירים">
+              <span class="filter-label">טווח מחירים (₪)</span>
+              <div class="price-range-inputs">
+                <label>מינימום
+                  <input id="priceMin" type="number" min="0" step="1" inputmode="numeric"/>
+                </label>
+                <label>מקסימום
+                  <input id="priceMax" type="number" min="0" step="1" inputmode="numeric"/>
+                </label>
+                <button id="priceApplyBtn" type="button" class="btn-secondary">עדכון</button>
+              </div>
+              <div class="price-range-hint">השאירי ריק כדי לא להגביל מחיר מסוים</div>
+            </div>
+
+            <div class="free-ship-row">
+              <label class="check-pill highlight">
+                <input id="onlyFreeShip" type="checkbox"/>
+                רק מוצרים עם משלוח חינם מעל סכום מסוים
+              </label>
+            </div>
+          </div>
+        </details>
+
+        <div class="status-bar">
+          <span class="count-tag" id="liveCount">0 מוצרים</span>
+          <button class="btn-link" id="clearFilters" type="button">ניקוי הכל</button>
+        </div>
+      </div>
+
           </div>
         </aside>
 

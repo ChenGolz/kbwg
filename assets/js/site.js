@@ -98,4 +98,20 @@
       onMq();
     }
   }
+
+    // Products page: collapsible Amazon US/UK info box
+    // Makes the heading "איך זה עובד עם אמזון ארה"ב ואנגליה?" clickable and toggles the extra details.
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.querySelector('.amazon-toggle');
+      var details = document.getElementById('amazonInfoDetails');
+      if (!btn || !details) return;
+
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        // If it was expanded -> collapse (hidden = true). If collapsed -> show (hidden = false).
+        details.hidden = expanded;
+      });
+    });
+
 })();

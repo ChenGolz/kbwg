@@ -1043,6 +1043,613 @@ window.PRODUCTS = [
     ]
   },
 
+  
+  // ---- Every Man Jack – טיפוח לגבר (PETA + Vegan) ----
+  {
+    id: "everymanjack-unscented-beard-oil-2pack",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "שמן זקן ללא ריח (סט של 2)",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "men-beard-oil",
+    productTypeLabel: "שמן זקן",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "30 מ״ל × 2 (בקירוב)",
+    storeRegion: "us",
+    priceMin: 50,
+    priceMax: 100,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/44Vamst",
+        meta: "",
+        price: 70,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-beard-essentials-kit-sandalwood",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "ערכת טיפוח זקן מלאה בניחוח סנדלווד",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "men-beard-set",
+    productTypeLabel: "סט טיפוח זקן",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "",
+    storeRegion: "us",
+    priceMin: 100,
+    priceMax: 150,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/3Nf8Nzn",
+        meta: "",
+        price: 130,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-mens-bath-body-gift-set-cedar-sage",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "סט מתנה לגבר – רחצה וטיפוח גוף (ארז וסלוויה)",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "men-body-set",
+    productTypeLabel: "סט רחצה לגבר",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "",
+    storeRegion: "us",
+    priceMin: 100,
+    priceMax: 150,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/3N2gM2J",
+        meta: "",
+        price: 130,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-cedar-redsage-deodorant-2pack",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "דאודורנט טבעי לגבר – ארז וסלוויה (סט של 2)",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "deodorant-men",
+    productTypeLabel: "דאודורנט לגבר",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "85 גר׳ × 2 (בקירוב)",
+    storeRegion: "us",
+    priceMin: 0,
+    priceMax: 50,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/45DOv91",
+        meta: "",
+        price: 50,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-bodywash-variety-3pack",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "סט 3 ג׳לי רחצה לגבר בניחוחות שונים",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "body-wash-men",
+    productTypeLabel: "ג׳ל רחצה לגבר",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "3 × 500 מ״ל (בקירוב)",
+    storeRegion: "us",
+    priceMin: 50,
+    priceMax: 100,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4q6w6Ks",
+        meta: "",
+        price: 100,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-beard-face-wash-2pack",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "ג׳ל ניקוי לפנים ולזקן – ונילה וארז (סט של 2)",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "men-beard-cleanser",
+    productTypeLabel: "ניקוי זקן ופנים",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "200 מ״ל × 2 (בקירוב)",
+    storeRegion: "us",
+    priceMin: 50,
+    priceMax: 100,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/49CPl8m",
+        meta: "",
+        price: 70,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-beard-grooming-tool-set",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "סט אביזרי טיפוח לזקן",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "men-beard-tools",
+    productTypeLabel: "אביזרי זקן",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "",
+    storeRegion: "us",
+    priceMin: 0,
+    priceMax: 50,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4bfwLEy",
+        meta: "",
+        price: 50,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "everymanjack-cold-processed-soap-3pack",
+    brand: "Every Man Jack",
+    isMen: true,
+    name: "סט 3 סבוני בר לגבר – קוקוס טרופי",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "bar-soap-men",
+    productTypeLabel: "סבון מוצק לגבר",
+    isVegan: true,
+    isPeta: true,
+    isLB: false,
+    vegan: true,
+    peta: true,
+    lb: false,
+    isIsrael: false,
+    size: "3 × 100 גר׳ (בקירוב)",
+    storeRegion: "us",
+    priceMin: 50,
+    priceMax: 100,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/49gLb4J",
+        meta: "",
+        price: 80,
+        freeShipOver: 180
+      }
+    ]
+  },
+
+  // ---- Rhode by Hailey Bieber – Skincare (Vegan + PETA + Leaping Bunny) ----
+  {
+    id: "rhode-peptide-lip-tints-set-4",
+    brand: "Rhode by Hailey Bieber",
+    name: "סט 4 טינטי שפתיים Peptide Lip",
+    category: "makeup",
+    categoryLabel: "איפור",
+    productTypeKey: "lip-set",
+    productTypeLabel: "סט לשפתיים",
+    isVegan: true,
+    isPeta: true,
+    isLB: true,
+    vegan: true,
+    peta: true,
+    lb: true,
+    isIsrael: false,
+    size: "",
+    storeRegion: "us",
+    priceMin: 300,
+    priceMax: 600,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4so7VIV",
+        meta: "",
+        price: 430,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "rhode-pineapple-refresh-cleanser",
+    brand: "Rhode by Hailey Bieber",
+    name: "פיינאפל רפרש – ג׳ל ניקוי יומי לפנים",
+    category: "face",
+    categoryLabel: "פנים",
+    productTypeKey: "face-cleanser",
+    productTypeLabel: "ניקוי פנים",
+    isVegan: true,
+    isPeta: true,
+    isLB: true,
+    vegan: true,
+    peta: true,
+    lb: true,
+    isIsrael: false,
+    size: "150 מ״ל",
+    storeRegion: "us",
+    priceMin: 150,
+    priceMax: 200,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4bgNK9u",
+        meta: "",
+        price: 170,
+        freeShipOver: 180
+      }
+    ]
+  },
+
+  // ---- Herbivore Botanicals – Skincare (Vegan + PETA + Leaping Bunny) ----
+  {
+    id: "herbivore-bakuchiol-retinol-alternative",
+    brand: "Herbivore",
+    name: "סרום בקטשול – חלופה צמחית לרטינול",
+    category: "face",
+    categoryLabel: "פנים",
+    productTypeKey: "serum",
+    productTypeLabel: "סרום פנים",
+    isVegan: true,
+    isPeta: true,
+    isLB: true,
+    vegan: true,
+    peta: true,
+    lb: true,
+    isIsrael: false,
+    size: "60 מ״ל (בקירוב)",
+    storeRegion: "us",
+    priceMin: 100,
+    priceMax: 150,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4smtGIW",
+        meta: "",
+        price: 120,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "herbivore-coco-rose-body-polish",
+    brand: "Herbivore",
+    name: "פילינג גוף קוקוס ורוז",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "body-scrub",
+    productTypeLabel: "פילינג גוף",
+    isVegan: true,
+    isPeta: true,
+    isLB: true,
+    vegan: true,
+    peta: true,
+    lb: true,
+    isIsrael: false,
+    size: "240 מ״ל (בקירוב)",
+    storeRegion: "us",
+    priceMin: 50,
+    priceMax: 100,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4aJWHYP",
+        meta: "",
+        price: 90,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "herbivore-nova-serum-set",
+    brand: "Herbivore",
+    name: "סט טיפוח פנים Nova – סרום וקרם עיניים",
+    category: "face",
+    categoryLabel: "פנים",
+    productTypeKey: "face-set",
+    productTypeLabel: "סט טיפוח פנים",
+    isVegan: true,
+    isPeta: true,
+    isLB: true,
+    vegan: true,
+    peta: true,
+    lb: true,
+    isIsrael: false,
+    size: "",
+    storeRegion: "us",
+    priceMin: 300,
+    priceMax: 600,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4qGalB6",
+        meta: "",
+        price: 330,
+        freeShipOver: 180
+      }
+    ]
+  },
+
+  // ---- Aesop – Skincare & Body (Leaping Bunny + Vegan) ----
+  {
+    id: "aesop-exalted-eye-serum",
+    brand: "Aesop",
+    name: "Exalted – סרום עיניים קליל",
+    category: "face",
+    categoryLabel: "פנים",
+    productTypeKey: "eye-serum",
+    productTypeLabel: "סרום לעיניים",
+    isVegan: true,
+    isPeta: false,
+    isLB: true,
+    vegan: true,
+    peta: false,
+    lb: true,
+    isIsrael: false,
+    size: "15 מ״ל",
+    storeRegion: "us",
+    priceMin: 300,
+    priceMax: 600,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4jpJy9t",
+        meta: "",
+        price: 420,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "aesop-resurrection-hand-wash-500",
+    brand: "Aesop",
+    name: "Resurrection – סבון ידיים ארומטי",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "hand-wash",
+    productTypeLabel: "סבון ידיים",
+    isVegan: true,
+    isPeta: false,
+    isLB: true,
+    vegan: true,
+    peta: false,
+    lb: true,
+    isIsrael: false,
+    size: "500 מ״ל",
+    storeRegion: "us",
+    priceMin: 150,
+    priceMax: 200,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/49mGE0C",
+        meta: "",
+        price: 170,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "aesop-perfect-facial-hydrating-cream",
+    brand: "Aesop",
+    name: "Perfect – קרם לחות עשיר לפנים",
+    category: "face",
+    categoryLabel: "פנים",
+    productTypeKey: "face-cream",
+    productTypeLabel: "קרם פנים",
+    isVegan: true,
+    isPeta: false,
+    isLB: true,
+    vegan: true,
+    peta: false,
+    lb: true,
+    isIsrael: false,
+    size: "60 מ״ל",
+    storeRegion: "us",
+    priceMin: 300,
+    priceMax: 600,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/49gBxz3",
+        meta: "",
+        price: 470,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "aesop-reverence-duet-hand-set",
+    brand: "Aesop",
+    name: "Reverence Duet – סט סבון וקרם ידיים",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "hand-set",
+    productTypeLabel: "סט לידיים",
+    isVegan: true,
+    isPeta: false,
+    isLB: true,
+    vegan: true,
+    peta: false,
+    lb: true,
+    isIsrael: false,
+    size: "500 מ״ל × 2",
+    storeRegion: "us",
+    priceMin: 300,
+    priceMax: 600,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4sGHUVx",
+        meta: "",
+        price: 500,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "aesop-resurrection-hand-wash-500-duplicate",
+    brand: "Aesop",
+    name: "Resurrection – סבון ידיים ארומטי",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "hand-wash",
+    productTypeLabel: "סבון ידיים",
+    isVegan: true,
+    isPeta: false,
+    isLB: true,
+    vegan: true,
+    peta: false,
+    lb: true,
+    isIsrael: false,
+    size: "500 מ״ל",
+    storeRegion: "us",
+    priceMin: 150,
+    priceMax: 200,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/3YU3ojJ",
+        meta: "",
+        price: 170,
+        freeShipOver: 180
+      }
+    ]
+  },
+  {
+    id: "aesop-resurrection-reverence-hand-wash-set",
+    brand: "Aesop",
+    name: "סט סבוני ידיים Resurrection & Reverence",
+    category: "body",
+    categoryLabel: "גוף",
+    productTypeKey: "hand-set",
+    productTypeLabel: "סט לידיים",
+    isVegan: true,
+    isPeta: false,
+    isLB: true,
+    vegan: true,
+    peta: false,
+    lb: true,
+    isIsrael: false,
+    size: "500 מ״ל × 2",
+    storeRegion: "us",
+    priceMin: 300,
+    priceMax: 600,
+    updated: "2026-01-04",
+    image: "",
+    offers: [
+      {
+        store: "Amazon US",
+        url: "https://amzn.to/4ppRqJM",
+        meta: "",
+        price: 470,
+        freeShipOver: 180
+      }
+    ]
+  },
+
+
   // 4) Sample Israeli products (דוגמה בלבד)
   {
     id: "narkis-cosmetics-vitc-serum-sample",
@@ -1074,6 +1681,349 @@ window.PRODUCTS = [
       }
     ]
   },
+  // ---- Stila – Amazon US (PETA + Leaping Bunny, איפור) ----
+{
+  id: "stila-stay-all-day-smudge-set-gel-liner-49",
+  brand: "stila",
+  name: "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $23 ≈ 80 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/4pZwrOV",
+      meta: "אמזון ארה״ב",
+      price: 80,         // הערכת מחיר בש״ח
+      freeShipOver: 170  // משלוח חינם מעל $49 ≈ ₪170
+    }
+  ]
+},
+
+{
+  id: "stila-color-correcting-palette",
+  brand: "stila",
+  name: "פלטת קונסילרים Color Correcting Palette",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "0.45 oz",
+  storeRegion: "us",
+  // $45 ≈ 160 ₪ → טווח 150–200
+  priceMin: 150,
+  priceMax: 200,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/49miVh6",
+      meta: "אמזון ארה״ב",
+      price: 160,
+      freeShipOver: 170  // מעל $49
+    }
+  ]
+},
+
+{
+  id: "stila-stay-all-day-sheer-shimmer-liquid-lip",
+  brand: "stila",
+  name: "שפתון נוזלי מבריק Stay All Day Sheer & Shimmer Liquid Lip",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $24 ≈ 85 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/49k0da1",
+      meta: "אמזון ארה״ב",
+      price: 85,
+      freeShipOver: 170  // מעל $49
+    }
+  ]
+},
+
+{
+  id: "stila-convertible-color-lip-cheek-cream",
+  brand: "stila",
+  name: "קרם דו־תכליתי לשפתיים וללחיים Convertible Color",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $25 ≈ 90 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/4q1wycF",
+      meta: "אמזון ארה״ב",
+      price: 90,
+      freeShipOver: 175  // מעל $50 ≈ ₪175
+    }
+  ]
+},
+
+{
+  id: "stila-stay-all-day-liquid-lipstick",
+  brand: "stila",
+  name: "שפתון נוזלי Matt Stay All Day® Liquid Lipstick",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $24 ≈ 85 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/494fUTR",
+      meta: "אמזון ארה״ב",
+      price: 85,
+      freeShipOver: 175  // מעל $50
+    }
+  ]
+},
+
+{
+  id: "stila-stay-all-day-waterproof-liquid-eye-liner",
+  brand: "stila",
+  name: "אייליינר נוזלי עמיד Stay All Day Waterproof Liquid Eye Liner",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $24 ≈ 85 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/4js4xJ5",
+      meta: "אמזון ארה״ב",
+      price: 85,
+      freeShipOver: 180  // מעל $51
+    }
+  ]
+},
+
+{
+  id: "stila-stay-all-day-smudge-set-gel-liner-52",
+  brand: "stila",
+  name: "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner (וריאציה)",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $23 ≈ 80 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/49k0olH",
+      meta: "אמזון ארה״ב",
+      price: 80,
+      freeShipOver: 180  // מעל $52
+    }
+  ]
+},
+
+{
+  id: "stila-magnificent-metals-glitter-glow-eye-shadow",
+  brand: "stila",
+  name: "צללית נוזלית מנצנצת Magnificent Metals Glitter & Glow Liquid Eye Shadow",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $25 ≈ 90 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/3Lu1var",
+      meta: "אמזון ארה״ב",
+      price: 90,
+      freeShipOver: 185  // מעל $53
+    }
+  ]
+},
+
+{
+  id: "stila-stay-all-day-smudge-set-gel-liner-54",
+  brand: "stila",
+  name: "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner (וריאציה נוספת)",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $23 ≈ 80 ₪ → טווח 50–100
+  priceMin: 50,
+  priceMax: 100,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/4qHZ5nP",
+      meta: "אמזון ארה״ב",
+      price: 80,
+      freeShipOver: 190  // מעל $54
+    }
+  ]
+},
+
+{
+  id: "stila-heavens-hue-highlighter-kitten",
+  brand: "stila",
+  name: "היילייטר Heaven's Hue Highlighter – גוון Kitten",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "0.35 oz",
+  storeRegion: "us",
+  // $34 ≈ 120 ₪ → טווח 100–150
+  priceMin: 100,
+  priceMax: 150,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/3MWfRkx",
+      meta: "אמזון ארה״ב",
+      price: 120,
+      freeShipOver: 190  // מעל $55
+    }
+  ]
+},
+
+{
+  id: "stila-stay-all-day-foundation-concealer",
+  brand: "stila",
+  name: "מייקאפ + קונסילר Stay All Day Foundation & Concealer",
+  category: "makeup",
+  categoryLabel: "איפור",
+  isVegan: false,
+  isPeta: true,
+  isLB: true,
+  vegan: false,
+  peta: true,
+  lb: true,
+  isIsrael: false,
+  size: "",
+  storeRegion: "us",
+  // $42 ≈ 145 ₪ → טווח 100–150
+  priceMin: 100,
+  priceMax: 150,
+  updated: "2026-01-03",
+  image: "",
+  offers: [
+    {
+      store: "Amazon",
+      url: "https://amzn.to/45nFBwk",
+      meta: "אמזון ארה״ב",
+      price: 145,
+      freeShipOver: 195  // מעל $56
+    }
+  ]
+},
+// ---- end Stila block ----
+
   {
     id: "levana-beauty-mascara-sample",
     brand: "לבנה ביוטי",

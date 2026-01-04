@@ -11,13 +11,16 @@
   const typeSelect = qs("#typeSelect"); // ✅ סוג מוצר (קבוצות + תתי-קטגוריות)
   const sortSel = qs("#sort");
   const clearBtn = qs("#clearFilters");
+  const priceMinInput = qs("#priceMin");
+  const priceMaxInput = qs("#priceMax");
+  const priceApplyBtn = qs("#priceApplyBtn");
 
   const onlyLB = qs("#onlyLB");
   const onlyPeta = qs("#onlyPeta");
   const onlyVegan = qs("#onlyVegan");
   const onlyIsrael = qs("#onlyIsrael");
+  const onlyMen = qs("#onlyMen");
   const onlyFreeShip = qs("#onlyFreeShip");
-  const priceRangeSelect = qs("#priceRange");
 
   const chips = Array.from(document.querySelectorAll(".chip"));
   let currentCat = "all";
@@ -31,7 +34,69 @@
       .replace(/'/g, "&#039;");
   }
 
-  function normalizeProduct(p) {
+  
+  function cleanupProductName(name, brand) {
+    if (!name) return "";
+    let result = String(name);
+
+    // הסרה של שם המותג מתוך שם המוצר (אם מופיע)
+    if (brand) {
+      const brandEsc = brand.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const brandRe = new RegExp("\\s*" + brandEsc + "\\s*", "gi");
+      result = result.replace(brandRe, " ");
+    }
+
+    // מילים באנגלית שנוטות לחזור יחד עם המונח העברי (כמו Conditioner + מרכך)
+    const duplicateEnglishWords = [
+      "Conditioner",
+      "Shampoo",
+      "Mask",
+      "Cream",
+      "Serum",
+      "Moisturizer",
+      "Lotion",
+      "Toner",
+      "Cleanser",
+      "Wash",
+      "Scrub",
+      "Peeling",
+      "Gel",
+      "Spray",
+      "Mist",
+      "Foam",
+      "Mousse",
+      "Oil",
+      "Balm",
+      "Exfoliant",
+      "Pads",
+      "Lipstick",
+      "Lip Gloss",
+      "Gloss",
+      "Lip Color",
+      "Foundation",
+      "Primer",
+      "Highlighter",
+      "Blush",
+      "Bronzer",
+      "Concealer",
+      "Palette",
+      "Kit",
+      "Set",
+      "BB Cream",
+      "CC Cream"
+    ];
+
+    duplicateEnglishWords.forEach((word) => {
+      const re = new RegExp("\\s*" + word.replace(" ", "\\s+") + "\\s*", "gi");
+      result = result.replace(re, " ");
+    });
+
+    // ניקוי רווחים כפולים
+    result = result.replace(/\s+/g, " ").trim();
+    return result;
+  }
+
+function normalizeProduct(p) {
     const offers = Array.isArray(p?.offers) ? p.offers : [];
     const storeRegion = String(p?.storeRegion ?? "").toLowerCase();
 
@@ -123,6 +188,22 @@
   // ✅ קביעת "קבוצת סוג" לפי קטגוריה + מילים בשם
   // קבוצות: מוצרי איפור, טיפוח לפנים, טיפוח לגוף, עיצוב שיער, הגנה מהשמש,
   // בשמים, הלבנה וטיפוח השיניים, טיפוח לגבר, אחר.
+
+  // Helper: האם המוצר ממוקד/מותאם לגברים (לפי שם ומילות מפתח)
+  function isMenTargetedProduct(p) {
+    if (!p) return false;
+    // אפשרות לסמן מפורשות בדאטה בעתיד
+    if (p.isMen) return true;
+
+    const name = p.name || "";
+    const lower = name.toLowerCase();
+
+    const hebMenRegex = /גבר|גברים/;
+    const enMenRegex = /(men's|for men|for him|pour homme)/i;
+
+    return hebMenRegex.test(name) || enMenRegex.test(lower);
+  }
+
   function getTypeGroupLabel(p) {
     const catKey = getPrimaryCategoryKey(p); // face / hair / body / makeup / fragrance / ...
     const nameLower = (p.productTypeLabel || p.name || "").toLowerCase();
@@ -214,18 +295,19 @@
       ) {
         return "אביזרי איפור";
       }
+      // סטים אמיתיים – קיטים/סטים/מארזים, אבל לא פלטות
       if (
         containsAny(lower, [
-          "palette",
           "kit",
-          "set",
-          "סט ",
-          "סט ",
           "מארז",
           "ערכת"
         ])
       ) {
         return "סטים ומארזים";
+      }
+      // פלטות – ברירת מחדל כפנים
+      if (containsAny(lower, ["palette", "פלטה"])) {
+        return "פנים";
       }
       // כל השאר – סומק/פודרה/מייקאפ וכו׳
       return "פנים";
@@ -293,8 +375,6 @@
         containsAny(lower, [
           "palette",
           "kit",
-          "set",
-          "סט ",
           "מארז",
           "ערכת",
           "collection"
@@ -337,8 +417,6 @@
         containsAny(lower, [
           "palette",
           "kit",
-          "set",
-          "סט ",
           "מארז",
           "ערכת",
           "collection"
@@ -516,15 +594,19 @@
       });
     }
 
-    // Store dropdown
+    // Store dropdown (separate Amazon US / Amazon UK וכו׳)
     if (storeSelect) {
       unique(
-        data.flatMap((p) => (p.offers || []).map((o) => o.store))
-      ).forEach((s) => {
-        const o = document.createElement("option");
-        o.value = s;
-        o.textContent = s;
-        storeSelect.appendChild(o);
+        data.flatMap((p) =>
+          (p.offers || [])
+            .map((o) => getStoreDisplayName(p, o))
+            .filter(Boolean)
+        )
+      ).forEach((label) => {
+        const opt = document.createElement("option");
+        opt.value = label;
+        opt.textContent = label;
+        storeSelect.appendChild(opt);
       });
     }
 
@@ -595,7 +677,7 @@
       () => !brand || p.brand === brand,
 
       // Store
-      () => !store || (p.offers || []).some((o) => o.store === store),
+      () => !store || (p.offers || []).some((o) => getStoreDisplayName(p, o) === store),
 
       // ✅ Type לפי קבוצה + תת-קטגוריה
       () => {
@@ -612,6 +694,12 @@
       () => !onlyPeta?.checked || p.isPeta,
       () => !onlyVegan?.checked || p.isVegan,
       () => !onlyIsrael?.checked || p.isIsrael,
+      // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
+      () => {
+        if (!onlyMen?.checked) return true;
+        if (currentCat === "makeup") return true;
+        return isMenTargetedProduct(p);
+      },
 
       // Only products with "free shipping over"
       () => {
@@ -622,22 +710,29 @@
 
       // Price range
       () => {
-        const val = priceRangeSelect?.value || "";
-        if (!val) return true;
+        if (!priceMinInput && !priceMaxInput) return true;
 
         const range = getProductPriceRange(p);
         if (!range) return false;
 
         const [pMin, pMax] = range;
-        const parts = val.split("-").map(Number);
-        if (parts.length !== 2 || Number.isNaN(parts[0]) || Number.isNaN(parts[1]))
-          return true;
 
-        const [minVal, maxVal] = parts;
-        if (pMax < minVal) return false;
-        if (pMin > maxVal) return false;
+        const minVal = priceMinInput && priceMinInput.value !== "" ? Number(priceMinInput.value) : null;
+        const maxVal = priceMaxInput && priceMaxInput.value !== "" ? Number(priceMaxInput.value) : null;
+
+        // אם לא הוגדר מינימום ולא מקסימום – אין סינון מחיר
+        if (minVal == null && maxVal == null) return true;
+
+        // לוגיקה לפי חיתוך טווחים (overlap):
+        // המוצר יופיע אם טווח המחיר שלו מצטלב עם הטווח שהמשתמש בחר.
+        // כלומר: לא כולו מתחת למינימום, ולא כולו מעל המקסימום.
+        if (minVal != null && pMax < minVal) return false; // טווח המוצר נגמר לפני המינימום
+        if (maxVal != null && pMin >= maxVal) return false; // טווח המוצר מתחיל אחרי המקסימום
+
+        // אחרת – יש חיתוך בין הטווחים, ולכן המוצר רלוונטי
         return true;
       },
+
 
       // חיפוש טקסט חופשי
       () => {
@@ -744,7 +839,7 @@
 
       const name = document.createElement("div");
       name.className = "pName";
-      name.textContent = p.name || "";
+      name.textContent = cleanupProductName(p.name || "", p.brand || "");
 
       titleWrap.appendChild(brand);
       titleWrap.appendChild(name);
@@ -772,13 +867,6 @@
       if (p.isVegan) approvals.push("Vegan");
       if (p.isLB) approvals.push("Leaping Bunny");
 
-      if (approvals.length) {
-        const ap = document.createElement("span");
-        ap.className = "pMetaPill";
-        ap.textContent = `מאושר: ${approvals.join(", ")}`;
-        meta.appendChild(ap);
-      }
-
       const bestOffer = getOfferWithMinFreeShip(p);
       if (bestOffer) {
         const fs = document.createElement("span");
@@ -792,7 +880,7 @@
 
       const tags = document.createElement("div");
       tags.className = "tags";
-      if (p.isLB) tags.appendChild(tag("Leaping Bunny"));
+      if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
       if (p.isPeta) tags.appendChild(tag("PETA"));
       if (p.isVegan) tags.appendChild(tag("Vegan"));
       if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
@@ -807,17 +895,10 @@
 
         const metaBox = document.createElement("div");
         const storeLabel = getStoreDisplayName(p, o);
-        const lines = [];
-
-        if (o.meta) {
-          lines.push(escapeHtml(o.meta || ""));
-        }
-
-        let inner = `<div class="offerStore">${escapeHtml(storeLabel)}</div>`;
-        if (lines.length) {
-          inner += `<div class="offerMeta">${lines.join(" · ")}</div>`;
-        }
-        metaBox.innerHTML = inner;
+        const safeStoreLabel = storeLabel ? escapeHtml(storeLabel) : "";
+        // מציגים רק את שם החנות (כולל אזור, למשל Amazon ארה"ב / Amazon אנגליה)
+        // כדי להימנע מכפל טקסט כמו "אמזון ארה"ב" פעמיים
+        metaBox.innerHTML = `<div class="offerStore">${safeStoreLabel}</div>`;
 
         const a = document.createElement("a");
         a.className = "btn primary";
@@ -863,59 +944,92 @@
     if (empty) empty.hidden = list.length !== 0;
   }
 
-  function bind() {
-    const toolbar = document.querySelector(".toolbar-container");
+  
+function bind() {
+  const toolbar = document.querySelector(".toolbar-container");
 
-    toolbar?.addEventListener("input", (e) => {
-      if (
-        e.target &&
-        e.target.matches(
-          "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #priceRange"
-        )
-      ) {
+  // Generic live filters: search, brand, store, sort, type, toggles, free-shipping
+  toolbar?.addEventListener("input", (e) => {
+    if (
+      e.target &&
+      e.target.matches(
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #onlyMen"
+      )
+    ) {
+      scheduleRender();
+    }
+  });
+
+  toolbar?.addEventListener("change", (e) => {
+    if (
+      e.target &&
+      e.target.matches(
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #onlyMen"
+      )
+    ) {
+      scheduleRender();
+    }
+  });
+
+  // Price inputs: change min/max, then click "עדכון טווח" or just blur to refresh
+  if (priceMinInput) {
+    ["change"].forEach((evt) => {
+      priceMinInput.addEventListener(evt, () => {
+        // do not schedule immediately on every keystroke to avoid flicker;
+        // we will let the change event or the button trigger
         scheduleRender();
-      }
+      });
     });
-
-    toolbar?.addEventListener("change", (e) => {
-      if (
-        e.target &&
-        e.target.matches("#brandSelect, #storeSelect, #typeSelect, #sort")
-      ) {
+  }
+  if (priceMaxInput) {
+    ["change"].forEach((evt) => {
+      priceMaxInput.addEventListener(evt, () => {
         scheduleRender();
-      }
+      });
     });
-
-    document.addEventListener("click", (e) => {
-      const chip = e.target?.closest?.(".chip");
-      if (chip) {
-        chips.forEach((c) => c.classList.remove("active"));
-        chip.classList.add("active");
-        currentCat = chip.dataset.cat || "all";
-        scheduleRender();
-        return;
-      }
-
-      if (e.target?.closest?.("#clearFilters")) {
-        if (q) q.value = "";
-        if (brandSelect) brandSelect.value = "";
-        if (storeSelect) storeSelect.value = "";
-        if (typeSelect) typeSelect.value = "";
-        if (sortSel) sortSel.value = "updated";
-        [onlyLB, onlyPeta, onlyVegan, onlyIsrael, onlyFreeShip].forEach((c) => {
-          if (c) c.checked = false;
-        });
-        if (priceRangeSelect) priceRangeSelect.value = "";
-        chips.forEach((c) => c.classList.remove("active"));
-        const all = chips.find((c) => c.dataset.cat === "all");
-        all && all.classList.add("active");
-        currentCat = "all";
-        scheduleRender();
-      }
+  }
+  if (priceApplyBtn) {
+    priceApplyBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      scheduleRender();
     });
   }
 
-  buildSelects();
+  // Top category chips
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn || !btn.dataset.cat) return;
+    const cat = btn.dataset.cat;
+    if (!cat) return;
+    currentCat = cat;
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    chips.forEach((c) => c.classList.toggle("active", c === btn));
+    scheduleRender();
+  });
+
+  // Clear-all filters
+  clearBtn?.addEventListener("click", () => {
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    q.value = "";
+    brandSelect.value = "";
+    storeSelect.value = "";
+    sortSel.value = "updated";
+    typeSelect.value = "";
+    onlyLB.checked = false;
+    onlyPeta.checked = false;
+    onlyVegan.checked = false;
+    onlyIsrael.checked = false;
+    onlyFreeShip.checked = false;
+    if (priceMinInput) priceMinInput.value = "";
+    if (priceMaxInput) priceMaxInput.value = "";
+    chips.forEach((c) => c.classList.remove("active"));
+    const all = chips.find((c) => c.dataset.cat === "all");
+    all && all.classList.add("active");
+    currentCat = "all";
+    scheduleRender();
+  });
+}
+buildSelects();
   bind();
   render();
 })();
