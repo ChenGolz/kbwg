@@ -1541,8 +1541,8 @@ window.PRODUCTS = [
     isIsrael: false,
     size: "60 מ״ל",
     storeRegion: "us",
-    priceMin: 300,
-    priceMax: 600,
+    priceMin: 400,
+    priceMax: 500,
     updated: "2026-01-04",
     image: "",
     offers: [
