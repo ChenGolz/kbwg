@@ -1447,7 +1447,7 @@ window.PRODUCTS = [
     size: "",
     storeRegion: "us",
     priceMin: 300,
-    priceMax: 600,
+    priceMax: 400,
     updated: "2026-01-04",
     image: "",
     offers: [
@@ -1480,7 +1480,7 @@ window.PRODUCTS = [
     size: "15 מ״ל",
     storeRegion: "us",
     priceMin: 300,
-    priceMax: 600,
+    priceMax: 400,
     updated: "2026-01-04",
     image: "",
     offers: [
