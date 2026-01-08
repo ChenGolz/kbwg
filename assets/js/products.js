@@ -135,7 +135,46 @@ function normalizeProduct(p) {
     };
   }
 
-  const data = (window.PRODUCTS || []).map(normalizeProduct);
+  
+  // --- Remove duplicate products (keeps first occurrence) ---
+  // Dedup key priority: first offer URL -> affiliateLink -> brand+name+size+type
+  function dedupeProducts(list) {
+    const debug = /(?:\?|&)debug=1(?:&|$)/.test(location.search);
+    const seen = new Set();
+    const removed = [];
+    const out = [];
+
+    for (const p of list) {
+      const offerUrl = (p.offers && p.offers[0] && p.offers[0].url) ? String(p.offers[0].url) : "";
+      const affiliate = p.affiliateLink ? String(p.affiliateLink) : "";
+      const fallback = [
+        (p.brand || "").toLowerCase().trim(),
+        (p.name || "").toLowerCase().trim(),
+        (p.size || "").toLowerCase().trim(),
+        (p.productTypeLabel || "").toLowerCase().trim()
+      ].join("|");
+
+      const key = (offerUrl || affiliate || fallback).trim();
+      if (!key) {
+        out.push(p);
+        continue;
+      }
+      if (seen.has(key)) {
+        removed.push({ key, name: p.name, brand: p.brand });
+        continue;
+      }
+      seen.add(key);
+      out.push(p);
+    }
+
+    if (debug && removed.length) {
+      console.warn("[products] Removed duplicates:", removed);
+    }
+    return out;
+  }
+
+
+  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct));
 
   function unique(arr) {
     return Array.from(new Set(arr))
@@ -541,21 +580,50 @@ function normalizeProduct(p) {
   }
 
   function getProductPriceRange(p) {
-    let min = typeof p?.priceMin === "number" ? p.priceMin : null;
-    let max = typeof p?.priceMax === "number" ? p.priceMax : null;
+    // Collect all numeric price hints: explicit range + offer prices
+    const prices = [];
+
+    if (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) {
+      prices.push(p.priceMin);
+    }
+    if (typeof p?.priceMax === "number" && !Number.isNaN(p.priceMax)) {
+      prices.push(p.priceMax);
+    }
 
     if (Array.isArray(p?.offers)) {
       p.offers.forEach((o) => {
         const v = typeof o.price === "number" ? o.price : null;
         if (v != null && !Number.isNaN(v)) {
-          min = min == null ? v : Math.min(min, v);
-          max = max == null ? v : Math.max(max, v);
+          prices.push(v);
         }
       });
     }
 
-    if (min == null || max == null) return null;
-    return [min, max];
+    if (!prices.length) return null;
+
+    // Use the average as an approximate "typical" price for bucketing
+    const avg = prices.reduce((sum, v) => sum + v, 0) / prices.length;
+    const basePrice = Math.max(0, Math.round(avg));
+
+    let bucketMin;
+    let bucketMax;
+
+    // Buckets:
+    // 0–50, 50–100, 100–200, 200–300, 300–400, 400–500, ...
+    if (basePrice <= 50) {
+      bucketMin = 0;
+      bucketMax = 50;
+    } else if (basePrice <= 100) {
+      bucketMin = 50;
+      bucketMax = 100;
+    } else {
+      const span = 100;
+      const idx = Math.floor((basePrice - 100) / span);
+      bucketMin = 100 + idx * span;
+      bucketMax = bucketMin + span;
+    }
+
+    return [bucketMin, bucketMax];
   }
 
   function getStoreDisplayName(p, o) {
@@ -713,9 +781,10 @@ function normalizeProduct(p) {
         if (!priceMinInput && !priceMaxInput) return true;
 
         const range = getProductPriceRange(p);
-        if (!range) return false;
+        if (!range) return true; // אם אין מידע על מחיר – לא מסננים לפי מחיר
 
-        const [pMin, pMax] = range;
+        const [pMin, pMaxRaw] = range;
+        const pMax = pMaxRaw ?? pMin ?? 0;
 
         const minVal = priceMinInput && priceMinInput.value !== "" ? Number(priceMinInput.value) : null;
         const maxVal = priceMaxInput && priceMaxInput.value !== "" ? Number(priceMaxInput.value) : null;
@@ -723,11 +792,20 @@ function normalizeProduct(p) {
         // אם לא הוגדר מינימום ולא מקסימום – אין סינון מחיר
         if (minVal == null && maxVal == null) return true;
 
-        // לוגיקה לפי חיתוך טווחים (overlap):
-        // המוצר יופיע אם טווח המחיר שלו מצטלב עם הטווח שהמשתמש בחר.
-        // כלומר: לא כולו מתחת למינימום, ולא כולו מעל המקסימום.
-        if (minVal != null && pMax < minVal) return false; // טווח המוצר נגמר לפני המינימום
-        if (maxVal != null && pMin >= maxVal) return false; // טווח המוצר מתחיל אחרי המקסימום
+        // רק מינימום הוגדר – דורשים שכל הטווח של המוצר יהיה מעל / שווה למינימום
+        if (minVal != null && maxVal == null) {
+          return pMin >= minVal;
+        }
+
+        // רק מקסימום הוגדר – דורשים שהגבול התחתון של המוצר יהיה קטן מהמקסימום
+        // כך, אם המקסימום הוא 50, טווח 50–100 *לא* יופיע; אם המקסימום הוא 51 – כן יופיע.
+        if (minVal == null && maxVal != null) {
+          return pMin < maxVal;
+        }
+
+        // שני הערכים הוגדרו – עובדים לפי חיתוך טווחים (overlap)
+        if (pMax < minVal) return false; // טווח המוצר נגמר לפני המינימום
+        if (pMin >= maxVal) return false; // טווח המוצר מתחיל אחרי / בדיוק בגבול המקסימום
 
         // אחרת – יש חיתוך בין הטווחים, ולכן המוצר רלוונטי
         return true;
@@ -735,6 +813,7 @@ function normalizeProduct(p) {
 
 
       // חיפוש טקסט חופשי
+
       () => {
         if (!text) return true;
         const hay = `${p.brand || ""} ${p.name || ""} ${getCats(p).join(" ")}`.toLowerCase();

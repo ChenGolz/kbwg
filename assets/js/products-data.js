@@ -1447,7 +1447,7 @@ window.PRODUCTS = [
     size: "",
     storeRegion: "us",
     priceMin: 300,
-    priceMax: 400,
+    priceMax: 600,
     updated: "2026-01-04",
     image: "",
     offers: [
@@ -1480,7 +1480,7 @@ window.PRODUCTS = [
     size: "15 מ״ל",
     storeRegion: "us",
     priceMin: 300,
-    priceMax: 400,
+    priceMax: 600,
     updated: "2026-01-04",
     image: "",
     offers: [
@@ -1541,8 +1541,8 @@ window.PRODUCTS = [
     isIsrael: false,
     size: "60 מ״ל",
     storeRegion: "us",
-    priceMin: 400,
-    priceMax: 500,
+    priceMin: 300,
+    priceMax: 600,
     updated: "2026-01-04",
     image: "",
     offers: [
@@ -1572,8 +1572,8 @@ window.PRODUCTS = [
     isIsrael: false,
     size: "500 מ״ל × 2",
     storeRegion: "us",
-    priceMin: 400,
-    priceMax: 500,
+    priceMin: 300,
+    priceMax: 600,
     updated: "2026-01-04",
     image: "",
     offers: [
@@ -1634,8 +1634,8 @@ window.PRODUCTS = [
     isIsrael: false,
     size: "500 מ״ל × 2",
     storeRegion: "us",
-    priceMin: 400,
-    priceMax: 500,
+    priceMin: 300,
+    priceMax: 600,
     updated: "2026-01-04",
     image: "",
     offers: [
@@ -1669,7 +1669,7 @@ window.PRODUCTS = [
     isIsrael: true,
     size: "30 מ״ל",
     image: "assets/img/photos/care-products.png",
-    priceMin: 100,
+    priceMin: 120,
     priceMax: 150,
     updated: "2025-12-31",
     offers: [
