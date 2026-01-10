@@ -382,13 +382,40 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 /* Product UI */
 .chipsRow{ display:flex; gap:8px; flex-wrap:wrap; margin: 12px 0; }
 .chip{
-  border: 1px solid var(--stroke2);
-  background: rgba(255,255,255,.80);
+  position: relative;
+  border: 1px solid rgba(15,23,42,.12);
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(240,246,255,.86));
   padding: 8px 12px;
   border-radius: 999px;
   font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 6px 16px rgba(15,23,42,.06);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
 }
-.chip.active{ background: rgba(42,91,154,.12); border-color: rgba(42,91,154,.22); }
+.chip::after{
+  content:"";
+  position:absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 5px;
+  height: 3px;
+  border-radius: 999px;
+  background: transparent;
+  opacity: 0;
+}
+.chip:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15,23,42,.09);
+}
+.chip.active{
+  background: linear-gradient(180deg, rgba(42,91,154,.14), rgba(255,255,255,.88));
+  border-color: rgba(42,91,154,.35);
+}
+.chip.active::after{
+  background: linear-gradient(90deg, rgba(16,185,129,.95), rgba(59,130,246,.90));
+  opacity: 1;
+}
+
 .toolbar{
   display:grid;
   grid-template-columns: 1.3fr .7fr .7fr .6fr auto;
@@ -1349,6 +1376,8 @@ body{ overflow-x: hidden; }
   box-shadow: 0 6px 14px rgba(0,0,0,.04);
 }
 
+.navDrawerHeader{ display:none; }
+
 @media (max-width: 900px){
   /* Ensure drawer is above overlay (header creates stacking context due to backdrop-filter) */
   .siteHeader{ z-index: 10001; }
@@ -1373,7 +1402,9 @@ body{ overflow-x: hidden; }
     background: #fff;
     border-left: 1px solid rgba(15, 23, 42, 0.10);
     box-shadow: -18px 0 40px rgba(0,0,0,.14);
-    padding: 78px 12px 14px;
+    /* Remove the extra empty strip above the drawer header (seen on Galaxy S8/S9).
+       Safe-area padding is handled by the drawer header itself. */
+    padding: 0 12px 14px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1389,6 +1420,56 @@ body{ overflow-x: hidden; }
     transform: translateX(0);
     pointer-events: auto;
   }
+
+
+  /* Drawer header (logo + close) */
+  .navDrawerHeader{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 10px;
+    /* Sit flush at the very top; include safe-area inset for notched phones */
+    padding: calc(10px + env(safe-area-inset-top, 0px)) 6px 12px;
+    margin: 0 0 6px;
+    background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.86));
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(15,23,42,.06);
+  }
+  .navDrawerLogo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    min-width: 0;
+  }
+  .navDrawerLogoImg{
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(15,23,42,.10);
+    flex: 0 0 auto;
+  }
+  .navDrawerLogoText{
+    font-weight: 1000;
+    letter-spacing: -0.2px;
+    color: #0f172a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .navDrawerClose{
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(15,23,42,.10);
+    background: rgba(255,255,255,.92);
+    box-shadow: 0 8px 18px rgba(15,23,42,.08);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .navDrawerClose:active{ transform: scale(.98); }
 
   /* Drawer links */
   .siteHeader .nav a{
@@ -1500,6 +1581,24 @@ body{ overflow-x: hidden; }
 }
 /* Chips row: smooth horizontal scroll */
 .chips-scroll-container{ -webkit-overflow-scrolling: touch; }
+/* Chips row: tighter + scroll on small screens (less vertical scrolling) */
+.chips-scroll-container{
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+}
+@media (max-width: 900px){
+  .chipsRow{
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+  .chip{
+    white-space: nowrap;
+    padding: 7px 10px;
+    font-size: 0.92rem;
+  }
+}
 
 /* Decorative photos: keep visible but out of text on mobile */
 @media (max-width: 768px){
@@ -2779,5 +2878,398 @@ body{ overflow-x: hidden; }
   }
   .filter-panel .filterPanel__collapseArea{
     transition: max-height .22s ease, padding .22s ease, margin .22s ease;
+  }
+}
+
+
+/* =========================================================
+   v41: Small-phone polish (Galaxy S9 / ~360px)
+   - Reduce cramped UI on very small screens
+   - Make key layouts less “2-columns on phone”
+   - Improve header/logo truncation
+   - Improve table readability on mobile
+   - Add fallbacks for older/quirky mobile browsers
+   ========================================================= */
+
+@media (max-width: 420px){
+  /* Slightly wider content area (12px gutters instead of 16px) */
+  .wrap{ width: calc(100% - 24px); }
+
+  /* Header: keep it compact and avoid awkward wrapping */
+  .headerRow{ padding: 10px 0; gap: 10px; }
+  .logo{ gap: 8px; }
+  .logoImg{ width: 32px; height: 32px; border-radius: 10px; }
+  .logoTag{ display: none; }
+  .logoText{
+    font-size: 15px;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Hamburger: icon-only on tiny phones */
+  .navToggle{ padding: 8px 10px; }
+  .navToggleText{ display: none; }
+  .navToggleIcon{ font-size: 18px; line-height: 1; }
+
+  /* Drawer links: align to start (RTL-friendly) */
+  .siteHeader .nav a{ text-align: start !important; }
+
+  /* Cards/panels: reduce padding so content isn't squeezed */
+  .toolbar-container,.contentCard{ padding: 16px; border-radius: 14px; }
+  .panel{ padding: 12px; border-radius: 14px; }
+
+  /* Headings: keep them readable without taking over */
+  .center-text h1{ font-size: 1.22rem; }
+  .center-text p{ font-size: .95rem; }
+
+  /* Product & brand grids: keep 2-per-row even on tiny phones (reduce scrolling) */
+  .page-products .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+  .brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .brandTop{ flex-direction: column; align-items: stretch; }
+  .page-recommended-brands #brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .brandLinks{ gap: 8px; }
+  .brandLinks a.btn,
+  .brandLinks a.btn.small{ flex: 1 1 calc(50% - 8px); justify-content: center; }
+
+  /* Products page: the intro card heading was made too small in a previous patch */
+  .panel.filter-panel .contentCard h2{ font-size: 1.05rem; }
+  .panel.filter-panel .contentCard p{ font-size: .95rem; }
+
+  /* Table: remove forced min-width so it can fit without horizontal scrolling */
+  .compareTable{ min-width: 0; table-layout: fixed; }
+  .compareTable th,.compareTable td{ padding: 10px 10px; font-size: 13px; overflow-wrap: anywhere; }
+  .compareTable tbody td:first-child{ white-space: normal; }
+
+  /* Hero: on tiny phones, prefer a clean vertical stack (less cramped than side-by-side) */
+  .hero.product-hero,
+  .hero.product-hero.heroSmall{
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: right !important;
+    gap: 10px !important;
+  }
+  .hero.product-hero > .decorPhoto,
+  .hero.product-hero.heroSmall > .decorPhoto{
+    width: 100% !important;
+    max-width: none !important;
+    height: 140px !important;
+    max-height: none !important;
+    border-radius: 14px !important;
+    object-fit: cover !important;
+  }
+  .hero.product-hero .heroCopy.center-text{ text-align: right !important; }
+  .hero.product-hero .badgeRow,
+  .hero.product-hero.heroSmall .badgeRow{
+    justify-content: flex-start !important;
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Safe-area support for newer phones (no harm on others) */
+.siteHeader{ padding-top: env(safe-area-inset-top, 0px); }
+body{ padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+/* Legacy/quirky mobile fallback: replace min()/clamp() dependent sizing when unsupported */
+@supports not (width: min(10px, 20px)){
+  .wrap{ width: calc(100% - 32px); max-width: 1120px; }
+  .hero.product-hero{ max-width: 980px; width: calc(100% - 28px); }
+}
+
+@supports not (font-size: clamp(1rem, 2vw, 2rem)){
+  h1{ font-size: 32px; }
+  h2{ font-size: 24px; }
+}
+
+
+/* =========================================================
+   v43: Site-wide responsive cleanup (2026-01)
+   Goals:
+   - Make the header compact on phones (Galaxy S9 / 320–360px)
+   - Ensure the mobile nav drawer never inflates the header height
+   - Make heroes shorter and more consistent across pages
+   - Improve general mobile compatibility & accessibility
+   ========================================================= */
+
+html{ -webkit-text-size-adjust: 100%; }
+*,*::before,*::after{ box-sizing: border-box; }
+img,svg,video,canvas{ max-width:100%; height:auto; }
+
+/* Accessible focus (keyboard) */
+:focus-visible{ outline: 3px solid rgba(42,91,154,.45); outline-offset: 2px; }
+
+/* ---------- Header & mobile nav ---------- */
+
+@media (max-width: 900px){
+  /* Keep header in a single compact row */
+  .headerRow{
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 0 !important;
+  }
+
+  /* Allow logo to shrink (avoid forcing the header to become 2 lines) */
+  .logo{ min-width: 0 !important; flex: 1 1 auto; }
+  .logoText{
+    max-width: min(58vw, 260px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .logoTag{ display:none !important; }
+
+  /* Make sure the drawer behaves like a single column list */
+  .siteHeader .nav{ flex-wrap: nowrap !important; }
+  .siteHeader .nav{ align-items: stretch !important; }
+  .siteHeader .nav a{ text-align: start !important; }
+
+  /* Drawer padding: account for header + safe area without being huge */
+  .siteHeader .nav{ padding-top: calc(env(safe-area-inset-top, 0px) + 66px) !important; }
+}
+
+@media (max-width: 420px){
+  .headerRow{ padding: 8px 0 !important; }
+  .logoImg{ width: 30px !important; height: 30px !important; }
+  .logoText{ max-width: min(52vw, 220px); font-size: 14px; }
+  .navToggle{ padding: 8px 10px !important; }
+}
+
+
+/* ---------- Heroes: shorter, consistent, mobile-first ---------- */
+
+/* heroSmall was historically used to add extra vertical padding/min-height.
+   On small screens it makes pages feel like "giant headers". */
+@media (max-width: 720px){
+  .hero.heroSmall{ min-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+}
+
+@media (max-width: 640px){
+  .hero.product-hero{
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    margin: 10px auto 12px !important;
+  }
+  .hero.product-hero > .decorPhoto{
+    width: 96px !important;
+    max-width: 34vw !important;
+    max-height: 72px !important;
+    border-radius: 14px !important;
+    object-fit: cover !important;
+  }
+  .hero.product-hero .center-text h1{ font-size: 1.2rem !important; }
+  .hero.product-hero .center-text p{ font-size: .92rem !important; }
+  .trust-badge{ padding: 5px 10px !important; font-size: .82rem !important; }
+}
+
+/* Override the older "stack hero vertically" rule on tiny phones.
+   Side-by-side is shorter and avoids the huge top box effect. */
+@media (max-width: 420px){
+  .hero.product-hero,
+  .hero.product-hero.heroSmall{
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+  .hero.product-hero > .decorPhoto,
+  .hero.product-hero.heroSmall > .decorPhoto{
+    width: 84px !important;
+    max-height: 64px !important;
+    height: auto !important;
+  }
+  .hero.product-hero .badgeRow{ gap: 8px !important; }
+}
+
+
+/* ---------- Tables: always usable on phones ---------- */
+table{ width: 100%; border-collapse: collapse; }
+@media (max-width: 640px){
+  .compareTable{ display:block; overflow-x:auto; -webkit-overflow-scrolling: touch; }
+}
+
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+
+/* =========================================================
+   v44: Compact density (reduce scrolling)
+   - Keep 2 cards per row on Products + Brands pages
+   - Tighten card padding + typography on small screens
+   ========================================================= */
+
+@media (max-width: 600px){
+  /* Global vertical rhythm */
+  .hero{ margin: 10px 0 12px; }
+  .heroShell{ padding: 14px; }
+  .contentCard{ margin-bottom: 12px; }
+  .panel{ margin-top: 12px; }
+
+  /* Products: always show 2 cards per row on phones */
+  .page-products .product-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .page-products .productCard{ padding: 8px 8px 10px; border-radius: 16px; }
+  .page-products .productCard .pBrand{ font-size: 12px; }
+  .page-products .productCard .pName{ font-size: 15px; line-height: 1.25; }
+  .page-products .productCard .pMeta{ margin-top: 4px; gap: 6px; }
+  .page-products .productCard .pMetaPill{ padding: 3px 7px; font-size: 10.5px; }
+  .page-products .productCard .pPriceRange{ margin-top: 4px; font-size: 12px; }
+  .page-products .productCard .offer{ padding: 10px 10px 10px; border-radius: 16px; gap: 6px; }
+  .page-products .productCard .offerMeta{ margin-top: 2px; font-size: 12px; }
+  .page-products .productCard .offer .btn.primary{ margin-top: 6px; padding: 9px 0; font-size: 14px; }
+
+  /* Israeli brands directory: force 2 columns on phones */
+  .brandGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .brandCard{ padding: 12px; border-radius: 16px; }
+  .brandName{ font-size: .98rem; }
+  .brandDesc{
+    margin-top: 8px;
+    line-height: 1.4;
+    font-size: .92rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .brandBadges{ margin-top: 10px; gap: 6px; }
+  .brandBadge{ padding: 5px 8px; font-size: 11px; }
+  .brandLinks{ margin-top: 10px; gap: 8px; }
+
+  /* Recommended brands (intl): denser cards on phones */
+  .page-recommended-brands #brandGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .page-recommended-brands .brandCard{
+    height: auto;
+    min-height: 210px;
+    padding: 12px !important;
+    border-radius: 16px;
+  }
+  .page-recommended-brands .brandName{ font-size: 1.15rem; }
+  .page-recommended-brands .brandMeta,
+  .page-recommended-brands .metaLine{ font-size: .85rem; }
+  .page-recommended-brands .brandTag,
+  .page-recommended-brands .tag{ padding: 3px 6px; font-size: 11px; }
+}
+
+/* Extra-tight on very small phones (Galaxy S9 ~360px) */
+@media (max-width: 380px){
+  .page-products .product-grid{ gap: 8px !important; }
+  .page-products .productCard{ padding: 7px 7px 9px; }
+  .page-products .productCard .pName{ font-size: 14.5px; }
+  .brandCard{ padding: 11px; }
+  .page-recommended-brands .brandCard{ min-height: 200px; }
+}
+
+
+/* Mobile-only Home link in hamburger menu */
+.navHomeMobile{ display:none; }
+@media (max-width: 900px){
+  .navHomeMobile{ display:block; }
+}
+
+
+
+/* =========================================================
+   v8: Compact mobile filters + tighter Intl brands UI
+   - Collapse filter/search blocks by default (mobile)
+   - Keep toggle compact + show active filter summary
+   ========================================================= */
+@media (max-width: 768px){
+  /* Mobile filter toggle – compact bar */
+  .filter-panel .mobileFilterToggle{
+    margin: 8px 0 10px !important;
+    padding: 10px 12px !important;
+    border-radius: 14px !important;
+    max-width: none !important;
+    box-shadow: 0 10px 22px rgba(15,23,42,.07) !important;
+  }
+  .filter-panel .mobileFilterToggle .mfText{
+    display:inline-block;
+    max-width: calc(100% - 28px);
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .filter-panel .mobileFilterToggle .mfMeta{
+    font-weight: 650;
+    opacity: .75;
+  }
+  .filter-panel .mobileFilterToggle .chev{
+    transition: transform .18s ease;
+    opacity: .65;
+    flex: 0 0 auto;
+  }
+  .filter-panel.mobileCollapsed .mobileFilterToggle .chev{
+    transform: rotate(-90deg);
+  }
+
+  /* When collapsed, hide the heavy toolbar/card UI completely (toggle stays visible) */
+  .filter-panel.mobileCollapsed .toolbar-container{
+    display:none !important;
+  }
+}
+
+
+
+/* =========================================================
+   v12: Products page — mobile alignment + collapsible filters
+   Match the Intl brands UX on mobile:
+   - Filters/search collapsed by default (uses existing mobileFilterToggle JS)
+   - Cards align to start (RTL) like Intl brand cards
+   Scoped to .page-products only to avoid affecting other pages
+   ========================================================= */
+
+.page-products .productsLayout > .filterPanel__collapseArea{min-width:0; width:100%;}
+.page-products .productsLayout > .filterPanel__collapseArea > .productsFilters{width:100%;}
+
+@media (max-width: 768px){
+  /* When collapsed, hide the info card too (reduces scrolling) */
+  .page-products .filter-panel.mobileCollapsed .contentCard{
+    display: none !important;
+  }
+  /* If the collapsed wrapper leaves a gap, remove it */
+  .page-products .filter-panel.mobileCollapsed .productsLayout{
+    gap: 0 !important;
+    margin-top: 0 !important;
+  }
+  /* Safety: ensure filters are hidden even if max-height doesn't animate well */
+  .page-products .filter-panel.mobileCollapsed .productsFilters{
+    display: none !important;
+  }
+
+  /* Product cards: align like Intl brand cards (start-aligned, RTL friendly) */
+  .page-products .productCard{
+    text-align: start !important;
+  }
+  .page-products .productCard .pHeader{
+    align-items: flex-start !important;
+    text-align: start !important;
+  }
+  .page-products .productCard .pTitleWrap{
+    text-align: start !important;
+  }
+  .page-products .productCard .pMeta{
+    justify-content: flex-start !important;
+  }
+  .page-products .productCard .tags{
+    justify-content: flex-start !important;
+  }
+  .page-products .productCard .offer{
+    text-align: start !important;
+  }
+  .page-products .productCard .offer .btn.primary{
+    width: 100%;
   }
 }

@@ -2,10 +2,24 @@
 
 (function () {
   // Auto-highlight active nav (fallback if aria-current isn't set)
+  const pathname = window.location.pathname || '';
   document.querySelectorAll('.nav a').forEach(a => {
     const href = a.getAttribute('href');
     if (!href) return;
-    if (window.location.pathname.endsWith('/' + href) || window.location.pathname.endsWith(href)) {
+
+    const isHomeLink = (href === 'index.html' || href.endsWith('/index.html'));
+    const onHome = (
+      pathname === '/' ||
+      pathname === '' ||
+      /\/index\.html?$/.test(pathname) ||
+      /\/$/.test(pathname)
+    );
+
+    if (
+      (isHomeLink && onHome) ||
+      pathname.endsWith('/' + href) ||
+      pathname.endsWith(href)
+    ) {
       a.classList.add('active');
       a.setAttribute('aria-current', 'page');
     }
@@ -88,6 +102,27 @@
         document.body.classList.add('menuOpen');
         btn.setAttribute('aria-expanded', 'true');
       };
+
+
+      // Insert a branded header inside the drawer (mobile only)
+      if (!nav.querySelector('.navDrawerHeader')) {
+        const drawerHeader = document.createElement('div');
+        drawerHeader.className = 'navDrawerHeader';
+        drawerHeader.innerHTML = `
+          <a class="navDrawerLogo" href="index.html" aria-label="דף הבית">
+            <img class="navDrawerLogoImg" src="assets/img/logo.png" alt="Cruelty Free" width="34" height="34" />
+            <span class="navDrawerLogoText">Cruelty Free</span>
+          </a>
+          <button type="button" class="navDrawerClose" aria-label="סגירה">×</button>
+        `;
+        nav.insertBefore(drawerHeader, nav.firstChild);
+
+        const closeBtn = drawerHeader.querySelector('.navDrawerClose');
+        const homeLogo = drawerHeader.querySelector('.navDrawerLogo');
+        if (closeBtn) closeBtn.addEventListener('click', close);
+        if (homeLogo) homeLogo.addEventListener('click', close);
+      }
+
 
       btn.addEventListener('click', () => {
         const isOpen = header.classList.contains('navOpen');
@@ -352,50 +387,109 @@
 
 
 function setupMobileFilterCollapse(){
-  const panel = document.querySelector('.filter-panel');
-  if (!panel) return;
+  // Collapses ONLY dedicated filter/search blocks (marked with .filterPanel__collapseArea)
+  // on small screens to reduce scrolling.
+  const panels = Array.from(document.querySelectorAll('.filter-panel'));
+  if (!panels.length) return;
 
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const wrap = panel.querySelector('.wrap');
-  if (!wrap) return;
 
-  // Only apply on mobile
-  if (!isMobile){
-    panel.classList.remove('mobileCollapsed');
-    const btn = panel.querySelector('.mobileFilterToggle');
-    if (btn) btn.remove();
-    wrap.style.maxHeight = '';
-    return;
-  }
+  panels.forEach(panel => {
+    const collapseArea = panel.querySelector('.filterPanel__collapseArea');
+    const wrap = panel.querySelector('.wrap');
+    if (!wrap || !collapseArea) return; // do not touch panels without explicit collapse area
 
-  if (panel.querySelector('.mobileFilterToggle')) return;
+    let btn = panel.querySelector('.mobileFilterToggle');
 
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'mobileFilterToggle';
-  btn.setAttribute('aria-expanded', 'false');
-  btn.innerHTML = '<span>סינון וחיפוש</span><span class="chev">▾</span>';
+    if (!isMobile){
+      panel.classList.remove('mobileCollapsed');
+      if (btn) btn.remove();
+      return;
+    }
 
-  // Insert the toggle above the wrap
-  panel.insertBefore(btn, wrap);
+    // Create toggle once
+    if (!btn){
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'mobileFilterToggle';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = '<span class="mfText"><span class="mfTitle">סינון וחיפוש</span><span class="mfMeta" aria-hidden="true"></span></span><span class="chev" aria-hidden="true">▾</span>';
+      panel.insertBefore(btn, wrap);
+    }
 
-  // Default collapsed only if nothing is already selected/typed
-  const hasActive = !!(panel.querySelector('input[type="search"], input[type="text"]') && (panel.querySelector('input[type="search"], input[type="text"]').value||'').trim())
-    || !!panel.querySelector('.pill.active, .pill.isActive, .pill.selected')
-    || !!panel.querySelector('select') && (panel.querySelector('select').value && panel.querySelector('select').value !== 'all' && panel.querySelector('select').value !== '');
+    // Bind click once
+    if (!btn.dataset.bound){
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', () => {
+        panel.classList.toggle('mobileCollapsed');
+        sync();
+        updateMeta();
+      });
+    }
 
-  if (!hasActive) panel.classList.add('mobileCollapsed');
+    // Default: ALWAYS collapsed on first init (even if a filter is active)
+    if (!panel.dataset.mobileCollapseInit){
+      panel.classList.add('mobileCollapsed');
+      panel.dataset.mobileCollapseInit = '1';
+    }
 
-  const sync = () => btn.setAttribute('aria-expanded', panel.classList.contains('mobileCollapsed') ? 'false' : 'true');
-  sync();
+    const sync = () => {
+      btn.setAttribute('aria-expanded', panel.classList.contains('mobileCollapsed') ? 'false' : 'true');
+    };
 
-  btn.addEventListener('click', () => {
-    panel.classList.toggle('mobileCollapsed');
+    const updateMeta = () => {
+      try {
+        const metaEl = btn.querySelector('.mfMeta');
+        if (!metaEl) return;
+
+        const parts = [];
+        // Category select
+        const sel = panel.querySelector('select');
+        if (sel && sel.value && sel.value !== 'all' && sel.selectedOptions && sel.selectedOptions[0]){
+          const t = (sel.selectedOptions[0].textContent || '').trim();
+          if (t) parts.push(t);
+        }
+        // Text/search
+        const input = panel.querySelector('input[type="search"], input[type="text"]');
+        if (input){
+          const v = (input.value || '').trim();
+          if (v) parts.push(v);
+        }
+
+        if (parts.length){
+          metaEl.textContent = ' – ' + parts.join(' • ');
+          btn.classList.add('hasMeta');
+        } else {
+          metaEl.textContent = '';
+          btn.classList.remove('hasMeta');
+        }
+      } catch(e) {}
+    };
+
     sync();
+    updateMeta();
+    // Keep the summary in sync when user changes filters
+    try {
+      const input = panel.querySelector('input[type="search"], input[type="text"]');
+      if (input && !input.dataset.mfMetaBound){
+        input.dataset.mfMetaBound = '1';
+        input.addEventListener('input', updateMeta);
+        input.addEventListener('change', updateMeta);
+      }
+      const sel = panel.querySelector('select');
+      if (sel && !sel.dataset.mfMetaBound){
+        sel.dataset.mfMetaBound = '1';
+        sel.addEventListener('change', updateMeta);
+      }
+    } catch(e) {}
   });
 }
-
 // Re-run on resize to keep behavior consistent
 window.addEventListener('resize', () => {
   try { setupMobileFilterCollapse(); } catch(e) {}
 });
+
+
+// Initial run
+try { setupMobileFilterCollapse(); } catch(e) {}
+window.addEventListener('DOMContentLoaded', () => { try { setupMobileFilterCollapse(); } catch(e) {} });
