@@ -34,3 +34,14 @@
 .brandLinks a.brandLink--amazon{border-color:rgba(42,91,154,.26);background:rgba(42,91,154,.10);}
 .brandLinks a.brandLink--site{background:rgba(15,23,42,.03);}
 .brandCard[hidden]{display:none !important;}
+
+/* Intl brands: mobile card redesign (single column + no overlaps) */
+@media (max-width: 560px){
+  .page-recommended-brands #brandGrid{ grid-template-columns: 1fr; }
+  .page-recommended-brands .brandHeader{ flex-wrap: wrap; row-gap: 6px; }
+  .page-recommended-brands .brandTitleBlock{ flex: 1 1 calc(100% - 44px); }
+  .page-recommended-brands .brandCatsInline{ white-space: normal; overflow: visible; text-overflow: clip; }
+  .page-recommended-brands .brandPriceTier{ order: 3; width: 100%; justify-content: flex-end; }
+  .page-recommended-brands .brandLinks{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .page-recommended-brands .brandLinks a{ white-space: nowrap; }
+}

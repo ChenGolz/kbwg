@@ -22,6 +22,26 @@
 
   var jsonPath = 'data/products.json';
 
+  function isFileProtocol() {
+    try { return location && location.protocol === 'file:'; } catch (e) { return false; }
+  }
+
+  function setHelpfulEmptyStateMessage() {
+    // Products page uses #emptyState for "no results".
+    var el = document.getElementById('emptyState');
+    if (!el) return;
+
+    // Hebrew + short English keyword for searchability.
+    el.innerHTML = [
+      '<strong>האתר רץ כרגע מקובץ מקומי (file://),</strong> ולכן הדפדפן חוסם טעינת JSON (CORS).',
+      '<br>כדי שזה יעבוד מקומית, תריצי שרת קטן (Local Server) ואז תפתחי את האתר דרך <code>http://localhost</code>.',
+      '<br><br><strong>Windows:</strong> בתיקייה של הפרויקט הריצי:',
+      '<br><code>py -m http.server 8000</code>',
+      '<br>ואז פתחי: <code>http://localhost:8000/products.html</code>',
+      '<br><br>ב־GitHub Pages / אתר אמיתי (https) זה יעבוד בלי בעיה.'
+    ].join('');
+  }
+
   fetch(jsonPath, { cache: 'no-store' })
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -33,6 +53,12 @@
     .catch(function (err) {
       console.warn('[products-json-loader] Could not load ' + jsonPath, err);
       window.PRODUCTS = [];
+
+      // When opened via file://, browsers block fetch() due to CORS.
+      if (isFileProtocol()) {
+        window.__KBWG_FILE_FETCH_BLOCKED = true;
+        setHelpfulEmptyStateMessage();
+      }
     })
     .finally(function () {
       // The main page logic expects window.PRODUCTS to exist.

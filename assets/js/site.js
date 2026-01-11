@@ -29,7 +29,6 @@
   const QUOTES = [
     "Be kind to all kinds.",
     "Compassion is the best fashion.",
-    "Eat like you care.",
     "Live and let live.",
     "Kindness is my religion."
   ];
@@ -490,6 +489,24 @@ window.addEventListener('resize', () => {
 });
 
 
+
+function fixEnglishNavLabels(){
+  try{
+    const lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+    const isEn = lang.startsWith('en') || String(location.pathname || '').includes('/en/');
+    if (!isEn) return;
+
+    const links = document.querySelectorAll('.siteHeader a[href$="contact.html"], .navDrawer a[href$="contact.html"], nav a[href$="contact.html"]');
+    links.forEach((a) => {
+      // Some auto-translators can produce odd variants like "Us Contact Us"
+      a.textContent = 'Contact us';
+    });
+  } catch(e) {}
+}
+
 // Initial run
 try { setupMobileFilterCollapse(); } catch(e) {}
-window.addEventListener('DOMContentLoaded', () => { try { setupMobileFilterCollapse(); } catch(e) {} });
+window.addEventListener('DOMContentLoaded', () => {
+  try { setupMobileFilterCollapse(); } catch(e) {}
+  try { fixEnglishNavLabels(); } catch(e) {}
+});

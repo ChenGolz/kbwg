@@ -1553,6 +1553,8 @@ body{ overflow-x: hidden; }
   background: #f5f5f5;
 }
 .more-filters-inner{
+  display: grid;
+  gap: 12px;
   margin-top: 10px;
   padding: 8px 10px 4px;
   border-radius: 12px;
@@ -3291,3 +3293,72 @@ table{ width: 100%; border-collapse: collapse; }
 .price-tier .dollar{opacity:.9;}
 .price-tier .dollar.inactive{opacity:.25;filter:grayscale(1);}
 .price-tier--sm{font-size:.92em;}
+
+
+/* --- January 2026 UI fixes --- */
+
+/* Fix LTR word order inside RTL nav (helps Weglot /en pages) */
+.nav a{ unicode-bidi: plaintext; }
+
+/* Products filter panel: prevent overlap + horizontal scroll */
+.page-products .productsFilters{ overflow-x: hidden; }
+.page-products .toolbar-container{ overflow-x: hidden; }
+.page-products .more-filters-inner{ padding-bottom: 12px; }
+.page-products .price-range-hint{ margin-top: 6px; margin-bottom: 12px; }
+.page-products .free-ship-row{ margin-top: 14px; flex-wrap: wrap; }
+
+/* Additional filters: allow rows to wrap on small widths */
+.page-products .more-filters-inner .row{ flex-wrap: wrap; }
+.page-products .more-filters-inner .row > label{ flex: 1 1 180px; min-width: 0; }
+.page-products .more-filters-inner select{ width: 100%; }
+
+/* Promotions hero subtitle: improve contrast on dark image */
+.page-shopping-calendar .hero .muted,
+.page-shopping-calendar .hero p.muted{ color: rgba(255,255,255,.90) !important; }
+
+/* International brands: better mobile cards (single column + auto height) */
+@media (max-width: 560px){
+  .page-recommended-brands #brandGrid{ grid-template-columns: 1fr !important; }
+  .page-recommended-brands .brandCard{ height: auto !important; min-height: 0 !important; }
+  .page-recommended-brands .brandTop{ height: auto !important; }
+  .page-recommended-brands .brandHeader{ align-items: center !important; }
+  .page-recommended-brands .brandName{ font-size: 1.25rem !important; line-height: 1.22 !important; }
+  .page-recommended-brands .brandCatsInline{ white-space: normal !important; max-width: 100% !important; }
+  .page-recommended-brands .brandLinks{ grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 6px !important; }
+  .page-recommended-brands .brandLinks .btn.small{ padding: 6px 8px !important; font-size: 12px !important; }
+}
+
+/* Info page: allow long pills to wrap (avoid clipping on mobile) */
+.comparePill{ flex-wrap: wrap; white-space: normal; max-width: 100%; text-align: center; line-height: 1.25; }
+
+/* Footer quotes: make all pills aligned on mobile */
+@media (max-width: 520px){
+  .footerQuotes{ flex-direction: column; align-items: center; }
+  .footerQuotes::before{ display:none; }
+  .footerQuotes .quotePill{ width: min(340px, 100%); justify-content: center; }
+}
+
+
+/* ===== v44: small UI fixes (mobile overflow, info pills, footer alignment) ===== */
+html, body{ overflow-x: hidden; }
+
+.calendarHero .muted{ color: rgba(255,255,255,.86); }
+
+/* Products: prevent the price-range hint from being visually cut by the next row */
+.page-products .price-range-hint{ display:block; margin-top: 6px; margin-bottom: 14px; }
+.page-products .price-range-row{ padding-bottom: 10px; border-bottom: 1px dashed rgba(15,23,42,.10); }
+
+/* Info page: prevent long inline pill text from spilling outside the frame */
+@media (max-width: 640px){
+  .comparePill{ display:block; width:100%; white-space: normal; }
+  .comparePill b{ display:inline; }
+}
+
+/* Footer quote pills: center + align neatly */
+.footerQuotes{ justify-content: center; align-items: center; }
+.footerQuotes::before{ display:none; }
+
+@media (max-width: 520px){
+  .compareTable th, .compareTable td{ padding: 8px 8px; font-size: 12px; }
+  .compareTable th{ font-size: 11px; }
+}

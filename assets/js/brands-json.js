@@ -160,11 +160,36 @@
 
   function buildPriceSelect(selectEl) {
     if (!selectEl) return;
-    // If already has options, don't overwrite.
-    if (selectEl.options && selectEl.options.length > 0) return;
+
+    // Price filter UX: selecting $$ should show brands up to that tier (<=),
+    // not only the exact tier.
+    var prev = String(selectEl.value || '');
+
+    // Rebuild options deterministically (avoid duplicates / partial lists)
+    selectEl.innerHTML = '';
+
+    var all = document.createElement('option');
+    all.value = '';
+    all.textContent = 'כל הרמות';
+    selectEl.appendChild(all);
+
+    for (var t = 1; t <= 5; t++) {
+      var op = document.createElement('option');
+      op.value = String(t);
+      op.textContent = '$'.repeat(t) + ' ומטה';
+      selectEl.appendChild(op);
+    }
+
+    // Restore previous selection if possible
+    selectEl.value = prev;
+    if (String(selectEl.value || '') !== prev) {
+      selectEl.value = '';
+    }
+  }
+
+
 
     var opts = [
-      { v: '', t: 'כל הרמות' },
       { v: '1', t: '$ (זול)' },
       { v: '2', t: '$$' },
       { v: '3', t: '$$$' },
@@ -392,7 +417,8 @@
 
         if (ok && state.priceTier) {
           var t = Number(it.el.getAttribute('data-price-tier')) || 3;
-          if (t !== state.priceTier) ok = false;
+          // show up to the selected tier (cheap -> expensive)
+          if (t > state.priceTier) ok = false;
         }
 
         if (ok && state.veganOnly) {
@@ -488,7 +514,23 @@
       .catch(function (err) {
         console.error(err);
         // Show a friendly message
-        grid.innerHTML = '<div class="infoCard">לא הצלחנו לטעון את הרשימה כרגע.</div>';
+        var isFile = false;
+        try { isFile = location && location.protocol === 'file:'; } catch (e) { isFile = false; }
+
+        if (isFile) {
+          grid.innerHTML = [
+            '<div class="infoCard">',
+            '<strong>האתר רץ כרגע מקובץ מקומי (file://),</strong> ולכן הדפדפן חוסם טעינת JSON (CORS).',
+            '<br>כדי שזה יעבוד מקומית, תריצי שרת קטן (Local Server) ואז תפתחי את האתר דרך <code>http://localhost</code>.',
+            '<br><br><strong>Windows:</strong> בתיקייה של הפרויקט הריצי:',
+            '<br><code>py -m http.server 8000</code>',
+            '<br>ואז פתחי: <code>http://localhost:8000/recommended-brands.html</code>',
+            '<br><br>ב־GitHub Pages / אתר אמיתי (https) זה יעבוד בלי בעיה.',
+            '</div>'
+          ].join('');
+        } else {
+          grid.innerHTML = '<div class="infoCard">לא הצלחנו לטעון את הרשימה כרגע.</div>';
+        }
       });
   }
 

@@ -30,8 +30,9 @@
 @media (max-width: 900px){
   .page-recommended-brands #brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
-@media (max-width: 520px){
-  .page-recommended-brands #brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+@media (max-width: 560px){
+  .page-recommended-brands #brandGrid{ grid-template-columns: 1fr !important; }
+  .page-recommended-brands .brandCard{ min-height: auto; }
 }
 
 /* Stack card content vertically (name → badges → links) */
@@ -352,7 +353,7 @@
 <div class="brandsCategoryControl">
 <label for="brandCategoryFilter">סינון לפי קטגוריה</label>
 <select class="brandCategoryFilter" id="brandCategoryFilter"><option value="">כל הקטגוריות</option><option value="baby-child">תינוקות וילדים</option><option value="body-care">טיפוח הגוף</option><option value="deodorant">דאודורנט</option><option value="skincare">טיפוח עור</option><option value="cleaning">ניקיון</option><option value="cosmetics">קוסמטיקה</option><option value="curly-hair">שיער מתולתל</option><option value="eyes">עיניים</option><option value="hair-color">צבע לשיער</option><option value="haircare">טיפוח שיער</option><option value="luxury-care">טיפוח יוקרתי</option><option value="mens-care">טיפוח לגברים</option><option value="nails">ציפורניים</option><option value="natural-beauty">יופי טבעי</option><option value="natural-care">טיפוח טבעי</option><option value="natural-skin">טיפוח עור טבעי</option><option value="paper">נייר</option><option value="wipes">מגבונים</option><option value="pet-care">טיפוח לחיות מחמד</option><option value="soap">סבון</option><option value="soap-bars">סבון מוצק</option><option value="sun">הגנה מהשמש</option><option value="tanning">שיזוף</option><option value="tattoo-care">טיפול בקעקועים</option><option value="wellness">וולנס</option></select>
-</div><div class="brandsPriceControl"><label for="brandPriceFilter">סינון לפי מחיר</label><select class="brandPriceFilter" id="brandPriceFilter"><option value="">כל הרמות</option></select><p class="hintText">מחיר משוער: $ זול · $$$$$ יקר</p></div>
+</div><div class="brandsPriceControl"><label for="brandPriceFilter">סינון לפי מחיר</label><select class="brandPriceFilter" id="brandPriceFilter"><option value="">כל הרמות</option></select><p class="hintText">מחיר משוער: $ זול · $$$$$ יקר. בחירה ב־$$ תציג מותגים עד $$ (כולל).</p></div>
 <div class="brandsVeganControl">
 <label class="check" for="brandVeganOnly">
 <input id="brandVeganOnly" type="checkbox"/>
@@ -370,7 +371,7 @@
 <footer class="siteFooter">
 <div class="wrap">
 <div aria-label="ציטוטים" class="footerQuotes">
-<span class="quotePill">Kindness is my religion</span><span class="quotePill">Live and let live</span><span class="quotePill">Eat like you care</span><span class="quotePill">Compassion is the best fashion</span><span class="quotePill">Be kind to all kinds</span>
+<span class="quotePill">Kindness is my religion</span><span class="quotePill">Live and let live</span><span class="quotePill">Compassion is the best fashion</span><span class="quotePill">Be kind to all kinds</span>
 </div>
 <p class="muted">גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך. התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים. איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע. אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.</p>
 </div>

@@ -77,7 +77,14 @@
     const months = normalizeData(data);
     months.sort((a, b) => sortISO(a.monthStart, b.monthStart));
 
-    root.innerHTML = months.map((m) => {
+    // Hide past months (start from the current month)
+    // NOTE: Do NOT use toISOString() here (it converts to UTC and can shift the date to the previous month).
+    const now = new Date();
+    const currentISO = `${now.getFullYear()}-${pad2(now.getMonth()+1)}-01`;
+    const filteredMonths = months.filter((m) => sortISO(m.monthStart, currentISO) >= 0);
+    const monthsToRender = filteredMonths.length ? filteredMonths : months;
+
+    root.innerHTML = monthsToRender.map((m) => {
       const label = monthLabelFromISO(m.monthStart);
       const events = asArray(m.events);
 
