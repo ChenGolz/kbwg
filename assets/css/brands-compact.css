@@ -1,0 +1,36 @@
+/* Shared compact brand cards + filters (intl + israel) */
+
+/* Controls */
+.brandsControls{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;}
+.brandsSearchControl{flex:1 1 260px;min-width:200px;}
+.brandsCategoryControl,.brandsPriceControl{flex:0 0 220px;min-width:190px;}
+.brandsCategoryControl label,.brandsPriceControl label{display:block;margin-bottom:6px;font-weight:800;}
+.brandsPriceControl .hintText{margin:6px 0 0;font-size:.9rem;opacity:.75;}
+
+/* Grid */
+#brandGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch;}
+@media(max-width:1100px){#brandGrid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media(max-width:900px){#brandGrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:520px){#brandGrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* Cards */
+.brandCard{position:relative;overflow:hidden;border-radius:20px;border:1px solid rgba(42,91,154,.12);background:linear-gradient(180deg,rgba(42,91,154,.055),#fff 55%);padding:12px 12px 10px;box-shadow:0 10px 22px rgba(15,23,42,.06);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;cursor:pointer;min-height:185px;}
+.brandCard:hover,.brandCard:focus-within{transform:translateY(-1px);box-shadow:0 14px 28px rgba(15,23,42,.09);border-color:rgba(42,91,154,.22);}
+.brandCard:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(42,91,154,.16),0 14px 28px rgba(15,23,42,.10);}
+.brandCard .brandTop{display:flex;flex-direction:column;align-items:stretch;gap:10px;height:100%;}
+.brandHeader{display:flex;align-items:flex-start;gap:10px;padding-bottom:10px;margin-bottom:2px;border-bottom:1px solid rgba(15,23,42,.07);}
+.brandLogo{width:32px;height:32px;border-radius:12px;border:1px solid rgba(42,91,154,.18);background:rgba(42,91,154,.07);display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto;color:rgba(15,23,42,.88);}
+.brandLogo--fallback{font-weight:800;}
+.brandTitleBlock{min-width:0;flex:1 1 auto;}
+.brandName{font-size:1.22rem;font-weight:650;letter-spacing:-0.1px;line-height:1.32;display:block;padding:3px 0;text-decoration:none;}
+.brandName:hover{text-decoration:underline;}
+.brandCatsInline{margin-top:4px;font-size:12.5px;font-weight:600;color:rgba(15,23,42,.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brandBadges{display:flex;flex-wrap:wrap;gap:6px;}
+.brandBadge{border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.65);color:rgba(15,23,42,.82);font-weight:650;border-radius:999px;font-size:12px;padding:4px 8px;}
+.brandBadge--approved{background:rgba(42,91,154,.08);border-color:rgba(42,91,154,.22);}
+.brandBadge--vegan{background:rgba(16,185,129,.11);border-color:rgba(16,185,129,.25);}
+.brandLinks{margin-top:auto;padding-top:6px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+.brandLinks a{border-radius:12px;text-align:center;white-space:nowrap;}
+.brandLinks a.brandLink--amazon{border-color:rgba(42,91,154,.26);background:rgba(42,91,154,.10);}
+.brandLinks a.brandLink--site{background:rgba(15,23,42,.03);}
+.brandCard[hidden]{display:none !important;}

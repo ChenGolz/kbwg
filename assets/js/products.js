@@ -833,6 +833,18 @@ function normalizeProduct(p) {
   function sortList(list) {
     const v = sortSel?.value || "updated";
 
+    if (v === "price-low") {
+      list.sort((a, b) => {
+        const pa = Number(a.priceMin ?? a.priceRangeMin ?? Infinity);
+        const pb = Number(b.priceMin ?? b.priceRangeMin ?? Infinity);
+        if (pa !== pb) return pa - pb;
+        const bd = String(a.brand || "").localeCompare(String(b.brand || ""), "he") ||
+                   String(a.name || "").localeCompare(String(b.name || ""), "he");
+        return bd;
+      });
+      return;
+    }
+
     if (v === "brand-az") {
       list.sort((a, b) =>
         String(a.brand || "").localeCompare(String(b.brand || ""), "he") ||
@@ -1092,7 +1104,7 @@ function bind() {
     q.value = "";
     brandSelect.value = "";
     storeSelect.value = "";
-    sortSel.value = "updated";
+    sortSel.value = "price-low";
     typeSelect.value = "";
     onlyLB.checked = false;
     onlyPeta.checked = false;

@@ -53,6 +53,11 @@ h3{ font-size: 18px; margin:0 0 8px; }
   display:flex; align-items:center; justify-content:space-between; gap:14px;
   padding: 12px 0;
 }
+
+/* Prevent desktop nav from dropping to a second line */
+.siteHeader .nav{ flex: 1 1 auto; }
+.siteHeader .logo{ flex: 0 0 auto; }
+
 .logo{
   display:flex; align-items:center; gap:10px; min-width: 220px;
 }
@@ -60,8 +65,14 @@ h3{ font-size: 18px; margin:0 0 8px; }
 .logoText{ font-weight: 900; letter-spacing:.3px; }
 
 .nav{
-  display:flex; flex-wrap:wrap; gap:10px 14px;
+  display:flex;
+  flex-wrap:nowrap;
+  gap:10px 14px;
   justify-content:flex-start;
+  white-space:nowrap;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width: thin;
 }
 .nav a{
   padding: 7px 10px;
@@ -3273,3 +3284,10 @@ table{ width: 100%; border-collapse: collapse; }
     width: 100%;
   }
 }
+
+
+/* Price tier: renders $$$$$ with inactive $ in gray */
+.price-tier{display:inline-flex;gap:.08em;font-weight:700;letter-spacing:.02em;font-family:inherit;user-select:none;}
+.price-tier .dollar{opacity:.9;}
+.price-tier .dollar.inactive{opacity:.25;filter:grayscale(1);}
+.price-tier--sm{font-size:.92em;}
