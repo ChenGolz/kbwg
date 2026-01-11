@@ -3362,3 +3362,88 @@ html, body{ overflow-x: hidden; }
   .compareTable th, .compareTable td{ padding: 8px 8px; font-size: 12px; }
   .compareTable th{ font-size: 11px; }
 }
+
+
+/* =========================================================
+   vNEXT: 2026-01 UI polish
+   - Fix products filter hint overlap
+   - Make mobile filter panels expand reliably
+   - Calendar: start showing 2 months per row on tablets
+   - Info cards: denser layout on small phones
+   - Footer quote pills aligned
+   ========================================================= */
+
+/* Products: prevent the free-shipping pill from overlapping the price hint */
+.price-range-hint{
+  margin-top: 4px;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.free-ship-row{ align-items: flex-start; }
+.free-ship-row .check-pill{
+  white-space: normal;
+  line-height: 1.25;
+  max-width: 100%;
+}
+
+/* Mobile collapse panels: give the expanded state a max-height so nested content (details/summary) isn't clipped */
+@media (max-width: 768px){
+  .filter-panel:not(.mobileCollapsed) .filterPanel__collapseArea{
+    max-height: 5000px;
+    overflow: visible;
+  }
+}
+
+/* Calendar grid: keep 2 months per row for tablets/small desktop, switch to 1 only on small phones */
+@media (max-width: 920px){
+  .agendaGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px){
+  .agendaGrid{ grid-template-columns: 1fr; }
+}
+
+/* Calendar hero: muted text should be readable on dark backgrounds */
+.hero.product-hero.calendarHero .heroCopy .muted{
+  color: rgba(255,255,255,.86) !important;
+}
+
+/* Learn/info: denser cards grid on phones */
+@media (max-width: 520px){
+  .cardsGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .infoCard{ padding: 12px; }
+}
+@media (max-width: 360px){
+  .cardsGrid{ grid-template-columns: 1fr; }
+}
+
+/* Footer quote pills: align neatly */
+@media (max-width: 520px){
+  .footerQuotes{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: min(420px, 100%);
+    margin-inline: auto;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  .footerQuotes::before{ display:none !important; }
+  .footerQuotes .quotePill{
+    width: 100% !important;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 360px){
+  .footerQuotes{ grid-template-columns: 1fr !important; }
+}
+
+
+/* Header: keep nav on one line on desktop (allow horizontal scroll instead of wrapping) */
+@media (min-width: 860px){
+  .headerRow{ flex-wrap: nowrap; }
+}

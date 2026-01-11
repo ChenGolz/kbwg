@@ -188,22 +188,6 @@
   }
 
 
-
-    var opts = [
-      { v: '1', t: '$ (זול)' },
-      { v: '2', t: '$$' },
-      { v: '3', t: '$$$' },
-      { v: '4', t: '$$$$' },
-      { v: '5', t: '$$$$$ (יקר)' }
-    ];
-    opts.forEach(function (o) {
-      var op = document.createElement('option');
-      op.value = o.v;
-      op.textContent = o.t;
-      selectEl.appendChild(op);
-    });
-  }
-
   function buildCategorySelectIfEmpty(selectEl, brands, pageKind) {
     if (!selectEl) return;
     // Intl page already contains a curated list in HTML.
