@@ -1,5 +1,5 @@
-// Build: 2026-01-12-v5
-try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v5'; console.info('[KBWG] KBWG_PRODUCTS_BUILD ' + window.KBWG_PRODUCTS_BUILD); } catch(e) {}
+// Build: 2026-01-12-v6
+try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PRODUCTS_BUILD ' + window.KBWG_PRODUCTS_BUILD); } catch(e) {}
 
 /*
   Loads products from data/products.json, then bootstraps assets/js/products.js.

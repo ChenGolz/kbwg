@@ -1,5 +1,5 @@
-// Build: 2026-01-12-v5
-try { window.KBWG_BRANDS_BUILD = '2026-01-12-v5'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
+// Build: 2026-01-12-v6
+try { window.KBWG_BRANDS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
 
 // Resolve URLs correctly when Weglot serves pages under /en/ (or when hosted under a subpath, e.g. GitHub Pages).
 // If you fetch("data/...") from /en/page.html the browser will request /en/data/... (404). We normalize to the true site base.
