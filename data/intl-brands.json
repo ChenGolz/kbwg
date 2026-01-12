@@ -1,4 +1,102 @@
 [
+    {
+    "name": "4EVER MAGIC COSMETICS",
+    "categories": [
+      "cosmetics"
+    ],
+    "website": "https://4evermagiccosmetics.com/",
+    "amazonUs": "https://amzn.to/4pFfkAN",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Anomaly Haircare",
+    "categories": [
+      "haircare"
+    ],
+    "website": null,
+    "amazonUs": "https://amzn.to/3LDGkCZ",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "ABBY & FINN",
+    "categories": [
+      "personal-care"
+    ],
+    "website": null,
+    "amazonUs": "https://amzn.to/4qQrTKP",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Abhati Suisse",
+    "categories": [
+      "personal-care"
+    ],
+    "website": "https://abhatisuisse.com/",
+    "amazonUs": "https://amzn.to/4qVN6Db",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "About Me",
+    "categories": [
+      "personal-care"
+    ],
+    "website": null,
+    "amazonUs": "https://amzn.to/49u9koA",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "BambuuBrush",
+    "categories": [
+      "tools-accessories"
+    ],
+    "website": "https://bambuubrush.com",
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Active Silver",
+    "categories": [
+      "wellness"
+    ],
+    "website": "https://active-silver.co.uk/",
+    "amazonUs": null,
+    "amazonUk": "https://amzn.to/4qRZ68F",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
   {
     "name": "Baby Magic",
     "categories": [
