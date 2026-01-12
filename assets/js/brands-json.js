@@ -1,3 +1,56 @@
+// Build: 2026-01-12-v5
+try { window.KBWG_BRANDS_BUILD = '2026-01-12-v5'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
+
+// Resolve URLs correctly when Weglot serves pages under /en/ (or when hosted under a subpath, e.g. GitHub Pages).
+// If you fetch("data/...") from /en/page.html the browser will request /en/data/... (404). We normalize to the true site base.
+function __kbwgSiteBaseFromScript(scriptName) {
+  try {
+    var src = '';
+    try { src = (document.currentScript && document.currentScript.src) ? document.currentScript.src : ''; } catch (e) { src = ''; }
+    if (!src) {
+      // Fallback: find the script tag by name
+      var scripts = document.getElementsByTagName('script');
+      for (var i = scripts.length - 1; i >= 0; i--) {
+        var ssrc = scripts[i] && scripts[i].src ? String(scripts[i].src) : '';
+        if (ssrc.indexOf(scriptName) !== -1) { src = ssrc; break; }
+      }
+    }
+    if (!src) return '/';
+
+    var u = new URL(src, location.href);
+    var p = u.pathname || '/';
+    var idx = p.indexOf('/assets/js/');
+    var base = idx >= 0 ? p.slice(0, idx) : p.replace(/\/[\w\-.]+$/, '');
+    base = base.replace(/\/+$/, '');
+
+    // Strip language segment at the end (e.g. /en, /he) so data files resolve to the real site root.
+    var parts = base.split('/').filter(Boolean);
+    var langs = { en: 1, he: 1, iw: 1, ar: 1, fr: 1, es: 1, de: 1, ru: 1 };
+    if (parts.length && langs[parts[parts.length - 1]]) parts.pop();
+
+    return '/' + parts.join('/');
+  } catch (e) {
+    return '/';
+  }
+}
+
+function __kbwgResolveFromSiteBase(relPath, scriptName) {
+  try {
+    if (!relPath) return relPath;
+    var p = String(relPath);
+    if (/^https?:\/\//i.test(p)) return p;
+
+    // Trim leading ./
+    p = p.replace(/^\.\//, '');
+
+    var base = __kbwgSiteBaseFromScript(scriptName) || '/';
+    if (base === '/') return '/' + p.replace(/^\//, '');
+    return base + '/' + p.replace(/^\//, '');
+  } catch (e) {
+    return relPath;
+  }
+}
+
 /*
   Brands pages (intl + israel) JSON loader + renderer.
   Works on GitHub Pages (no build step).
@@ -362,6 +415,9 @@
     var jsonPath = grid.getAttribute('data-json');
     if (!jsonPath) return;
 
+    // Normalize JSON URL so it works under Weglot language paths (/en/...) and under subpaths.
+    var jsonUrl = __kbwgResolveFromSiteBase(jsonPath, 'brands-json.js');
+
     var pageKind = grid.getAttribute('data-kind') || (document.documentElement.classList.contains('page-recommended-brands') ? 'intl' : 'israel');
 
     var searchInput = document.getElementById('brandSearch');
@@ -440,9 +496,9 @@
     }
 
     // Load JSON and render
-    fetch(jsonPath, { cache: 'no-store' })
+    fetch(jsonUrl, { cache: 'no-store' })
       .then(function (r) {
-        if (!r.ok) throw new Error('Failed to load ' + jsonPath);
+        if (!r.ok) throw new Error('Failed to load ' + jsonUrl + ' (from ' + jsonPath + ')');
         return r.json();
       })
       .then(function (brands) {

@@ -1,3 +1,6 @@
+// Build: 2026-01-12-v5
+try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v5'; console.info('[KBWG] KBWG_PRODUCTS_BUILD ' + window.KBWG_PRODUCTS_BUILD); } catch(e) {}
+
 /*
   Loads products from data/products.json, then bootstraps assets/js/products.js.
   Works on GitHub Pages (no build step).
@@ -20,7 +23,43 @@
     return Array.isArray(data) ? data : [];
   }
 
-  var jsonPath = 'data/products.json';
+  // Resolve correctly when Weglot serves pages under /en/... (or when hosted under a subpath)
+  function siteBaseFromScript() {
+    try {
+      var src = '';
+      try { src = (document.currentScript && document.currentScript.src) ? document.currentScript.src : ''; } catch (e) { src = ''; }
+      if (!src) {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = scripts.length - 1; i >= 0; i--) {
+          var ssrc = scripts[i] && scripts[i].src ? String(scripts[i].src) : '';
+          if (ssrc.indexOf('products-json-loader.js') !== -1) { src = ssrc; break; }
+        }
+      }
+      if (!src) return '/';
+      var u = new URL(src, location.href);
+      var p = u.pathname || '/';
+      var idx = p.indexOf('/assets/js/');
+      var base = idx >= 0 ? p.slice(0, idx) : p.replace(/\/[^\/]+$/, '');
+      base = base.replace(/\/+$/, '');
+      var parts = base.split('/').filter(Boolean);
+      var langs = { en: 1, he: 1, iw: 1, ar: 1, fr: 1, es: 1, de: 1, ru: 1 };
+      if (parts.length && langs[parts[parts.length - 1]]) parts.pop();
+      return '/' + parts.join('/');
+    } catch (e) { return '/'; }
+  }
+
+  function resolveFromBase(rel) {
+    try {
+      if (!rel) return rel;
+      var p = String(rel).replace(/^\.\//, '');
+      if (/^https?:\/\//i.test(p)) return p;
+      var base = siteBaseFromScript() || '/';
+      if (base === '/') return '/' + p.replace(/^\//, '');
+      return base + '/' + p.replace(/^\//, '');
+    } catch (e) { return rel; }
+  }
+
+  var jsonPath = resolveFromBase('data/products.json');
 
   function isFileProtocol() {
     try { return location && location.protocol === 'file:'; } catch (e) { return false; }

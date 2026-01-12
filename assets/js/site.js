@@ -2,7 +2,7 @@
 
 (function () {
   // Build marker: use this to verify you loaded the latest JS
-  window.KBWG_BUILD = '2026-01-11-v3';
+  window.KBWG_BUILD = '2026-01-12-v5';
   try { console.info('[KBWG] build', window.KBWG_BUILD); } catch(e) {}
   // Auto-highlight active nav (fallback if aria-current isn't set)
   const pathname = window.location.pathname || '';
@@ -495,12 +495,12 @@ window.addEventListener('resize', () => {
 
 function fixEnglishNavLabels(){
   try{
-    const lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-    const translated = (document.documentElement.getAttribute('data-wg-translated') || '').toLowerCase();
-    const isEn = lang.startsWith('en') || translated.startsWith('en') || String(location.pathname || '').includes('/en/');
-    if (!isEn) return;
-
     const normalize = () => {
+      const lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+      const translated = (document.documentElement.getAttribute('data-wg-translated') || '').toLowerCase();
+      const isEn = lang.startsWith('en') || translated.startsWith('en') || String(location.pathname || '').includes('/en/');
+      if (!isEn) return;
+
       const anchors = document.querySelectorAll('.siteHeader a, .navDrawer a, nav a');
       anchors.forEach((a) => {
         if (!a) return;
@@ -510,25 +510,35 @@ function fixEnglishNavLabels(){
 
         // Prefer href-based detection (robust against auto-translation glitches)
         if (href.includes('contact')){
-          a.textContent = 'Contact us';
+          if (txt !== 'Contact us') a.textContent = 'Contact us';
           return;
         }
 
         // Guard against weird auto-translator outputs like "Us Contact Us"
         const usCount = (lower.match(/\bus\b/g) || []).length;
         if (lower === 'us contact us' || lower === 'contact us us' || (lower.includes('contact') && usCount >= 2)){
-          a.textContent = 'Contact us';
+          if (txt !== 'Contact us') a.textContent = 'Contact us';
         }
       });
     };
 
+    // Run now + a couple of delayed retries (catches late translator mutations)
     normalize();
+    window.setTimeout(normalize, 400);
+    window.setTimeout(normalize, 1200);
 
-    const headerRoot = document.getElementById('siteHeader') || document.body;
-    if (headerRoot && !headerRoot.dataset.contactObserver){
-      headerRoot.dataset.contactObserver = '1';
-      const obs = new MutationObserver(() => normalize());
-      obs.observe(headerRoot, { childList: true, subtree: true, characterData: true });
+    // If Weglot is installed, hook into its lifecycle instead of using MutationObserver.
+    // MutationObserver + translators can cause infinite DOM-churn and heavy CPU usage.
+    if (window.Weglot && typeof window.Weglot.on === 'function' && !window.__KBWG_WEGLOT_NAV_FIX_BOUND){
+      window.__KBWG_WEGLOT_NAV_FIX_BOUND = true;
+      try { window.Weglot.on('initialized', normalize); } catch(e) {}
+      try {
+        window.Weglot.on('languageChanged', function(){
+          normalize();
+          window.setTimeout(normalize, 400);
+          window.setTimeout(normalize, 1200);
+        });
+      } catch(e) {}
     }
 
     // Some translators mutate late; run again after full load.
