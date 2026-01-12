@@ -1,125 +1,171 @@
 [
   {
-    "name": "Childs Farm",
+    "name": "Baby Magic",
     "categories": [
       "baby-child"
     ],
-    "website": "https://www.childsfarm.com",
-    "amazonUs": "https://amzn.to/453rcFw",
-    "amazonUk": "https://amzn.to/4qP3HbP",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "Good Bubble",
-    "categories": [
-      "baby-child"
-    ],
-    "website": "https://www.goodbubble.co.uk",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/4blYGCO",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "Callen Olive",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://callenolive.com",
-    "amazonUs": null,
+    "website": "https://babymagic.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Baby+Magic",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Hanni",
+    "name": "b.box for kids",
     "categories": [
-      "body-care"
+      "baby-child"
     ],
-    "website": "https://heyhanni.com",
-    "amazonUs": "https://www.amazon.com/s?k=Hanni+Shave",
-    "amazonUk": "https://www.amazon.co.uk/s?k=Hanni+Beauty",
+    "website": "https://bbox.com.au/",
+    "amazonUs": "https://www.amazon.com/s?k=b.box+for+kids",
+    "amazonUk": "https://www.amazon.co.uk/s?k=b.box",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Kate McLeod",
+    "name": "AKT London",
     "categories": [
-      "body-care"
-    ],
-    "website": "https://www.katemcleod.com",
-    "amazonUs": "https://www.amazon.com/s?k=Kate+McLeod",
-    "amazonUk": "https://www.amazon.co.uk/s?k=Kate+McLeod",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Megababe",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://megababebeauty.com",
-    "amazonUs": "https://www.amazon.com/Megababe",
-    "amazonUk": "https://www.amazon.co.uk/s?k=Megababe",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Meow Meow Tweet",
-    "categories": [
-      "body-care",
       "deodorant"
     ],
-    "website": "https://meowmeowtweet.com",
-    "amazonUs": null,
-    "amazonUk": null,
+    "website": "https://www.aktlondon.com/",
+    "amazonUs": "https://www.amazon.com/s?k=AKT+London+Deodorant",
+    "amazonUk": "https://www.amazon.co.uk/s?k=AKT+London",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 2
+    "vegan": true
   },
   {
-    "name": "Everyday Oil",
+    "name": "Bali Boo",
     "categories": [
-      "body-care",
-      "skincare"
+      "cleaning"
     ],
-    "website": "https://everydayoil.com",
-    "amazonUs": null,
+    "website": "https://bali-boo.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Bali+Boo",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Bali+Boo",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Arches & Halos",
+    "categories": [
+      "eyes"
+    ],
+    "website": "https://archesandhalos.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Arches+%26+Halos",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
+  },
+  {
+    "name": "abyssian",
+    "categories": [
+      "haircare"
+    ],
+    "website": "https://abyssianhaircare.com/",
+    "amazonUs": "https://www.amazon.com/s?k=abyssian+hair",
+    "amazonUk": "https://www.amazon.co.uk/s?k=abyssian+hair",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Andrew Fitzsimons",
+    "categories": [
+      "haircare"
+    ],
+    "website": "https://andrewfitzsimons.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Andrew+Fitzsimons+Hair",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Andrew+Fitzsimons",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Anomaly Haircare",
+    "categories": [
+      "haircare"
+    ],
+    "website": "https://www.anomalyhaircare.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Anomaly+Haircare",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "As I Am",
+    "categories": [
+      "haircare"
+    ],
+    "website": "https://asiamnaturally.com/",
+    "amazonUs": "https://www.amazon.com/s?k=As+I+Am",
+    "amazonUk": "https://www.amazon.co.uk/s?k=As+I+Am",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Bare Anatomy",
+    "categories": [
+      "haircare"
+    ],
+    "website": "https://bareanatomy.in/",
+    "amazonUs": "https://www.amazon.com/s?k=Bare+Anatomy",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Arctic Fox",
+    "categories": [
+      "hair-color"
+    ],
+    "website": "https://arcticfoxhaircolor.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Arctic+Fox+Hair+Color",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Arctic+Fox+Hair+Color",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "AspenClean",
+    "categories": [
+      "cleaning"
+    ],
+    "website": "https://www.aspenclean.com/",
+    "amazonUs": "https://www.amazon.com/s?k=AspenClean",
+    "amazonUk": null,
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
   },
   {
     "name": "Astonish",
@@ -127,616 +173,337 @@
       "cleaning"
     ],
     "website": "https://astonish.co.uk/",
-    "amazonUs": "https://amzn.to/3N8AIRD",
-    "amazonUk": "https://amzn.to/3Z1ZIMZ",
+    "amazonUs": "https://www.amazon.com/s?k=Astonish+Cleaners",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Astonish",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 1
+    "vegan": true
   },
   {
-    "name": "Bio-D",
+    "name": "Aunt Fannie’s",
     "categories": [
       "cleaning"
     ],
-    "website": "https://biod.co.uk",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/45KrdhN",
+    "website": "https://auntfannies.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Aunt+Fannie's",
+    "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 1
+    "vegan": true
   },
   {
-    "name": "Ecozone",
+    "name": "ATTITUDE",
     "categories": [
-      "cleaning"
+      "cleaning",
+      "body-care"
     ],
-    "website": "https://ecozone.com",
-    "amazonUs": "https://amzn.to/3LpQWFt",
-    "amazonUk": "https://amzn.to/49HW9lc",
+    "website": "https://attitudeliving.com/",
+    "amazonUs": "https://www.amazon.com/s?k=ATTITUDE+Living",
+    "amazonUk": "https://www.amazon.co.uk/s?k=ATTITUDE+Living",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 1
+    "vegan": true
   },
   {
-    "name": "Beauty Without Cruelty",
+    "name": "3INA",
     "categories": [
       "cosmetics"
     ],
-    "website": "https://www.bwcv.com",
-    "amazonUs": "https://amzn.to/49aWxbM",
-    "amazonUk": null,
+    "website": "https://3ina.com/",
+    "amazonUs": "https://www.amazon.com/s?k=3INA",
+    "amazonUk": "https://www.amazon.co.uk/s?k=3INA",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Cult Candy Cosmetics",
+    "name": "about-face",
     "categories": [
       "cosmetics"
     ],
-    "website": "https://cultcandycosmetics.com",
-    "amazonUs": null,
+    "website": "https://aboutface.com/",
+    "amazonUs": "https://www.amazon.com/s?k=about-face+makeup",
+    "amazonUk": "https://www.amazon.co.uk/s?k=about-face+makeup",
+    "badges": [
+      "PETA approved",
+      "100% vegan"
+    ],
+    "vegan": true
+  },
+  {
+    "name": "Alamar Cosmetics",
+    "categories": [
+      "cosmetics"
+    ],
+    "website": "https://alamarcosmetics.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alamar+Cosmetics",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Boucleme",
+    "name": "Au Naturale",
     "categories": [
-      "curly-hair"
+      "cosmetics"
     ],
-    "website": "https://www.boucleme.co.uk",
-    "amazonUs": "https://amzn.to/4puK2g3",
-    "amazonUk": "https://amzn.to/4555qkO",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "AKT London",
-    "categories": [
-      "deodorant"
-    ],
-    "website": "https://www.aktlondon.com",
-    "amazonUs": "https://amzn.to/4swvIX8",
-    "amazonUk": "https://amzn.to/49qSSWd",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "Beautiful Brows & Lashes",
-    "categories": [
-      "eyes"
-    ],
-    "website": "https://beautifulbrowsandlashes.com",
-    "amazonUs": null,
+    "website": "https://www.aunaturalecosmetics.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Au+Naturale+Cosmetics",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Cultivator Natural Products",
+    "name": "Axiology",
     "categories": [
-      "hair-color"
+      "cosmetics"
     ],
-    "website": "https://www.cultivatornatural.com",
-    "amazonUs": "https://amzn.to/4pqbJ9X",
-    "amazonUk": "https://amzn.to/3LBdR0v",
+    "website": "https://axiologybeauty.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Axiology+Beauty",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Axiology",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Alter/Native by Suma",
+    "name": "BARRY M",
     "categories": [
-      "haircare",
-      "body-care"
+      "cosmetics"
     ],
-    "website": "https://www.suma-store.coop/products/alternative-suma",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/4bo9Dns",
+    "website": "https://barrym.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Barry+M",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Barry+M",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Aveda",
+    "name": "Technic",
     "categories": [
-      "haircare"
+      "cosmetics"
     ],
-    "website": "https://www.aveda.com",
-    "amazonUs": "https://amzn.to/49t7zbh",
-    "amazonUk": "https://amzn.to/4su9bdl",
+    "website": "https://techniccosmetics.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Technic+Cosmetics",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Technic+Cosmetics",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Curl Jar",
+    "name": "Alleyoop",
     "categories": [
-      "haircare"
+      "cosmetics"
     ],
-    "website": "https://curljar.com",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/4qABy7W",
+    "website": "https://meetalleyoop.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alleyoop",
+    "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Ethique",
-    "categories": [
-      "haircare"
-    ],
-    "website": "https://ethique.co.uk",
-    "amazonUs": "https://amzn.to/4qbzjYX",
-    "amazonUk": "https://amzn.to/450o6SC",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Aesop",
-    "categories": [
-      "luxury-care"
-    ],
-    "website": "https://www.aesop.com",
-    "amazonUs": "https://amzn.to/49hWDwU",
-    "amazonUk": "https://amzn.to/4quVjOZ",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 5
-  },
-  {
-    "name": "Bulldog Skincare",
-    "categories": [
-      "mens-care"
-    ],
-    "website": "https://www.bulldogskincare.com",
-    "amazonUs": "https://amzn.to/3LqUKWP",
-    "amazonUk": "https://amzn.to/4suB70V",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "ManCave",
-    "categories": [
-      "mens-care"
-    ],
-    "website": "https://mancaveinc.com",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/4jskG0O",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Aimeili",
+    "name": "Aimeili Gel Polish",
     "categories": [
       "nails"
     ],
-    "website": "https://aimeili.us",
-    "amazonUs": "https://amzn.to/49rBRei",
-    "amazonUk": "https://amzn.to/3YOBQMZ",
+    "website": "https://www.aimeili.us/",
+    "amazonUs": "https://www.amazon.com/s?k=Aimeili+Gel+Polish",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Aimeili+Gel+Polish",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "ORLY",
+    "name": "Alpine White",
     "categories": [
-      "nails"
+      "wellness"
     ],
-    "website": "https://orlybeauty.com",
-    "amazonUs": "https://amzn.to/3NgayfF",
-    "amazonUk": "https://amzn.to/4r3jAvp",
+    "website": "https://alpinewhite.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alpine+White",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Alpine+White",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Dianne Caine",
+    "name": "Australian Glow",
     "categories": [
-      "natural-beauty"
+      "tanning"
     ],
-    "website": "https://diannecaine.com.au",
-    "amazonUs": null,
-    "amazonUk": null,
+    "website": "https://australianglow.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Australian+Glow",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Australian+Glow",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "D'las",
-    "categories": [
-      "natural-care"
-    ],
-    "website": "https://local.dlasint.com/",
-    "amazonUs": null,
-    "amazonUk": null,
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Sukin",
-    "categories": [
-      "natural-skin"
-    ],
-    "website": "https://sukinnaturals.com",
-    "amazonUs": "https://amzn.to/3NAc3FB",
-    "amazonUk": "https://amzn.to/49q0lET",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "The Cheeky Panda",
-    "categories": [
-      "paper",
-      "wipes"
-    ],
-    "website": "https://cheekypanda.com",
-    "amazonUs": "https://amzn.to/4swUbeV",
-    "amazonUk": "https://amzn.to/4qk2t8E",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 1
-  },
-  {
-    "name": "earthbath",
-    "categories": [
-      "pet-care"
-    ],
-    "website": "https://earthbath.com",
-    "amazonUs": "https://amzn.to/3L5KiUR",
-    "amazonUk": "https://amzn.to/49dlPGk",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "ACURE",
+    "name": "82°E",
     "categories": [
       "skincare"
     ],
-    "website": "https://acure.com",
-    "amazonUs": "https://amzn.to/4qI577G",
-    "amazonUk": "https://amzn.to/4svJRUl",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "AD skin synergy",
-    "categories": [
-      "skincare"
-    ],
-    "website": "https://adskinsynergy.com",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/4554TiO",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Adaptology",
-    "categories": [
-      "skincare"
-    ],
-    "website": "https://www.adaptology.com",
-    "amazonUs": null,
+    "website": "https://82e.com/",
+    "amazonUs": "https://www.amazon.com/s?k=82%C2%B0E+skincare",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Almora Botanica",
+    "name": "Alchimie Forever",
     "categories": [
       "skincare"
     ],
-    "website": "https://almorabotanica.com",
-    "amazonUs": "https://amzn.to/4sx0nn0",
-    "amazonUk": null,
+    "website": "https://alchimie-forever.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alchimie+Forever",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Alchimie+Forever",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "By Sarah London",
+    "name": "Alya Skin",
     "categories": [
       "skincare"
     ],
-    "website": "https://bysarahlondon.com",
-    "amazonUs": null,
-    "amazonUk": null,
+    "website": "https://www.alyaskin.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alya+Skin",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Alya+Skin",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Cherish",
+    "name": "Amara Beauty",
     "categories": [
       "skincare"
     ],
-    "website": "https://cherishbeauty.co.za/",
-    "amazonUs": null,
-    "amazonUk": null,
+    "website": "https://amarabeauty.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Amara+Beauty",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Amara+Beauty",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Cocokind",
+    "name": "Aqualogica",
     "categories": [
       "skincare"
     ],
-    "website": "https://www.cocokind.com",
-    "amazonUs": "https://amzn.to/4qfXtSn",
-    "amazonUk": "https://amzn.to/44XXotV",
+    "website": "https://aqualogica.in/",
+    "amazonUs": "https://www.amazon.com/s?k=Aqualogica",
+    "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Cultured Biomecare",
+    "name": "Avoskin",
     "categories": [
       "skincare"
     ],
-    "website": "https://culturedbiomecare.com",
-    "amazonUs": null,
+    "website": "https://www.avoskinbeauty.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Avoskin",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Down to Earth",
+    "name": "AZURE",
     "categories": [
       "skincare"
     ],
-    "website": "https://downtoearthcare.co.za",
-    "amazonUs": null,
-    "amazonUk": null,
+    "website": "https://azurecosmetics.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Azure+Skincare",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Azure+Skincare",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "The Ordinary",
+    "name": "AvryBeauty",
     "categories": [
-      "skincare"
-    ],
-    "website": "https://theordinary.com",
-    "amazonUs": "https://amzn.to/4ps4Gxm",
-    "amazonUk": null,
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "A La Maison",
-    "categories": [
-      "soap"
-    ],
-    "website": "https://alamaisondeprovence.com/",
-    "amazonUs": "https://amzn.to/4bm1JLd",
-    "amazonUk": null,
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "Little Soap Company",
-    "categories": [
-      "soap"
-    ],
-    "website": "https://www.littlesoapcompany.co.uk",
-    "amazonUs": null,
-    "amazonUk": "https://amzn.to/4sNoiPB",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "Friendly Soap",
-    "categories": [
-      "soap-bars"
-    ],
-    "website": "https://www.friendlysoap.co.uk",
-    "amazonUs": "https://amzn.to/4qKW3Pz",
-    "amazonUk": "https://amzn.to/4pnoJNj",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "All Good",
-    "categories": [
-      "sun",
       "body-care"
     ],
-    "website": "https://allgoodproducts.com",
-    "amazonUs": "https://amzn.to/3LwjEVb",
+    "website": "https://www.avrybeauty.com/",
+    "amazonUs": "https://www.amazon.com/s?k=AvryBeauty",
     "amazonUk": null,
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "Bali Body",
-    "categories": [
-      "tanning"
-    ],
-    "website": "https://balibodyco.com",
-    "amazonUs": "https://amzn.to/49t7Drx",
-    "amazonUk": "https://amzn.to/4swEi8c",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
-  },
-  {
-    "name": "St. Moriz",
-    "categories": [
-      "tanning"
-    ],
-    "website": "https://www.stmoriz.co.uk",
-    "amazonUs": "https://amzn.to/4suaNUr",
-    "amazonUk": "https://amzn.to/4jzDKKP",
-    "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
-    ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
     "name": "After Inked",
     "categories": [
-      "tattoo-care"
+      "tattoo-care",
+      "skincare"
     ],
-    "website": "https://afterinked.com",
-    "amazonUs": "https://amzn.to/3NgaMn1",
-    "amazonUk": "https://amzn.to/45GxACI",
+    "website": "https://afterinked.com/",
+    "amazonUs": "https://www.amazon.com/s?k=After+Inked",
+    "amazonUk": "https://www.amazon.co.uk/s?k=After+Inked",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 3
+    "vegan": true
   },
   {
-    "name": "Abundant Natural Health",
+    "name": "Arbonne",
     "categories": [
-      "wellness"
+      "wellness",
+      "skincare"
     ],
-    "website": "https://amzn.to/3Yu7TBG",
-    "amazonUs": "https://amzn.to/3Yu7TBG",
-    "amazonUk": null,
+    "website": "https://www.arbonne.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Arbonne",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Arbonne",
     "badges": [
-      "PETA/Leaping/Intl",
-      "טבעוני"
+      "PETA approved",
+      "100% vegan"
     ],
-    "vegan": true,
-    "priceTier": 4
+    "vegan": true
   }
 ]
