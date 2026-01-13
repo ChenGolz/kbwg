@@ -637,17 +637,17 @@ function normalizeProduct(p) {
 
     switch (region) {
       case "uk":
-        return "אמזון אנגליה (Amazon UK)";
+        return "אמזון אנגליה";
       case "us":
-        return "אמזון ארה״ב (Amazon US)";
+        return "אמזון ארה״ב";
       case "de":
-        return "אמזון גרמניה (Amazon DE)";
+        return "אמזון גרמניה";
       case "fr":
-        return "אמזון צרפת (Amazon FR)";
+        return "אמזון צרפת";
       case "il":
         return "אמזון ישראל";
       default:
-        return "אמזון בינלאומי (Amazon)";
+        return "אמזון בינלאומי";
     }
   }
 
@@ -955,8 +955,8 @@ function normalizeProduct(p) {
 
       const approvals = [];
       if (p.isPeta) approvals.push("PETA");
-      if (p.isVegan) approvals.push("Vegan");
-      if (p.isLB) approvals.push("Leaping Bunny");
+      if (p.isVegan) approvals.push("טבעוני");
+      if (p.isLB) approvals.push("ארנב קופץ");
 
       const bestOffer = getOfferWithMinFreeShip(p);
       if (bestOffer) {
@@ -971,9 +971,9 @@ function normalizeProduct(p) {
 
       const tags = document.createElement("div");
       tags.className = "tags";
-      if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
+      if (p.isLB) tags.appendChild(tag("ארנב קופץ / CFI"));
       if (p.isPeta) tags.appendChild(tag("PETA"));
-      if (p.isVegan) tags.appendChild(tag("Vegan"));
+      if (p.isVegan) tags.appendChild(tag("טבעוני"));
       if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
 
       const offerList = document.createElement("div");
@@ -1028,6 +1028,14 @@ function normalizeProduct(p) {
     });
 
     grid.replaceChildren(frag);
+
+    // Let Weglot detect newly-inserted DOM content (dynamic rendering)
+    try {
+      if (window.Weglot && typeof window.Weglot.refresh === "function") {
+        window.Weglot.refresh();
+      }
+    } catch (e) {}
+
 
     if (liveCount) liveCount.textContent = `${list.length} מוצרים`;
 

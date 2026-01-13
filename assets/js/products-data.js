@@ -1620,7 +1620,7 @@ window.PRODUCTS = [
   {
     id: "aesop-resurrection-reverence-hand-wash-set",
     brand: "Aesop",
-    name: "סט סבוני ידיים Resurrection & Reverence",
+    name: "סט סבוני ידיים רזירקשן ו רוורנס",
     category: "body",
     categoryLabel: "גוף",
     productTypeKey: "hand-set",
@@ -1635,15 +1635,15 @@ window.PRODUCTS = [
     size: "500 מ״ל × 2",
     storeRegion: "us",
     priceMin: 300,
-    priceMax: 600,
-    updated: "2026-01-04",
+    priceMax: 400,
+    updated: "2026-01-13",
     image: "",
     offers: [
       {
         store: "Amazon US",
         url: "https://amzn.to/4ppRqJM",
         meta: "",
-        price: 470,
+        price: 380,
         freeShipOver: 180
       }
     ]
