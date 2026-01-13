@@ -85,194 +85,61 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
   var PT = (window.KBWGPriceTier || {});
 
-  // Language (Weglot / <html lang> / URL path)
-var KBWG_LANG = 'he';
-function kbwgGetLang() {
-  try {
-    if (window.Weglot && typeof window.Weglot.getCurrentLang === 'function') {
-      var wl = String(window.Weglot.getCurrentLang() || '').toLowerCase();
-      if (wl) return wl.split('-')[0];
-    }
-  } catch (e) {}
-  try {
-    var l = String(document.documentElement.getAttribute('lang') || '').toLowerCase();
-    if (l) return l.split('-')[0];
-  } catch (e) {}
-  try {
-    var mm = String(location.pathname || '').match(/^\/(en|he|iw|ar|fr|es|de|ru)(\/|$)/i);
-    if (mm && mm[1]) return String(mm[1]).toLowerCase();
-  } catch (e) {}
-  return 'he';
-}
+  var CAT_LABELS_INTL = {
+    'baby-child': 'תינוקות וילדים',
+    'body-care': 'טיפוח הגוף',
+    'deodorant': 'דאודורנט',
+    'skincare': 'טיפוח עור',
+    'cleaning': 'ניקיון',
+    'cosmetics': 'קוסמטיקה',
+    'curly-hair': 'שיער מתולתל',
+    'eyes': 'עיניים',
+    'hair-color': 'צבע לשיער',
+    'haircare': 'טיפוח שיער',
+    'luxury-care': 'טיפוח יוקרתי',
+    'mens-care': 'טיפוח לגברים',
+    'nails': 'ציפורניים',
+    'natural-beauty': 'יופי טבעי',
+    'natural-care': 'טיפוח טבעי',
+    'natural-skin': 'טיפוח עור טבעי',
+    'paper': 'נייר',
+    'wipes': 'מגבונים',
+    'pet-care': 'טיפוח לחיות מחמד',
+    'soap': 'סבון',
+    'soap-bars': 'סבון מוצק',
+    'sun': 'הגנה מהשמש',
+    'tanning': 'שיזוף',
+    'tattoo-care': 'טיפול בקעקועים',
+    'wellness': 'וולנס'
+  };
 
-function isEn() { return KBWG_LANG === 'en'; }
-
-var UI = {
-  he: {
-    allLevels: 'כל הרמות',
-    upTo: ' ומטה',
-    allCategories: 'כל הקטגוריות',
-    showing: 'מציג',
-    outOf: 'מתוך',
-    website: 'אתר',
-    amazonUk: 'Amazon UK',
-    amazonUs: 'Amazon US',
-    vegan: 'טבעוני',
-    openBrand: 'פתחי',
-    loadFail: 'לא הצלחנו לטעון את הרשימה כרגע.'
-  },
-  en: {
-    allLevels: 'All levels',
-    upTo: ' & below',
-    allCategories: 'All categories',
-    showing: 'Showing',
-    outOf: 'of',
-    website: 'Website',
-    amazonUk: 'Amazon UK',
-    amazonUs: 'Amazon US',
-    vegan: 'Vegan',
-    openBrand: 'Open',
-    loadFail: "We couldn't load the list right now."
-  }
-};
-
-function ui(key) {
-  var dict = UI[isEn() ? 'en' : 'he'] || UI.he;
-  return dict[key] || key;
-}
-
-// Category labels (keys remain stable slugs; label switches by language)
-var CAT_LABELS_INTL_HE = {
-  'wellness-body': 'וולנס וטיפוח גוף',
-  'tools-accessories': 'כלים ואביזרים',
-  'marketplace': 'מרקטפלייס',
-  'personal-care': 'טיפוח אישי',
-  'fragrance': 'בישום',
-  'eco-home': 'בית אקולוגי',
-  'creator': 'יוצרים/ות',
-  'baby-child': 'תינוקות וילדים',
-  'body-care': 'טיפוח הגוף',
-  'deodorant': 'דאודורנט',
-  'skincare': 'טיפוח עור',
-  'cleaning': 'ניקיון',
-  'cosmetics': 'קוסמטיקה',
-  'eyes': 'עיניים',
-  'hair': 'שיער',
-  'luxury-care': 'טיפוח יוקרתי',
-  'mens-care': 'מוצרי גברים',
-  'nails': 'ציפורניים',
-  'natural-beauty': 'יופי טבעי',
-  'natural-care': 'טיפוח טבעי',
-  'natural-skin': 'טיפוח עור טבעי',
-  'paper': 'נייר',
-  'wipes': 'מגבונים',
-  'pet-care': 'טיפוח לחיות מחמד',
-  'soap': 'סבון',
-  'soap-bars': 'סבון מוצק',
-  'sun': 'הגנה מהשמש',
-  'tanning': 'שיזוף',
-  'tattoo-care': 'טיפול בקעקועים',
-  'wellness': 'וולנס'
-};
-
-var CAT_LABELS_INTL_EN = {
-  'wellness-body': 'Wellness & body',
-  'tools-accessories': 'Tools & accessories',
-  'marketplace': 'Marketplace',
-  'personal-care': 'Personal care',
-  'fragrance': 'Fragrance',
-  'eco-home': 'Eco home',
-  'creator': 'Creators',
-  'baby-child': 'Baby & kids',
-  'body-care': 'Body care',
-  'deodorant': 'Deodorant',
-  'skincare': 'Skincare',
-  'cleaning': 'Cleaning',
-  'cosmetics': 'Makeup',
-  'eyes': 'Eyes',
-  'hair': 'Hair',
-  'luxury-care': 'Luxury care',
-  'mens-care': "Men's products",
-  'nails': 'Nails',
-  'natural-beauty': 'Natural beauty',
-  'natural-care': 'Natural care',
-  'natural-skin': 'Natural skincare',
-  'paper': 'Paper',
-  'wipes': 'Wipes',
-  'pet-care': 'Pet care',
-  'soap': 'Soap',
-  'soap-bars': 'Bar soap',
-  'sun': 'Sun care',
-  'tanning': 'Self tanning',
-  'tattoo-care': 'Tattoo care',
-  'wellness': 'Wellness'
-};
-
-function catLabelIntl(key) {
-  var k = String(key || '').trim();
-  var map = isEn() ? CAT_LABELS_INTL_EN : CAT_LABELS_INTL_HE;
-  return map[k] || k;
-}
-
-// Normalize category keys (clean taxonomy; "curly hair" and "hair" become just "hair")
-var CAT_NORMALIZE = {
-  'curly-hair': 'hair',
-  'haircare': 'hair',
-  'hair-color': 'hair',
-  'wellness-body': 'body-care'
-};
-
-function normalizeIntlCategories(cats) {
-  var out = [];
-  (cats || []).forEach(function (c) {
-    var k = String(c || '').trim();
-    if (!k) return;
-    if (CAT_NORMALIZE[k]) k = CAT_NORMALIZE[k];
-    out.push(k);
-  });
-  out = uniq(out);
-  return out;
-}
-
-// Default order for the intl category filter (cleaned)
-var CAT_ORDER_INTL = [
-  'skincare','hair','body-care','cosmetics','nails','deodorant','baby-child',
-  'cleaning','eco-home','personal-care','fragrance','wellness','mens-care',
-  'pet-care','sun','tanning','soap','soap-bars','paper','wipes',
-  'tools-accessories','marketplace','luxury-care','tattoo-care','natural-beauty','natural-care','natural-skin','eyes','creator'
-];
-
-var CAT_PRICE_TIER = {
-  'paper': 1,
-  'wipes': 1,
-  'cleaning': 1,
-  'marketplace': 2,
-  'soap': 2,
-  'soap-bars': 2,
-  'baby-child': 2,
-  'deodorant': 2,
-  'eco-home': 2,
-  'tools-accessories': 2,
-  'personal-care': 3,
-  'body-care': 3,
-  'skincare': 3,
-  'cosmetics': 3,
-  'hair': 3,
-  'eyes': 3,
-  'mens-care': 3,
-  'nails': 3,
-  'natural-beauty': 3,
-  'natural-care': 3,
-  'natural-skin': 3,
-  'pet-care': 3,
-  'sun': 3,
-  'tanning': 3,
-  'tattoo-care': 3,
-  'fragrance': 4,
-  'wellness': 4,
-  'luxury-care': 5
-};
-
+  var CAT_PRICE_TIER = {
+    'paper': 1,
+    'wipes': 1,
+    'cleaning': 1,
+    'soap': 2,
+    'soap-bars': 2,
+    'baby-child': 2,
+    'deodorant': 2,
+    'body-care': 3,
+    'skincare': 3,
+    'cosmetics': 3,
+    'haircare': 3,
+    'curly-hair': 3,
+    'eyes': 3,
+    'hair-color': 3,
+    'mens-care': 3,
+    'nails': 3,
+    'natural-beauty': 3,
+    'natural-care': 3,
+    'natural-skin': 3,
+    'pet-care': 3,
+    'sun': 3,
+    'tanning': 3,
+    'tattoo-care': 3,
+    'wellness': 4,
+    'luxury-care': 5
+  };
 
   function norm(s) {
     return String(s || '').toLowerCase().trim();
@@ -337,7 +204,7 @@ var CAT_PRICE_TIER = {
   function labelForCategories(pageKind, cats) {
     if (!cats || !cats.length) return '';
     if (pageKind === 'intl') {
-      var labels = cats.map(function (k) { return catLabelIntl(k); });
+      var labels = cats.map(function (k) { return CAT_LABELS_INTL[k] || k; });
       return labels.join(' / ');
     }
     // israel: cats are already labels
@@ -356,13 +223,13 @@ var CAT_PRICE_TIER = {
 
     var all = document.createElement('option');
     all.value = '';
-    all.textContent = ui('allLevels');
+    all.textContent = 'כל הרמות';
     selectEl.appendChild(all);
 
     for (var t = 1; t <= 5; t++) {
       var op = document.createElement('option');
       op.value = String(t);
-      op.textContent = '$'.repeat(t) + ui('upTo');
+      op.textContent = '$'.repeat(t) + ' ומטה';
       selectEl.appendChild(op);
     }
 
@@ -374,47 +241,10 @@ var CAT_PRICE_TIER = {
   }
 
 
-
-function buildCategorySelectIntl(selectEl, brands) {
-  if (!selectEl) return;
-
-  // Rebuild every time to ensure correct language & cleaned taxonomy
-  var cats = [];
-  brands.forEach(function (b) {
-    (b.categories || []).forEach(function (c) { cats.push(c); });
-  });
-  cats = uniq(cats);
-
-  // Ensure men's products exists in filter even if none currently tagged
-  if (cats.indexOf('mens-care') === -1) cats.push('mens-care');
-
-  // Sort using curated order first, then alpha by label
-  var order = Object.create(null);
-  CAT_ORDER_INTL.forEach(function (k, i) { order[k] = i + 1; });
-
-  cats.sort(function (a, b) {
-    var oa = order[a] || 999;
-    var ob = order[b] || 999;
-    if (oa !== ob) return oa - ob;
-    return catLabelIntl(a).localeCompare(catLabelIntl(b), isEn() ? 'en' : 'he');
-  });
-
-  selectEl.innerHTML = '';
-  var all = document.createElement('option');
-  all.value = '';
-  all.textContent = ui('allCategories');
-  selectEl.appendChild(all);
-
-  cats.forEach(function (c) {
-    var op = document.createElement('option');
-    op.value = c;
-    op.textContent = catLabelIntl(c);
-    selectEl.appendChild(op);
-  });
-}
-
   function buildCategorySelectIfEmpty(selectEl, brands, pageKind) {
     if (!selectEl) return;
+    // Intl page already contains a curated list in HTML.
+    if (pageKind === 'intl') return;
     if (selectEl.options && selectEl.options.length > 0) return;
 
     var cats = [];
@@ -429,7 +259,7 @@ function buildCategorySelectIntl(selectEl, brands) {
 
     var all = document.createElement('option');
     all.value = '';
-    all.textContent = ui('allCategories');
+    all.textContent = 'כל הקטגוריות';
     selectEl.appendChild(all);
 
     cats.forEach(function (c) {
@@ -469,7 +299,7 @@ function buildCategorySelectIntl(selectEl, brands) {
     if (targetUrl && targetUrl !== '#') {
       article.tabIndex = 0;
       article.setAttribute('role', 'link');
-      article.setAttribute('aria-label', ui('openBrand') + ' ' + (brand.name || (isEn() ? 'Brand' : 'מותג')));
+      article.setAttribute('aria-label', 'פתחי ' + (brand.name || 'מותג'));
       article.addEventListener('click', function () {
         window.open(targetUrl, '_blank', 'noopener');
       });
@@ -540,7 +370,7 @@ function buildCategorySelectIntl(selectEl, brands) {
       return t.indexOf('peta') !== -1 || t.indexOf('leaping') !== -1 || t.indexOf('cruelty') !== -1;
     });
     if (prog) addBadge(prog, 'brandBadge--approved');
-    if (vegan) addBadge(ui('vegan'), 'brandBadge--vegan');
+    if (vegan) addBadge('טבעוני', 'brandBadge--vegan');
 
     // Links row
     var links = document.createElement('div');
@@ -558,9 +388,9 @@ function buildCategorySelectIntl(selectEl, brands) {
       links.appendChild(a);
     }
 
-    addLink(ui('website'), brand.website || null, 'brandLink--site');
-    addLink(ui('amazonUk'), brand.amazonUk || null, 'brandLink--amazon');
-    addLink(ui('amazonUs'), brand.amazonUs || null, 'brandLink--amazon');
+    addLink('Website', brand.website || null, 'brandLink--site');
+    addLink('Amazon UK', brand.amazonUk || null, 'brandLink--amazon');
+    addLink('Amazon US', brand.amazonUs || null, 'brandLink--amazon');
 
     top.appendChild(header);
     if (badgesWrap.childNodes.length) top.appendChild(badgesWrap);
@@ -579,7 +409,6 @@ function buildCategorySelectIntl(selectEl, brands) {
   }
 
   function initPage() {
-    KBWG_LANG = kbwgGetLang();
     var grid = document.getElementById('brandGrid');
     if (!grid) return;
 
@@ -602,9 +431,9 @@ function buildCategorySelectIntl(selectEl, brands) {
     function setCount(n, total) {
       if (!countEl) return;
       if (typeof total === 'number') {
-        countEl.textContent = ui('showing') + ' ' + n + ' ' + ui('outOf') + ' ' + total;
+        countEl.textContent = 'מציג ' + n + ' מתוך ' + total;
       } else {
-        countEl.textContent = ui('showing') + ' ' + n;
+        countEl.textContent = 'מציג ' + n;
       }
     }
 
@@ -680,17 +509,12 @@ function buildCategorySelectIntl(selectEl, brands) {
           var out = b || {};
           out.name = String(out.name || '').trim();
           out.categories = Array.isArray(out.categories) ? out.categories.filter(Boolean) : [];
-          if (pageKind === 'intl') out.categories = normalizeIntlCategories(out.categories);
           out.badges = Array.isArray(out.badges) ? out.badges.filter(Boolean) : [];
           return out;
         }).filter(function (b) { return b.name; });
 
-        // Build category select
-        if (pageKind === 'intl') {
-          buildCategorySelectIntl(categorySelect, brands);
-        } else {
-          buildCategorySelectIfEmpty(categorySelect, brands, pageKind);
-        }
+        // Build category select (israel)
+        buildCategorySelectIfEmpty(categorySelect, brands, pageKind);
 
         // Sort default: cheapest tier first (then name)
         if (PT && typeof PT.sortBrandsCheapestFirst === 'function') {
@@ -745,7 +569,7 @@ function buildCategorySelectIntl(selectEl, brands) {
             '</div>'
           ].join('');
         } else {
-          grid.innerHTML = '<div class="infoCard">' + ui('loadFail') + '</div>';
+          grid.innerHTML = '<div class="infoCard">לא הצלחנו לטעון את הרשימה כרגע.</div>';
         }
       });
   }
