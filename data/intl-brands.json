@@ -1,7 +1,4 @@
-// data/intl-brands.js
-// Loads into the browser as: window.INTL_BRANDS
-
-window.INTL_BRANDS = [
+ [
      {
     "name": "365 by Whole Foods Market",
     "categories": ["marketplace"],
