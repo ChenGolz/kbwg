@@ -1,4 +1,3 @@
-function kbwgContentRendered(){ try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){} }
 (function () {
   const input = document.getElementById('qIng');
   const out = document.getElementById('out');
@@ -159,7 +158,3 @@ function kbwgContentRendered(){ try{ window.dispatchEvent(new Event('kbwg:conten
   clearUI();
   renderHint('הזינו שתי אותיות לפחות להתחיל');
 })();
-
-
-// Weglot: notify after dynamic render
-kbwgContentRendered();

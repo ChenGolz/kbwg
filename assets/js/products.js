@@ -1,4 +1,3 @@
-function kbwgContentRendered(){ try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){} }
 // מוצרים page logic (RTL-friendly, data-normalized, performant)
 (function () {
   const qs = (s) => document.querySelector(s);
@@ -1136,7 +1135,3 @@ buildSelects();
   bind();
   render();
 })();
-
-
-// Weglot: notify after dynamic render
-kbwgContentRendered();

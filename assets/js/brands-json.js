@@ -1,4 +1,3 @@
-function kbwgContentRendered(){ try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){} }
 // Build: 2026-01-12-v6
 try { window.KBWG_BRANDS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
 
@@ -581,7 +580,3 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     initPage();
   }
 })();
-
-
-// Weglot: notify after dynamic render
-kbwgContentRendered();

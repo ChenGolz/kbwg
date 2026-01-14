@@ -3537,15 +3537,180 @@ body.menuOpen .navOverlay{
 }
 
 
-/* ==== v20: header spacing for Weglot + mobile filter spacing ==== */
-@media (min-width: 921px){
-  .siteHeader .headerRow{ flex-wrap: nowrap; gap: 8px; }
-  .siteHeader .nav{ gap: 6px !important; }
-  .siteHeader .nav a{ padding: 5px 8px !important; font-size: 13px !important; }
-}
-/* Mobile: remove big gap between "טווח מחירים" and "לצפייה" */
+/* ==== FINAL MOBILE DRAWER FIX (v12) ==== */
 @media (max-width: 920px){
-  .filtersRow, .filtersBar, .filtersTop, .filters{ gap: 8px !important; }
-  .filtersRow .field, .filtersRow .fieldGroup, .priceRange, .priceFilter,
-  .viewLink, .viewBtn, .filterApply, .filterBtn{ margin: 0 !important; }
+  /* Drawer */
+  .siteHeader .nav{
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    width: min(320px, 85vw) !important;
+    background: #fff !important;
+    box-shadow: -18px 0 40px rgba(0,0,0,.15) !important;
+    border-left: 1px solid rgba(15,23,42,.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 10px 12px !important;
+    transform: translateX(105%) !important;
+    transition: transform .25s ease !important;
+    z-index: 10002 !important;
+    pointer-events: none !important;
+  }
+
+  .siteHeader.navOpen .nav,
+  .siteHeader.navopen .nav{
+    transform: translateX(0) !important;
+    pointer-events: auto !important;
+  }
+
+  .siteHeader .nav a{
+    width: 100% !important;
+    padding: 10px 12px !important;
+    text-align: right !important;
+    white-space: normal !important;
+  }
+
+  .navOverlay{
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.28) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity .2s ease !important;
+    z-index: 10000 !important;
+  }
+  body.menuOpen .navOverlay,
+  body.menuopen .navOverlay{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
 }
+
+
+
+/* Desktop nav */
+@media (min-width: 921px){
+  .siteHeader .headerRow{
+    gap: 12px;
+  }
+
+  .siteHeader .nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px 10px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+  }
+
+  .siteHeader .nav a{
+    font-size: clamp(13px, 0.95vw, 15px);
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: rgba(15,23,42,.86);
+    padding: 8px 12px;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+
+  .siteHeader .nav a:hover{
+    background: rgba(15, 23, 42, 0.06);
+    color: rgba(15,23,42,.96);
+  }
+
+  /* Active page highlight (works if links already get .active / aria-current) */
+  .siteHeader .nav a[aria-current="page"],
+  .siteHeader .nav a.active{
+    background: rgba(15, 23, 42, 0.10);
+    color: rgba(15,23,42,.98);
+  }
+
+  /* CTA pill (the "לקנות בלי לפגוע" button) */
+  .siteHeader .ctaPill{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 999px;
+  }
+}
+
+/* Medium screens: slightly tighter to avoid wrapping too much */
+@media (min-width: 921px) and (max-width: 1100px){
+  .siteHeader .nav{
+    gap: 6px 8px;
+    padding: 8px 8px;
+  }
+  .siteHeader .nav a{
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
+
+/* ==== Top menu: keep in ONE ROW on desktop (v18) ==== */
+@media (min-width: 921px){
+  /* Keep header compact */
+  .siteHeader .headerRow{ gap: 12px; }
+
+  /* One-line nav */
+  .siteHeader .nav{
+    display: flex;
+    flex-wrap: nowrap;          /* IMPORTANT: one row */
+    white-space: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    overflow-x: auto;           /* fallback if screen is narrow */
+    scrollbar-width: none;      /* Firefox */
+  }
+  .siteHeader .nav::-webkit-scrollbar{ display: none; }
+
+  .siteHeader .nav a{
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: rgba(15,23,42,.86);
+    padding: 6px 10px;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background .15s ease, color .15s ease;
+  }
+  .siteHeader .nav a:hover{
+    background: rgba(15, 23, 42, 0.06);
+    color: rgba(15,23,42,.96);
+  }
+  .siteHeader .nav a[aria-current="page"],
+  .siteHeader .nav a.active{
+    background: rgba(15, 23, 42, 0.10);
+    color: rgba(15,23,42,.98);
+  }
+
+  /* CTA pill */
+  .siteHeader .ctaPill{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}
+
+/* Slightly tighter on mid-size desktops */
+@media (min-width: 921px) and (max-width: 1100px){
+  .siteHeader .nav{ gap: 6px; }
+  .siteHeader .nav a{ font-size: 13px; padding: 6px 9px; }
+}
+
