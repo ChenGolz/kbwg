@@ -1,4 +1,8 @@
 (function () {
+
+  function kbwgNotifyRendered(){
+    try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){}
+  }
   const input = document.getElementById('qIng');
   const out = document.getElementById('out');
   const hint = document.getElementById('hint');

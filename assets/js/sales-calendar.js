@@ -1,3 +1,7 @@
+
+  function kbwgNotifyRendered(){
+    try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){}
+  }
 /* Cruelty Free / KBWG – Shopping Calendar renderer (RTL) */
 (() => {
   const root = document.getElementById('agenda');

@@ -1,5 +1,9 @@
 // מוצרים page logic (RTL-friendly, data-normalized, performant)
 (function () {
+
+  function kbwgNotifyRendered(){
+    try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){}
+  }
   const qs = (s) => document.querySelector(s);
 
   const q = qs("#q");
@@ -1035,7 +1039,9 @@ function normalizeProduct(p) {
     });
 
     grid.replaceChildren(frag);
-    // Refresh Weglot after dynamic content is rendered
+    
+    kbwgNotifyRendered();
+// Refresh Weglot after dynamic content is rendered
     if (window.Weglot && typeof window.Weglot.refresh === "function") {
       window.Weglot.refresh();
     }
