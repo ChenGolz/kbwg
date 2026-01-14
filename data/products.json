@@ -1,5 +1,5 @@
 [
-  [
+  
   {
     "id": "lavido-natural-soap-jasmine",
     "brand": "Lavido",
@@ -28,8 +28,6 @@
         "meta": "אמזון ארה״ב",
         "price": 33,
         "freeShipOver": 180
-      }
-    ]
   },
   {
     "id": "lavido-aromatic-body-lotion-mandarin",
