@@ -56,6 +56,18 @@ h3{ font-size: 18px; margin:0 0 8px; }
 
 /* Prevent desktop nav from dropping to a second line */
 .siteHeader .nav{ flex: 1 1 auto; }
+
+  /* Mobile drawer: keep list clean (no wrapping into columns) */
+  .siteHeader .nav{
+    flex-wrap: nowrap;
+    white-space: normal;
+    overflow-x: hidden;
+  }
+  .siteHeader .nav a{
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
 .siteHeader .logo{ flex: 0 0 auto; }
 
 .logo{
@@ -66,16 +78,17 @@ h3{ font-size: 18px; margin:0 0 8px; }
 
 .nav{
   display:flex;
-  flex-wrap:nowrap;
-  gap:10px 14px;
+  flex-wrap:wrap;
+  gap:6px 8px;
   justify-content:flex-start;
-  white-space:nowrap;
-  overflow-x:auto;
+  white-space:normal;
+  overflow-x:visible;
   -webkit-overflow-scrolling:touch;
   scrollbar-width: thin;
 }
 .nav a{
-  padding: 7px 10px;
+  font-size: 14px;
+  padding: 6px 10px;
   border-radius: 999px;
   font-weight: 800;
   color: rgba(17,24,39,.78);
@@ -430,7 +443,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .toolbar{
   display:grid;
   grid-template-columns: 1.3fr .7fr .7fr .6fr auto;
-  gap: 10px;
+  gap: 6px;
   align-items:center;
   margin: 10px 0;
 }
@@ -495,7 +508,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 
 
 /* ------------------------------------------------------------------
-   Products page (v3) – compatibility styles
+   מוצרים page (v3) – compatibility styles
    Fixes: mixed checkboxes (RTL), missing pill styling, cleaner spacing
    ------------------------------------------------------------------ */
 
@@ -508,7 +521,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   box-shadow: 0 14px 28px rgba(20,35,60,.06);
 }
 
-/* Products search */
+/* מוצרים search */
 .search-wrapper{ position: relative; max-width: 640px; margin: 0 auto 16px; }
 .search-wrapper input{
   width:100%;
@@ -546,7 +559,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .toggles-row{
   display:flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 6px;
   align-items:center;
   justify-content:flex-start;
   direction: rtl;
@@ -645,7 +658,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 }
 
 /* RTL: keep the checkbox visually on the left for readability */
-html[dir="rtl"] .check-pill{ flex-direction: row-reverse; }
+html[dir="rtl"] .check-pill{ flex-direction: row; }
 
 /* Status bar (count + clear button) */
 .status-bar{
@@ -1092,7 +1105,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 /* Mobile: keep side-by-side but smaller */
 @media (max-width: 640px){
   .hero.product-hero{
-    gap: 10px;
+    gap: 6px;
     padding: 10px 12px;
     margin: 10px auto 12px;
     border-radius: 16px;
@@ -1240,7 +1253,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .hero.heroCompact .heroShell{ z-index: 2; position: relative; }
 
 /* ------------------------------------------------------------------
-   Products page toolbar (new layout) – make filters look clean in RTL
+   מוצרים page toolbar (new layout) – make filters look clean in RTL
    ------------------------------------------------------------------ */
 
 /* When products.html uses the "filter-panel" layout, keep it consistent */
@@ -1255,7 +1268,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
   margin-bottom: 22px;
 }
 
-/* Search */
+/* חיפוש */
 .search-wrapper{ position: relative; max-width: 720px; margin: 0 auto 18px; }
 .search-wrapper input{
   width: 100%;
@@ -1269,7 +1282,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .search-btn{ position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.15rem; opacity: .75; cursor: default; }
 
 /* Selects row */
-.select-group{ display:flex; gap: 10px; flex-wrap: wrap; }
+.select-group{ display:flex; gap: 6px; flex-wrap: wrap; }
 .select.minimal{
   border: 1px solid rgba(31,41,55,.14);
   padding: 9px 12px;
@@ -1284,7 +1297,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .toggles-row{
   display:flex;
   flex-wrap:wrap;
-  gap: 10px;
+  gap: 6px;
   align-items:center;
   justify-content: flex-start;
   direction: rtl;
@@ -1308,7 +1321,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .check-pill.highlight{ background: rgba(42,91,154,.10); border-color: rgba(42,91,154,.24); }
 
 /* In RTL the checkbox should visually sit on the left for readability */
-html[dir="rtl"] .check-pill{ flex-direction: row-reverse; }
+html[dir="rtl"] .check-pill{ flex-direction: row; }
 
 /* Count + clear */
 .status-bar{
@@ -1339,7 +1352,7 @@ html[dir="rtl"] .check-pill{ flex-direction: row-reverse; }
 }
 .btn-link:hover{ background: rgba(42,91,154,.08); }
 
-/* Products list spacing under filters */
+/* מוצרים list spacing under filters */
 .product-grid{ margin-top: 18px; }
 
 @media (max-width: 768px){
@@ -1418,7 +1431,7 @@ body{ overflow-x: hidden; }
     padding: 0 12px 14px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateX(105%);
@@ -1441,7 +1454,7 @@ body{ overflow-x: hidden; }
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap: 10px;
+    gap: 6px;
     /* Sit flush at the very top; include safe-area inset for notched phones */
     padding: calc(10px + env(safe-area-inset-top, 0px)) 6px 12px;
     margin: 0 0 6px;
@@ -1487,7 +1500,7 @@ body{ overflow-x: hidden; }
     background: rgba(42,91,154,.06);
     border: 1px solid rgba(42,91,154,.12);
     text-align: right;
-    padding: 12px 14px;
+    padding: 6px 10px;
     border-radius: 14px;
   }
 
@@ -1495,7 +1508,7 @@ body{ overflow-x: hidden; }
     background: rgba(42,91,154,.08);
     border: 1px solid rgba(42,91,154,.12);
     text-align: center;
-    padding: 10px 12px;
+    padding: 6px 10px;
   }
 
   .navOverlay{
@@ -1516,7 +1529,7 @@ body{ overflow-x: hidden; }
 }
 
 
-/* Products filters: force clean stacking on phones */
+/* מוצרים filters: force clean stacking on phones */
 @media (max-width: 820px){
   .filters-actions{
     flex-direction: column;
@@ -1626,7 +1639,7 @@ body{ overflow-x: hidden; }
 
 
 /* =========================================================
-   Products page layout (desktop sidebar + mobile stack)
+   מוצרים page layout (desktop sidebar + mobile stack)
    - Does NOT affect the hero section
    ========================================================= */
 .productsLayout{
@@ -1681,11 +1694,11 @@ body{ overflow-x: hidden; }
   opacity: .75;
 }
 
-.pContent{ min-width: 0; display: grid; gap: 10px; }
+.pContent{ min-width: 0; display: grid; gap: 6px; }
 .pHeader{
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 6px;
   align-items: flex-start;
 }
 .pTitleWrap{ min-width: 0; }
@@ -1727,10 +1740,10 @@ body{ overflow-x: hidden; }
 
 
 /* =========================================================
-   Products page quick polish (2025-12-31)
+   מוצרים page quick polish (2025-12-31)
    - Smaller text on cards
    - Tiny image/placeholder until you have real images
-   - Search bar aligned to the right (RTL)
+   - חיפוש bar aligned to the right (RTL)
    - Logical positioning for RTL/LTR safety
    ========================================================= */
 
@@ -1814,7 +1827,7 @@ body{ overflow-x: hidden; }
 .brandLinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;}
 .brandLinks a{font-weight:900;}
 
-/* Products page – premium font + subtle wow, without touching header/hero */
+/* מוצרים page – premium font + subtle wow, without touching header/hero */
 .page-products main{font-family:"Assistant",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:400;}
 .page-products main p,.page-products main li,.page-products main .muted{font-weight:300;}
 .page-products main h1,.page-products main h2,.page-products main h3{font-weight:500;}
@@ -2008,7 +2021,7 @@ body{ overflow-x: hidden; }
 }
 
 
-/* Products page: collapsible Amazon info heading */
+/* מוצרים page: collapsible Amazon info heading */
 .amazon-short-intro .amazon-toggle {
   background: none;
   border: 0;
@@ -2426,7 +2439,7 @@ body{ overflow-x: hidden; }
 .page-recommended-brands .brandCard:nth-child(4n+3){ --rb-accent: linear-gradient(90deg, rgba(245,158,11,.92), rgba(236,72,153,.80)); }
 .page-recommended-brands .brandCard:nth-child(4n){   --rb-accent: linear-gradient(90deg, rgba(20,184,166,.92), rgba(59,130,246,.82)); }
 
-/* Brand name bigger */
+/* מותג name bigger */
 .page-recommended-brands .brandName{
   font-size: 1.65rem !important;
 }
@@ -2909,7 +2922,7 @@ body{ overflow-x: hidden; }
   .wrap{ width: calc(100% - 24px); }
 
   /* Header: keep it compact and avoid awkward wrapping */
-  .headerRow{ padding: 10px 0; gap: 10px; }
+  .headerRow{ padding: 10px 0; gap: 6px; }
   .logo{ gap: 8px; }
   .logoImg{ width: 32px; height: 32px; border-radius: 10px; }
   .logoTag{ display: none; }
@@ -2938,7 +2951,7 @@ body{ overflow-x: hidden; }
   .center-text p{ font-size: .95rem; }
 
   /* Product & brand grids: keep 2-per-row even on tiny phones (reduce scrolling) */
-  .page-products .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+  .page-products .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; }
   .brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .brandTop{ flex-direction: column; align-items: stretch; }
   .page-recommended-brands #brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
@@ -2946,7 +2959,7 @@ body{ overflow-x: hidden; }
   .brandLinks a.btn,
   .brandLinks a.btn.small{ flex: 1 1 calc(50% - 8px); justify-content: center; }
 
-  /* Products page: the intro card heading was made too small in a previous patch */
+  /* מוצרים page: the intro card heading was made too small in a previous patch */
   .panel.filter-panel .contentCard h2{ font-size: 1.05rem; }
   .panel.filter-panel .contentCard p{ font-size: .95rem; }
 
@@ -3112,7 +3125,7 @@ table{ width: 100%; border-collapse: collapse; }
 
 /* =========================================================
    v44: Compact density (reduce scrolling)
-   - Keep 2 cards per row on Products + Brands pages
+   - Keep 2 cards per row on מוצרים + Brands pages
    - Tighten card padding + typography on small screens
    ========================================================= */
 
@@ -3123,7 +3136,7 @@ table{ width: 100%; border-collapse: collapse; }
   .contentCard{ margin-bottom: 12px; }
   .panel{ margin-top: 12px; }
 
-  /* Products: always show 2 cards per row on phones */
+  /* מוצרים: always show 2 cards per row on phones */
   .page-products .product-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
@@ -3186,7 +3199,7 @@ table{ width: 100%; border-collapse: collapse; }
 }
 
 
-/* Mobile-only Home link in hamburger menu */
+/* Mobile-only דף הבית link in hamburger menu */
 .navHomeMobile{ display:none; }
 @media (max-width: 900px){
   .navHomeMobile{ display:block; }
@@ -3237,7 +3250,7 @@ table{ width: 100%; border-collapse: collapse; }
 
 
 /* =========================================================
-   v12: Products page — mobile alignment + collapsible filters
+   v12: מוצרים page — mobile alignment + collapsible filters
    Match the Intl brands UX on mobile:
    - Filters/search collapsed by default (uses existing mobileFilterToggle JS)
    - Cards align to start (RTL) like Intl brand cards
@@ -3288,7 +3301,7 @@ table{ width: 100%; border-collapse: collapse; }
 }
 
 
-/* Price tier: renders $$$$$ with inactive $ in gray */
+/* מחיר tier: renders $$$$$ with inactive $ in gray */
 .price-tier{display:inline-flex;gap:.08em;font-weight:700;letter-spacing:.02em;font-family:inherit;user-select:none;}
 .price-tier .dollar{opacity:.9;}
 .price-tier .dollar.inactive{opacity:.25;filter:grayscale(1);}
@@ -3300,7 +3313,7 @@ table{ width: 100%; border-collapse: collapse; }
 /* Fix LTR word order inside RTL nav (helps Weglot /en pages) */
 .nav a{ unicode-bidi: plaintext; }
 
-/* Products filter panel: prevent overlap + horizontal scroll */
+/* מוצרים filter panel: prevent overlap + horizontal scroll */
 .page-products .productsFilters{ overflow-x: hidden; }
 .page-products .toolbar-container{ overflow-x: hidden; }
 .page-products .more-filters-inner{ padding-bottom: 12px; }
@@ -3316,7 +3329,7 @@ table{ width: 100%; border-collapse: collapse; }
 .page-shopping-calendar .hero .muted,
 .page-shopping-calendar .hero p.muted{ color: rgba(255,255,255,.90) !important; }
 
-/* International brands: better mobile cards (single column + auto height) */
+/* מותגי intl: better mobile cards (single column + auto height) */
 @media (max-width: 560px){
   .page-recommended-brands #brandGrid{ grid-template-columns: 1fr !important; }
   .page-recommended-brands .brandCard{ height: auto !important; min-height: 0 !important; }
@@ -3344,7 +3357,7 @@ html, body{ overflow-x: hidden; }
 
 .calendarHero .muted{ color: rgba(255,255,255,.86); }
 
-/* Products: prevent the price-range hint from being visually cut by the next row */
+/* מוצרים: prevent the price-range hint from being visually cut by the next row */
 .page-products .price-range-hint{ display:block; margin-top: 6px; margin-bottom: 14px; }
 .page-products .price-range-row{ padding-bottom: 10px; border-bottom: 1px dashed rgba(15,23,42,.10); }
 
@@ -3373,7 +3386,7 @@ html, body{ overflow-x: hidden; }
    - Footer quote pills aligned
    ========================================================= */
 
-/* Products: prevent the free-shipping pill from overlapping the price hint */
+/* מוצרים: prevent the free-shipping pill from overlapping the price hint */
 .price-range-hint{
   margin-top: 4px;
   margin-bottom: 10px;
@@ -3447,3 +3460,134 @@ html, body{ overflow-x: hidden; }
 @media (min-width: 860px){
   .headerRow{ flex-wrap: nowrap; }
 }
+
+
+/* --- מחיר tier color mapping (same tier = same color) --- */
+:root{
+  --tier1:#16a34a;
+  --tier2:#0ea5a4;
+  --tier3:var(--brand);
+  --tier4:#7c3aed;
+  --tier5:#f59e0b;
+}
+.price-tier .dollar{font-weight:1000;}
+.price-tier .dollar.inactive{color:rgba(15,23,42,.22);}
+.price-tier--t1 .dollar:not(.inactive){color:var(--tier1);}
+.price-tier--t2 .dollar:not(.inactive){color:var(--tier2);}
+.price-tier--t3 .dollar:not(.inactive){color:var(--tier3);}
+.price-tier--t4 .dollar:not(.inactive){color:var(--tier4);}
+.price-tier--t5 .dollar:not(.inactive){color:var(--tier5);}
+
+/* --- מותג logo fallback (initials) --- */
+.brandLogo{
+  width:44px;height:44px;flex:0 0 44px;
+  border-radius:14px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg, rgba(157,195,230,.55), rgba(42,91,154,.10));
+  border:1px solid rgba(42,91,154,.18);
+  color:#0f172a;
+  font-weight:1000;
+  letter-spacing:.02em;
+  box-shadow:0 10px 22px rgba(20,35,60,.08);
+}
+.brandHeader{display:flex;gap:12px;align-items:center;}
+.brandTitleBlock{display:flex;flex-direction:column;gap:2px;}
+.brandCard[role="link"]{cursor:pointer;}
+.brandCard[role="link"] .brandName{cursor:pointer;text-decoration:none;}
+.brandCard[role="link"] .brandName:hover{text-decoration:underline;}
+
+/* --- מבצעים page --- */
+.page-deals .dealsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px;}
+.page-deals .dealCard{padding:16px;border-radius:var(--radius);border:1px solid var(--stroke);background:rgba(255,255,255,.86);box-shadow:var(--shadow);transition:transform .18s, box-shadow .18s, border-color .18s;}
+.page-deals .dealCard:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(20,35,60,.10);border-color:rgba(42,91,154,.22);}
+.page-deals .dealTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;}
+.page-deals .dealBrandRow{display:flex;gap:12px;align-items:center;}
+.page-deals .dealBrand{font-weight:1000;color:rgba(17,24,39,.92);}
+.page-deals .dealName{font-weight:800;color:rgba(17,24,39,.78);margin-top:2px;line-height:1.35;}
+.page-deals .dealMeta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.page-deals .dealCta{margin-top:12px;display:flex;justify-content:space-between;gap:12px;align-items:center;}
+.page-deals .dealPrice{font-weight:1000;}
+.page-deals .dealBtn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;border:1px solid rgba(42,91,154,.22);background:rgba(157,195,230,.22);color:#0f172a;font-weight:1000;text-decoration:none;}
+.page-deals .dealBtn:hover{background:rgba(157,195,230,.32);}
+
+
+/* --- Hebrew RTL enhancements --- */
+:root { --he-font: 'Heebo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+html[dir="rtl"] body { direction: rtl; text-align: right; font-family: var(--he-font); }
+html[dir="rtl"] input, html[dir="rtl"] textarea, html[dir="rtl"] select { font-family: var(--he-font); }
+html[dir="rtl"] .nav, html[dir="rtl"] nav ul { flex-direction: row; }
+html[dir="rtl"] .menu, html[dir="rtl"] .topMenu, html[dir="rtl"] .navbar, html[dir="rtl"] .nav-links { flex-direction: row; }
+html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, html[dir="rtl"] .brandCard { text-align: right; }
+html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
+
+
+/* Mobile nav overlay */
+.navOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 10000;
+}
+body.menuOpen .navOverlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* ==== FINAL MOBILE DRAWER FIX (v12) ==== */
+@media (max-width: 920px){
+  /* Drawer */
+  .siteHeader .nav{
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    width: min(320px, 85vw) !important;
+    background: #fff !important;
+    box-shadow: -18px 0 40px rgba(0,0,0,.15) !important;
+    border-left: 1px solid rgba(15,23,42,.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 10px 12px !important;
+    transform: translateX(105%) !important;
+    transition: transform .25s ease !important;
+    z-index: 10002 !important;
+    pointer-events: none !important;
+  }
+
+  .siteHeader.navOpen .nav,
+  .siteHeader.navopen .nav{
+    transform: translateX(0) !important;
+    pointer-events: auto !important;
+  }
+
+  .siteHeader .nav a{
+    width: 100% !important;
+    padding: 10px 12px !important;
+    text-align: right !important;
+    white-space: normal !important;
+  }
+
+  .navOverlay{
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.28) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity .2s ease !important;
+    z-index: 10000 !important;
+  }
+  body.menuOpen .navOverlay,
+  body.menuopen .navOverlay{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+

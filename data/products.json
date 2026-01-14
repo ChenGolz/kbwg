@@ -1568,7 +1568,7 @@
   {
     "id": "aesop-resurrection-reverence-hand-wash-set",
     "brand": "Aesop",
-    "name": "סט סבוני ידיים רזירקשן ו רוורנס",
+    "name": "סט סבוני ידיים Resurrection & Reverence",
     "category": "body",
     "categoryLabel": "גוף",
     "productTypeKey": "hand-set",
@@ -1629,7 +1629,7 @@
   {
     "id": "stila-stay-all-day-smudge-set-gel-liner-49",
     "brand": "stila",
-    "name": "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner",
+    "name": "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1687,7 +1687,7 @@
   {
     "id": "stila-stay-all-day-sheer-shimmer-liquid-lip",
     "brand": "stila",
-    "name": "שפתון נוזלי מבריק Stay All Day Sheer & Shimmer Liquid Lip",
+    "name": "שפתון נוזלי מבריק Stay הכל Day Sheer & Shimmer Liquid Lip",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1745,7 +1745,7 @@
   {
     "id": "stila-stay-all-day-liquid-lipstick",
     "brand": "stila",
-    "name": "שפתון נוזלי Matt Stay All Day® Liquid Lipstick",
+    "name": "שפתון נוזלי Matt Stay הכל Day® Liquid Lipstick",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1774,7 +1774,7 @@
   {
     "id": "stila-stay-all-day-waterproof-liquid-eye-liner",
     "brand": "stila",
-    "name": "אייליינר נוזלי עמיד Stay All Day Waterproof Liquid Eye Liner",
+    "name": "אייליינר נוזלי עמיד Stay הכל Day Waterproof Liquid Eye Liner",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1803,7 +1803,7 @@
   {
     "id": "stila-stay-all-day-smudge-set-gel-liner-52",
     "brand": "stila",
-    "name": "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner (וריאציה)",
+    "name": "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner (וריאציה)",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1861,7 +1861,7 @@
   {
     "id": "stila-stay-all-day-smudge-set-gel-liner-54",
     "brand": "stila",
-    "name": "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner (וריאציה נוספת)",
+    "name": "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner (וריאציה נוספת)",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1919,7 +1919,7 @@
   {
     "id": "stila-stay-all-day-foundation-concealer",
     "brand": "stila",
-    "name": "מייקאפ + קונסילר Stay All Day Foundation & Concealer",
+    "name": "מייקאפ + קונסילר Stay הכל Day Foundation & Concealer",
     "category": "makeup",
     "categoryLabel": "איפור",
     "isVegan": false,
@@ -1972,6 +1972,227 @@
         "url": "https://example.com",
         "meta": "מותג ישראלי (דוגמה)",
         "price": 70
+      }
+    ]
+  },
+  {
+    "id": "baylis-and-harding-men-body-set-the-fuzzy-duck-bergamot-hemp",
+    "brand": "Baylis & Harding",
+    "name": "סט מתנה יוקרתי לגברים – תיק טיפוח עם ברגמוט, המפ ואלגום",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "men-body-set",
+    "productTypeLabel": "סט רחצה לגבר",
+    "vegan": true,
+    "peta": true,
+    "lb": false,
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/3LLQX6G",
+    "tags": [
+      "Vegan",
+      "PETA",
+      "Men"
+    ],
+    "priceMin": 55,
+    "priceMax": 75,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3LLQX6G",
+        "meta": "אמזון ארה״ב",
+        "price": 65,
+        "freeShipOver": 170
+      }
+    ],
+    "categories": [
+      "body",
+      "mens-care"
+    ]
+  },
+  {
+    "id": "grace-and-stella-face-accessory-face-pads-for-toner-essence",
+    "brand": "grace & stella",
+    "name": "פדים לפנים לטונר/אסנס ומסכות ביתיות (100 יח׳) – רכים וללא סיבים לניקוי וטיפוח",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-accessory",
+    "productTypeLabel": "אביזרי פנים",
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "isIsrael": false,
+    "size": "100 יח׳",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/3Zan3vU",
+    "tags": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "priceMin": 25,
+    "priceMax": 45,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3Zan3vU",
+        "meta": "אמזון ארה״ב",
+        "price": 35,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "the-humble-co-oral-care-dental-floss-picks-for-teeth",
+    "brand": "The Humble Co",
+    "name": "קיסמי חוט דנטלי, 200 יח׳ (מנטה) – חוט כפול לניקוי בין השיניים ושמירה על החניכיים",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "oral-care",
+    "productTypeLabel": "טיפוח פה ושיניים",
+    "vegan": true,
+    "peta": true,
+    "lb": false,
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "isIsrael": false,
+    "size": "200 יח׳",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/4qQPGdt",
+    "tags": [
+      "Vegan",
+      "PETA"
+    ],
+    "priceMin": 45,
+    "priceMax": 65,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4qQPGdt",
+        "meta": "אמזון ארה״ב",
+        "price": 55,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "r-co-shampoo-conditioner-set-atlantis-moisturizing-b5-shamp",
+    "brand": "R+Co",
+    "name": "סט שמפו ומרכך Atlantis עם B5 – לחות עמוקה ושיקום לשיער יבש (2×8.5oz)",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "shampoo-conditioner-set",
+    "productTypeLabel": "סט שמפו + מרכך",
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "isIsrael": false,
+    "size": "8.5oz x2",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/4swvT4G",
+    "tags": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "priceMin": 205,
+    "priceMax": 225,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4swvT4G",
+        "meta": "אמזון ארה״ב",
+        "price": 215,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "igk-conditioner-legendary-dream-hair-condition",
+    "brand": "IGK",
+    "name": "מרכך Dream Hair LEGENDARY – שיער בריא, לח ומבריק",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "conditioner",
+    "productTypeLabel": "מרכך",
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/4jL2kbQ",
+    "tags": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "priceMin": 255,
+    "priceMax": 275,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4jL2kbQ",
+        "meta": "אמזון ארה״ב",
+        "price": 265,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "p-r-minerals-face-moisturizer-4-in-1-cloud-cream-hydrating",
+    "brand": "PÜR MINERALS",
+    "name": "קרם לחות לפנים Cloud Cream 4-ב-1 – לחות מרוכזת ואנטי-אייג׳ינג",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-moisturizer",
+    "productTypeLabel": "קרם לחות לפנים",
+    "vegan": true,
+    "peta": true,
+    "lb": false,
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/3YErOOm",
+    "tags": [
+      "Vegan",
+      "PETA"
+    ],
+    "priceMin": 95,
+    "priceMax": 115,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3YErOOm",
+        "meta": "אמזון ארה״ב",
+        "price": 105,
+        "freeShipOver": 170
       }
     ]
   }

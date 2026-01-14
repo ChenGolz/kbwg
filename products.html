@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html dir="rtl" lang="he">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -10,21 +10,22 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <!-- Page-only typography (does not change header/site-wide typography) -->
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.css?v=2026-01-12-v6" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=2026-01-14-v12" rel="stylesheet"/>
 <link href="assets/img/logo.png" rel="icon" type="image/png"/>
 </head>
 <body class="page-products">
 <header class="siteHeader" id="siteHeader">
 <div class="wrap headerRow">
-<a aria-label="דף הבית" class="logo" href="index.html">
+<a aria-label="בית" class="logo" href="index.html">
 <img alt="Cruelty Free" class="logoImg" height="40" src="assets/img/logo.png" width="40"/>
 <span class="logoText">Cruelty Free</span>
 <span class="logoTag">לקנות בלי לפגוע</span>
 </a>
 <nav aria-label="ניווט ראשי" class="nav">
-<a class="navHomeMobile" href="index.html">דף הבית</a>
-<a aria-current="page" class="active" href="products.html">מוצרים</a>
-<a class="" href="shopping-calendar.html">מבצעים</a>
+<a class="navHomeMobile" href="index.html">בית</a>
+<a class="" href="todays-top-deals.html">מומלצי היום</a>
+<a class="" href="products.html">מוצרים</a>
+<a class="" href="shopping-calendar.html">סיילים חשובים</a>
 <a class="" href="israeli-brands.html">מותגים ישראליים</a>
 <a class="" href="recommended-brands.html">מותגים בינלאומיים</a>
 <a class="" href="ingredient-detective.html">רכיבים</a>
@@ -42,9 +43,9 @@
 <h1>לקנות בלי לפגוע</h1>
 <p>גלי מוצרים ללא ניסויים בבעלי חיים, סנני לפי העדפותייך ורכשי ישירות מהחנויות המובילות</p>
 <div class="badgeRow center-badges">
-<div class="trust-badge"><span aria-hidden="true" class="icon">🐰</span> PETA</div>
-<div class="trust-badge"><span aria-hidden="true" class="icon">🌿</span> טבעוני</div>
-<div class="trust-badge"><span aria-hidden="true" class="icon">🐇</span> ארנב קופץ</div>
+<div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🐰</span> PETA</div>
+<div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🌿</span> Vegan</div>
+<div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🐇</span> Leaping Bunny</div>
 </div>
 </div>
 </div>
@@ -94,6 +95,7 @@
 <button class="chip" data-cat="body" type="button">גוף ורחצה</button>
 <button class="chip" data-cat="makeup" type="button">איפור</button>
 <button class="chip" data-cat="fragrance" type="button">בישום</button>
+        <button class="chip" data-cat="mens-care">גברים</button>
 <button class="chip" data-cat="baby" type="button">תינוקות</button>
 <button class="chip" data-cat="health" type="button">בריאות</button>
 </div>
@@ -101,9 +103,9 @@
 <div class="filters-actions">
 <!-- שורת כפתורי סינון מהיר (תמיד גלויה) -->
 <div aria-label="מסננים מהירים" class="toggles-row">
-<label class="check-pill"><input id="onlyLB" type="checkbox"/> ארנב קופץ</label>
-<label class="check-pill"><input id="onlyPeta" type="checkbox"/> PETA</label>
-<label class="check-pill"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyPeta" type="checkbox"/> PETA</label>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
 <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
 <label class="check-pill"><input id="onlyMen" type="checkbox"/> טיפוח לגבר</label>
 </div>
@@ -166,16 +168,14 @@
 </div>
 </section>
 </main>
-
-
 <footer class="siteFooter">
 <div class="wrap">
 <div aria-label="ציטוטים" class="footerQuotes">
-<span class="quotePill">אדיבות היא הדת שלי</span><span class="quotePill">חיה ותן לחיות</span><span class="quotePill">חמלה היא האופנה הכי טובה</span><span class="quotePill">היי טובה לכל היצורים</span>
+<span class="quotePill">חמלה היא דרך חיים</span><span class="quotePill">חיה ותן לחיות</span><span class="quotePill">חמלה היא האופנה הכי יפה</span><span class="quotePill">היו טובים לכל היצורים</span>
 </div>
 <p class="muted">גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך. התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים. איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע. אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.</p>
 </div>
 </footer>
-<script defer="True" src="assets/js/products-json-loader.js?v=2026-01-12-v6"></script><script defer="" src="assets/js/site.js?v=2026-01-12-v6"></script>
+<script defer="True" src="assets/js/products-json-loader.js?v=2026-01-12-v6"></script><script defer="" src="assets/js/site.js?v=2026-01-14-v12"></script>
 </body>
 </html>

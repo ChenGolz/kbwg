@@ -1,5 +1,5 @@
 /**
- * KBWG Price Tier helpers (no build step; works on GitHub Pages).
+ * KBWG מחיר Tier helpers (no build step; works on GitHub Pages).
  *
  * Shows price level as $$$$$ where inactive $ are gray.
  *
@@ -39,8 +39,8 @@
     var t = Math.max(1, Math.min(5, Number(tier) || 3));
 
     var wrap = document.createElement('span');
-    wrap.className = 'price-tier' + (opts.size === 'sm' ? ' price-tier--sm' : '');
-    wrap.setAttribute('aria-label', 'Price level: ' + t + ' out of 5');
+    wrap.className = 'price-tier price-tier--t' + t + (opts.size === 'sm' ? ' price-tier--sm' : '');
+    wrap.setAttribute('aria-label', 'מחיר level: ' + t + ' out of 5');
 
     for (var i = 1; i <= 5; i++) {
       var s = document.createElement('span');

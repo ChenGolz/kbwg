@@ -1,4 +1,4 @@
-// Products page logic (RTL-friendly, data-normalized, performant)
+// מוצרים page logic (RTL-friendly, data-normalized, performant)
 (function () {
   const qs = (s) => document.querySelector(s);
 
@@ -205,7 +205,8 @@ function normalizeProduct(p) {
     hair: "שיער",
     body: "גוף",
     makeup: "איפור",
-    fragrance: "בישום"
+    fragrance: "בישום",
+    "mens-care": "גברים"
   };
 
   function getPrimaryCategoryKey(p) {
@@ -601,9 +602,10 @@ function normalizeProduct(p) {
 
     if (!prices.length) return null;
 
-    // Use the average as an approximate "typical" price for bucketing
+    // Use priceMin when available (more stable for bucketing); fallback to avg of hints
     const avg = prices.reduce((sum, v) => sum + v, 0) / prices.length;
-    const basePrice = Math.max(0, Math.round(avg));
+    const hint = (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) ? p.priceMin : avg;
+    const basePrice = Math.max(0, Math.round(hint));
 
     let bucketMin;
     let bucketMax;
@@ -637,22 +639,22 @@ function normalizeProduct(p) {
 
     switch (region) {
       case "uk":
-        return "אמזון אנגליה";
+        return "אמזון אנגליה (Amazon UK)";
       case "us":
-        return "אמזון ארה״ב";
+        return "אמזון ארה״ב (Amazon US)";
       case "de":
-        return "אמזון גרמניה";
+        return "אמזון גרמניה (Amazon DE)";
       case "fr":
-        return "אמזון צרפת";
+        return "אמזון צרפת (Amazon FR)";
       case "il":
         return "אמזון ישראל";
       default:
-        return "אמזון בינלאומי";
+        return "אמזון בינלאומי (Amazon)";
     }
   }
 
   function buildSelects() {
-    // Brand dropdown
+    // מותג dropdown
     if (brandSelect) {
       unique(data.map((p) => p.brand)).forEach((b) => {
         const o = document.createElement("option");
@@ -741,7 +743,7 @@ function normalizeProduct(p) {
       // פילטר קטגוריות עליונות (chips)
       () => currentCat === "all" || getCats(p).includes(normCat(currentCat)),
 
-      // Brand
+      // מותג
       () => !brand || p.brand === brand,
 
       // Store
@@ -776,7 +778,7 @@ function normalizeProduct(p) {
         return best != null;
       },
 
-      // Price range
+      // מחיר range
       () => {
         if (!priceMinInput && !priceMaxInput) return true;
 
@@ -875,6 +877,11 @@ function normalizeProduct(p) {
     const s = document.createElement("span");
     s.className = "tag";
     s.textContent = label;
+    // Don’t translate certification tags/badges (Weglot)
+    if (/(Leaping Bunny|PETA|Vegan|INTL)/i.test(String(label))) {
+      s.setAttribute("data-wg-notranslate", "true");
+      s.classList.add("wg-notranslate");
+    }
     return s;
   }
 
@@ -955,8 +962,8 @@ function normalizeProduct(p) {
 
       const approvals = [];
       if (p.isPeta) approvals.push("PETA");
-      if (p.isVegan) approvals.push("טבעוני");
-      if (p.isLB) approvals.push("ארנב קופץ");
+      if (p.isVegan) approvals.push("Vegan");
+      if (p.isLB) approvals.push("Leaping Bunny");
 
       const bestOffer = getOfferWithMinFreeShip(p);
       if (bestOffer) {
@@ -971,9 +978,9 @@ function normalizeProduct(p) {
 
       const tags = document.createElement("div");
       tags.className = "tags";
-      if (p.isLB) tags.appendChild(tag("ארנב קופץ / CFI"));
+      if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
       if (p.isPeta) tags.appendChild(tag("PETA"));
-      if (p.isVegan) tags.appendChild(tag("טבעוני"));
+      if (p.isVegan) tags.appendChild(tag("Vegan"));
       if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
 
       const offerList = document.createElement("div");
@@ -1028,14 +1035,10 @@ function normalizeProduct(p) {
     });
 
     grid.replaceChildren(frag);
-
-    // Let Weglot detect newly-inserted DOM content (dynamic rendering)
-    try {
-      if (window.Weglot && typeof window.Weglot.refresh === "function") {
-        window.Weglot.refresh();
-      }
-    } catch (e) {}
-
+    // Refresh Weglot after dynamic content is rendered
+    if (window.Weglot && typeof window.Weglot.refresh === "function") {
+      window.Weglot.refresh();
+    }
 
     if (liveCount) liveCount.textContent = `${list.length} מוצרים`;
 
@@ -1070,7 +1073,7 @@ function bind() {
     }
   });
 
-  // Price inputs: change min/max, then click "עדכון טווח" or just blur to refresh
+  // מחיר inputs: change min/max, then click "עדכון טווח" or just blur to refresh
   if (priceMinInput) {
     ["change"].forEach((evt) => {
       priceMinInput.addEventListener(evt, () => {

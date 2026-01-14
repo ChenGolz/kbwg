@@ -30,10 +30,10 @@
 
   // Hero quote rotator (rotates through the 5 quotes)
   const QUOTES = [
-    "Be kind to all kinds.",
-    "Compassion is the best fashion.",
-    "Live and let live.",
-    "Kindness is my religion."
+    "היו טובים לכל היצורים.",
+    "חמלה היא האופנה הכי יפה.",
+    "חיה ותן לחיות.",
+    "חמלה היא דרך חיים."
   ];
 
   const el = document.querySelector('[data-quote]');
@@ -95,13 +95,13 @@
 
 
       const close = () => {
-        header.classList.remove('navOpen');
-        document.body.classList.remove('menuOpen');
+        header.classList.remove('navOpen'); header.classList.remove('navopen');
+        document.body.classList.remove('menuOpen'); document.body.classList.remove('menuopen');
         btn.setAttribute('aria-expanded', 'false');
       };
       const open = () => {
-        header.classList.add('navOpen');
-        document.body.classList.add('menuOpen');
+        header.classList.add('navOpen'); header.classList.add('navopen');
+        document.body.classList.add('menuOpen'); document.body.classList.add('menuopen');
         btn.setAttribute('aria-expanded', 'true');
       };
 
@@ -149,7 +149,7 @@
     }
   }
 
-    // Products page: collapsible Amazon US/UK info box
+    // מוצרים page: collapsible Amazon US/UK info box
     // Makes the heading "איך זה עובד עם אמזון ארה"ב ואנגליה?" clickable and toggles the extra details.
     document.addEventListener('DOMContentLoaded', function () {
       var btn = document.querySelector('.amazon-toggle');
@@ -445,7 +445,7 @@ function setupMobileFilterCollapse(){
         if (!metaEl) return;
 
         const parts = [];
-        // Category select
+        // קטגוריה select
         const sel = panel.querySelector('select');
         if (sel && sel.value && sel.value !== 'all' && sel.selectedOptions && sel.selectedOptions[0]){
           const t = (sel.selectedOptions[0].textContent || '').trim();
