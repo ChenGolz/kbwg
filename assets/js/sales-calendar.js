@@ -1,7 +1,4 @@
-
-  function kbwgNotifyRendered(){
-    try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){}
-  }
+function kbwgContentRendered(){ try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){} }
 /* Cruelty Free / KBWG – Shopping Calendar renderer (RTL) */
 (() => {
   const root = document.getElementById('agenda');
@@ -135,3 +132,7 @@
 
   document.addEventListener('DOMContentLoaded', render);
 })();
+
+
+// Weglot: notify after dynamic render
+kbwgContentRendered();

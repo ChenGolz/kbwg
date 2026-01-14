@@ -1,3 +1,4 @@
+function kbwgContentRendered(){ try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){} }
 // Build: 2026-01-12-v6
 try { window.KBWG_BRANDS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
 
@@ -81,42 +82,36 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     - Card click opens Amazon (prefer UK) if available; otherwise opens website.
 */
 (function () {
-
-  function kbwgNotifyRendered(){
-    try{ window.dispatchEvent(new Event('kbwg:content-rendered')); }catch(e){}
-  }
   'use strict';
 
   var PT = (window.KBWGPriceTier || {});
 
   var CAT_LABELS_INTL = {
-    'cosmetics': 'מוצרי איפור',
+    'baby-child': 'תינוקות וילדים',
+    'body-care': 'טיפוח הגוף',
+    'deodorant': 'דאודורנט',
+    'skincare': 'טיפוח עור',
+    'cleaning': 'ניקיון',
+    'cosmetics': 'קוסמטיקה',
+    'curly-hair': 'שיער מתולתל',
     'eyes': 'עיניים',
-    'lips': 'שפתיים',
-    'face': 'פנים',
+    'hair-color': 'צבע לשיער',
+    'haircare': 'טיפוח שיער',
+    'luxury-care': 'טיפוח יוקרתי',
+    'mens-care': 'טיפוח לגברים',
     'nails': 'ציפורניים',
-    'skincare': 'טיפוח לפנים',
-    'natural-skin': 'טיפוח לפנים',
-    'luxury-care': 'טיפוח לפנים',
-    'body-care': 'טיפוח לגוף',
-    'personal-care': 'טיפוח לגוף',
-    'soap': 'סבונים ודאודורנטים',
-    'deodorant': 'סבונים ודאודורנטים',
-    'hair': 'טיפוח לשיער',
-    'haircare': 'טיפוח לשיער',
-    'hair-color': 'צבעי שיער',
+    'natural-beauty': 'יופי טבעי',
+    'natural-care': 'טיפוח טבעי',
+    'natural-skin': 'טיפוח עור טבעי',
+    'paper': 'נייר',
+    'wipes': 'מגבונים',
+    'pet-care': 'טיפוח לחיות מחמד',
+    'soap': 'סבון',
+    'soap-bars': 'סבון מוצק',
     'sun': 'הגנה מהשמש',
-    'tanning': 'שיזוף עצמי',
-    'fragrance': 'בשמים',
-    'mens-care': 'בושם לגבר',
-    'baby-child': 'טיפוח לגוף',
-    'wellness': 'טיפוח לגוף',
-    'cleaning': 'טיפוח לגוף',
-    'pet-care': 'טיפוח לגוף',
-    'marketplace': 'סטים ומארזים',
-    'tattoo-care': 'טיפוח לגוף',
-    'natural-care': 'טיפוח לפנים',
-    'natural-beauty': 'טיפוח לפנים'
+    'tanning': 'שיזוף',
+    'tattoo-care': 'טיפול בקעקועים',
+    'wellness': 'וולנס'
   };
 
   var CAT_PRICE_TIER = {
@@ -207,56 +202,14 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     return s[0].toUpperCase();
   }
 
-  
-  var ALLOWED_CATS = [
-    'מוצרי איפור','עיניים','שפתיים','פנים','ציפורניים',
-    'אביזרי איפור','הלבנה וטיפוח השיניים',
-    'טיפוח לפנים','ניקוי ואיזון','קרם פנים','סרום',
-    'עיניים ושפתיים','פילינג ומסכות','סטים ומארזים',
-    'טיפוח לגוף','סבונים ודאודורנטים','קרמי גוף','קרמי ידיים','קרמי רגליים','פילינגים',
-    'טיפוח לשיער','טיפוח והזנה','עיצוב שיער','צבעי שיער','שמפו','מרכך','מסכה לשיער','מכשירי שיער',
-    'הגנה מהשמש','הגנה לפנים','הגנה לגוף',
-    'שיזוף עצמי',
-    'בשמים','בשמים לנשים','בושם לגבר'
-  ];
-
-  function normalizeCatLabel(pageKind, c){
-    var s = String(c || '').trim();
-    if (!s) return '';
-    // intl: translate token -> hebrew label
-    if (pageKind === 'intl'){
-      return (CAT_LABELS_INTL[s] || CAT_LABELS_INTL[s.toLowerCase()] || s);
-    }
-    // israel: map variants -> allowed labels
-    var t = s.replace(/[-_]/g,' ').trim();
-    if (t.indexOf('שן') !== -1 || t.indexOf('שיניים') !== -1) return 'הלבנה וטיפוח השיניים';
-    if (t.indexOf('בושם') !== -1 || t.indexOf('בשמים') !== -1 || t.indexOf('בישום') !== -1) return 'בשמים';
-    if (t.indexOf('איפור') !== -1 || t.indexOf('קוסמט') !== -1) return 'מוצרי איפור';
-    if (t.indexOf('שיער') !== -1) return 'טיפוח לשיער';
-    if (t.indexOf('פנים') !== -1 || t.indexOf('עור') !== -1) return 'טיפוח לפנים';
-    if (t.indexOf('גוף') !== -1 || t.indexOf('רחצה') !== -1) return 'טיפוח לגוף';
-    if (t.indexOf('דאודורנט') !== -1 || t.indexOf('סבון') !== -1) return 'סבונים ודאודורנטים';
-    if (t.indexOf('שמש') !== -1) return 'הגנה מהשמש';
-    if (t.indexOf('שיזוף') !== -1) return 'שיזוף עצמי';
-    if (t.indexOf('סט') !== -1 || t.indexOf('מארז') !== -1) return 'סטים ומארזים';
-    return s;
-  }
-
-  function uniq(arr){
-    var out=[], seen={};
-    (arr||[]).forEach(function(x){
-      var k=String(x||'').trim();
-      if(!k || seen[k]) return;
-      seen[k]=1; out.push(k);
-    });
-    return out;
-  }
-
   function labelForCategories(pageKind, cats) {
     if (!cats || !cats.length) return '';
-    var labels = cats.map(function (k) { return normalizeCatLabel(pageKind, k); }).filter(Boolean);
-    labels = uniq(labels);
-    return labels.join(' / ');
+    if (pageKind === 'intl') {
+      var labels = cats.map(function (k) { return CAT_LABELS_INTL[k] || k; });
+      return labels.join(' / ');
+    }
+    // israel: cats are already labels
+    return cats.join(' / ');
   }
 
   function buildPriceSelect(selectEl) {
@@ -377,9 +330,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     var nameLink = document.createElement('a');
     nameLink.className = 'brandName';
     nameLink.textContent = brand.name || '';
-    
-    if (pageKind === 'israel') { nameLink.setAttribute('data-wg-notranslate',''); }
-nameLink.href = brand.website || targetUrl || '#';
+    nameLink.href = brand.website || targetUrl || '#';
     nameLink.target = '_blank';
     nameLink.rel = 'nofollow noopener';
     stopLinkPropagation(nameLink);
@@ -630,3 +581,7 @@ nameLink.href = brand.website || targetUrl || '#';
     initPage();
   }
 })();
+
+
+// Weglot: notify after dynamic render
+kbwgContentRendered();
