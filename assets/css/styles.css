@@ -3591,3 +3591,126 @@ body.menuOpen .navOverlay{
   }
 }
 
+
+
+/* Desktop nav */
+@media (min-width: 921px){
+  .siteHeader .headerRow{
+    gap: 12px;
+  }
+
+  .siteHeader .nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px 10px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+  }
+
+  .siteHeader .nav a{
+    font-size: clamp(13px, 0.95vw, 15px);
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: rgba(15,23,42,.86);
+    padding: 8px 12px;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+
+  .siteHeader .nav a:hover{
+    background: rgba(15, 23, 42, 0.06);
+    color: rgba(15,23,42,.96);
+  }
+
+  /* Active page highlight (works if links already get .active / aria-current) */
+  .siteHeader .nav a[aria-current="page"],
+  .siteHeader .nav a.active{
+    background: rgba(15, 23, 42, 0.10);
+    color: rgba(15,23,42,.98);
+  }
+
+  /* CTA pill (the "לקנות בלי לפגוע" button) */
+  .siteHeader .ctaPill{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 999px;
+  }
+}
+
+/* Medium screens: slightly tighter to avoid wrapping too much */
+@media (min-width: 921px) and (max-width: 1100px){
+  .siteHeader .nav{
+    gap: 6px 8px;
+    padding: 8px 8px;
+  }
+  .siteHeader .nav a{
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
+
+/* ==== Top menu: keep in ONE ROW on desktop (v18) ==== */
+@media (min-width: 921px){
+  /* Keep header compact */
+  .siteHeader .headerRow{ gap: 12px; }
+
+  /* One-line nav */
+  .siteHeader .nav{
+    display: flex;
+    flex-wrap: nowrap;          /* IMPORTANT: one row */
+    white-space: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    overflow-x: auto;           /* fallback if screen is narrow */
+    scrollbar-width: none;      /* Firefox */
+  }
+  .siteHeader .nav::-webkit-scrollbar{ display: none; }
+
+  .siteHeader .nav a{
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: rgba(15,23,42,.86);
+    padding: 6px 10px;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background .15s ease, color .15s ease;
+  }
+  .siteHeader .nav a:hover{
+    background: rgba(15, 23, 42, 0.06);
+    color: rgba(15,23,42,.96);
+  }
+  .siteHeader .nav a[aria-current="page"],
+  .siteHeader .nav a.active{
+    background: rgba(15, 23, 42, 0.10);
+    color: rgba(15,23,42,.98);
+  }
+
+  /* CTA pill */
+  .siteHeader .ctaPill{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}
+
+/* Slightly tighter on mid-size desktops */
+@media (min-width: 921px) and (max-width: 1100px){
+  .siteHeader .nav{ gap: 6px; }
+  .siteHeader .nav a{ font-size: 13px; padding: 6px 9px; }
+}
+
