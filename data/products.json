@@ -408,7 +408,7 @@
   {
     "id": "bellapierre-banana-setting-powder-014oz",
     "brand": "Bellapierre",
-    "name": "Banana פודרה בננה לקיבוע והבהרה",
+    "name": "פודרה בננה לקיבוע והבהרה",
     "category": "makeup",
     "categoryLabel": "איפור",
     "productTypeKey": "setting-powder",
@@ -497,37 +497,7 @@
         "freeShipOver": 170
       }
     ]
-  },
-  {
-    "id": "bellapierre-banana-setting-powder-medium-duplicate",
-    "brand": "Bellapierre",
-    "name": "Banana Setting Powder – גוון Medium",
-    "category": "makeup",
-    "categoryLabel": "איפור",
-    "productTypeKey": "setting-powder",
-    "productTypeLabel": "פודרה לקיבוע",
-    "isVegan": false,
-    "isPeta": false,
-    "isLB": true,
-    "vegan": false,
-    "peta": false,
-    "lb": true,
-    "isIsrael": false,
-    "size": "0.14 oz",
-    "storeRegion": "us",
-    "priceMin": 0,
-    "priceMax": 50,
-    "updated": "2026-01-03",
-    "image": "",
-    "offers": [
-      {
-        "store": "Amazon",
-        "url": "https://amzn.to/3YT7FE2",
-        "meta": "אמזון ארה״ב",
-        "price": 50,
-        "freeShipOver": 170
-      }
-    ]
+
   },
   {
     "id": "bellapierre-mineral-blush-autumn-glow",
@@ -1395,8 +1365,8 @@
     "isIsrael": false,
     "size": "",
     "storeRegion": "us",
-    "priceMin": 0,
-    "priceMax": 50,
+    "priceMin": 50,
+    "priceMax": 100,
     "updated": "2026-01-04",
     "image": "",
     "offers": [
@@ -2225,8 +2195,8 @@
       "Vegan",
       "Leaping Bunny"
     ],
-    "priceMin": 25,
-    "priceMax": 45,
+    "priceMin": 0,
+    "priceMax": 50,
     "updated": "2026-01-14",
     "offers": [
       {
