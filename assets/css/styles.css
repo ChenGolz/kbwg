@@ -3545,7 +3545,7 @@ html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, 
   .productsResults .productCard .pName{ -webkit-line-clamp: 2; }
 }
 
-@media (max-width: 420px){
+@media (max-width: 360px){
   .brandGrid{ grid-template-columns: 1fr; }
   .page-deals .dealsGrid{ grid-template-columns: 1fr; }
   .product-grid{ grid-template-columns: 1fr !important; }
