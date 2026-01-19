@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "id": "bundle-kids-hair-oral",
+    "title": "באנדל ילדים: שיער + ניקוי + היגיינת פה",
+    "subtitle": "סט יומיומי לילדים — מגיע לכ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["ילדים ותינוקות", "עיצוב שיער", "הלבנה וטיפוח השיניים"],
+    "items": [
+      "attitude-b07qttx153",
+      "attitude-b07vc8bzb1",
+      "attitude-b09p5yn72x"
+    ]
+  },
+  {
+    "id": "bundle-baby-soft",
+    "title": "באנדל לתינוקות: לחות + ניקוי",
+    "subtitle": "מומלץ לעור רגיש — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["ילדים ותינוקות", "טיפוח לגוף"],
+    "items": [
+      "attitude-b07j4khsmc",
+      "attitude-b07mzcn118",
+      "attitude-b07qttx153"
+    ]
+  },
+  {
+    "id": "bundle-hair-bar-oral",
+    "title": "באנדל שיער + נשימה רעננה",
+    "subtitle": "שילוב קל ונוח — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["עיצוב שיער", "הלבנה וטיפוח השיניים"],
+    "items": [
+      "attitude-b07mzcn118",
+      "attitude-b09p5yn72x",
+      "attitude-b09s2xbshn"
+    ]
+  },
+  {
+    "id": "bundle-sensitive-family",
+    "title": "באנדל משפחתי לעור רגיש",
+    "subtitle": "לגוף ולילדים — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["טיפוח לגוף", "ילדים ותינוקות"],
+    "items": [
+      "attitude-b07nf645hb",
+      "attitude-b07rwp838s",
+      "attitude-b09p5yn72x"
+    ]
+  },
+  {
+    "id": "bundle-kids-soap-pack",
+    "title": "באנדל סבון קצף לילדים + מרכך לקרקפת",
+    "subtitle": "שילוב שמגיע ליעד — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["ילדים ותינוקות", "עיצוב שיער"],
+    "items": [
+      "attitude-b0fj9vmk3k",
+      "attitude-b097mm895y"
+    ]
+  },
+  {
+    "id": "bundle-dry-hair-duo",
+    "title": "באנדל שיער יבש: שמפו + מרכך (גדולים)",
+    "subtitle": "דואו לשיקום והזנה — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["עיצוב שיער"],
+    "items": [
+      "attitude-b08yfby7xl",
+      "attitude-b08yfcz7b7"
+    ]
+  },
+  {
+    "id": "bundle-bath-and-body",
+    "title": "באנדל אמבטיה וגוף",
+    "subtitle": "לרחצה יומיומית — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["טיפוח לגוף", "ילדים ותינוקות"],
+    "items": [
+      "attitude-b07vc8bzb1",
+      "attitude-b07j4khsmc",
+      "attitude-b0c15qw2q1"
+    ]
+  },
+  {
+    "id": "bundle-extra-hair-body",
+    "title": "באנדל תוספת: גוף + שיער",
+    "subtitle": "עוד אופציה שמגיעה ליעד — כ־160–170₪ (משוער) לפי שער המרה.",
+    "tags": ["טיפוח לגוף", "עיצוב שיער"],
+    "items": [
+      "attitude-b07mzcn118",
+      "attitude-b0c15qw2q1",
+      "attitude-b097mm895y"
+    ]
+  }
+]
