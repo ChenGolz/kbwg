@@ -127,7 +127,7 @@
         "url": "https://www.amazon.com/ATTITUDE-Dermatologically-Mineral-Based-Ingredients-Watermelon/dp/B0FJ9VMK3K?tag=nocrueltyil-20",
         "asin": "B0FJ9VMK3K",
         "currency": "USD",
-        "priceUSD": 23.71,
+        "priceUSD": 7.9,
         "freeShipOver": 49
       }
     ],
@@ -178,7 +178,7 @@
         "url": "https://www.amazon.com/ATTITUDE-Natural-Protects-Watercress-Verified/dp/B0F7T7XVHN?tag=nocrueltyil-20",
         "asin": "B0F7T7XVHN",
         "currency": "USD",
-        "priceUSD": 38.32,
+        "priceUSD": 6.39,
         "freeShipOver": 49
       }
     ]
@@ -254,7 +254,7 @@
         "url": "https://www.amazon.com/ATTITUDE-Conditioner-Ingredients-Verified-Eucalyptus/dp/B0FQDX4WBY?tag=nocrueltyil-20",
         "asin": "B0FQDX4WBY",
         "currency": "USD",
-        "priceUSD": 39.14,
+        "priceUSD": 13.05,
         "freeShipOver": 49
       }
     ],
@@ -281,7 +281,7 @@
         "url": "https://www.amazon.com/ATTITUDE-Natural-Ingredients-Verified-Eucalyptus/dp/B0F7SHJM5P?tag=nocrueltyil-20",
         "asin": "B0F7SHJM5P",
         "currency": "USD",
-        "priceUSD": 36.17,
+        "priceUSD": 6.03,
         "freeShipOver": 49
       }
     ],
@@ -412,118 +412,6 @@
         "currency": "USD",
         "priceUSD": 17.6,
         "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "alleyoop-b0dffbhgb7",
-    "brand": "ALLEYOOP",
-    "name": "עיפרון גבות 4‑ב‑1 עם מחדד ומברשת (Taupe)",
-    "categories": [
-      "makeup"
-    ],
-    "tags": [
-      "vegan",
-      "peta",
-      "leaping-bunny"
-    ],
-    "isVegan": true,
-    "isCrueltyFree": true,
-    "isPeta": true,
-    "isLeapingBunny": true,
-    "priceMin": 50,
-    "priceMax": 150,
-    "offers": [
-      {
-        "label": "Amazon US",
-        "url": "https://www.amazon.com/ALLEYOOP-Definition-Built-Sharpener-Spoolie/dp/B0DFFBHGB7?th=1&tag=nocrueltyil-20&language=en_US",
-        "price": 19.2,
-        "currency": "USD",
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "alleyoop-b08xbz865d",
-    "brand": "ALLEYOOP",
-    "name": "סטיק צללית קרם 11th Hour – Coffee Break (מאט)",
-    "categories": [
-      "makeup"
-    ],
-    "tags": [
-      "vegan",
-      "peta",
-      "leaping-bunny"
-    ],
-    "isVegan": true,
-    "isCrueltyFree": true,
-    "isPeta": true,
-    "isLeapingBunny": true,
-    "priceMin": 50,
-    "priceMax": 150,
-    "offers": [
-      {
-        "label": "Amazon US",
-        "url": "https://www.amazon.com/Alleyoop-Cream-Eyeshadow-Sticks-Matte/dp/B08XBZ865D?th=1&tag=nocrueltyil-20&language=en_US",
-        "price": 16.0,
-        "currency": "USD",
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "alleyoop-b0bvgrlfkg",
-    "brand": "ALLEYOOP",
-    "name": "קונסילר Game Face – All Star (0.19 fl oz)",
-    "categories": [
-      "makeup"
-    ],
-    "tags": [
-      "vegan",
-      "peta",
-      "leaping-bunny"
-    ],
-    "isVegan": true,
-    "isCrueltyFree": true,
-    "isPeta": true,
-    "isLeapingBunny": true,
-    "priceMin": 50,
-    "priceMax": 150,
-    "offers": [
-      {
-        "label": "Amazon US",
-        "url": "https://www.amazon.com/Alleyoop-Concealer-Makeup-Under-Eye-Dark-Spot/dp/B0BVGRLFKG?th=1&tag=nocrueltyil-20&language=en_US",
-        "price": 34.96,
-        "currency": "USD",
-        "freeShipOver": 50
-      }
-    ]
-  },
-  {
-    "id": "alleyoop-b08xbd2cbt",
-    "brand": "ALLEYOOP",
-    "name": "פלטת קרמים Stack The Odds – סומק/ברונזר/היילייטר (Sunkissed)",
-    "categories": [
-      "makeup"
-    ],
-    "tags": [
-      "vegan",
-      "peta",
-      "leaping-bunny"
-    ],
-    "isVegan": true,
-    "isCrueltyFree": true,
-    "isPeta": true,
-    "isLeapingBunny": true,
-    "priceMin": 50,
-    "priceMax": 150,
-    "offers": [
-      {
-        "label": "Amazon US",
-        "url": "https://www.amazon.com/Alleyoop-Blush-Bronzer-Highlighter-Trio-Face-Makeup/dp/B08XBD2CBT?th=1&tag=nocrueltyil-20&language=en_US",
-        "price": 30.99,
-        "currency": "USD",
-        "freeShipOver": 50
       }
     ]
   }
