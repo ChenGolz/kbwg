@@ -85,83 +85,66 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
   var PT = (window.KBWGPriceTier || {});
 
-  // Unified categories – aligned with site-wide top-level product groups (Hebrew).
-  // These labels are used in the category filter and inside brand cards.
+  // Unified categories – must match the Products page filters.
   var CAT_LABELS = {
-    makeup: 'מוצרי איפור',
-    face: 'טיפוח לפנים',
-    teeth: 'הלבנה וטיפוח השיניים',
-    body: 'טיפוח לגוף',
-    hair: 'עיצוב שיער',
-    sun: 'הגנה מהשמש',
-    fragrance: 'בשמים',
-    baby: 'ילדים ותינוקות',
-    men: 'גברים'
+    face: 'טיפוח פנים',
+    hair: 'שיער',
+    body: 'גוף ורחצה',
+    makeup: 'איפור',
+    fragrance: 'בישום',
+    'mens-care': 'גברים',
+    baby: 'תינוקות',
+    health: 'בריאות'
   };
 
-  // Map raw/legacy category strings from JSON into the unified keys above.
+  // Map legacy/varied categories from JSON into the unified set.
   var INTL_TO_UNIFIED = {
-    // face / skincare
     skincare: 'face',
-    'skin care': 'face',
-    face: 'face',
+    'natural-skin': 'face',
+    eyes: 'face',
 
-    // makeup
-    makeup: 'makeup',
-    cosmetics: 'makeup',
-    'makeup tools': 'makeup',
-    nails: 'makeup',
-
-    // hair
-    hair: 'hair',
     haircare: 'hair',
+    'curly-hair': 'hair',
+    'hair-color': 'hair',
 
-    // body
-    body: 'body',
     'body-care': 'body',
+    deodorant: 'body',
     soap: 'body',
     'soap-bars': 'body',
-    deodorant: 'body',
+    sun: 'body',
+    tanning: 'body',
+    'tattoo-care': 'body',
 
-    // sun
-    sun: 'sun',
-    suncare: 'sun',
-    spf: 'sun',
+    cosmetics: 'makeup',
+    'makeup tools': 'makeup',
+    'makeup tools ': 'makeup',
+    nails: 'makeup',
 
-    // baby & kids
-    baby: 'baby',
-    kids: 'baby',
-    'baby&kids': 'baby',
+    fragrance: 'fragrance',
+
+    'mens-care': 'mens-care',
+
     'baby-child': 'baby',
 
-    // men
-    men: 'men',
-    mens: 'men',
-    "men's": 'men',
-    'mens-care': 'men',
-
-    // teeth
-    teeth: 'teeth',
-    dental: 'teeth',
-    oral: 'teeth',
-
-    // fragrance
-    fragrance: 'fragrance',
-    perfume: 'fragrance',
-    perfumes: 'fragrance'
+    wellness: 'health',
+    health: 'health',
+    'personal care': 'health',
+    'personal-care': 'health',
+    cleaning: 'health',
+    paper: 'health',
+    wipes: 'health',
+    'pet-care': 'health'
   };
 
-  // Optional: use categories to infer price tier when priceTier is missing.
   var CAT_PRICE_TIER = {
-    makeup: 3,
     face: 3,
-    teeth: 2,
-    body: 3,
     hair: 3,
-    sun: 3,
+    body: 3,
+    makeup: 3,
     fragrance: 4,
+    'mens-care': 3,
     baby: 2,
-    men: 3
+    health: 2
   };
 
   function toUnifiedCat(pageKind, raw) {
@@ -185,7 +168,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     if (he.indexOf('גוף') !== -1 || he.indexOf('רחצה') !== -1 || he.indexOf('סבון') !== -1 || he.indexOf('דאוד') !== -1) return 'body';
     if (he.indexOf('איפור') !== -1 || he.indexOf('ציפור') !== -1) return 'makeup';
     if (he.indexOf('בישום') !== -1 || he.indexOf('בושם') !== -1 || he.indexOf('בושמי') !== -1) return 'fragrance';
-    if (he.indexOf('שמש') !== -1 || he.indexOf('spf') !== -1) return 'sun';
     if (he.indexOf('גבר') !== -1) return 'mens-care';
     if (he.indexOf('תינוק') !== -1 || he.indexOf('ילד') !== -1) return 'baby';
     if (he.indexOf('בריאות') !== -1 || he.indexOf('שיניים') !== -1 || he.indexOf('היגיינ') !== -1 || he.indexOf('וולנס') !== -1) return 'health';
@@ -271,7 +253,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     return s[0].toUpperCase();
   }
 
-  function normalizeCatsRaw(raw) {
+  function normalizeCats(raw) {
     if (!raw) return [];
     if (Array.isArray(raw)) return raw.map(function (x) { return String(x || '').trim(); }).filter(Boolean);
     if (typeof raw === 'string') {
@@ -324,12 +306,12 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     var isMen = /גבר|גברים|men's|for men|for him|pour homme/i.test(nameLower);
 
     if (catKey === 'makeup') return 'מוצרי איפור';
-    if (catKey === 'face') return isMen ? 'גברים' : 'טיפוח לפנים';
-    if (catKey === 'body') return isMen ? 'גברים' : 'טיפוח לגוף';
-    if (catKey === 'hair') return isMen ? 'גברים' : 'עיצוב שיער';
+    if (catKey === 'face') return isMen ? 'טיפוח לגבר' : 'טיפוח לפנים';
+    if (catKey === 'body') return isMen ? 'טיפוח לגבר' : 'טיפוח לגוף';
+    if (catKey === 'hair') return isMen ? 'טיפוח לגבר' : 'עיצוב שיער';
     if (catKey === 'fragrance') return 'בשמים';
     if (catKey === 'sun' || catKey === 'suncare' || catKey === 'spf') return 'הגנה מהשמש';
-    if (isMen) return 'גברים';
+    if (isMen) return 'טיפוח לגבר';
     return 'אחר';
   }
 
@@ -385,7 +367,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     // Sun
     if (group === 'הגנה מהשמש') return 'SPF';
     if (group === 'בשמים') return 'בישום';
-    if (group === 'גברים') return 'גברים';
+    if (group === 'טיפוח לגבר') return 'טיפוח לגבר';
 
     return 'אחר';
   }
@@ -409,7 +391,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       'עיצוב שיער',
       'הגנה מהשמש',
       'בשמים',
-      'גברים',
+      'טיפוח לגבר',
       'אחר'
     ];
 
@@ -478,10 +460,11 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     'טיפוח לפנים',
     'הלבנה וטיפוח השיניים',
     'טיפוח לגוף',
+    'לבית',
     'עיצוב שיער',
     'הגנה מהשמש',
     'בשמים',
-    'גברים',
+    'טיפוח לגבר',
     'ילדים ותינוקות'
   ];
 
@@ -510,22 +493,24 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     if (s.indexOf('פנים') !== -1 || s.indexOf('עור') !== -1) return 'טיפוח לפנים';
     if (s.indexOf('שיניים') !== -1 || s.indexOf('פה') !== -1) return 'הלבנה וטיפוח השיניים';
     if (s.indexOf('גוף') !== -1 || s.indexOf('רחצה') !== -1) return 'טיפוח לגוף';
+    if (s.indexOf('בית') !== -1 || s.indexOf('ניקיון') !== -1) return 'לבית';
     if (s.indexOf('שיער') !== -1) return 'עיצוב שיער';
     if (s.indexOf('שמש') !== -1 || s.indexOf('spf') !== -1) return 'הגנה מהשמש';
     if (s.indexOf('ילדים') !== -1 || s.indexOf('תינוק') !== -1) return 'ילדים ותינוקות';
     if (s.indexOf('בושם') !== -1 || s.indexOf('בשמים') !== -1 || s.indexOf('בישום') !== -1) return 'בשמים';
-    if (s.indexOf('גבר') !== -1 || s.indexOf('לגבר') !== -1) return 'גברים';
+    if (s.indexOf('גבר') !== -1 || s.indexOf('לגבר') !== -1) return 'טיפוח לגבר';
 
     // English / sluggy keys
     if (/(makeup|cosmetic|cosmetics|nails|lip|eye)/.test(lower)) return 'מוצרי איפור';
     if (/(skin|skincare|face|serum|cleanser|toner|moistur)/.test(lower)) return 'טיפוח לפנים';
     if (/(tooth|teeth|dental|oral|floss)/.test(lower)) return 'הלבנה וטיפוח השיניים';
     if (/(body|personal\s*-?care|bath|soap|deodor)/.test(lower)) return 'טיפוח לגוף';
+    if (/(home|house|household|cleaning|laundry|dish)/.test(lower)) return 'לבית';
     if (/(hair|shampoo|conditioner|styling)/.test(lower)) return 'עיצוב שיער';
     if (/(sun|suncare|spf|sunscreen)/.test(lower)) return 'הגנה מהשמש';
     if (/(baby|babies|kid|kids|children|child)/.test(lower)) return 'ילדים ותינוקות';
     if (/(fragrance|perfume|cologne)/.test(lower)) return 'בשמים';
-    if (/(men|mens|man|beard|shave|groom|pour\s*homme)/.test(lower)) return 'גברים';
+    if (/(men|mens|man|beard|shave|groom|pour\s*homme)/.test(lower)) return 'טיפוח לגבר';
 
     return '';
   }
@@ -550,27 +535,24 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     var bkey = brandKey(brandObj && brandObj.name ? brandObj.name : '');
     var set = bkey ? brandTypeKeys.get(bkey) : null;
 
-    var groups = [];
-
-    // 1) From products.json (accurate for what we currently list)
+    // From products.json (most accurate)
     if (set && set.size) {
-      groups = Array.from(set)
+      var groups = Array.from(set)
         .map(function (typeKey) { return String(typeKey || '').split('::')[0].trim(); })
         .filter(Boolean);
+
+      // Keep only our allowed top-level groups
       groups = groups.filter(function (g) { return TOP_LEVEL_ORDER.indexOf(g) !== -1; });
       groups = uniqStrings(groups);
+      if (groups.length) return groups;
     }
 
-    // 2) Always ALSO include the brand JSON categories (so a brand can appear in a category
-    // even if we currently list only a few products for it).
+    // Fallback: infer from the brand JSON categories (mapped into our top-level list)
     var fromBrand = inferTopLevelsFromBrandJson(pageKind, brandObj);
-    if (fromBrand.length) {
-      groups = uniqStrings(groups.concat(fromBrand));
-    }
-
-    if (groups.length) return groups;
+    if (fromBrand.length) return fromBrand;
 
     // Last resort heuristic: if absolutely nothing is known, avoid “אחר” and pick a conservative default.
+    // (Prefer “טיפוח לפנים”, since most brands in our DB are skincare-forward.)
     return ['טיפוח לפנים'];
   }
 
@@ -652,12 +634,12 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     var isMen = /גבר|גברים|men's|for men|for him|pour homme/i.test(nameLower);
 
     if (catKey === 'makeup') return 'מוצרי איפור';
-    if (catKey === 'face') return isMen ? 'גברים' : 'טיפוח לפנים';
-    if (catKey === 'body') return isMen ? 'גברים' : 'טיפוח לגוף';
-    if (catKey === 'hair') return isMen ? 'גברים' : 'עיצוב שיער';
+    if (catKey === 'face') return isMen ? 'טיפוח לגבר' : 'טיפוח לפנים';
+    if (catKey === 'body') return isMen ? 'טיפוח לגבר' : 'טיפוח לגוף';
+    if (catKey === 'hair') return isMen ? 'טיפוח לגבר' : 'עיצוב שיער';
     if (catKey === 'fragrance') return 'בשמים';
     if (catKey === 'sun' || catKey === 'suncare' || catKey === 'spf') return 'הגנה מהשמש';
-    if (isMen) return 'גברים';
+    if (isMen) return 'טיפוח לגבר';
     return 'אחר';
   }
 
@@ -718,7 +700,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       return 'שיניים';
     }
 
-    if (group === 'גברים') {
+    if (group === 'טיפוח לגבר') {
       if (containsAny(lower, ['beard','זקן'])) return 'זקן';
       if (containsAny(lower, ['shave','גילוח'])) return 'גילוח';
       return 'כללי';

@@ -126,15 +126,8 @@
   }
 
   function priceTierHtml(tier) {
-    var t = Math.max(1, Math.min(5, toNumber(tier) || 3));
-    var cls = 'price-tier price-tier--t' + t + ' price-tier--sm';
-    var label = 'רמת מחיר: ' + t + ' מתוך 5';
-    var s = '<span aria-label="' + label + '" class="' + cls + '">';
-    for (var i = 1; i <= 5; i++) {
-      s += '<span class="dollar' + (i <= t ? '' : ' inactive') + '">$</span>';
-    }
-    s += '</span>';
-    return s;
+    // Bundles page: requested to remove the "price tier" (dollar signs) entirely.
+    return '';
   }
 
   function dedupeById(arr) {
@@ -254,8 +247,14 @@ var state = {
     grid.innerHTML = '';
 
     state.bundles.forEach(function (b) {
-      var subtotal = bundleSubtotal(b);
-      var toFree = Math.max(0, FREE_SHIP_USD - subtotal);
+      // subtotal is used for the Amazon free-shipping progress (USD).
+      var subtotalUSD = bundleSubtotal(b);
+      var toFree = Math.max(0, FREE_SHIP_USD - subtotalUSD);
+
+      // Display price: prefer explicit totalILS from bundles.json (keeps 160–170₪ bundles stable).
+      var displayILS = (b.totalILS != null && !isNaN(Number(b.totalILS)))
+        ? formatILS(Number(b.totalILS))
+        : formatILSFromUSD(subtotalUSD);
       var tags = [];
       tags.push('Amazon US');
       tags.push('Vegan');
@@ -276,7 +275,7 @@ var state = {
         '</div>' +
         '<div class="bundleCta">' +
           '<div>' +
-            '<div class="bundlePrice">' + formatILSFromUSD(subtotal) + '</div>' +
+            '<div class="bundlePrice">' + displayILS + '</div>' +
             '<div class="noteTiny">' + (toFree > 0 ? ('עוד ' + formatILSFromUSD(toFree) + ' כדי להגיע למשלוח חינם ($49+)') : 'מעולה! הבאנדל מעל $49+') + '</div>' +
           '</div>' +
           '<button type="button" class="bundleBtn" data-bundle-id="' + safeText(b.id) + '">פתחי באנ‏דל</button>' +
@@ -528,14 +527,17 @@ var state = {
         var title = String(b.title || 'באנדל');
         var subtitle = String(b.subtitle || '');
         var tags = Array.isArray(b.tags) ? b.tags : [];
-        var itemIds = Array.isArray(b.items) ? b.items : [];
+        // Support both shapes:
+        // - new: { itemIds: [...] , total_ils: 169 }
+        // - old: { items: [...] }
+        var itemIds = Array.isArray(b.itemIds) ? b.itemIds : (Array.isArray(b.items) ? b.items : []);
         var items = itemIds
           .map(function (pid) {
             var p = state.productsById[String(pid)];
             return p ? ({ product: p }) : null;
           })
           .filter(Boolean);
-        return { id: id, title: title, subtitle: subtitle, tags: tags, items: items };
+        return { id: id, title: title, subtitle: subtitle, tags: tags, items: items, totalILS: b.total_ils };
       })
       .filter(function (b) { return b.items && b.items.length >= 2; });
   }
