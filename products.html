@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>חנות ומאגר מוצרים | Cruelty Free</title>
+<title>חנות ומאגר מוצרים | ללא ניסויים</title>
 <meta content="קטלוג קניות ללא ניסויים בבעלי חיים עם סינון חכם וקישורי קנייה" name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -17,12 +17,13 @@
 <header class="siteHeader" id="siteHeader">
 <div class="wrap headerRow">
 <a aria-label="בית" class="logo" href="index.html">
-<img alt="Cruelty Free" class="logoImg" height="40" src="assets/img/logo.png" width="40"/>
-<span class="logoText">Cruelty Free</span>
+<img alt="ללא ניסויים" class="logoImg" height="40" src="assets/img/logo.png" width="40"/>
+<span class="logoText">ללא ניסויים</span>
 </a>
 <nav aria-label="ניווט ראשי" class="nav">
 <a class="" href="todays-top-deals.html">מומלצי היום</a>
 <a class="" href="products.html">מוצרים</a>
+<a class="" href="bundles.html">באנדלים</a>
 <a class="" href="shopping-calendar.html">סיילים</a>
 <a class="" href="israeli-brands.html">תוצרת הארץ</a>
 <a class="" href="recommended-brands.html">מותגים בינלאומים</a>
@@ -41,9 +42,9 @@
 <h1>לקנות בלי לפגוע</h1>
 <p>גלי מוצרים ללא ניסויים בבעלי חיים, סנני לפי העדפותייך ורכשי ישירות מהחנויות המובילות</p>
 <div class="badgeRow center-badges">
-<div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🐰</span> PETA</div>
-<div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🌿</span> Vegan</div>
-<div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🐇</span> Leaping Bunny</div>
+<div class="trust-badge" ><span aria-hidden="true" class="icon">🐰</span> PETA</div>
+<div class="trust-badge" ><span aria-hidden="true" class="icon">🌿</span> Vegan</div>
+<div class="trust-badge" ><span aria-hidden="true" class="icon">🐇</span> ליפינג באני</div>
 </div>
 </div>
 </div>
@@ -85,25 +86,18 @@
 <input aria-label="חיפוש מוצרים" autocomplete="off" id="q" placeholder="מה בא לך לחפש היום? (מותג, מוצר...)" type="search"/>
 <button aria-hidden="true" class="search-btn" type="button">🔍</button>
 </div>
-<div aria-label="קטגוריות" class="chips-scroll-container">
-<div class="chipsRow">
-<button class="chip active" data-cat="all" type="button">הכל</button>
-<button class="chip" data-cat="face" type="button">טיפוח פנים</button>
-<button class="chip" data-cat="hair" type="button">שיער</button>
-<button class="chip" data-cat="body" type="button">גוף ורחצה</button>
-<button class="chip" data-cat="makeup" type="button">איפור</button>
-<button class="chip" data-cat="fragrance" type="button">בישום</button>
-        <button class="chip" data-cat="mens-care">גברים</button>
-<button class="chip" data-cat="baby" type="button">תינוקות</button>
-<button class="chip" data-cat="health" type="button">בריאות</button>
-</div>
+<!-- הוסר: שורת הצ'יפים לסינון קטגוריות (כדי לקצר גלילה במובייל). -->
+<div class="select-group" style="margin-top:10px;">
+  <!-- סוג מוצר (קרם פנים, סרום, קרם גוף וכו׳) - גלוי כברירת מחדל -->
+  <select class="select minimal" id="typeSelect" aria-label="סינון לפי סוג מוצר">
+    <option value="">כל סוגי המוצרים</option>
+  </select>
 </div>
 <div class="filters-actions">
 <!-- שורת כפתורי סינון מהיר (תמיד גלויה) -->
 <div aria-label="מסננים מהירים" class="toggles-row">
-<label class="check-pill" data-wg-notranslate="true"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
-<label class="check-pill" data-wg-notranslate="true"><input id="onlyPeta" type="checkbox"/> PETA</label>
-<label class="check-pill" data-wg-notranslate="true"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
+<label class="check-pill" ><input id="onlyLB" type="checkbox"/> <span class="wg-notranslate" data-wg-notranslate="true">Leaping Bunny</span></label>
+<label class="check-pill" ><input id="onlyPeta" type="checkbox"/> <span class="wg-notranslate" data-wg-notranslate="true">PETA</span></label>
 <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
 <label class="check-pill"><input id="onlyMen" type="checkbox"/> טיפוח לגבר</label>
 </div>
@@ -123,10 +117,6 @@
 <option value="updated">הכי חדשים</option>
 <option value="brand-az">לפי שם מותג</option>
 <option value="name-az">לפי שם מוצר</option>
-</select>
-<!-- סוג מוצר (קרם פנים, סרום, קרם גוף וכו׳) -->
-<select class="select minimal" id="typeSelect">
-<option value="">כל סוגי המוצרים</option>
 </select>
 </div>
 <div aria-label="טווח מחירים" class="price-range-row">

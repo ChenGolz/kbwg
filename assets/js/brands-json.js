@@ -1,5 +1,5 @@
-// Build: 2026-01-12-v6
-try { window.KBWG_BRANDS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
+// // Build: 2026-01-18-v10
+try { window.KBWG_BRANDS_BUILD = '2026-01-18-v10'; console.info('[KBWG] KBWG_BRANDS_BUILD ' + window.KBWG_BRANDS_BUILD); } catch(e) {}
 
 // Resolve URLs correctly when Weglot serves pages under /en/ (or when hosted under a subpath, e.g. GitHub Pages).
 // If you fetch("data/...") from /en/page.html the browser will request /en/data/... (404). We normalize to the true site base.
@@ -85,64 +85,116 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
   var PT = (window.KBWGPriceTier || {});
 
-  var CAT_LABELS_INTL = {
-    'baby-child': 'תינוקות וילדים',
-    'body-care': 'טיפוח הגוף',
-    'deodorant': 'דאודורנט',
-    'skincare': 'טיפוח עור',
-    'cleaning': 'ניקיון',
-    'cosmetics': 'קוסמטיקה',
-    'curly-hair': 'שיער מתולתל',
-    'eyes': 'עיניים',
-    'hair-color': 'צבע לשיער',
-    'haircare': 'טיפוח שיער',
-    'luxury-care': 'טיפוח יוקרתי',
-    'mens-care': 'טיפוח לגברים',
-    'nails': 'ציפורניים',
-    'natural-beauty': 'יופי טבעי',
-    'natural-care': 'טיפוח טבעי',
-    'natural-skin': 'טיפוח עור טבעי',
-    'paper': 'נייר',
-    'wipes': 'מגבונים',
-    'pet-care': 'טיפוח לחיות מחמד',
-    'soap': 'סבון',
-    'soap-bars': 'סבון מוצק',
-    'sun': 'הגנה מהשמש',
-    'tanning': 'שיזוף',
-    'tattoo-care': 'טיפול בקעקועים',
-    'wellness': 'וולנס'
+  // Unified categories – must match the Products page filters.
+  var CAT_LABELS = {
+    face: 'טיפוח פנים',
+    hair: 'שיער',
+    body: 'גוף ורחצה',
+    makeup: 'איפור',
+    fragrance: 'בישום',
+    'mens-care': 'גברים',
+    baby: 'תינוקות',
+    health: 'בריאות'
+  };
+
+  // Map legacy/varied categories from JSON into the unified set.
+  var INTL_TO_UNIFIED = {
+    skincare: 'face',
+    'natural-skin': 'face',
+    eyes: 'face',
+
+    haircare: 'hair',
+    'curly-hair': 'hair',
+    'hair-color': 'hair',
+
+    'body-care': 'body',
+    deodorant: 'body',
+    soap: 'body',
+    'soap-bars': 'body',
+    sun: 'body',
+    tanning: 'body',
+    'tattoo-care': 'body',
+
+    cosmetics: 'makeup',
+    'makeup tools': 'makeup',
+    'makeup tools ': 'makeup',
+    nails: 'makeup',
+
+    fragrance: 'fragrance',
+
+    'mens-care': 'mens-care',
+
+    'baby-child': 'baby',
+
+    wellness: 'health',
+    health: 'health',
+    'personal care': 'health',
+    'personal-care': 'health',
+    cleaning: 'health',
+    paper: 'health',
+    wipes: 'health',
+    'pet-care': 'health'
   };
 
   var CAT_PRICE_TIER = {
-    'paper': 1,
-    'wipes': 1,
-    'cleaning': 1,
-    'soap': 2,
-    'soap-bars': 2,
-    'baby-child': 2,
-    'deodorant': 2,
-    'body-care': 3,
-    'skincare': 3,
-    'cosmetics': 3,
-    'haircare': 3,
-    'curly-hair': 3,
-    'eyes': 3,
-    'hair-color': 3,
+    face: 3,
+    hair: 3,
+    body: 3,
+    makeup: 3,
+    fragrance: 4,
     'mens-care': 3,
-    'nails': 3,
-    'natural-beauty': 3,
-    'natural-care': 3,
-    'natural-skin': 3,
-    'pet-care': 3,
-    'sun': 3,
-    'tanning': 3,
-    'tattoo-care': 3,
-    'wellness': 4,
-    'luxury-care': 5
+    baby: 2,
+    health: 2
   };
+
+  function toUnifiedCat(pageKind, raw) {
+    var k = String(raw || '').trim();
+    if (!k) return '';
+
+    // Already unified?
+    if (CAT_LABELS[k]) return k;
+
+    var lower = k.toLowerCase().trim();
+    if (CAT_LABELS[lower]) return lower;
+
+    if (pageKind === 'intl') {
+      return INTL_TO_UNIFIED[lower] || '';
+    }
+
+    // Israel page categories are Hebrew labels; map by keywords.
+    var he = k;
+    if (he.indexOf('פנים') !== -1 || he.indexOf('עור') !== -1) return 'face';
+    if (he.indexOf('שיער') !== -1) return 'hair';
+    if (he.indexOf('גוף') !== -1 || he.indexOf('רחצה') !== -1 || he.indexOf('סבון') !== -1 || he.indexOf('דאוד') !== -1) return 'body';
+    if (he.indexOf('איפור') !== -1 || he.indexOf('ציפור') !== -1) return 'makeup';
+    if (he.indexOf('בישום') !== -1 || he.indexOf('בושם') !== -1 || he.indexOf('בושמי') !== -1) return 'fragrance';
+    if (he.indexOf('גבר') !== -1) return 'mens-care';
+    if (he.indexOf('תינוק') !== -1 || he.indexOf('ילד') !== -1) return 'baby';
+    if (he.indexOf('בריאות') !== -1 || he.indexOf('שיניים') !== -1 || he.indexOf('היגיינ') !== -1 || he.indexOf('וולנס') !== -1) return 'health';
+    return '';
+  }
+
+  function normalizeCats(pageKind, cats) {
+    var out = [];
+    (cats || []).forEach(function (c) {
+      var u = toUnifiedCat(pageKind, c);
+      if (u) out.push(u);
+    });
+    return uniq(out);
+  }
 
   function norm(s) {
     return String(s || '').toLowerCase().trim();
+  }
+
+  // Normalize brand names so products.json and brands JSON can match reliably
+  // even when spacing/punctuation differs (e.g. "grace&stella" vs "grace & stella").
+  function brandKey(s) {
+    return String(s || '')
+      .toLowerCase()
+      .replace(/\s+/g, '')
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9\u0590-\u05FF]/g, '');
   }
 
   function uniq(arr) {
@@ -201,14 +253,319 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     return s[0].toUpperCase();
   }
 
-  function labelForCategories(pageKind, cats) {
-    if (!cats || !cats.length) return '';
-    if (pageKind === 'intl') {
-      var labels = cats.map(function (k) { return CAT_LABELS_INTL[k] || k; });
-      return labels.join(' / ');
+  function normalizeCats(raw) {
+    if (!raw) return [];
+    if (Array.isArray(raw)) return raw.map(function (x) { return String(x || '').trim(); }).filter(Boolean);
+    if (typeof raw === 'string') {
+      // Allow comma / slash separated strings.
+      return raw.split(/[,/]/g).map(function (x) { return String(x || '').trim(); }).filter(Boolean);
     }
-    // israel: cats are already labels
-    return cats.join(' / ');
+    // Handle objects like {a:true, b:true}
+    if (typeof raw === 'object') {
+      return Object.keys(raw).map(function (k) { return String(k || '').trim(); }).filter(Boolean);
+    }
+    return [String(raw).trim()].filter(Boolean);
+  }
+
+  // ------------------------------
+  // Product-type alignment (match Products page "כל סוגי המוצרים" dropdown)
+  // We derive the same optgroup + sub-type structure from data/products.json,
+  // and also compute, for each brand, which type-keys it has products for.
+  // typeKey format: "<Group>::<SubType>"
+
+  function containsAny(haystackLower, words) {
+    if (!haystackLower) return false;
+    for (var i = 0; i < words.length; i++) {
+      if (haystackLower.indexOf(String(words[i]).toLowerCase()) !== -1) return true;
+    }
+    return false;
+  }
+
+  function getCatsRawFromProduct(p) {
+    if (!p) return [];
+    var raw = [];
+    if (Array.isArray(p.categories)) raw = p.categories;
+    else if (p.category != null) raw = [p.category];
+    else if (p.cat != null) raw = [p.cat];
+    return raw.map(function (x) { return String(x || '').toLowerCase().trim(); }).filter(Boolean);
+  }
+
+  function getPrimaryCategoryKeyFromProduct(p) {
+    var cats = getCatsRawFromProduct(p);
+    return cats[0] || '';
+  }
+
+  function getTypeGroupLabelFromProduct(p) {
+    var catKey = getPrimaryCategoryKeyFromProduct(p);
+    var nameLower = String(p.productTypeLabel || p.name || '').toLowerCase();
+
+    // Teeth / whitening
+    var isTeeth = containsAny(nameLower, ['tooth','teeth','שן','שיניים','toothpaste','whitening']);
+    if (isTeeth) return 'הלבנה וטיפוח השיניים';
+
+    var isMen = /גבר|גברים|men's|for men|for him|pour homme/i.test(nameLower);
+
+    if (catKey === 'makeup') return 'מוצרי איפור';
+    if (catKey === 'face') return isMen ? 'טיפוח לגבר' : 'טיפוח לפנים';
+    if (catKey === 'body') return isMen ? 'טיפוח לגבר' : 'טיפוח לגוף';
+    if (catKey === 'hair') return isMen ? 'טיפוח לגבר' : 'עיצוב שיער';
+    if (catKey === 'fragrance') return 'בשמים';
+    if (catKey === 'sun' || catKey === 'suncare' || catKey === 'spf') return 'הגנה מהשמש';
+    if (isMen) return 'טיפוח לגבר';
+    return 'אחר';
+  }
+
+  function getTypeDisplayLabelFromProduct(p) {
+    var group = getTypeGroupLabelFromProduct(p);
+    var name = String(p.productTypeLabel || p.name || '').trim();
+    if (!name) return '';
+    var lower = name.toLowerCase();
+
+    // Makeup
+    if (group === 'מוצרי איפור') {
+      if (containsAny(lower, ['lip','שפתיים','שפתון','gloss'])) return 'שפתיים';
+      if (containsAny(lower, ['eye','eyes','עיניים','ריסים','מסקרה','eyeliner','brow'])) return 'עיניים';
+      if (containsAny(lower, ['nail','ציפורניים','לק'])) return 'ציפורניים';
+      if (containsAny(lower, ['brush','מברשת','sponge','applicator','tools','אביזר'])) return 'אביזרי איפור';
+      if (containsAny(lower, ['kit','מארז','ערכת'])) return 'סטים ומארזים';
+      if (containsAny(lower, ['palette','פלטה'])) return 'פנים';
+      return 'פנים';
+    }
+
+    // Face care
+    if (group === 'טיפוח לפנים') {
+      if (containsAny(lower, ['eye','eyes','עיניים','אזור העיניים','שפתיים','lip'])) return 'עיניים ושפתיים';
+      if (containsAny(lower, ['mask','מסכה','peel','פילינג','exfoli','scrub'])) return 'מסכות ופילינג';
+      if (containsAny(lower, ['cleanser','clean','wash','soap','סבון','ניקוי','cleansing'])) return 'ניקוי פנים';
+      if (containsAny(lower, ['moist','cream','קרם','hydr'])) return 'קרמים ולחות';
+      if (containsAny(lower, ['serum','סרום'])) return 'סרומים';
+      if (containsAny(lower, ['toner','essence','מי פנים','טונר','אסנס'])) return 'טונרים ואסנס';
+      return 'טיפוח כללי';
+    }
+
+    // Teeth
+    if (group === 'הלבנה וטיפוח השיניים') return 'טיפוח השיניים';
+
+    // Body
+    if (group === 'טיפוח לגוף') {
+      if (containsAny(lower, ['deodor','דאודורנט'])) return 'דאודורנט';
+      if (containsAny(lower, ['body','גוף','lotion','קרם','butter','oil','שמן'])) return 'לחות וגוף';
+      if (containsAny(lower, ['scrub','פילינג','exfoli'])) return 'פילינג גוף';
+      if (containsAny(lower, ['soap','wash','gel','סבון','רחצה'])) return 'רחצה';
+      return 'טיפוח כללי';
+    }
+
+    // Hair
+    if (group === 'עיצוב שיער') {
+      if (containsAny(lower, ['shampoo','שמפו'])) return 'שמפו';
+      if (containsAny(lower, ['condition','מרכך'])) return 'מרכך';
+      if (containsAny(lower, ['mask','מסכה'])) return 'מסכה לשיער';
+      if (containsAny(lower, ['serum','oil','שמן','סרום'])) return 'שמנים וסרומים';
+      return 'טיפוח/עיצוב';
+    }
+
+    // Sun
+    if (group === 'הגנה מהשמש') return 'SPF';
+    if (group === 'בשמים') return 'בישום';
+    if (group === 'טיפוח לגבר') return 'טיפוח לגבר';
+
+    return 'אחר';
+  }
+
+  function buildTypeSelect(selectEl, groupsByType) {
+    if (!selectEl) return;
+
+    var prev = String(selectEl.value || '');
+    selectEl.innerHTML = '';
+
+    var placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'כל סוגי המוצרים';
+    selectEl.appendChild(placeholder);
+
+    var groupOrder = [
+      'מוצרי איפור',
+      'טיפוח לפנים',
+      'הלבנה וטיפוח השיניים',
+      'טיפוח לגוף',
+      'עיצוב שיער',
+      'הגנה מהשמש',
+      'בשמים',
+      'טיפוח לגבר',
+      'אחר'
+    ];
+
+    groupOrder.forEach(function (groupLabel) {
+      var set = groupsByType.get(groupLabel);
+      if (!set || !set.size) return;
+      var optGroup = document.createElement('optgroup');
+      optGroup.label = groupLabel;
+      Array.from(set)
+        .sort(function (a, b) { return String(a).localeCompare(String(b), 'he'); })
+        .forEach(function (typeLabel) {
+          var o = document.createElement('option');
+          o.value = groupLabel + '::' + typeLabel;
+          o.textContent = typeLabel;
+          optGroup.appendChild(o);
+        });
+      selectEl.appendChild(optGroup);
+    });
+
+    selectEl.value = prev;
+    if (String(selectEl.value || '') !== prev) selectEl.value = '';
+  }
+
+  function buildTypesIndexFromProducts(products) {
+    var groupsByType = new Map(); // group -> Set(subType)
+    var brandTypeKeys = new Map(); // brand -> Set(typeKey)
+
+    (products || []).forEach(function (p) {
+      if (!p) return;
+      // Site policy: vegan-only
+      if (p.isVegan === false) return;
+
+      var brand = String(p.brand || '').trim();
+      if (!brand) return;
+      var bkey = brandKey(brand);
+      if (!bkey) return;
+
+      var group = getTypeGroupLabelFromProduct(p);
+      var sub = getTypeDisplayLabelFromProduct(p);
+      if (!group || !sub) return;
+      if (!groupsByType.has(group)) groupsByType.set(group, new Set());
+      groupsByType.get(group).add(sub);
+
+      var key = group + '::' + sub;
+      if (!brandTypeKeys.has(bkey)) brandTypeKeys.set(bkey, new Set());
+      brandTypeKeys.get(bkey).add(key);
+    });
+
+    return { groupsByType: groupsByType, brandTypeKeys: brandTypeKeys };
+  }
+
+  // =============================
+  // Brand categories
+  // =============================
+  // The Brands pages must show categories in Hebrew and align with the filter.
+  // We derive categories primarily from products.json (brand -> product types),
+  // and only fall back to the brand JSON categories if the brand has no products.
+
+  // Top-level category labels (must match across the site).
+  // ✅ REQUIRED by nocrueltyil.com: brands must be categorized into one (or more) of these TOP LEVEL types.
+  // These names are shown in the filter and on the brand cards.
+  // Canonical top-level categories used site-wide (Hebrew)
+  // NOTE: “ילדים ותינוקות” is a first-class category for both brands + products.
+  var TOP_LEVEL_ORDER = [
+    'מוצרי איפור',
+    'טיפוח לפנים',
+    'הלבנה וטיפוח השיניים',
+    'טיפוח לגוף',
+    'עיצוב שיער',
+    'הגנה מהשמש',
+    'בשמים',
+    'טיפוח לגבר',
+    'ילדים ותינוקות'
+  ];
+
+  function uniqStrings(arr) {
+    var seen = Object.create(null);
+    var out = [];
+    (arr || []).forEach(function (s) {
+      var v = String(s || '').trim();
+      if (!v) return;
+      if (seen[v]) return;
+      seen[v] = 1;
+      out.push(v);
+    });
+    return out;
+  }
+
+  // Map raw categories coming from brands JSON (often English) into the TOP LEVEL Hebrew list.
+  // Used only as fallback when a brand has no matching products in products.json.
+  function mapBrandJsonCategoryToTop(raw) {
+    var s = String(raw || '').trim();
+    if (!s) return '';
+    var lower = s.toLowerCase();
+
+    // Hebrew already
+    if (s.indexOf('איפור') !== -1) return 'מוצרי איפור';
+    if (s.indexOf('פנים') !== -1 || s.indexOf('עור') !== -1) return 'טיפוח לפנים';
+    if (s.indexOf('שיניים') !== -1 || s.indexOf('פה') !== -1) return 'הלבנה וטיפוח השיניים';
+    if (s.indexOf('גוף') !== -1 || s.indexOf('רחצה') !== -1) return 'טיפוח לגוף';
+    if (s.indexOf('שיער') !== -1) return 'עיצוב שיער';
+    if (s.indexOf('שמש') !== -1 || s.indexOf('spf') !== -1) return 'הגנה מהשמש';
+    if (s.indexOf('ילדים') !== -1 || s.indexOf('תינוק') !== -1) return 'ילדים ותינוקות';
+    if (s.indexOf('בושם') !== -1 || s.indexOf('בשמים') !== -1 || s.indexOf('בישום') !== -1) return 'בשמים';
+    if (s.indexOf('גבר') !== -1 || s.indexOf('לגבר') !== -1) return 'טיפוח לגבר';
+
+    // English / sluggy keys
+    if (/(makeup|cosmetic|cosmetics|nails|lip|eye)/.test(lower)) return 'מוצרי איפור';
+    if (/(skin|skincare|face|serum|cleanser|toner|moistur)/.test(lower)) return 'טיפוח לפנים';
+    if (/(tooth|teeth|dental|oral|floss)/.test(lower)) return 'הלבנה וטיפוח השיניים';
+    if (/(body|personal\s*-?care|bath|soap|deodor)/.test(lower)) return 'טיפוח לגוף';
+    if (/(hair|shampoo|conditioner|styling)/.test(lower)) return 'עיצוב שיער';
+    if (/(sun|suncare|spf|sunscreen)/.test(lower)) return 'הגנה מהשמש';
+    if (/(baby|babies|kid|kids|children|child)/.test(lower)) return 'ילדים ותינוקות';
+    if (/(fragrance|perfume|cologne)/.test(lower)) return 'בשמים';
+    if (/(men|mens|man|beard|shave|groom|pour\s*homme)/.test(lower)) return 'טיפוח לגבר';
+
+    return '';
+  }
+
+  function inferTopLevelsFromBrandJson(pageKind, brandObj) {
+    var raw = [];
+    if (brandObj) {
+      if (Array.isArray(brandObj.categories)) raw = raw.concat(brandObj.categories);
+      if (brandObj.category != null) raw.push(brandObj.category);
+      if (brandObj.cat != null) raw.push(brandObj.cat);
+    }
+    var out = [];
+    raw.forEach(function (c) {
+      var m = mapBrandJsonCategoryToTop(c);
+      if (m) out.push(m);
+    });
+    return uniqStrings(out);
+  }
+
+  // Derive brand top-level categories. Primary source: products.json.
+  function deriveBrandTopLevels(pageKind, brandObj, brandTypeKeys) {
+    var bkey = brandKey(brandObj && brandObj.name ? brandObj.name : '');
+    var set = bkey ? brandTypeKeys.get(bkey) : null;
+
+    // From products.json (most accurate)
+    if (set && set.size) {
+      var groups = Array.from(set)
+        .map(function (typeKey) { return String(typeKey || '').split('::')[0].trim(); })
+        .filter(Boolean);
+
+      // Keep only our allowed top-level groups
+      groups = groups.filter(function (g) { return TOP_LEVEL_ORDER.indexOf(g) !== -1; });
+      groups = uniqStrings(groups);
+      if (groups.length) return groups;
+    }
+
+    // Fallback: infer from the brand JSON categories (mapped into our top-level list)
+    var fromBrand = inferTopLevelsFromBrandJson(pageKind, brandObj);
+    if (fromBrand.length) return fromBrand;
+
+    // Last resort heuristic: if absolutely nothing is known, avoid “אחר” and pick a conservative default.
+    // (Prefer “טיפוח לפנים”, since most brands in our DB are skincare-forward.)
+    return ['טיפוח לפנים'];
+  }
+
+  function labelForTopLevels(topLevels) {
+    var arr = uniqStrings(topLevels);
+    if (!arr.length) return '';
+    // Sort by our canonical order
+    arr.sort(function (a, b) {
+      var ia = TOP_LEVEL_ORDER.indexOf(a);
+      var ib = TOP_LEVEL_ORDER.indexOf(b);
+      if (ia === -1) ia = 999;
+      if (ib === -1) ib = 999;
+      if (ia !== ib) return ia - ib;
+      return String(a).localeCompare(String(b), 'he');
+    });
+    return arr.join(' / ');
   }
 
   function buildPriceSelect(selectEl) {
@@ -241,47 +598,163 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
   }
 
 
-  function buildCategorySelectIfEmpty(selectEl, brands, pageKind) {
-    if (!selectEl) return;
-    // Intl page already contains a curated list in HTML.
-    if (pageKind === 'intl') return;
-    if (selectEl.options && selectEl.options.length > 0) return;
-
-    var cats = [];
-    brands.forEach(function (b) {
-      (b.categories || []).forEach(function (c) {
-        cats.push(c);
-      });
-    });
-    cats = uniq(cats).sort(function (a, b) {
-      return String(a).localeCompare(String(b), 'he');
-    });
-
-    var all = document.createElement('option');
-    all.value = '';
-    all.textContent = 'כל הקטגוריות';
-    selectEl.appendChild(all);
-
-    cats.forEach(function (c) {
-      var op = document.createElement('option');
-      op.value = c;
-      op.textContent = c;
-      selectEl.appendChild(op);
-    });
+  // =============================
+  // Product-type dropdown (align with products page)
+  // =============================
+  function containsAny(haystackLower, words) {
+    for (var i = 0; i < words.length; i++) {
+      if (haystackLower.indexOf(String(words[i]).toLowerCase()) !== -1) return true;
+    }
+    return false;
   }
 
-  function createBrandCard(brand, pageKind) {
+  function getCatsRawFromProduct(p) {
+    if (!p) return [];
+    if (Array.isArray(p.categories)) return p.categories.map(function(x){ return String(x||'').toLowerCase().trim(); }).filter(Boolean);
+    if (p.category != null) return [String(p.category).toLowerCase().trim()].filter(Boolean);
+    if (p.cat != null) return [String(p.cat).toLowerCase().trim()].filter(Boolean);
+    return [];
+  }
+
+  function getPrimaryCategoryKeyFromProduct(p) {
+    var cats = getCatsRawFromProduct(p);
+    return cats[0] || '';
+  }
+
+  function getTypeGroupLabelFromProduct(p) {
+    var catKey = getPrimaryCategoryKeyFromProduct(p); // face/hair/body/makeup/fragrance...
+    var nameLower = String((p.productTypeLabel || p.name || '')).toLowerCase();
+
+    var isTeeth = containsAny(nameLower, ['tooth','teeth','שן','שיניים','toothpaste','whitening']);
+    if (isTeeth) return 'הלבנה וטיפוח השיניים';
+
+    var isMen = /גבר|גברים|men's|for men|for him|pour homme/i.test(nameLower);
+
+    if (catKey === 'makeup') return 'מוצרי איפור';
+    if (catKey === 'face') return isMen ? 'טיפוח לגבר' : 'טיפוח לפנים';
+    if (catKey === 'body') return isMen ? 'טיפוח לגבר' : 'טיפוח לגוף';
+    if (catKey === 'hair') return isMen ? 'טיפוח לגבר' : 'עיצוב שיער';
+    if (catKey === 'fragrance') return 'בשמים';
+    if (catKey === 'sun' || catKey === 'suncare' || catKey === 'spf') return 'הגנה מהשמש';
+    if (isMen) return 'טיפוח לגבר';
+    return 'אחר';
+  }
+
+  function getTypeDisplayLabelFromProduct(p) {
+    var group = getTypeGroupLabelFromProduct(p);
+    var name = String((p.productTypeLabel || p.name || '')).trim();
+    if (!name) return '';
+    var lower = name.toLowerCase();
+
+    if (group === 'מוצרי איפור') {
+      if (containsAny(lower, ['lip','שפתיים','שפתון','gloss'])) return 'שפתיים';
+      if (containsAny(lower, ['eye','eyes','עיניים','ריסים','מסקרה','eyeliner','brow'])) return 'עיניים';
+      if (containsAny(lower, ['nail','ציפורניים','לק'])) return 'ציפורניים';
+      if (containsAny(lower, ['brush','מברשת','sponge','applicator','tools','אביזר'])) return 'אביזרי איפור';
+      if (containsAny(lower, ['kit','מארז','ערכת'])) return 'סטים ומארזים';
+      if (containsAny(lower, ['palette','פלטה'])) return 'פנים';
+      return 'פנים';
+    }
+
+    if (group === 'טיפוח לפנים') {
+      if (containsAny(lower, ['eye','eyes','עיניים','אזור העיניים','שפתיים','lip'])) return 'עיניים ושפתיים';
+      if (containsAny(lower, ['mask','מסכה','peel','פילינג','exfoli','scrub'])) return 'מסכות ופילינג';
+      if (containsAny(lower, ['serum','סרום','ampoule'])) return 'סרומים';
+      if (containsAny(lower, ['cleanser','wash','soap','clean','gel','foam','micellar','מים מיסלריים','ניקוי'])) return 'ניקוי פנים';
+      if (containsAny(lower, ['toner','טונר','essence','מיסט'])) return 'טונרים ומיסט';
+      if (containsAny(lower, ['cream','קרם','moistur'])) return 'קרמים ולחות';
+      if (containsAny(lower, ['oil','שמן'])) return 'שמנים';
+      return 'כללי';
+    }
+
+    if (group === 'טיפוח לגוף') {
+      if (containsAny(lower, ['deodor','דאודורנט'])) return 'דאודורנט';
+      if (containsAny(lower, ['body wash','shower','bath','soap','סבון','רחצה'])) return 'רחצה';
+      if (containsAny(lower, ['lotion','קרם גוף','body cream','butter','moistur'])) return 'לחות לגוף';
+      if (containsAny(lower, ['hand','ידיים'])) return 'ידיים';
+      if (containsAny(lower, ['foot','feet','רגל'])) return 'רגליים';
+      return 'כללי';
+    }
+
+    if (group === 'עיצוב שיער') {
+      if (containsAny(lower, ['shampoo','שמפו'])) return 'שמפו';
+      if (containsAny(lower, ['conditioner','מרכך'])) return 'מרכך';
+      if (containsAny(lower, ['mask','מסכה'])) return 'מסכה לשיער';
+      if (containsAny(lower, ['serum','oil','שמן'])) return 'שמנים וסרומים';
+      if (containsAny(lower, ['spray','ספריי','gel','wax','cream','mousse'])) return 'עיצוב';
+      return 'כללי';
+    }
+
+    if (group === 'הגנה מהשמש') {
+      return 'SPF';
+    }
+
+    if (group === 'בשמים') {
+      return 'בישום';
+    }
+
+    if (group === 'הלבנה וטיפוח השיניים') {
+      return 'שיניים';
+    }
+
+    if (group === 'טיפוח לגבר') {
+      if (containsAny(lower, ['beard','זקן'])) return 'זקן';
+      if (containsAny(lower, ['shave','גילוח'])) return 'גילוח';
+      return 'כללי';
+    }
+
+    return 'אחר';
+  }
+
+  // Brands pages: category filter is TOP LEVEL ONLY (e.g. "איפור") and must be in Hebrew.
+  // We build the options based on what actually exists on the page (so it's never empty).
+  function buildTypeSelect(selectEl) {
+    if (!selectEl) return;
+
+    var prev = String(selectEl.value || '');
+    selectEl.innerHTML = '';
+
+    var placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'כל סוגי המוצרים';
+    selectEl.appendChild(placeholder);
+
+    // TOP LEVEL ONLY (no sub-categories)
+    TOP_LEVEL_ORDER.forEach(function (label) {
+      var o = document.createElement('option');
+      o.value = label;
+      o.textContent = label;
+      selectEl.appendChild(o);
+    });
+
+    // Restore previous selection if possible
+    selectEl.value = prev;
+    if (String(selectEl.value || '') !== prev) selectEl.value = '';
+  }
+
+  function createBrandCard(brand, pageKind, brandTypeKeysMap) {
     var article = document.createElement('article');
     article.className = 'brandCard';
 
-    var cats = Array.isArray(brand.categories) ? brand.categories.slice() : [];
+    // Derive Hebrew top-level categories per brand.
+    var topCats = Array.isArray(brand.__topCats) && brand.__topCats.length
+      ? brand.__topCats
+      : deriveBrandTopLevels(pageKind, brand, brandTypeKeysMap);
+    article.setAttribute('data-topcats', topCats.join('|'));
+
+    // Categories in brand JSON are optional and may be empty; pass pageKind for correct normalization.
+    var rawCats = [];
+    if (Array.isArray(brand.categories)) rawCats = rawCats.concat(brand.categories);
+    if (brand.category != null) rawCats.push(brand.category);
+    if (brand.cat != null) rawCats.push(brand.cat);
+    var cats = normalizeCats(pageKind, rawCats);
     var tier = Number(brand.priceTier);
     if (!(tier >= 1 && tier <= 5)) {
       tier = pageKind === 'intl' ? inferTierFromCategories(cats) : inferTierIsrael(cats);
     }
 
     article.setAttribute('data-price-tier', String(tier));
-    if (cats.length) article.setAttribute('data-categories', cats.join(','));
+    // No need for sub-type keys on brands pages; filter uses top-level categories only.
 
     var badges = Array.isArray(brand.badges) ? brand.badges.slice() : [];
     // Remove any "מאומת" badge if it exists
@@ -328,6 +801,8 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
     var nameLink = document.createElement('a');
     nameLink.className = 'brandName';
+    // Brand names should remain as-is (Weglot should not translate them)
+    nameLink.setAttribute('data-wg-notranslate', 'true');
     nameLink.textContent = brand.name || '';
     nameLink.href = brand.website || targetUrl || '#';
     nameLink.target = '_blank';
@@ -336,7 +811,8 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
     var catsInline = document.createElement('div');
     catsInline.className = 'brandCatsInline';
-    catsInline.textContent = labelForCategories(pageKind, cats);
+    var catText = labelForTopLevels(topCats);
+    catsInline.textContent = catText;
 
     titleBlock.appendChild(nameLink);
     if (catsInline.textContent) titleBlock.appendChild(catsInline);
@@ -360,6 +836,11 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       var s = document.createElement('span');
       s.className = 'brandBadge' + (cls ? (' ' + cls) : '');
       s.textContent = text;
+      // Avoid Weglot translating certification program names.
+      if (/\bLeaping\s*Bunny\b/i.test(text) || /\bPETA\b/i.test(text)) {
+        s.setAttribute('data-wg-notranslate', 'true');
+        s.classList.add('wg-notranslate');
+      }
       badgesWrap.appendChild(s);
     }
 
@@ -369,7 +850,12 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       var t = String(b || '').toLowerCase();
       return t.indexOf('peta') !== -1 || t.indexOf('leaping') !== -1 || t.indexOf('cruelty') !== -1;
     });
-    if (prog) addBadge(prog, 'brandBadge--approved');
+    if (prog) {
+      var progLabel = String(prog || '');
+      if (/leaping\s*bunny/i.test(progLabel)) progLabel = 'Leaping Bunny';
+      else if (/peta/i.test(progLabel)) progLabel = 'PETA';
+      addBadge(progLabel, 'brandBadge--approved');
+    }
     if (vegan) addBadge('טבעוני', 'brandBadge--vegan');
 
     // Links row
@@ -388,9 +874,9 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       links.appendChild(a);
     }
 
-    addLink('Website', brand.website || null, 'brandLink--site');
-    addLink('Amazon UK', brand.amazonUk || null, 'brandLink--amazon');
-    addLink('Amazon US', brand.amazonUs || null, 'brandLink--amazon');
+    addLink('אתר המותג', brand.website || null, 'brandLink--site');
+    addLink('אמזון UK', brand.amazonUk || null, 'brandLink--amazon');
+    addLink('אמזון US', brand.amazonUs || null, 'brandLink--amazon');
 
     top.appendChild(header);
     if (badgesWrap.childNodes.length) top.appendChild(badgesWrap);
@@ -399,7 +885,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     article.appendChild(top);
 
     // חיפוש haystack for filtering
-    var hay = [brand.name, labelForCategories(pageKind, cats)].concat(badges).join(' ');
+    var hay = [brand.name, catText].concat(badges).join(' ');
     article.setAttribute('data-search', hay);
 
     // Filtering attributes
@@ -423,7 +909,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     var searchInput = document.getElementById('brandSearch');
     var categorySelect = document.getElementById('brandCategoryFilter');
     var priceSelect = document.getElementById('brandPriceFilter');
-    var veganInput = document.getElementById('brandVeganOnly');
     var countEl = document.querySelector('[data-brands-count]');
 
     buildPriceSelect(priceSelect);
@@ -447,11 +932,18 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
           if (hay.indexOf(state.q) === -1) ok = false;
         }
 
+        // Brands page category filter: TOP LEVEL only.
         if (ok && state.cat) {
-          var cats = (it.el.getAttribute('data-categories') || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
-          if (cats.indexOf(state.cat) === -1) {
-            // Israel uses label as category; in that case data-categories is label too.
+          var tops = String(it.el.getAttribute('data-topcats') || '');
+          if (!tops) {
             ok = false;
+          } else {
+            var arr2 = tops.split('|');
+            var hit2 = false;
+            for (var j = 0; j < arr2.length; j++) {
+              if (String(arr2[j] || '').trim() === state.cat) { hit2 = true; break; }
+            }
+            if (!hit2) ok = false;
           }
         }
 
@@ -461,9 +953,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
           if (t > state.priceTier) ok = false;
         }
 
-        if (ok && state.veganOnly) {
-          if (it.el.getAttribute('data-vegan') !== '1') ok = false;
-        }
 
         it.el.toggleAttribute('hidden', !ok);
         it.el.setAttribute('aria-hidden', ok ? 'false' : 'true');
@@ -477,7 +966,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       state.q = searchInput ? norm(searchInput.value) : '';
       state.cat = categorySelect ? String(categorySelect.value || '').trim() : '';
       state.priceTier = priceSelect ? Number(priceSelect.value || '') : 0;
-      state.veganOnly = veganInput ? Boolean(veganInput.checked) : false;
+      // Vegan-only filter removed (all brands on the site are Vegan + Cruelty‑Free)
     }
 
     function bind(state) {
@@ -489,19 +978,32 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       if (searchInput) searchInput.addEventListener('input', handler);
       if (categorySelect) categorySelect.addEventListener('change', handler);
       if (priceSelect) priceSelect.addEventListener('change', handler);
-      if (veganInput) veganInput.addEventListener('change', handler);
 
       // initial
       handler();
     }
 
-    // Load JSON and render
-    fetch(jsonUrl, { cache: 'no-store' })
-      .then(function (r) {
+    // Load brand JSON and products.json (for shared category/type dropdown + brand->types index)
+    var productsPath = 'data/products.json';
+    var productsUrl = __kbwgResolveFromSiteBase(productsPath, 'brands-json.js');
+
+    Promise.all([
+      fetch(jsonUrl, { cache: 'no-store' }).then(function (r) {
         if (!r.ok) throw new Error('Failed to load ' + jsonUrl + ' (from ' + jsonPath + ')');
         return r.json();
+      }),
+      fetch(productsUrl, { cache: 'no-store' }).then(function (r) {
+        if (!r.ok) throw new Error('Failed to load ' + productsUrl + ' (from ' + productsPath + ')');
+        return r.json();
       })
-      .then(function (brands) {
+    ])
+      .then(function (arr) {
+        var brands = arr[0];
+        var products = arr[1];
+
+        products = Array.isArray(products) ? products : [];
+        var idx = buildTypesIndexFromProducts(products);
+
         brands = Array.isArray(brands) ? brands : [];
 
         // Ensure normalization
@@ -513,8 +1015,16 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
           return out;
         }).filter(function (b) { return b.name; });
 
-        // Build category select (israel)
-        buildCategorySelectIfEmpty(categorySelect, brands, pageKind);
+        // Policy: show only Vegan-labeled brands.
+        // Primary signal: boolean `vegan` in JSON. Fallback: a badge that contains "Vegan".
+        brands = brands.filter(function (b) {
+          if (b && b.vegan === true) return true;
+          try {
+            return Array.isArray(b.badges) && b.badges.some(function (x) {
+              return String(x || '').toLowerCase().indexOf('vegan') !== -1;
+            });
+          } catch (e) { return false; }
+        });
 
         // מיון default: cheapest tier first (then name)
         if (PT && typeof PT.sortBrandsCheapestFirst === 'function') {
@@ -528,28 +1038,34 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
           });
         }
 
+        // Compute per-brand TOP categories (Hebrew, aligned) and populate the category dropdown.
+        var presentTopCatsSet = new Set();
+        brands.forEach(function (b) {
+          try {
+            var tops = deriveBrandTopLevels(pageKind, b, idx.brandTypeKeys);
+            b.__topCats = tops;
+            (tops || []).forEach(function (t) { presentTopCatsSet.add(String(t || '').trim()); });
+          } catch (e) {
+            b.__topCats = ['אחר'];
+            presentTopCatsSet.add('אחר');
+          }
+        });
+        buildTypeSelect(categorySelect, Array.from(presentTopCatsSet));
+
         // Render
         grid.innerHTML = '';
         var items = [];
         brands.forEach(function (b) {
-          var res = createBrandCard(b, pageKind);
+          var res = createBrandCard(b, pageKind, idx.brandTypeKeys);
           items.push(res);
           grid.appendChild(res.el);
         });
 
-        // Hide vegan checkbox if none
-        try {
-          if (veganInput) {
-            var anyVegan = items.some(function (it) { return it.el.getAttribute('data-vegan') === '1'; });
-            if (!anyVegan) {
-              var wrap = veganInput.closest('.brandsVeganControl');
-              if (wrap) wrap.style.display = 'none';
-            }
-          }
-        } catch (e) {}
-
-        var state = { items: items, q: '', cat: '', priceTier: 0, veganOnly: false };
+        var state = { items: items, q: '', cat: '', priceTier: 0 };
         bind(state);
+
+        // Let Weglot (and other listeners) know dynamic content is ready.
+        try { window.dispatchEvent(new Event('kbwg:content-rendered')); } catch (e) {}
       })
       .catch(function (err) {
         console.error(err);

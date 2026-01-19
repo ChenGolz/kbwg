@@ -1,4 +1,4 @@
-/* Cruelty Free / KBWG – Shopping Calendar renderer (RTL) */
+/* ללא ניסויים / KBWG – Shopping Calendar renderer (RTL) */
 (() => {
   const root = document.getElementById('agenda');
 

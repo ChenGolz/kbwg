@@ -112,8 +112,8 @@
         drawerHeader.className = 'navDrawerHeader';
         drawerHeader.innerHTML = `
           <a class="navDrawerLogo" href="index.html" aria-label="דף הבית">
-            <img class="navDrawerLogoImg" src="assets/img/logo.png" alt="Cruelty Free" width="34" height="34" />
-            <span class="navDrawerLogoText">Cruelty Free</span>
+            <img class="navDrawerLogoImg" src="assets/img/logo.png" alt="ללא ניסויים" width="34" height="34" />
+            <span class="navDrawerLogoText">ללא ניסויים</span>
           </a>
           <button type="button" class="navDrawerClose" aria-label="סגירה">×</button>
         `;

@@ -17,8 +17,8 @@
 
   const onlyLB = qs("#onlyLB");
   const onlyPeta = qs("#onlyPeta");
-  const onlyVegan = qs("#onlyVegan");
-  const onlyIsrael = qs("#onlyIsrael");
+  const onlyVegan = null;
+const onlyIsrael = qs("#onlyIsrael");
   const onlyMen = qs("#onlyMen");
   const onlyFreeShip = qs("#onlyFreeShip");
 
@@ -174,7 +174,10 @@ function normalizeProduct(p) {
   }
 
 
-  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct));
+  // Source of truth: data/products.json (loaded by products-json-loader.js)
+  // Policy: show only Vegan-labeled products.
+  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct))
+    .filter((p) => Boolean(p && p.isVegan));
 
   function unique(arr) {
     return Array.from(new Set(arr))
@@ -206,6 +209,9 @@ function normalizeProduct(p) {
     body: "גוף",
     makeup: "איפור",
     fragrance: "בישום",
+    sun: "שמש",
+    teeth: "שיניים",
+    baby: "ילדים",
     "mens-care": "גברים"
   };
 
@@ -235,13 +241,22 @@ function normalizeProduct(p) {
     // אפשרות לסמן מפורשות בדאטה בעתיד
     if (p.isMen) return true;
 
+    // 1) קטגוריות/טייפים שמסומנים לגבר
+    const cat = String(p.category || "").toLowerCase();
+    const typeKey = String(p.productTypeKey || "").toLowerCase();
+    if (cat === "mens-care" || typeKey.startsWith("men-") || typeKey.includes("mens")) return true;
+
+    // 2) שם מוצר
     const name = p.name || "";
     const lower = name.toLowerCase();
+    const hebMenRegex = /גבר|גברים|לגבר|לגברים/;
+    const enMenRegex = /(men's|for men|for him|mens|pour homme|groom)/i;
+    if (hebMenRegex.test(name) || enMenRegex.test(lower)) return true;
 
-    const hebMenRegex = /גבר|גברים/;
-    const enMenRegex = /(men's|for men|for him|pour homme)/i;
-
-    return hebMenRegex.test(name) || enMenRegex.test(lower);
+    // 3) שם מותג (למשל Every Man Jack)
+    const brand = String(p.brand || "").toLowerCase();
+    const brandMenRegex = /(\bmen\b|\bman\b|mens|groom|shave|beard)/i;
+    return brandMenRegex.test(brand);
   }
 
   function getTypeGroupLabel(p) {
@@ -581,51 +596,37 @@ function normalizeProduct(p) {
   }
 
   function getProductPriceRange(p) {
-    // Collect all numeric price hints: explicit range + offer prices
-    const prices = [];
+    // Return the *real* min/max range (no bucketing).
+    // Priority:
+    // 1) explicit priceMin/priceMax on product
+    // 2) min/max of offer prices
+    // 3) null if unknown
 
-    if (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) {
-      prices.push(p.priceMin);
-    }
-    if (typeof p?.priceMax === "number" && !Number.isNaN(p.priceMax)) {
-      prices.push(p.priceMax);
+    const minExplicit = (typeof p?.priceMin === "number" && Number.isFinite(p.priceMin)) ? p.priceMin : null;
+    const maxExplicit = (typeof p?.priceMax === "number" && Number.isFinite(p.priceMax)) ? p.priceMax : null;
+
+    // If explicit range exists, use it (and normalize if only one side exists)
+    if (minExplicit != null || maxExplicit != null) {
+      const min = minExplicit != null ? minExplicit : maxExplicit;
+      const max = maxExplicit != null ? maxExplicit : minExplicit;
+      const a = Math.round(Math.min(min, max));
+      const b = Math.round(Math.max(min, max));
+      return [a, b];
     }
 
+    // Otherwise, compute from offer prices
+    const offerPrices = [];
     if (Array.isArray(p?.offers)) {
       p.offers.forEach((o) => {
-        const v = typeof o.price === "number" ? o.price : null;
-        if (v != null && !Number.isNaN(v)) {
-          prices.push(v);
-        }
+        const v = typeof o?.price === "number" ? o.price : null;
+        if (v != null && Number.isFinite(v)) offerPrices.push(v);
       });
     }
 
-    if (!prices.length) return null;
-
-    // Use priceMin when available (more stable for bucketing); fallback to avg of hints
-    const avg = prices.reduce((sum, v) => sum + v, 0) / prices.length;
-    const hint = (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) ? p.priceMin : avg;
-    const basePrice = Math.max(0, Math.round(hint));
-
-    let bucketMin;
-    let bucketMax;
-
-    // Buckets:
-    // 0–50, 50–100, 100–200, 200–300, 300–400, 400–500, ...
-    if (basePrice <= 50) {
-      bucketMin = 0;
-      bucketMax = 50;
-    } else if (basePrice <= 100) {
-      bucketMin = 50;
-      bucketMax = 100;
-    } else {
-      const span = 100;
-      const idx = Math.floor((basePrice - 100) / span);
-      bucketMin = 100 + idx * span;
-      bucketMax = bucketMin + span;
-    }
-
-    return [bucketMin, bucketMax];
+    if (!offerPrices.length) return null;
+    const min = Math.round(Math.min.apply(null, offerPrices));
+    const max = Math.round(Math.max.apply(null, offerPrices));
+    return [min, max];
   }
 
   function getStoreDisplayName(p, o) {
@@ -762,12 +763,10 @@ function normalizeProduct(p) {
       // Approvals
       () => !onlyLB?.checked || p.isLB,
       () => !onlyPeta?.checked || p.isPeta,
-      () => !onlyVegan?.checked || p.isVegan,
       () => !onlyIsrael?.checked || p.isIsrael,
       // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
       () => {
         if (!onlyMen?.checked) return true;
-        if (currentCat === "makeup") return true;
         return isMenTargetedProduct(p);
       },
 
@@ -963,7 +962,7 @@ function normalizeProduct(p) {
       const approvals = [];
       if (p.isPeta) approvals.push("PETA");
       if (p.isVegan) approvals.push("Vegan");
-      if (p.isLB) approvals.push("Leaping Bunny");
+      if (p.isLB) approvals.push("ליפינג באני");
 
       const bestOffer = getOfferWithMinFreeShip(p);
       if (bestOffer) {
@@ -978,9 +977,9 @@ function normalizeProduct(p) {
 
       const tags = document.createElement("div");
       tags.className = "tags";
-      if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
-      if (p.isPeta) tags.appendChild(tag("PETA"));
-      if (p.isVegan) tags.appendChild(tag("Vegan"));
+      if (p.isLB) tags.appendChild(tag("ליפינג באני (CFI)"));
+      if (p.isPeta) tags.appendChild(tag("מאושר PETA"));
+      if (p.isVegan) tags.appendChild(tag("טבעוני"));
       if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
 
       const offerList = document.createElement("div");
@@ -1055,7 +1054,7 @@ function bind() {
     if (
       e.target &&
       e.target.matches(
-        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #onlyMen"
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyIsrael, #onlyFreeShip, #onlyMen"
       )
     ) {
       scheduleRender();
@@ -1066,7 +1065,7 @@ function bind() {
     if (
       e.target &&
       e.target.matches(
-        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #onlyMen"
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyIsrael, #onlyFreeShip, #onlyMen"
       )
     ) {
       scheduleRender();
@@ -1119,8 +1118,7 @@ function bind() {
     typeSelect.value = "";
     onlyLB.checked = false;
     onlyPeta.checked = false;
-    onlyVegan.checked = false;
-    onlyIsrael.checked = false;
+onlyIsrael.checked = false;
     onlyFreeShip.checked = false;
     if (priceMinInput) priceMinInput.value = "";
     if (priceMaxInput) priceMaxInput.value = "";

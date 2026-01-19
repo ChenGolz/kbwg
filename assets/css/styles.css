@@ -3518,6 +3518,38 @@ html[dir="rtl"] input, html[dir="rtl"] textarea, html[dir="rtl"] select { font-f
 html[dir="rtl"] .nav, html[dir="rtl"] nav ul { flex-direction: row; }
 html[dir="rtl"] .menu, html[dir="rtl"] .topMenu, html[dir="rtl"] .navbar, html[dir="rtl"] .nav-links { flex-direction: row; }
 html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, html[dir="rtl"] .brandCard { text-align: right; }
+
+/* ------------------------------------------------------------
+   Mobile: reduce scrolling by showing 2 cards per row
+   (Brands / Products / Deals). Falls back to 1 column on very
+   small screens.
+------------------------------------------------------------ */
+
+@media (max-width: 720px){
+  /* Brands */
+  .brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .brandCard{ padding: 12px; border-radius: 16px; }
+
+  /* Deals */
+  .page-deals .dealsGrid{ grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .page-deals .dealCard{ padding: 12px; border-radius: 16px; }
+
+  /* Products */
+  .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px; }
+  .productsResults .productCard{
+    grid-template-columns: 1fr; /* stack image on top for tighter cards */
+    padding: 12px;
+    border-radius: 16px;
+  }
+  .productsResults .productCard .pMedia{ height: 130px; }
+  .productsResults .productCard .pName{ -webkit-line-clamp: 2; }
+}
+
+@media (max-width: 420px){
+  .brandGrid{ grid-template-columns: 1fr; }
+  .page-deals .dealsGrid{ grid-template-columns: 1fr; }
+  .product-grid{ grid-template-columns: 1fr !important; }
+}
 html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
 
 
