@@ -109,6 +109,12 @@
     return '$' + v.toFixed(2);
   }
 
+  // Bundles are displayed in ILS (converted from USD).
+  function formatILSFromUSD(usd) {
+    var rate = (FX && FX.rate) ? FX.rate : 3.75;
+    return formatILS(toNumber(usd) * rate);
+  }
+
   function tierFromPriceUSD(price) {
     var p = toNumber(price);
     if (p <= 0) return 3;
@@ -157,7 +163,8 @@
 
   
   // FX: USD -> ILS (client-side fetch, with fallback)
-  var FX = { rate: null, updatedAt: null };
+  // We always render bundle prices in ILS. If live fetch fails, we fall back to a safe default.
+  var FX = { rate: 3.75, updatedAt: null };
   function formatILS(n){
     var v = Math.round(toNumber(n) * 100) / 100;
     try{ return '₪' + v.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }catch(e){ return '₪' + v.toFixed(2); }
@@ -248,7 +255,6 @@ var state = {
 
     state.bundles.forEach(function (b) {
       var subtotal = bundleSubtotal(b);
-      var tier = tierFromPriceUSD(subtotal);
       var toFree = Math.max(0, FREE_SHIP_USD - subtotal);
       var tags = [];
       tags.push('Amazon US');
@@ -262,14 +268,16 @@ var state = {
           '<div>' +
             '<h3 class="bundleTitle">' + safeText(b.title) + '</h3>' +
             '<p class="bundleSubtitle">' + safeText(b.subtitle || '') + '</p>' +
-            '<div class="bundleMeta">' + tags.map(function (t) { return '<span class="tag">' + safeText(t) + '</span>'; }).join('') + '</div>' +
+            '<div class="bundleMeta">' + tags.map(function (t) {
+              var cls = (t === 'PETA' || t === 'Leaping Bunny') ? 'tag wg-notranslate' : 'tag';
+              return '<span class="' + cls + '">' + safeText(t) + '</span>';
+            }).join('') + '</div>' +
           '</div>' +
-          priceTierHtml(tier) +
         '</div>' +
         '<div class="bundleCta">' +
           '<div>' +
-            '<div class="bundlePrice">' + formatUSD(subtotal) + '</div>' +
-            '<div class="noteTiny">' + (toFree > 0 ? ('עוד ' + formatUSD(toFree) + ' כדי להגיע ל־$49') : 'מעולה! הבאנדל מעל $49') + '</div>' +
+            '<div class="bundlePrice">' + formatILSFromUSD(subtotal) + '</div>' +
+            '<div class="noteTiny">' + (toFree > 0 ? ('עוד ' + formatILSFromUSD(toFree) + ' כדי להגיע למשלוח חינם ($49+)') : 'מעולה! הבאנדל מעל $49+') + '</div>' +
           '</div>' +
           '<button type="button" class="bundleBtn" data-bundle-id="' + safeText(b.id) + '">פתחי באנ‏דל</button>' +
         '</div>';
@@ -324,9 +332,9 @@ var state = {
         '<div>' +
           '<p class="bundleItemName">' + safeText(p.brand || '') + ' — ' + safeText(p.name || '') + '</p>' +
           '<div class="bundleItemMeta">' +
-            '<span class="miniTag">' + formatUSD(price) + '</span>' +
-            (p.isPeta ? '<span class="miniTag">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag">Leaping Bunny</span>' : '') +
+            '<span class="miniTag">' + formatILSFromUSD(price) + '</span>' +
+            (p.isPeta ? '<span class="miniTag wg-notranslate">PETA</span>' : '') +
+            (p.isLB ? '<span class="miniTag wg-notranslate">Leaping Bunny</span>' : '') +
             '<button type="button" class="miniBtn" data-action="replace" data-slot="' + idx + '">החליפי</button>' +
             (p.affiliateLink ? '<a class="miniBtn secondary" href="' + safeText(p.affiliateLink) + '" target="_blank" rel="noopener">מוצר</a>' : '') +
           '</div>' +
@@ -345,10 +353,10 @@ var state = {
     });
 
     var subtotal = bundleSubtotal(b);
-    $('#bundleSubtotal').textContent = formatUSD(subtotal);
+    $('#bundleSubtotal').textContent = formatILSFromUSD(subtotal);
     var usdInput = document.getElementById('usdInput');
     if (usdInput){ usdInput.value = (Math.round(subtotal*100)/100).toFixed(2); updateIlsOut(); }
-    $('#bundleToFree').textContent = formatUSD(Math.max(0, FREE_SHIP_USD - subtotal));
+    $('#bundleToFree').textContent = formatILSFromUSD(Math.max(0, FREE_SHIP_USD - subtotal));
     $('#shopAllBtn').href = amazonSearchUrl(b);
 
     renderPicker();
