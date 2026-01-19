@@ -23,7 +23,8 @@
         "priceUSD": 14.72,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isKids": true
   },
   {
     "id": "attitude-b07vc8bzb1",
@@ -50,7 +51,8 @@
         "priceUSD": 15.99,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isKids": true
   },
   {
     "id": "attitude-b07mzcn118",
@@ -58,8 +60,7 @@
     "name": "סבון ידיים מוקצף (EWG Verified), עלי לימון",
     "size": "10 fl oz",
     "categories": [
-      "body",
-      "health"
+      "body"
     ],
     "isVegan": true,
     "isPeta": true,
@@ -102,7 +103,8 @@
         "priceUSD": 17.24,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isKids": true
   },
   {
     "id": "attitude-b0fj9vmk3k",
@@ -111,8 +113,7 @@
     "size": "10 fl oz (מארז 3)",
     "categories": [
       "body",
-      "baby",
-      "health"
+      "baby"
     ],
     "isVegan": true,
     "isPeta": true,
@@ -129,16 +130,17 @@
         "priceUSD": 23.71,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isKids": true
   },
   {
     "id": "attitude-b09p5yn72x",
     "brand": "ATTITUDE",
     "name": "משחת שיניים ללא פלואוריד לנשימה רעננה, מנטה",
     "size": "4.2 oz",
-  "categories": [
-    "teeth"
-  ],
+    "categories": [
+      "teeth"
+    ],
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
@@ -255,7 +257,8 @@
         "priceUSD": 39.14,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isMen": true
   },
   {
     "id": "attitude-b0f7shjm5p",
@@ -281,7 +284,8 @@
         "priceUSD": 36.17,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isMen": true
   },
   {
     "id": "attitude-b08yfcz7b7",
@@ -358,7 +362,8 @@
         "priceUSD": 12.43,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "isKids": true
   },
   {
     "id": "attitude-b097mm895y",

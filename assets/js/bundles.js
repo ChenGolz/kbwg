@@ -326,7 +326,7 @@ var state = {
           '<div class="bundleItemMeta">' +
             '<span class="miniTag">' + formatUSD(price) + '</span>' +
             (p.isPeta ? '<span class="miniTag">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag">ליפינג באני</span>' : '') +
+            (p.isLB ? '<span class="miniTag">Leaping Bunny</span>' : '') +
             '<button type="button" class="miniBtn" data-action="replace" data-slot="' + idx + '">החליפי</button>' +
             (p.affiliateLink ? '<a class="miniBtn secondary" href="' + safeText(p.affiliateLink) + '" target="_blank" rel="noopener">מוצר</a>' : '') +
           '</div>' +
@@ -420,7 +420,7 @@ var state = {
           '<div class="pickMeta">' +
             '<span class="pickPrice">' + formatUSD(price) + '</span>' +
             (p.isPeta ? '<span class="miniTag">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag">ליפינג באני</span>' : '') +
+            (p.isLB ? '<span class="miniTag">Leaping Bunny</span>' : '') +
           '</div>' +
         '</div>';
       card.addEventListener('click', function () { replaceActiveSlot(p.id); });

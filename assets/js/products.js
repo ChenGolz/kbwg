@@ -962,7 +962,7 @@ function normalizeProduct(p) {
       const approvals = [];
       if (p.isPeta) approvals.push("PETA");
       if (p.isVegan) approvals.push("Vegan");
-      if (p.isLB) approvals.push("ליפינג באני");
+      if (p.isLB) approvals.push("Leaping Bunny");
 
       const bestOffer = getOfferWithMinFreeShip(p);
       if (bestOffer) {
@@ -977,8 +977,8 @@ function normalizeProduct(p) {
 
       const tags = document.createElement("div");
       tags.className = "tags";
-      if (p.isLB) tags.appendChild(tag("ליפינג באני (CFI)"));
-      if (p.isPeta) tags.appendChild(tag("מאושר PETA"));
+      if (p.isLB) tags.appendChild(tag("Leaping Bunny"));
+      if (p.isPeta) tags.appendChild(tag("PETA"));
       if (p.isVegan) tags.appendChild(tag("טבעוני"));
       if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
 
