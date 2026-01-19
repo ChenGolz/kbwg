@@ -19,5 +19,20 @@
     "vegan": true,
     "priceTier": 2,
     "notes": "100% טבעוני וללא ניסויים (PETA)"
+  },
+  {
+    "name": "ALLEYOOP",
+    "website": "https://meetalleyoop.com/",
+    "amazonUs": "https://amzn.to/4b8oN03",
+    "amazonUk": "",
+    "categories": [
+      "makeup"
+    ],
+    "badges": [
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "notes": "100% טבעוני וללא ניסויים"
   }
 ]
