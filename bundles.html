@@ -29,6 +29,15 @@
       .bundleMeta { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
       .bundleMeta .tag { background: rgba(0,0,0,.06); padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
       .bundleCta { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top: 14px; }
+
+      /* Bundle card: show products preview (not only in the popup) */
+      .bundlePreview{ margin-top: 12px; display:flex; flex-direction:column; gap:10px; }
+      .bundlePreviewItem{ display:grid; grid-template-columns: 46px 1fr; gap:10px; align-items:center; padding: 8px; border-radius: 14px; background: rgba(0,0,0,.03); }
+      .bundlePreviewItem img{ width:46px; height:46px; border-radius: 12px; object-fit: cover; background: rgba(0,0,0,.06); }
+      .bundlePreviewName{ font-weight: 700; font-size: .92rem; line-height: 1.25; }
+      .bundlePreviewMeta{ margin-top: 6px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+      .bundlePreviewMore{ font-size: .85rem; opacity: .85; padding-inline: 8px; }
+
       .bundlePrice { font-weight: 800; font-size: 1.15rem; }
       .bundleBtn { display:inline-flex; align-items:center; gap:8px; border:0; border-radius: 999px; padding: 10px 14px; font-weight: 700; cursor:pointer; background: #111; color:#fff; }
       .bundleBtn:focus { outline: 3px solid rgba(0,0,0,.25); outline-offset: 2px; }
@@ -108,6 +117,20 @@
       .fxBox input{ width: 140px; max-width: 55vw; border: 1px solid rgba(0,0,0,.18); border-radius: 12px; padding: 8px 10px; }
       .fxOut{ font-weight: 900; }
       .fxNote{ font-size:.82rem; opacity:.82; }
+
+    
+      /* Auto bundles product list */
+      .bundleMeta { text-align: left; }
+      .bundleTotal { font-weight: 700; }
+      .bundleShip { font-size: .9rem; opacity: .9; margin-top: 4px; }
+
+      .bundleProducts { margin-top: 12px; display: grid; gap: 10px; }
+      .bundleProduct { display:flex; gap:10px; align-items:center; padding:10px; border-radius:14px; background: rgba(0,0,0,.03); text-decoration:none; color: inherit; }
+      .bundleProduct:hover { background: rgba(0,0,0,.05); }
+      .bundleProductImg { width: 54px; height: 54px; border-radius: 12px; object-fit: cover; background: #fff; border: 1px solid rgba(0,0,0,.08); }
+      .bundleProductTitle { font-weight: 700; line-height: 1.2; }
+      .bundleProductDetails { opacity: .85; font-size: .9rem; margin-top: 3px; }
+      .bundleCTA { margin-top: 12px; display:flex; justify-content:flex-start; }
 
     </style>
   </head>

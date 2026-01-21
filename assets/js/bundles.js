@@ -1,577 +1,492 @@
-/*
-  Bundles page (Amazon free shipping helper)
-  - Shows curated bundles that roughly reach Amazon US free shipping threshold ($49+)
-  - Each bundle opens a modal where the user can swap items using a cool product picker + filters
-
-  Data sources:
-    - data/products.json (already Vegan-only by site policy)
-    - data/bundles.json (curated bundle definitions)
-
-  Notes:
-    - Prices are *estimates*. Final totals depend on Amazon checkout, taxes, shipping, etc.
-    - We prefer storeRegion === 'us' items when the goal is the $49 threshold.
+/* Auto Bundles (KBWG) — v2 logic
+  Goals:
+    - Each product can appear at most once on the Bundles page (global uniqueness).
+    - Bundles are logical & varied: Men / Baby / Family / Hair / Face / Makeup.
+    - Bundle constraints:
+        * Eligible for Amazon free shipping threshold (freeShipOver === 49) AND total USD >= 49
+        * Estimated total ILS between 170–250 (using USD→ILS constant)
+    - Prices displayed in ILS only (USD used internally for totals & threshold).
 */
 (function () {
   'use strict';
 
-  var FREE_SHIP_USD = 49;
+  // Rough constant used elsewhere on site ("$49 ≈ ₪160")
+  var USD_TO_ILS = 3.3;
 
-  function $(sel, root) {
-    return (root || document).querySelector(sel);
-  }
-  function $all(sel, root) {
-    return Array.prototype.slice.call((root || document).querySelectorAll(sel));
-  }
+  var ILS_MIN = 170;
+  var ILS_MAX = 250;
+  var FREE_SHIP_OVER_USD = 49;
+  var MIN_BUNDLE_USD = 49;
 
-  function siteBaseFromScript(scriptName) {
-    try {
-      var src = '';
-      try {
-        src = (document.currentScript && document.currentScript.src) ? document.currentScript.src : '';
-      } catch (e) {
-        src = '';
-      }
-      if (!src) {
-        var scripts = document.getElementsByTagName('script');
-        for (var i = scripts.length - 1; i >= 0; i--) {
-          var ssrc = scripts[i] && scripts[i].src ? String(scripts[i].src) : '';
-          if (ssrc.indexOf(scriptName) !== -1) { src = ssrc; break; }
-        }
-      }
-      if (!src) return '/';
+  function $(sel, root) { return (root || document).querySelector(sel); }
 
-      var u = new URL(src, location.href);
-      var p = u.pathname || '/';
-      var idx = p.indexOf('/assets/js/');
-      var base = idx >= 0 ? p.slice(0, idx) : p.replace(/\/[\w\-.]+$/, '');
-      base = base.replace(/\/+$/, '');
-
-      // Strip language segment at the end (e.g. /en)
-      var parts = base.split('/').filter(Boolean);
-      var langs = { en: 1, he: 1, iw: 1, ar: 1, fr: 1, es: 1, de: 1, ru: 1 };
-      if (parts.length && langs[parts[parts.length - 1]]) parts.pop();
-      return '/' + parts.join('/');
-    } catch (e) {
-      return '/';
-    }
+  function normalizeCategory(cat) {
+    if (!cat) return '';
+    var c = String(cat).trim().toLowerCase();
+    var aliases = {
+      skincare: 'face',
+      'skin-care': 'face',
+      skin: 'face',
+      fragrances: 'fragrance',
+      perfume: 'fragrance',
+      perfumes: 'fragrance',
+      frag: 'fragrance'
+    };
+    return aliases[c] || c;
   }
 
-  function resolveFromBase(relPath, scriptName) {
-    if (!relPath) return relPath;
-    var p = String(relPath);
-    if (/^https?:\/\//i.test(p)) return p;
-    p = p.replace(/^\.\//, '');
-    var base = siteBaseFromScript(scriptName) || '/';
-    if (base === '/') return '/' + p.replace(/^\//, '');
-    return base + '/' + p.replace(/^\//, '');
+  function catsOf(p) {
+    var cats = (p.categories || []).map(normalizeCategory).filter(Boolean);
+    return cats;
   }
 
-  function toNumber(v) {
-    var n = Number(v);
-    return Number.isFinite(n) ? n : 0;
+  function hasCat(p, cat) {
+    var cats = catsOf(p);
+    for (var i = 0; i < cats.length; i++) if (cats[i] === cat) return true;
+    return false;
   }
 
-  function normalizeProduct(p) {
-    var out = Object.assign({}, p || {});
-    // normalize booleans
-    out.isVegan = out.isVegan === true || out.vegan === true;
-    out.isPeta = out.isPeta === true || out.peta === true;
-    out.isLB = out.isLB === true || out.lb === true;
-    out.storeRegion = String(out.storeRegion || '').toLowerCase().trim();
-    out.category = String(out.category || '').toLowerCase().trim();
-    out.brand = String(out.brand || '').trim();
-    out.name = String(out.name || '').trim();
-    out.image = String(out.image || '').trim();
-    out.affiliateLink = String(out.affiliateLink || '').trim();
-    out.offers = Array.isArray(out.offers) ? out.offers : [];
-    return out;
+  function hasAnyCat(p, setObj) {
+    var cats = catsOf(p);
+    for (var i = 0; i < cats.length; i++) if (setObj[cats[i]]) return true;
+    return false;
   }
 
-  function bestPrice(p) {
-    // Prefer offers with numeric price
-    var prices = [];
-    if (p && Array.isArray(p.offers)) {
-      p.offers.forEach(function (o) {
-        var n = toNumber(o && o.price);
-        if (n > 0) prices.push(n);
-      });
-    }
-    if (prices.length) return Math.min.apply(Math, prices);
-    var pm = toNumber(p && p.priceMin);
-    if (pm > 0) return pm;
-    var px = toNumber(p && p.priceMax);
-    if (px > 0) return px;
-    return 0;
+  function getBestOffer(p) {
+    if (!p || !Array.isArray(p.offers)) return null;
+    var amazon = p.offers.find(function (o) { return o && o.store === 'amazon-us'; });
+    return amazon || p.offers[0] || null;
   }
 
-  function formatUSD(n) {
-    var v = Math.round(toNumber(n) * 100) / 100;
-    return '$' + v.toFixed(2);
+  function usdPrice(p) {
+    var o = getBestOffer(p);
+    var v = o && Number(o.priceUSD);
+    return Number.isFinite(v) ? v : null;
   }
 
-  // Bundles are displayed in ILS (converted from USD).
-  function formatILSFromUSD(usd) {
-    var rate = (FX && FX.rate) ? FX.rate : 3.75;
-    return formatILS(toNumber(usd) * rate);
+  function isEligibleForThreshold(p) {
+    var o = getBestOffer(p);
+    if (!o) return false;
+    if (o.store !== 'amazon-us') return false;
+    if (usdPrice(p) == null) return false;
+    // require explicit freeShipOver = 49 (your rule)
+    return typeof o.freeShipOver === 'number' && Math.abs(o.freeShipOver - FREE_SHIP_OVER_USD) < 0.01;
   }
 
-  function tierFromPriceUSD(price) {
-    var p = toNumber(price);
-    if (p <= 0) return 3;
-    if (p < 15) return 1;
-    if (p < 35) return 2;
-    if (p < 70) return 3;
-    if (p < 120) return 4;
-    return 5;
+  function ilsFromUsd(usd) {
+    return (Number(usd) || 0) * USD_TO_ILS;
   }
 
-  function priceTierHtml(tier) {
-    // Bundles page: requested to remove the "price tier" (dollar signs) entirely.
-    return '';
+  function fmtILS(n) {
+    return '₪' + Math.round(n).toString();
   }
 
-  function dedupeById(arr) {
-    var seen = new Set();
-    var out = [];
-    (arr || []).forEach(function (p) {
-      var id = String(p && p.id || '');
-      if (!id) return;
-      if (seen.has(id)) return;
-      seen.add(id);
-      out.push(p);
-    });
-    return out;
+  function tryResolveImage(p) {
+    if (p && p.image) return p.image;
+    if (!p || !p.id) return 'assets/img/placeholder-product.png';
+    return 'assets/img/products/' + p.id + '.jpg';
   }
 
-  function loadJson(url) {
-    return fetch(url, { cache: 'no-store' }).then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
+  function escapeHtml(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#039;' })[c];
     });
   }
 
-  function safeText(s) {
-    return String(s || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // --- heuristics for logic/variety ---
+  function lc(s) { return String(s || '').toLowerCase(); }
+
+  function isMenProduct(p) {
+    if (!p) return false;
+    if (p.isMen) return true;
+    if (hasCat(p, 'mens-care')) return true;
+    var n = lc(p.name);
+    return n.indexOf('men') >= 0 || n.indexOf('גבר') >= 0 || n.indexOf('לגבר') >= 0 || n.indexOf('גברים') >= 0;
   }
 
-  
-  // FX: USD -> ILS (client-side fetch, with fallback)
-  // We always render bundle prices in ILS. If live fetch fails, we fall back to a safe default.
-  var FX = { rate: 3.75, updatedAt: null };
-  function formatILS(n){
-    var v = Math.round(toNumber(n) * 100) / 100;
-    try{ return '₪' + v.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }catch(e){ return '₪' + v.toFixed(2); }
-  }
-  function setFxNote(msg){
-    var el = document.getElementById('fxNote');
-    if (el) el.textContent = msg || '';
-  }
-  function updateIlsOut(){
-    var input = document.getElementById('usdInput');
-    var out = document.getElementById('ilsOut');
-    if (!input || !out) return;
-    var usd = toNumber(input.value);
-    if (!FX.rate){ out.textContent = '₪—'; return; }
-    out.textContent = formatILS(usd * FX.rate);
-  }
-  function bindFxInput(){
-    var input = document.getElementById('usdInput');
-    if (!input) return;
-    input.addEventListener('input', updateIlsOut);
-  }
-  function loadFxRate(){
-    // exchangerate.host is usually keyless. If it fails, fall back to stored rate.
-    var stored = null;
-    try{ stored = JSON.parse(localStorage.getItem('kbwg_fx_usd_ils') || 'null'); }catch(e){ stored = null; }
-    if (stored && stored.rate){ FX.rate = stored.rate; FX.updatedAt = stored.updatedAt || null; setFxNote('שער אחרון: ' + (stored.rate.toFixed ? stored.rate.toFixed(3) : stored.rate)); updateIlsOut(); }
-
-    fetch('https://api.exchangerate.host/latest?base=USD&symbols=ILS', { cache: 'no-store' })
-      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-      .then(function(data){
-        var rate = data && data.rates ? toNumber(data.rates.ILS) : 0;
-        if (rate > 0){
-          FX.rate = rate;
-          FX.updatedAt = (data && data.date) ? data.date : new Date().toISOString();
-          try{ localStorage.setItem('kbwg_fx_usd_ils', JSON.stringify({ rate: rate, updatedAt: FX.updatedAt })); }catch(e){}
-          setFxNote('שער USD/ILS: ' + rate.toFixed(3));
-          updateIlsOut();
-        }else{ setFxNote('לא ניתן לטעון שער.'); }
-      })
-      .catch(function(){
-        if (!FX.rate) setFxNote('לא ניתן לטעון שער כרגע.');
-      });
+  function isBabyProduct(p) {
+    if (!p) return false;
+    if (p.isKids) return true;
+    if (hasCat(p, 'baby')) return true;
+    var n = lc(p.name);
+    return n.indexOf('kid') >= 0 || n.indexOf('toddler') >= 0 || n.indexOf('תינוק') >= 0 || n.indexOf('ילד') >= 0 || n.indexOf('ילדים') >= 0;
   }
 
-var state = {
-    products: [],
-    productsById: {},
-    bundles: [],
-    activeBundle: null,
-    activeSlotIndex: 0,
-    // Picker filters: search + price tier + chips (category dropdown removed)
-    picker: { q: '', tier: '', chips: { peta: false, lb: false, us: true } }
-  };
-
-  function buildIndex(products) {
-    var map = {};
-    products.forEach(function (p) {
-      map[String(p.id)] = p;
-    });
-    return map;
+  function typeKey(p) {
+    var n = lc(p.name);
+    if (n.indexOf('shampoo') >= 0 || n.indexOf('שמפו') >= 0) return 'shampoo';
+    if (n.indexOf('conditioner') >= 0 || n.indexOf('מרכך') >= 0) return 'conditioner';
+    if (n.indexOf('toothbrush') >= 0 || n.indexOf('מברשת שיניים') >= 0) return 'toothbrush';
+    if (n.indexOf('replacement') >= 0 || n.indexOf('heads') >= 0 || n.indexOf('ראשים') >= 0) return 'heads';
+    if (n.indexOf('serum') >= 0 || n.indexOf('סרום') >= 0) return 'serum';
+    if (n.indexOf('cream') >= 0 || n.indexOf('קרם') >= 0) return 'cream';
+    if (n.indexOf('scrub') >= 0 || n.indexOf('פילינג') >= 0) return 'scrub';
+    if (n.indexOf('foundation') >= 0 || n.indexOf('פאונדיישן') >= 0 || n.indexOf('מייקאפ') >= 0) return 'foundation';
+    if (n.indexOf('liner') >= 0 || n.indexOf('תוחם') >= 0) return 'liner';
+    return 'other';
   }
 
-  function bundleSubtotal(bundle) {
-    var sum = 0;
-    bundle.items.forEach(function (it) {
-      sum += bestPrice(it.product);
-    });
-    return sum;
+  function bundleTotals(items) {
+    var usd = 0;
+    for (var i = 0; i < items.length; i++) usd += (usdPrice(items[i]) || 0);
+    var ils = ilsFromUsd(usd);
+    return { usd: usd, ils: ils };
   }
 
-  function amazonSearchUrl(bundle) {
-    // We can't add-to-cart without Amazon API. We open a search that includes the brands / keywords.
-    var parts = bundle.items
-      .map(function (it) {
-        var p = it.product || {};
-        return (p.brand || '') + ' ' + (p.name || '');
-      })
-      .join(' | ')
-      .slice(0, 160);
-    var q = encodeURIComponent(parts || bundle.title || 'vegan cruelty free');
-    return 'https://www.amazon.com/s?k=' + q;
+  function inRange(items) {
+    var t = bundleTotals(items);
+    if (t.usd < MIN_BUNDLE_USD) return false;
+    return t.ils >= ILS_MIN && t.ils <= ILS_MAX;
   }
 
-  function renderBundlesGrid() {
-    var grid = $('#bundleGrid');
-    if (!grid) return;
-    grid.innerHTML = '';
-
-    state.bundles.forEach(function (b) {
-      // subtotal is used for the Amazon free-shipping progress (USD).
-      var subtotalUSD = bundleSubtotal(b);
-      var toFree = Math.max(0, FREE_SHIP_USD - subtotalUSD);
-
-      // Display price: prefer explicit totalILS from bundles.json (keeps 160–170₪ bundles stable).
-      var displayILS = (b.totalILS != null && !isNaN(Number(b.totalILS)))
-        ? formatILS(Number(b.totalILS))
-        : formatILSFromUSD(subtotalUSD);
-      var tags = [];
-      tags.push('Amazon US');
-      tags.push('Vegan');
-      if (b.tags && b.tags.length) tags = tags.concat(b.tags);
-
-      var card = document.createElement('article');
-      card.className = 'contentCard bundleCard';
-      card.innerHTML =
-        '<div class="bundleTop">' +
-          '<div>' +
-            '<h3 class="bundleTitle">' + safeText(b.title) + '</h3>' +
-            '<p class="bundleSubtitle">' + safeText(b.subtitle || '') + '</p>' +
-            '<div class="bundleMeta">' + tags.map(function (t) {
-              var cls = (t === 'PETA' || t === 'Leaping Bunny') ? 'tag wg-notranslate' : 'tag';
-              return '<span class="' + cls + '">' + safeText(t) + '</span>';
-            }).join('') + '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="bundleCta">' +
-          '<div>' +
-            '<div class="bundlePrice">' + displayILS + '</div>' +
-            '<div class="noteTiny">' + (toFree > 0 ? ('עוד ' + formatILSFromUSD(toFree) + ' כדי להגיע למשלוח חינם ($49+)') : 'מעולה! הבאנדל מעל $49+') + '</div>' +
-          '</div>' +
-          '<button type="button" class="bundleBtn" data-bundle-id="' + safeText(b.id) + '">פתחי באנ‏דל</button>' +
-        '</div>';
-      grid.appendChild(card);
-    });
-
-    $all('.bundleBtn', grid).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var id = String(btn.getAttribute('data-bundle-id') || '');
-        openBundle(id);
-      });
-    });
-  }
-
-  function openBundle(bundleId) {
-    var b = state.bundles.find(function (x) { return x.id === bundleId; });
-    if (!b) return;
-    state.activeBundle = b;
-    state.activeSlotIndex = 0;
-    $('#bundleModalTitle').textContent = b.title;
-    // reset picker
-    state.picker.q = '';
-    state.picker.tier = '';
-    state.picker.chips = { peta: false, lb: false, us: true };
-    $('#pickQ').value = '';
-    $('#pickTier').value = '';
-    $all('.pickerChip').forEach(function (c) {
-      var key = c.getAttribute('data-chip');
-      var on = Boolean(state.picker.chips[key]);
-      c.classList.toggle('active', on);
-    });
-
-    renderBundleModal();
-    showModal();
-  }
-
-  function renderBundleModal() {
-    var b = state.activeBundle;
-    if (!b) return;
-    var itemsWrap = $('#bundleItems');
-    itemsWrap.innerHTML = '';
-
-    b.items.forEach(function (slot, idx) {
-      var p = slot.product;
-      var price = bestPrice(p);
-      var img = p.image ? p.image : 'assets/img/photos/pink-flatlay.jpg';
-      var el = document.createElement('div');
-      el.className = 'bundleItem' + (idx === state.activeSlotIndex ? ' isActive' : '');
-      el.setAttribute('data-slot', String(idx));
-      el.innerHTML =
-        '<img alt="" src="' + safeText(img) + '" loading="lazy" />' +
-        '<div>' +
-          '<p class="bundleItemName">' + safeText(p.brand || '') + ' — ' + safeText(p.name || '') + '</p>' +
-          '<div class="bundleItemMeta">' +
-            '<span class="miniTag">' + formatILSFromUSD(price) + '</span>' +
-            (p.isPeta ? '<span class="miniTag wg-notranslate">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag wg-notranslate">Leaping Bunny</span>' : '') +
-            '<button type="button" class="miniBtn" data-action="replace" data-slot="' + idx + '">החליפי</button>' +
-            (p.affiliateLink ? '<a class="miniBtn secondary" href="' + safeText(p.affiliateLink) + '" target="_blank" rel="noopener">מוצר</a>' : '') +
-          '</div>' +
-        '</div>';
-      itemsWrap.appendChild(el);
-    });
-
-    $all('[data-action="replace"]', itemsWrap).forEach(function (btn) {
-      btn.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        var i = toNumber(btn.getAttribute('data-slot'));
-        if (!Number.isFinite(i)) return;
-        state.activeSlotIndex = i;
-        renderBundleModal();
-      });
-    });
-
-    var subtotal = bundleSubtotal(b);
-    $('#bundleSubtotal').textContent = formatILSFromUSD(subtotal);
-    var usdInput = document.getElementById('usdInput');
-    if (usdInput){ usdInput.value = (Math.round(subtotal*100)/100).toFixed(2); updateIlsOut(); }
-    $('#bundleToFree').textContent = formatILSFromUSD(Math.max(0, FREE_SHIP_USD - subtotal));
-    $('#shopAllBtn').href = amazonSearchUrl(b);
-
-    renderPicker();
-  }
-
-  function productMatchesPicker(p) {
-    if (!p || !p.isVegan) return false;
-
-    // Chips
-    if (state.picker.chips.us && p.storeRegion && p.storeRegion !== 'us') return false;
-    if (state.picker.chips.peta && !p.isPeta) return false;
-    if (state.picker.chips.lb && !p.isLB) return false;
-
-    // Tier
-    if (state.picker.tier) {
-      var t = tierFromPriceUSD(bestPrice(p));
-      if (String(t) !== String(state.picker.tier)) return false;
-    }
-
-    // Search
-    if (state.picker.q) {
-      var q = state.picker.q.toLowerCase().trim();
-      var hay = (p.brand + ' ' + p.name + ' ' + (p.size || '') + ' ' + (p.productTypeLabel || '')).toLowerCase();
-      if (hay.indexOf(q) === -1) return false;
+  function noDupTypes(items, allowTwoHair) {
+    var seen = {};
+    for (var i = 0; i < items.length; i++) {
+      var tk = typeKey(items[i]);
+      if ((tk === 'shampoo' || tk === 'conditioner') && allowTwoHair) continue;
+      if (seen[tk]) return false;
+      seen[tk] = 1;
     }
     return true;
   }
 
-  function selectedProductIds() {
-    var b = state.activeBundle;
-    if (!b) return [];
-    return b.items.map(function (it) { return String(it.product && it.product.id || ''); }).filter(Boolean);
-  }
+  function pickBundle(pool, used, rules) {
+    // rules: { mustAny, allowBaby, allowMen, allowTwoHair, minCount, maxCount, requireMen, requireBaby, avoidWomenMakeup }
+    var candidates = pool.filter(function (p) {
+      if (!p || !p.id) return false;
+      if (used[p.id]) return false;
+      if (!isEligibleForThreshold(p)) return false;
 
-  function renderPicker() {
-    var grid = $('#pickerGrid');
-    if (!grid) return;
+      if (!rules.allowMen && isMenProduct(p)) return false;
+      if (!rules.allowBaby && isBabyProduct(p)) return false;
 
-    var selected = new Set(selectedProductIds());
-    // allow keeping the currently active slot product in list by removing it from exclusion
-    var currentSlot = state.activeBundle && state.activeBundle.items[state.activeSlotIndex];
-    if (currentSlot && currentSlot.product && currentSlot.product.id) {
-      selected.delete(String(currentSlot.product.id));
+      if (rules.mustAny && !rules.mustAny(p)) return false;
+
+      return true;
+    });
+
+    // sort by price descending (helps reach threshold)
+    candidates.sort(function (a, b) { return (usdPrice(b) || 0) - (usdPrice(a) || 0); });
+
+    var best = null;
+    var bestScore = 1e9;
+    var target = (ILS_MIN + ILS_MAX) / 2;
+
+    var minK = rules.minCount || 2;
+    var maxK = rules.maxCount || 5;
+
+    // group by type for variety
+    var byType = {};
+    candidates.forEach(function (p) {
+      var tk = typeKey(p);
+      (byType[tk] = byType[tk] || []).push(p);
+    });
+    var typeKeys = Object.keys(byType);
+
+    function randFrom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    for (var attempt = 0; attempt < 900; attempt++) {
+      var k = minK + Math.floor(Math.random() * (maxK - minK + 1));
+      var items = [];
+      var pickedTypes = {};
+      var tries = 0;
+
+      while (items.length < k && tries < 80) {
+        tries++;
+        var tk = typeKeys.length ? typeKeys[Math.floor(Math.random() * typeKeys.length)] : null;
+        var arr = tk ? byType[tk] : candidates;
+        if (!arr || !arr.length) continue;
+        var p = randFrom(arr);
+        if (!p || used[p.id]) continue;
+        if (items.indexOf(p) >= 0) continue;
+
+        var tkey = typeKey(p);
+        if (!rules.allowTwoHair) {
+          if (pickedTypes[tkey]) continue;
+        } else {
+          if (pickedTypes[tkey] && tkey !== 'shampoo' && tkey !== 'conditioner') continue;
+        }
+        pickedTypes[tkey] = (pickedTypes[tkey] || 0) + 1;
+
+        items.push(p);
+
+        if (bundleTotals(items).ils > ILS_MAX) {
+          items.pop();
+          pickedTypes[tkey] = pickedTypes[tkey] - 1;
+          if (pickedTypes[tkey] <= 0) delete pickedTypes[tkey];
+        }
+      }
+
+      if (items.length < minK) continue;
+      if (!inRange(items)) continue;
+      if (!noDupTypes(items, !!rules.allowTwoHair)) continue;
+
+      if (rules.requireMen && !items.some(isMenProduct)) continue;
+      if (rules.requireBaby && !items.some(isBabyProduct)) continue;
+
+      if (rules.avoidWomenMakeup) {
+        var hasMakeup = items.some(function (p) { return hasAnyCat(p, { makeup:1 }) || typeKey(p) === 'liner' || typeKey(p) === 'foundation'; });
+        if (hasMakeup) continue;
+      }
+
+      var score = Math.abs(bundleTotals(items).ils - target);
+      if (score < bestScore) { bestScore = score; best = items.slice(); }
     }
 
-    var list = state.products
-      .filter(productMatchesPicker)
-      .filter(function (p) { return !selected.has(String(p.id)); })
-      .slice(0, 60);
+    if (!best) return null;
+    best.forEach(function (p) { used[p.id] = 1; });
+    return best;
+  }
 
-    if (!list.length) {
-      grid.innerHTML = '<div class="noteTiny">לא נמצאו מוצרים לפי הסינון. נסי להסיר פילטרים.</div>';
-      return;
+  var THEMES = [
+    {
+      key: 'men',
+      title: 'שגרת גבר נקייה',
+      subtitle: 'מוצרים ייעודיים לגברים + פריטים אוניברסליים.',
+      rules: {
+        allowMen: true,
+        allowBaby: false,
+        requireMen: true,
+        avoidWomenMakeup: true,
+        allowTwoHair: false,
+        minCount: 2,
+        maxCount: 5,
+        mustAny: function (p) { return isMenProduct(p) || hasAnyCat(p, { body:1, hair:1, teeth:1, face:1 }); }
+      }
+    },
+    {
+      key: 'baby',
+      title: 'בייבי באלנס',
+      subtitle: 'שגרה עדינה לילדים ותינוקות — בלי להתפשר על ערכים.',
+      rules: {
+        allowMen: false,
+        allowBaby: true,
+        requireBaby: true,
+        allowTwoHair: false,
+        minCount: 2,
+        maxCount: 5,
+        mustAny: function (p) { return isBabyProduct(p); }
+      }
+    },
+    {
+      key: 'family',
+      title: 'באנדל משפחתי',
+      subtitle: 'מיקס חכם לבית: לילדים + למבוגרים, כדי להגיע לסף משלוח.',
+      rules: {
+        allowMen: true,
+        allowBaby: true,
+        requireBaby: true,
+        allowTwoHair: true,
+        minCount: 3,
+        maxCount: 5,
+        mustAny: function (p) { return hasAnyCat(p, { baby:1, body:1, hair:1, teeth:1, face:1 }); }
+      }
+    },
+    {
+      key: 'hair',
+      title: 'שיער וואו בבית',
+      subtitle: 'שגרת שיער שמרגישה כמו סלון — מגוונת ולא חוזרת על עצמה.',
+      rules: {
+        allowMen: false,
+        allowBaby: false,
+        allowTwoHair: false,
+        minCount: 2,
+        maxCount: 5,
+        mustAny: function (p) { return hasAnyCat(p, { hair:1 }); }
+      }
+    },
+    {
+      key: 'face',
+      title: 'פנים זוהרות',
+      subtitle: 'שגרת פנים פשוטה ואפקטיבית: ניקוי/טיפול/לחות.',
+      rules: {
+        allowMen: false,
+        allowBaby: false,
+        allowTwoHair: false,
+        minCount: 2,
+        maxCount: 5,
+        mustAny: function (p) { return hasAnyCat(p, { face:1 }); }
+      }
+    },
+    {
+      key: 'makeup',
+      title: 'איפור יומי בקלות',
+      subtitle: 'כמה פריטים שמרימים לוק שלם — בלי כפילויות מיותרות.',
+      rules: {
+        allowMen: false,
+        allowBaby: false,
+        allowTwoHair: false,
+        minCount: 2,
+        maxCount: 5,
+        mustAny: function (p) { return hasAnyCat(p, { makeup:1 }); }
+      }
+    }
+  ];
+
+  function renderBundleCard(bundle) {
+    var card = document.createElement('article');
+    card.className = 'bundleCard card';
+
+    var top = document.createElement('div');
+    top.className = 'bundleTop';
+
+    var left = document.createElement('div');
+    var h = document.createElement('h3');
+    h.className = 'bundleTitle';
+    h.textContent = bundle.title;
+
+    var sub = document.createElement('p');
+    sub.className = 'bundleSubtitle';
+    sub.textContent = bundle.subtitle;
+
+    var meta = document.createElement('div');
+    meta.className = 'bundleMeta';
+
+    var totals = bundleTotals(bundle.items);
+    var totalLine = document.createElement('div');
+    totalLine.className = 'bundleTotal';
+    totalLine.textContent = 'סה״כ משוער: ' + fmtILS(totals.ils);
+
+    var shipLine = document.createElement('div');
+    shipLine.className = 'bundleShip';
+    shipLine.textContent = 'כולל: משלוח חינם מעל $49 (160 ש״ח לערך)';
+
+    meta.appendChild(totalLine);
+    meta.appendChild(shipLine);
+
+    left.appendChild(h);
+    left.appendChild(sub);
+
+    top.appendChild(left);
+    top.appendChild(meta);
+
+    var list = document.createElement('div');
+    list.className = 'bundleProducts';
+
+    bundle.items.forEach(function (p) {
+      var row = document.createElement('a');
+      row.className = 'bundleProduct';
+      var offer = getBestOffer(p);
+      row.href = (offer && offer.url) || '#';
+      row.target = '_blank';
+      row.rel = 'noopener';
+
+      var img = document.createElement('img');
+      img.className = 'bundleProductImg';
+      img.alt = (p.brand || '') + ' ' + (p.name || '');
+      img.src = tryResolveImage(p);
+
+      var info = document.createElement('div');
+      info.className = 'bundleProductInfo';
+
+      var title = document.createElement('div');
+      title.className = 'bundleProductTitle';
+      title.innerHTML = '<span class="wg-notranslate">' + escapeHtml(p.brand || '') + '</span>' + ' — ' + escapeHtml(p.name || '');
+
+      var details = document.createElement('div');
+      details.className = 'bundleProductDetails';
+      var u = usdPrice(p);
+      var ils = (u != null) ? ilsFromUsd(u) : null;
+      details.textContent = (p.size ? (p.size + ' • ') : '') + (ils != null ? fmtILS(ils) : '');
+
+      info.appendChild(title);
+      info.appendChild(details);
+
+      row.appendChild(img);
+      row.appendChild(info);
+
+      list.appendChild(row);
+    });
+
+    var cta = document.createElement('div');
+    cta.className = 'bundleCTA';
+
+    var btn = document.createElement('button');
+    btn.className = 'btn btnPrimary';
+    btn.type = 'button';
+    btn.textContent = 'קישור לחבילה - בקרוב';
+    btn.addEventListener('click', function () {
+      bundle.items.forEach(function (p) {
+        var o = getBestOffer(p);
+        if (o && o.url) window.open(o.url, '_blank', 'noopener');
+      });
+    });
+
+    cta.appendChild(btn);
+
+    card.appendChild(top);
+    card.appendChild(list);
+    card.appendChild(cta);
+
+    return card;
+  }
+
+  function showEmpty(grid) {
+    grid.innerHTML = '';
+    var p = document.createElement('p');
+    p.className = 'muted';
+    p.textContent = 'לא נמצאו באנדלים מתאימים כרגע (תלוי במלאי/מחירים/שילוח). נסי להוסיף עוד מוצרים עם freeShipOver=49.';
+    grid.appendChild(p);
+  }
+
+  function weglotRefresh() {
+    try {
+      if (window.Weglot && typeof window.Weglot.refresh === 'function') window.Weglot.refresh();
+      if (typeof window.weglotRefresh === 'function') window.weglotRefresh();
+    } catch (e) {}
+  }
+
+  async function fetchJson(url) {
+    var res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error('Failed to fetch ' + url);
+    return await res.json();
+  }
+
+  async function init() {
+    var grid = $('#bundleGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '<div class="muted">טוען באנדלים...</div>';
+
+    var products = await fetchJson('data/products.json');
+    if (!Array.isArray(products)) products = [];
+
+    products.forEach(function (p) {
+      if (!p || !Array.isArray(p.categories)) return;
+      p.categories = p.categories.map(normalizeCategory);
+    });
+
+    var used = {};
+    var bundles = [];
+
+    for (var i = 0; i < THEMES.length; i++) {
+      var theme = THEMES[i];
+      var items = pickBundle(products, used, theme.rules);
+      if (items && items.length) {
+        bundles.push({
+          key: theme.key,
+          title: theme.title,
+          subtitle: theme.subtitle,
+          items: items
+        });
+      }
     }
 
     grid.innerHTML = '';
-    list.forEach(function (p) {
-      var price = bestPrice(p);
-      var img = p.image ? p.image : 'assets/img/photos/pink-flatlay.jpg';
-      var card = document.createElement('div');
-      card.className = 'pickCard';
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('data-pid', String(p.id));
-      card.innerHTML =
-        '<img alt="" src="' + safeText(img) + '" loading="lazy" />' +
-        '<div>' +
-          '<p class="pickName">' + safeText(p.brand || '') + ' — ' + safeText(p.name || '') + '</p>' +
-          '<div class="pickMeta">' +
-            '<span class="pickPrice">' + formatUSD(price) + '</span>' +
-            (p.isPeta ? '<span class="miniTag">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag">Leaping Bunny</span>' : '') +
-          '</div>' +
-        '</div>';
-      card.addEventListener('click', function () { replaceActiveSlot(p.id); });
-      card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          replaceActiveSlot(p.id);
-        }
-      });
-      grid.appendChild(card);
+    if (!bundles.length) return showEmpty(grid);
+
+    bundles.forEach(function (b) {
+      grid.appendChild(renderBundleCard(b));
     });
+
+    weglotRefresh();
   }
 
-  function replaceActiveSlot(productId) {
-    var b = state.activeBundle;
-    if (!b) return;
-    var p = state.productsById[String(productId)];
-    if (!p) return;
-    if (!p.isVegan) return;
-
-    b.items[state.activeSlotIndex].product = p;
-    renderBundleModal();
-  }
-
-  function showModal() {
-    var overlay = $('#bundleOverlay');
-    var modal = $('#bundleModal');
-    overlay.classList.add('isOpen');
-    modal.classList.add('isOpen');
-    overlay.setAttribute('aria-hidden', 'false');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-
-    // focus
-    setTimeout(function () {
-      var q = $('#pickQ');
-      if (q) q.focus();
-    }, 10);
-  }
-
-  function closeModal() {
-    var overlay = $('#bundleOverlay');
-    var modal = $('#bundleModal');
-    overlay.classList.remove('isOpen');
-    modal.classList.remove('isOpen');
-    overlay.setAttribute('aria-hidden', 'true');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    state.activeBundle = null;
-  }
-
-  function wireModalEvents() {
-    var overlay = $('#bundleOverlay');
-    var closeBtn = $('#bundleCloseBtn');
-    if (overlay) overlay.addEventListener('click', closeModal);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        var modal = $('#bundleModal');
-        if (modal && modal.classList.contains('isOpen')) closeModal();
-      }
+  document.addEventListener('DOMContentLoaded', function () {
+    init().catch(function (e) {
+      console.error(e);
+      var grid = document.getElementById('bundleGrid');
+      if (grid) grid.innerHTML = '<div class="muted">שגיאה בטעינת באנדלים. נסי לרענן את העמוד.</div>';
     });
-  }
-
-  function wirePickerControls() {
-    var q = $('#pickQ');
-    var tier = $('#pickTier');
-    if (q) {
-      q.addEventListener('input', function () {
-        state.picker.q = q.value || '';
-        renderPicker();
-      });
-    }
-    if (tier) {
-      tier.addEventListener('change', function () {
-        state.picker.tier = tier.value || '';
-        renderPicker();
-      });
-    }
-    $all('.pickerChip').forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        var key = chip.getAttribute('data-chip');
-        if (!key) return;
-        state.picker.chips[key] = !state.picker.chips[key];
-        // keep US on by default; allow user to turn off
-        chip.classList.toggle('active', Boolean(state.picker.chips[key]));
-        renderPicker();
-      });
-    });
-  }
-
-  function normalizeBundles(rawBundles) {
-    var bundles = Array.isArray(rawBundles) ? rawBundles : [];
-    return bundles
-      .map(function (b, idx) {
-        var id = String(b.id || ('bundle-' + (idx + 1)));
-        var title = String(b.title || 'באנדל');
-        var subtitle = String(b.subtitle || '');
-        var tags = Array.isArray(b.tags) ? b.tags : [];
-        // Support both shapes:
-        // - new: { itemIds: [...] , total_ils: 169 }
-        // - old: { items: [...] }
-        var itemIds = Array.isArray(b.itemIds) ? b.itemIds : (Array.isArray(b.items) ? b.items : []);
-        var items = itemIds
-          .map(function (pid) {
-            var p = state.productsById[String(pid)];
-            return p ? ({ product: p }) : null;
-          })
-          .filter(Boolean);
-        return { id: id, title: title, subtitle: subtitle, tags: tags, items: items, totalILS: b.total_ils };
-      })
-      .filter(function (b) { return b.items && b.items.length >= 2; });
-  }
-
-  function boot() {
-    wireModalEvents();
-    wirePickerControls();
-
-    var productsUrl = resolveFromBase('data/products.json', 'bundles.js');
-    var bundlesUrl = resolveFromBase('data/bundles.json', 'bundles.js');
-
-    Promise.all([loadJson(productsUrl), loadJson(bundlesUrl)])
-      .then(function (res) {
-        var rawProducts = res[0];
-        var rawBundles = res[1];
-
-        state.products = dedupeById((rawProducts || []).map(normalizeProduct)).filter(function (p) {
-          return p && p.isVegan; // Policy: Vegan only
-        });
-        state.productsById = buildIndex(state.products);
-        state.bundles = normalizeBundles(rawBundles);
-
-        renderBundlesGrid();
-      })
-      .catch(function (err) {
-        console.warn('[bundles] Could not load data', err);
-        var grid = $('#bundleGrid');
-        if (grid) grid.innerHTML = '<div class="contentCard">לא הצלחנו לטעון נתונים כרגע. נסו לרענן.</div>';
-      });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+  });
 })();

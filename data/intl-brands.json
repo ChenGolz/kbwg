@@ -1,16 +1,35 @@
 [
   {
-    "name": "ATTITUDE",
-    "website": "https://attitudeliving.com/",
-    "amazonUs": "https://amzn.to/3Lq6kSl",
-    "amazonUk": "https://amzn.to/3YIVrxZ",
+  "name": "Made by Dentists",
+  "website": "",
+  "amazonUs": "https://amzn.to/4jNdtZu",
+  "categories": ["teeth", "baby"],
+  "badges": ["PETA", "Vegan"],
+  "vegan": true,
+  "priceTier": 2,
+  "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
+  "site": "",
+  "amazonUk": ""
+},
+{
+  "name": "about-face",
+  "website": "",
+  "amazonUs": "https://amzn.to/49RwPZ1",
+  "categories": ["makeup", "face"],
+  "badges": ["PETA", "Vegan"],
+  "vegan": true,
+  "priceTier": 2,
+  "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
+  "site": "",
+  "amazonUk": ""
+}
+,
+  {
+    "name": "oVertone",
+    "website": "https://overtone.co/",
+    "amazonUs": "https://amzn.to/4pU61xh",
     "categories": [
-      "makeup",
-      "skincare",
-      "hair",
-      "body",
-      "sun",
-      "baby"
+      "hair"
     ],
     "badges": [
       "PETA",
@@ -18,24 +37,8 @@
     ],
     "vegan": true,
     "priceTier": 2,
-    "notes": "100% טבעוני וללא ניסויים (PETA)"
-  },
-  {
-    "name": "ALLEYOOP",
-    "website": "https://meetalleyoop.com/",
-    "amazonUs": "https://amzn.to/4b8oN03",
-    "categories": [
-      "makeup"
-    ],
-    "badges": [
-      "PETA",
-      "Leaping Bunny",
-      "Vegan"
-    ],
-    "vegan": true,
-    "priceTier": 3,
-    "notes": "",
-    "site": "https://meetalleyoop.com/",
+    "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
+    "site": "https://overtone.co",
     "amazonUk": ""
   },
   {
@@ -127,6 +130,24 @@
     "amazonUk": ""
   },
   {
+    "name": "ALLEYOOP",
+    "website": "https://meetalleyoop.com/",
+    "amazonUs": "https://amzn.to/4b8oN03",
+    "categories": [
+      "makeup"
+    ],
+    "badges": [
+      "PETA",
+      "Leaping Bunny",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "notes": "",
+    "site": "https://meetalleyoop.com/",
+    "amazonUk": ""
+  },
+  {
     "name": "Alpyn Beauty",
     "website": "https://alpynbeauty.com/",
     "amazonUs": "https://www.amazon.com/stores/Alpyn%7CClinicalSkincare/page/2065E3FD-4D1D-406B-8576-936DDB161C99?lp_asin=B0CXB5HPCH&store_ref=bl_ast_dp_brandLogo_sto&linkCode=ll2&tag=nocrueltyil-20&linkId=2975b3df02994341b2d5882caec4ebed&language=en_US&ref_=as_li_ss_tl",
@@ -193,6 +214,60 @@
     "priceTier": 1,
     "notes": "",
     "site": "https://astonish.co.uk",
+    "amazonUk": ""
+  },
+  {
+    "name": "ATTITUDE",
+    "website": "https://attitudeliving.com/",
+    "amazonUs": "https://amzn.to/3Lq6kSl",
+    "amazonUk": "https://amzn.to/3YIVrxZ",
+    "categories": [
+      "makeup",
+      "skincare",
+      "hair",
+      "body",
+      "sun",
+      "baby"
+    ],
+    "badges": [
+      "PETA",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "notes": "100% טבעוני וללא ניסויים (PETA)"
+  },
+  {
+    "name": "Ravie Beauty",
+    "website": "https://ravie.com/",
+    "amazonUs": "https://amzn.to/4b4Tgfu",
+    "amazonUk": "",
+    "categories": [
+      "makeup",
+      "skincare"
+    ],
+    "badges": [
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "notes": "טבעוני וללא ניסויים בבעלי חיים (לפי המותג)"
+  },
+  {
+    "name": "LilyAna Naturals",
+    "website": "https://lilyananaturals.com/",
+    "amazonUs": "https://amzn.to/4qvR8SH",
+    "categories": [
+      "body"
+    ],
+    "badges": [
+      "Leaping Bunny",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "notes": "",
+    "site": "https://lilyananaturals.com",
     "amazonUk": ""
   }
 ]

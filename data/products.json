@@ -1,4 +1,610 @@
 [
+{
+  "id": "made-by-dentists-b0f3jptkc4",
+  "brand": "Made by Dentists",
+  "name": "מברשת שיניים חשמלית לילדים (נטענת) עם טיימר – כולל 6 ראשים – דוגמת Cheetah",
+  "size": "כולל 6 ראשים",
+  "categories": ["teeth", "baby"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0F3JPTKC4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953400189",
+      "asin": "B0F3JPTKC4",
+      "currency": "USD",
+      "priceUSD": 26.98,
+      "freeShipOver": 49
+    }
+  ],
+  "image": "assets/img/products/B0F3JPTKC4.jpg",
+  "isKids": true
+},
+{
+  "id": "made-by-dentists-b0g49mqv9f",
+  "brand": "Made by Dentists",
+  "name": "ראשים חלופיים Sonic X – 6 ראשים (2×3) – סיבים רכים – מתאים רק למברשת Sonic X",
+  "size": "6 ראשים (2×3)",
+  "categories": ["teeth"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0G49MQV9F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953706015",
+      "asin": "B0G49MQV9F",
+      "currency": "USD",
+      "priceUSD": 19.99
+    }
+  ],
+  "image": "assets/img/products/B0G49MQV9F.jpg",
+  "isKids": false
+},
+{
+  "id": "made-by-dentists-b0g49mw8mw",
+  "brand": "Made by Dentists",
+  "name": "מברשת שיניים חשמלית Sonic X – נטענת – 2 מצבים + טיימר 2 דקות – כולל 6 ראשים (Today Was A Good Day)",
+  "size": "כולל 6 ראשים",
+  "categories": ["teeth", "baby"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0G49MW8MW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953706838",
+      "asin": "B0G49MW8MW",
+      "currency": "USD",
+      "priceUSD": 28.98
+    }
+  ],
+  "image": "assets/img/products/B0G49MW8MW.jpg",
+  "isKids": true
+},
+{
+  "id": "ravie-b0fhk6cmpm-mocha",
+  "brand": "Ravie Beauty",
+  "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Mocha",
+  "size": "0.32 oz",
+  "categories": ["makeup"],
+  "isVegan": true,
+  "isPeta": false,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0FHK6CMPM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.175JEPTPNVH65&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.175JEPTPNVH65_1768954454332",
+      "asin": "B0FHK6CMPM",
+      "currency": "USD",
+      "priceUSD": 18.0,
+      "freeShipOver": 49
+    }
+  ],
+  "image": "assets/img/products/B0FHK6CMPM.jpg",
+  "isKids": false
+},
+{
+  "id": "ravie-b0fhk5mrd8-fig",
+  "brand": "Ravie Beauty",
+  "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Fig",
+  "size": "0.32 oz",
+  "categories": ["makeup"],
+  "isVegan": true,
+  "isPeta": false,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0FHK5MRD8?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.22G6I4O7C72CX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.22G6I4O7C72CX_1768954541403",
+      "asin": "B0FHK5MRD8",
+      "currency": "USD",
+      "priceUSD": 18.0,
+      "freeShipOver": 49
+    }
+  ],
+  "image": "assets/img/products/B0FHK5MRD8.jpg",
+  "isKids": false
+},
+{
+  "id": "about-face-b0fc4hk4kp",
+  "brand": "about-face",
+  "name": "THE PERFORMER מייקאפ/פאונדיישן – MD3 Warm – כיסוי בינוני, עמיד ונושם",
+  "size": "1.08 oz",
+  "categories": ["makeup", "face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0FC4HK4KP?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1VAR88KOLOHR7&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1VAR88KOLOHR7_1768954701989",
+      "asin": "B0FC4HK4KP",
+      "currency": "USD",
+      "priceUSD": 25.0
+    }
+  ],
+  "image": "assets/img/products/B0FC4HK4KP.jpg",
+  "isKids": false
+}
+,
+     {
+  "id": "lilyana-b07ztrd3ry",
+  "brand": "LilyAna Naturals",
+  "name": "סט מתנה טיפוח LilyAna – קרם רטינול, סרום ויטמין C, קרם עיניים וקרם לחות לפנים (אנטי-אייג׳ינג)",
+  "size": "סט מתנה (4 פריטים)",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 150,
+  "priceMax": 200,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B07ZTRD3RY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951501461",
+      "asin": "B07ZTRD3RY",
+      "currency": "USD",
+      "priceUSD": 59.99,
+      "freeShipToIL": true
+    }
+  ],
+  "image": "assets/img/products/B07ZTRD3RY.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b0c8qkqcjw",
+  "brand": "LilyAna Naturals",
+  "name": "סט מתנה ויטמין C של LilyAna – סט בהיר ומחדש (סרום ויטמין C + חומצה היאלורונית ועוד, 4 חלקים)",
+  "size": "סט מתנה (4 פריטים)",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 150,
+  "priceMax": 200,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0C8QKQCJW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951634139",
+      "asin": "B0C8QKQCJW",
+      "currency": "USD",
+      "priceUSD": 54.99,
+      "freeShipToIL": true
+    }
+  ],
+  "image": "assets/img/products/B0C8QKQCJW.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b0d1w229g3",
+  "brand": "LilyAna Naturals",
+  "name": "קרם עיניים LilyAna לעיגולים שחורים ונפיחות (לעור רגיש)",
+  "size": "1.7 oz",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0D1W229G3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951731419",
+      "asin": "B0D1W229G3",
+      "currency": "USD",
+      "priceUSD": 22.49,
+      "freeShipOver": 49
+    }
+  ],
+  "image": "assets/img/products/B0D1W229G3.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b08gty479f",
+  "brand": "LilyAna Naturals",
+  "name": "סרום ויטמין C לפנים – מארז כפול (עם חומצה היאלורונית וויטמין E)",
+  "size": "מארז כפול",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B08GTY479F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951818182",
+      "asin": "B08GTY479F",
+      "currency": "USD",
+      "priceUSD": 23.99
+    }
+  ],
+  "image": "assets/img/products/B08GTY479F.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b09h9hw2jr",
+  "brand": "LilyAna Naturals",
+  "name": "קרם רטינול אנטי-אייג׳ינג לפנים ולצוואר – לחותי (עם חומצה היאלורונית)",
+  "size": "—",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B09H9HW2JR?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951859295",
+      "asin": "B09H9HW2JR",
+      "currency": "USD",
+      "priceUSD": 15.99
+    }
+  ],
+  "image": "assets/img/products/B09H9HW2JR.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b00lv5ny3i",
+  "brand": "LilyAna Naturals",
+  "name": "קרם לחות לפנים ולצוואר – Rose & Pomegranate (מתאים לנשים וגברים)",
+  "size": "1.7 oz",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B00LV5NY3I?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951950071",
+      "asin": "B00LV5NY3I",
+      "currency": "USD",
+      "priceUSD": 22.99,
+      "freeShipOver": 49
+    }
+  ],
+  "image": "assets/img/products/B00LV5NY3I.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b00lv6vdg2",
+  "brand": "LilyAna Naturals",
+  "name": "קרם עיניים LilyAna לעיגולים שחורים ונפיחות",
+  "size": "1.7 oz",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B00LV6VDG2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952036729",
+      "asin": "B00LV6VDG2",
+      "currency": "USD",
+      "priceUSD": 18.16
+    }
+  ],
+  "image": "assets/img/products/B00LV6VDG2.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b08l463dz6",
+  "brand": "LilyAna Naturals",
+  "name": "פילינג פנים פחם פעיל – Charcoal Face Scrub (לבנדר + עץ התה)",
+  "size": "3 oz",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 0,
+  "priceMax": 50,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B08L463DZ6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952094726",
+      "asin": "B08L463DZ6",
+      "currency": "USD",
+      "priceUSD": 14.79
+    }
+  ],
+  "image": "assets/img/products/B08L463DZ6.jpg",
+  "isKids": false
+},
+{
+  "id": "lilyana-b08l44wgzg",
+  "brand": "LilyAna Naturals",
+  "name": "קרם עיניים רטינול (מפחית קמטוטים וקווים דקים)",
+  "size": "1.0 oz",
+  "categories": ["face"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": false,
+  "priceMin": 50,
+  "priceMax": 100,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B08L44WGZG?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952161904",
+      "asin": "B08L44WGZG",
+      "currency": "USD",
+      "priceUSD": 19.79
+    }
+  ],
+  "image": "assets/img/products/B08L44WGZG.jpg",
+  "isKids": false
+}
+,
+     {
+    "id": "overtone-B0F2GXVS7C",
+    "brand": "oVertone",
+    "name": "מסיכת פיגמנט לשיער חצי-קבועה בגוון סגול עז לכל סוגי השיער, עם חמאת שיאה ושמן קוקוס",
+    "size": "8 oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0F2GXVS7C?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FG1U70BL7O4A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FG1U70BL7O4A_1768950602090",
+        "asin": "B0F2GXVS7C",
+        "currency": "USD",
+        "priceUSD": 32.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0F2GXVS7C.jpg"
+  },
+   {
+    "id": "overtone-B0BQZT4C7G",
+    "brand": "oVertone",
+    "name": "מרכך פיגמנט לשימוש יומיומי בגוון ורוד פטל: פיגמנט זמני עם שמן שיאה, קוקוס ואבוקדו, מעניק לחות, לכל סוגי השיער",
+    "size": "8 oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BQZT4C7G?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1E5JURZY40GC2&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1E5JURZY40GC2_1768949575723",
+        "asin": "B0BQZT4C7G",
+        "currency": "USD",
+        "priceUSD": 18.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BQZT4C7G.jpg"
+  },
+ 
+  {
+    "id": "overtone-b0fh5r8wzj",
+    "brand": "oVertone",
+    "name": "Overtone The Ultimate Conditioner – מרכך לחותי ומחזק לשיער ולקרקפת (Tea Tree & Peppermint)",
+    "size": "10 oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FH5R8WZJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.MK3F05HUS4R7&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.MK3F05HUS4R7_1768947581195",
+        "asin": "B0FH5R8WZJ",
+        "currency": "USD",
+        "priceUSD": 16.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/overtone-b0fh5r8wzj.jpg"
+  },
+  {
+    "id": "overtone-b0f3g1pq92",
+    "brand": "oVertone",
+    "name": "The Revitalizer by Overtone – אליקסיר לחיזוק וצמיחת שיער, קומפלקס 14 חומצות אמינו",
+    "size": "144 mL",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0F3G1PQ92?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.MK3F05HUS4R7&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.MK3F05HUS4R7_1768947610856",
+        "asin": "B0F3G1PQ92",
+        "currency": "USD",
+        "priceUSD": 22.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/overtone-b0f3g1pq92.jpg"
+  }, 
+{
+  "id": "lilyana-b0d1w229g3",
+  "brand": "LilyAna Naturals",
+  "name": "קרם עיניים טבעוני לחידוש העור",
+  "size": "1.7 oz",
+  "categories": [
+    "face"
+  ],
+  "isVegan": true,
+  "isPeta": false,
+  "isLB": true,
+  "priceMin": 0,
+  "priceMax": 50,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0D1W229G3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NH3SC4GK2XVV&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NH3SC4GK2XVV_1768945804768",
+      "asin": "B0D1W229G3",
+      "currency": "USD",
+      "priceUSD": 22.49,
+      "freeShipOver": 49
+    }
+  ],
+  "image": "assets/img/products/lilyana-eye-cream.png",
+  "isKids": false
+}
+,
+  {
+    "id": "alleyoop-b08xbd2cbt",
+    "brand": "Alleyoop",
+    "name": "Stack The Odds – פלטת קרמים קומפקטית (סומק, קונטור/ברונזר והיילייטר) – גוון Sunkissed",
+    "size": "0.28 oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/Alleyoop-Blush-Bronzer-Highlighter-Trio-Face-Makeup/dp/B08XBD2CBT?th=1&linkCode=ll1&tag=nocrueltyil-20&linkId=20fc27453dcf9dd7aeda7c2a7514f40b&language=en_US&ref_=as_li_ss_tl",
+        "asin": "B08XBD2CBT",
+        "currency": "USD",
+        "priceUSD": 30.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false
+  },
+  {
+    "id": "alleyoop-b08xbz865d",
+    "brand": "Alleyoop",
+    "name": "סטיק צללית קרמית 11th Hour – Coffee Break (מט) (עמיד למריחה וללא התקמטות למשך עד 11 שעות)",
+    "size": "0.05 oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/Alleyoop-Cream-Eyeshadow-Sticks-Matte/dp/B08XBZ865D?th=1&linkCode=ll1&tag=nocrueltyil-20&linkId=8806d08227ebbf162f81886beea072b2&language=en_US&ref_=as_li_ss_tl",
+        "asin": "B08XBZ865D",
+        "currency": "USD",
+        "priceUSD": 16.0,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false
+  },
+  {
+    "id": "alleyoop-b0dffbhgb7",
+    "brand": "Alleyoop",
+    "name": "עיפרון גבות 3‑ב‑1 Swift Eyebrow עם מחדד מובנה ומברשת ספוליי – גוון Taupe",
+    "size": "0.2 g",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ALLEYOOP-Definition-Built-Sharpener-Spoolie/dp/B0DFFBHGB7?th=1&linkCode=ll1&tag=nocrueltyil-20&linkId=f0e66186c612a58349d56ab3d4d065af&language=en_US&ref_=as_li_ss_tl",
+        "asin": "B0DFFBHGB7",
+        "currency": "USD",
+        "priceUSD": 19.2,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false
+  },
+  {
+    "id": "alleyoop-b0bvgrlfkg",
+    "brand": "Alleyoop",
+    "name": "קונסילר Game Face – All Star (קליל, נבנה בשכבות, לחותי, מתאים לאזור מתחת לעיניים)",
+    "size": "0.19 fl oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/Alleyoop-Concealer-Makeup-Under-Eye-Dark-Spot/dp/B0BVGRLFKG?th=1&linkCode=ll1&tag=nocrueltyil-20&linkId=d7f32681c2f7c32c1c51b156f82b4f25&language=en_US&ref_=as_li_ss_tl",
+        "asin": "B0BVGRLFKG",
+        "currency": "USD",
+        "priceUSD": 34.96,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false
+  },
   {
     "id": "attitude-b07qttx153",
     "brand": "ATTITUDE",
@@ -21,345 +627,6 @@
         "asin": "B07QTTX153",
         "currency": "USD",
         "priceUSD": 14.72,
-        "freeShipOver": 49
-      }
-    ],
-    "isKids": true
-  },
-  {
-    "id": "attitude-b07vc8bzb1",
-    "brand": "ATTITUDE",
-    "name": "שמפו וסבון גוף לילדים (EWG Verified), מנגו",
-    "size": "16 fl oz",
-    "categories": [
-      "hair",
-      "body",
-      "baby"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Verified-Cleanser-Dermatologically-Products/dp/B07VC8BZB1?tag=nocrueltyil-20",
-        "asin": "B07VC8BZB1",
-        "currency": "USD",
-        "priceUSD": 15.99,
-        "freeShipOver": 49
-      }
-    ],
-    "isKids": true
-  },
-  {
-    "id": "attitude-b07mzcn118",
-    "brand": "ATTITUDE",
-    "name": "סבון ידיים מוקצף (EWG Verified), עלי לימון",
-    "size": "10 fl oz",
-    "categories": [
-      "body"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 0,
-    "priceMax": 50,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Mineral-Based-Ingredients-Cruelty-free-Personal/dp/B07MZCN118?tag=nocrueltyil-20",
-        "asin": "B07MZCN118",
-        "currency": "USD",
-        "priceUSD": 12.19,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b07j4khsmc",
-    "brand": "ATTITUDE",
-    "name": "קרם לחות לתינוק (EWG Verified), ללא בישום",
-    "size": "16 fl oz",
-    "categories": [
-      "body",
-      "baby"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Verified-Dermatologically-Mineral-Based-Unscented/dp/B07J4KHSMC?tag=nocrueltyil-20",
-        "asin": "B07J4KHSMC",
-        "currency": "USD",
-        "priceUSD": 17.24,
-        "freeShipOver": 49
-      }
-    ],
-    "isKids": true
-  },
-  {
-    "id": "attitude-b0fj9vmk3k",
-    "brand": "ATTITUDE",
-    "name": "סבון ידיים מוקצף לילדים (EWG Verified) אבטיח וקוקו (מארז 3)",
-    "size": "10 fl oz (מארז 3)",
-    "categories": [
-      "body",
-      "baby"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Dermatologically-Mineral-Based-Ingredients-Watermelon/dp/B0FJ9VMK3K?tag=nocrueltyil-20",
-        "asin": "B0FJ9VMK3K",
-        "currency": "USD",
-        "priceUSD": 7.9,
-        "freeShipOver": 49
-      }
-    ],
-    "isKids": true
-  },
-  {
-    "id": "attitude-b09p5yn72x",
-    "brand": "ATTITUDE",
-    "name": "משחת שיניים ללא פלואוריד לנשימה רעננה, מנטה",
-    "size": "4.2 oz",
-    "categories": [
-      "teeth"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 0,
-    "priceMax": 50,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Fluoride-Free-Mineral-Based-Cruelty-Free-16740/dp/B09P5YN72X?tag=nocrueltyil-20",
-        "asin": "B09P5YN72X",
-        "currency": "USD",
-        "priceUSD": 13.15,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b0f7t7xvhn",
-    "brand": "ATTITUDE",
-    "name": "סבון גוף מוצק (EWG Verified) קוקוס ופירות יער (מארז 6)",
-    "size": "4 oz (מארז 6)",
-    "categories": [
-      "body"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 100,
-    "priceMax": 150,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Natural-Protects-Watercress-Verified/dp/B0F7T7XVHN?tag=nocrueltyil-20",
-        "asin": "B0F7T7XVHN",
-        "currency": "USD",
-        "priceUSD": 6.39,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b09s2xbshn",
-    "brand": "ATTITUDE",
-    "name": "שמפו מוצק לנפח וברק (EWG Verified), פריחת תפוז ואקליפטוס",
-    "size": "4 oz",
-    "categories": [
-      "hair"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Shampoo-Verified-Ingredients-Eucalyptus/dp/B09S2XBSHN?tag=nocrueltyil-20",
-        "asin": "B09S2XBSHN",
-        "currency": "USD",
-        "priceUSD": 18.99,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b0c15qw2q1",
-    "brand": "ATTITUDE",
-    "name": "סבון גוף מוצק (EWG Verified), מרווה ורוזמרין",
-    "size": "4 oz",
-    "categories": [
-      "body"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 0,
-    "priceMax": 50,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Natural-Protects-verified-Rosemary/dp/B0C15QW2Q1?tag=nocrueltyil-20",
-        "asin": "B0C15QW2Q1",
-        "currency": "USD",
-        "priceUSD": 11.29,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b0fqdx4wby",
-    "brand": "ATTITUDE",
-    "name": "שמפו + מרכך 2‑ב‑1 לגבר (EWG Verified), אקליפטוס ומרווה (מארז 3)",
-    "size": "14 fl oz (מארז 3)",
-    "categories": [
-      "hair",
-      "mens-care"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 100,
-    "priceMax": 150,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Conditioner-Ingredients-Verified-Eucalyptus/dp/B0FQDX4WBY?tag=nocrueltyil-20",
-        "asin": "B0FQDX4WBY",
-        "currency": "USD",
-        "priceUSD": 13.05,
-        "freeShipOver": 49
-      }
-    ],
-    "isMen": true
-  },
-  {
-    "id": "attitude-b0f7shjm5p",
-    "brand": "ATTITUDE",
-    "name": "סבון גוף מוצק לגבר (EWG Verified) עם שמן אבוקדו, אקליפטוס ומרווה (מארז 6)",
-    "size": "4 oz (מארז 6)",
-    "categories": [
-      "body",
-      "mens-care"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 100,
-    "priceMax": 150,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Natural-Ingredients-Verified-Eucalyptus/dp/B0F7SHJM5P?tag=nocrueltyil-20",
-        "asin": "B0F7SHJM5P",
-        "currency": "USD",
-        "priceUSD": 6.03,
-        "freeShipOver": 49
-      }
-    ],
-    "isMen": true
-  },
-  {
-    "id": "attitude-b08yfcz7b7",
-    "brand": "ATTITUDE",
-    "name": "מרכך שיער עשיר בלחות לשיער יבש/פגום (EWG Verified), קינואה וג׳וג׳ובה",
-    "size": "32 fl oz",
-    "categories": [
-      "hair"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Conditioner-Mineral-Based-Ingredients-Cruelty-Free/dp/B08YFCZ7B7?tag=nocrueltyil-20",
-        "asin": "B08YFCZ7B7",
-        "currency": "USD",
-        "priceUSD": 21.43,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b08yfby7xl",
-    "brand": "ATTITUDE",
-    "name": "שמפו שיער עשיר בלחות לשיער יבש/פגום (EWG Verified), קינואה וג׳וג׳ובה",
-    "size": "32 fl oz",
-    "categories": [
-      "hair"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Hypoallergenic-Verified-Moisture-11507/dp/B08YFBY7XL?tag=nocrueltyil-20",
-        "asin": "B08YFBY7XL",
-        "currency": "USD",
-        "priceUSD": 21.87,
-        "freeShipOver": 49
-      }
-    ]
-  },
-  {
-    "id": "attitude-b07rwp838s",
-    "brand": "ATTITUDE",
-    "name": "קצף אמבט/שמפו וסבון גוף לילדים (EWG Verified), מנגו",
-    "size": "16 fl oz",
-    "categories": [
-      "hair",
-      "body",
-      "baby"
-    ],
-    "isVegan": true,
-    "isPeta": true,
-    "isLB": false,
-    "priceMin": 0,
-    "priceMax": 50,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/ATTITUDE-Verified-Mineral-Based-Hypoallergenic-Cruelty-free/dp/B07RWP838S?tag=nocrueltyil-20",
-        "asin": "B07RWP838S",
-        "currency": "USD",
-        "priceUSD": 12.43,
         "freeShipOver": 49
       }
     ],
@@ -391,6 +658,56 @@
     ]
   },
   {
+    "id": "attitude-b08yfcz7b7",
+    "brand": "ATTITUDE",
+    "name": "מרכך שיער עשיר בלחות לשיער יבש/פגום (EWG Verified), קינואה וג׳וג׳ובה",
+    "size": "32 fl oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Conditioner-Mineral-Based-Ingredients-Cruelty-Free/dp/B08YFCZ7B7?tag=nocrueltyil-20",
+        "asin": "B08YFCZ7B7",
+        "currency": "USD",
+        "priceUSD": 21.43,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
+    "id": "attitude-b09p5yn72x",
+    "brand": "ATTITUDE",
+    "name": "משחת שיניים ללא פלואוריד לנשימה רעננה, מנטה",
+    "size": "4.2 oz",
+    "categories": [
+      "teeth"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Fluoride-Free-Mineral-Based-Cruelty-Free-16740/dp/B09P5YN72X?tag=nocrueltyil-20",
+        "asin": "B09P5YN72X",
+        "currency": "USD",
+        "priceUSD": 13.15,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
     "id": "attitude-b07nf645hb",
     "brand": "ATTITUDE",
     "name": "סבון גוף לעור רגיש עם שיבולת שועל (EWG Verified), ללא בישום",
@@ -414,5 +731,320 @@
         "freeShipOver": 49
       }
     ]
+  },
+  {
+    "id": "attitude-b0f7t7xvhn",
+    "brand": "ATTITUDE",
+    "name": "סבון גוף מוצק (EWG Verified) קוקוס ופירות יער (מארז 6)",
+    "size": "4 oz (מארז 6)",
+    "categories": [
+      "body"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Natural-Protects-Watercress-Verified/dp/B0F7T7XVHN?tag=nocrueltyil-20",
+        "asin": "B0F7T7XVHN",
+        "currency": "USD",
+        "priceUSD": 6.39,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
+    "id": "attitude-b0c15qw2q1",
+    "brand": "ATTITUDE",
+    "name": "סבון גוף מוצק (EWG Verified), מרווה ורוזמרין",
+    "size": "4 oz",
+    "categories": [
+      "body"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Natural-Protects-verified-Rosemary/dp/B0C15QW2Q1?tag=nocrueltyil-20",
+        "asin": "B0C15QW2Q1",
+        "currency": "USD",
+        "priceUSD": 11.29,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
+    "id": "attitude-b0f7shjm5p",
+    "brand": "ATTITUDE",
+    "name": "סבון גוף מוצק לגבר (EWG Verified) עם שמן אבוקדו, אקליפטוס ומרווה (מארז 6)",
+    "size": "4 oz (מארז 6)",
+    "categories": [
+      "body",
+      "mens-care"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Natural-Ingredients-Verified-Eucalyptus/dp/B0F7SHJM5P?tag=nocrueltyil-20",
+        "asin": "B0F7SHJM5P",
+        "currency": "USD",
+        "priceUSD": 6.03,
+        "freeShipOver": 49
+      }
+    ],
+    "isMen": true
+  },
+  {
+    "id": "attitude-b07mzcn118",
+    "brand": "ATTITUDE",
+    "name": "סבון ידיים מוקצף (EWG Verified), עלי לימון",
+    "size": "10 fl oz",
+    "categories": [
+      "body"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Mineral-Based-Ingredients-Cruelty-free-Personal/dp/B07MZCN118?tag=nocrueltyil-20",
+        "asin": "B07MZCN118",
+        "currency": "USD",
+        "priceUSD": 12.19,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
+    "id": "attitude-b0fj9vmk3k",
+    "brand": "ATTITUDE",
+    "name": "סבון ידיים מוקצף לילדים (EWG Verified) אבטיח וקוקו (מארז 3)",
+    "size": "10 fl oz (מארז 3)",
+    "categories": [
+      "body",
+      "baby"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Dermatologically-Mineral-Based-Ingredients-Watermelon/dp/B0FJ9VMK3K?tag=nocrueltyil-20",
+        "asin": "B0FJ9VMK3K",
+        "currency": "USD",
+        "priceUSD": 7.9,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": true
+  },
+  {
+    "id": "attitude-b07rwp838s",
+    "brand": "ATTITUDE",
+    "name": "קצף אמבט/שמפו וסבון גוף לילדים (EWG Verified), מנגו",
+    "size": "16 fl oz",
+    "categories": [
+      "hair",
+      "body",
+      "baby"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Verified-Mineral-Based-Hypoallergenic-Cruelty-free/dp/B07RWP838S?tag=nocrueltyil-20",
+        "asin": "B07RWP838S",
+        "currency": "USD",
+        "priceUSD": 12.43,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": true
+  },
+  {
+    "id": "attitude-b07j4khsmc",
+    "brand": "ATTITUDE",
+    "name": "קרם לחות לתינוק (EWG Verified), ללא בישום",
+    "size": "16 fl oz",
+    "categories": [
+      "body",
+      "baby"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Verified-Dermatologically-Mineral-Based-Unscented/dp/B07J4KHSMC?tag=nocrueltyil-20",
+        "asin": "B07J4KHSMC",
+        "currency": "USD",
+        "priceUSD": 17.24,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": true
+  },
+  {
+    "id": "attitude-b0fqdx4wby",
+    "brand": "ATTITUDE",
+    "name": "שמפו + מרכך 2‑ב‑1 לגבר (EWG Verified), אקליפטוס ומרווה (מארז 3)",
+    "size": "14 fl oz (מארז 3)",
+    "categories": [
+      "hair",
+      "mens-care"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Conditioner-Ingredients-Verified-Eucalyptus/dp/B0FQDX4WBY?tag=nocrueltyil-20",
+        "asin": "B0FQDX4WBY",
+        "currency": "USD",
+        "priceUSD": 13.05,
+        "freeShipOver": 49
+      }
+    ],
+    "isMen": true
+  },
+  {
+    "id": "attitude-b07vc8bzb1",
+    "brand": "ATTITUDE",
+    "name": "שמפו וסבון גוף לילדים (EWG Verified), מנגו",
+    "size": "16 fl oz",
+    "categories": [
+      "hair",
+      "body",
+      "baby"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Verified-Cleanser-Dermatologically-Products/dp/B07VC8BZB1?tag=nocrueltyil-20",
+        "asin": "B07VC8BZB1",
+        "currency": "USD",
+        "priceUSD": 15.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": true
+  },
+  {
+    "id": "attitude-b09s2xbshn",
+    "brand": "ATTITUDE",
+    "name": "שמפו מוצק לנפח וברק (EWG Verified), פריחת תפוז ואקליפטוס",
+    "size": "4 oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Shampoo-Verified-Ingredients-Eucalyptus/dp/B09S2XBSHN?tag=nocrueltyil-20",
+        "asin": "B09S2XBSHN",
+        "currency": "USD",
+        "priceUSD": 18.99,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
+    "id": "attitude-b08yfby7xl",
+    "brand": "ATTITUDE",
+    "name": "שמפו שיער עשיר בלחות לשיער יבש/פגום (EWG Verified), קינואה וג׳וג׳ובה",
+    "size": "32 fl oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/ATTITUDE-Hypoallergenic-Verified-Moisture-11507/dp/B08YFBY7XL?tag=nocrueltyil-20",
+        "asin": "B08YFBY7XL",
+        "currency": "USD",
+        "priceUSD": 21.87,
+        "freeShipOver": 49
+      }
+    ]
+  },
+  {
+    "id": "ravie-b0fhk6cmpm",
+    "brand": "Ravie Beauty",
+    "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Honey",
+    "size": "0.042 oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FHK6CMPM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.175JEPTPNVH65&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.175JEPTPNVH65_1768941398724",
+        "asin": "B0FHK6CMPM",
+        "currency": "USD",
+        "priceUSD": 18.0,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false
   }
 ]

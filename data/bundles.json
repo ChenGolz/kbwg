@@ -1,87 +1,84 @@
 [
   {
-    "id": "bundle-1",
-    "title": "באנדל 1",
-    "subtitle": "סך הכל כ-171 ₪",
+    "id": "bundle-baby",
+    "title": "קטנטנים נקיים, הורים רגועים",
+    "subtitle": "באנדל אמבטיה לתינוקות/ילדים · סך הכל כ־175 ₪",
     "tags": [
-      "משלוח חינם מעל $49+"
-    ],
-    "itemIds": [
-      "attitude-b07mzcn118",
-      "attitude-b0fj9vmk3k",
-      "attitude-b0f7t7xvhn",
-      "attitude-b0fqdx4wby",
-      "attitude-b0f7shjm5p"
-    ],
-    "total_ils": 171
-  },
-  {
-    "id": "bundle-2",
-    "title": "באנדל 2",
-    "subtitle": "סך הכל כ-171 ₪",
-    "tags": [
-      "משלוח חינם מעל $49+"
-    ],
-    "itemIds": [
-      "attitude-b07qttx153",
-      "attitude-b09p5yn72x",
-      "attitude-b07nf645hb"
-    ],
-    "total_ils": 171
-  },
-  {
-    "id": "bundle-3",
-    "title": "באנדל 3",
-    "subtitle": "סך הכל כ-169 ₪",
-    "tags": [
-      "משלוח חינם מעל $49+"
-    ],
-    "itemIds": [
-      "attitude-b0c15qw2q1",
-      "attitude-b08yfcz7b7",
-      "attitude-b07rwp838s"
-    ],
-    "total_ils": 169
-  },
-  {
-    "id": "bundle-4",
-    "title": "באנדל 4",
-    "subtitle": "סך הכל כ-170 ₪",
-    "tags": [
-      "משלוח חינם מעל $49+"
+      "תינוקות/ילדים",
+      "Amazon US · $49+",
+      "ללא בישום/עדין לעור"
     ],
     "itemIds": [
       "attitude-b07vc8bzb1",
-      "attitude-b07mzcn118",
-      "attitude-b07j4khsmc"
+      "attitude-b0fj9vmk3k",
+      "attitude-b07qttx153",
+      "attitude-b07j4khsmc",
+      "attitude-b07rwp838s"
+    ],
+    "total_ils": 175
+  },
+  {
+    "id": "bundle-sensitive",
+    "title": "רגוע לעור ולקרקפת",
+    "subtitle": "שגרה עדינה ללא בישום · סך הכל כ־170 ₪",
+    "tags": [
+      "לעור רגיש",
+      "ללא בישום",
+      "Amazon US · $49+"
+    ],
+    "itemIds": [
+      "attitude-b07nf645hb",
+      "attitude-b097mm895y",
+      "attitude-b07vc8bzb1"
     ],
     "total_ils": 170
   },
   {
-    "id": "bundle-5",
-    "title": "באנדל 5",
-    "subtitle": "סך הכל כ-171 ₪",
+    "id": "bundle-hair",
+    "title": "שיער יבש? בואי נחזיר לו חיים",
+    "subtitle": "שמפו + מרכך + בוסט · סך הכל כ־169 ₪",
     "tags": [
-      "משלוח חינם מעל $49+"
+      "שיער יבש/פגום",
+      "EWG Verified",
+      "Amazon US · $49+"
     ],
     "itemIds": [
-      "attitude-b09s2xbshn",
-      "attitude-b0f7shjm5p",
-      "attitude-b097mm895y"
+      "attitude-b08yfby7xl",
+      "attitude-b08yfcz7b7",
+      "attitude-b09s2xbshn"
     ],
-    "total_ils": 171
+    "total_ils": 169
   },
   {
-    "id": "bundle-6",
-    "title": "באנדל 6",
-    "subtitle": "סך הכל כ-162 ₪",
+    "id": "bundle-mens",
+    "title": "גבר נקי בלי פשרות",
+    "subtitle": "שיער + גוף + היגיינה · סך הכל כ־172 ₪",
     "tags": [
-      "משלוח חינם מעל $49+"
+      "טיפוח לגבר",
+      "Amazon US · $49+",
+      "EWG Verified"
     ],
     "itemIds": [
-      "attitude-b08yfcz7b7",
-      "attitude-b08yfby7xl"
+      "attitude-b0fqdx4wby",
+      "attitude-b0f7shjm5p",
+      "attitude-b09p5yn72x"
     ],
-    "total_ils": 162
+    "total_ils": 172
+  },
+  {
+    "id": "bundle-bathroom",
+    "title": "מילוי מדף האמבטיה",
+    "subtitle": "סבונים + שגרה יומית · סך הכל כ־171 ₪",
+    "tags": [
+      "משפחתי",
+      "Amazon US · $49+",
+      "ניחוחות רעננים"
+    ],
+    "itemIds": [
+      "attitude-b0f7t7xvhn",
+      "attitude-b0c15qw2q1",
+      "attitude-b0f7shjm5p"
+    ],
+    "total_ils": 171
   }
 ]
