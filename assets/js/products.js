@@ -102,6 +102,8 @@ function normalizeProduct(p) {
 
     return {
       ...p,
+      // תמונה: אם אין תמונה בדאטה – ננסה לפי ASIN (assets/img/products/{asin}.jpg)
+      image: p?.image || (offers.find((x) => x && x.asin)?.asin ? `assets/img/products/${offers.find((x) => x && x.asin).asin}.jpg` : null),
       // דגלים לוגיים אחידים
       isLB: Boolean(p?.isLB ?? p?.lb ?? p?.isLeapingBunny),
       isPeta: Boolean(p?.isPeta ?? p?.peta),
@@ -917,6 +919,15 @@ function normalizeProduct(p) {
         img.decoding = "async";
         img.width = 640;
         img.height = 640;
+        img.onerror = () => {
+          // אם אין תמונה (404) – נחליף לפלייסהולדר במקום להשאיר תמונה שבורה
+          try { img.remove(); } catch (e) {}
+          const ph = document.createElement("div");
+          ph.className = "pPlaceholder";
+          ph.textContent = "🧴";
+          ph.setAttribute("aria-hidden", "true");
+          media.appendChild(ph);
+        };
         media.appendChild(img);
       } else {
         const ph = document.createElement("div");
