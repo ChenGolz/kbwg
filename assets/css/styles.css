@@ -3758,3 +3758,67 @@ body.menuOpen .navOverlay{
   .siteHeader .nav a{ font-size: 13px; padding: 6px 9px; }
 }
 
+/* =========================================================
+   מוצרים: תמונות אוטומטיות לפי ASIN
+   - אם קיימת תמונה ב assets/img/products/{asin}.jpg היא תופיע
+   - אחרת נציג פלייסהולדר (🧴) בלי "תמונה שבורה"
+   ========================================================= */
+
+.page-products .productCard{
+  /* מבטל override ישן של flex כדי לאפשר כרטיס עם תמונה */
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 12px;
+  padding: 12px;
+  text-align: start;
+  align-items: stretch;
+}
+
+.page-products .productCard .pMedia{
+  display: grid;
+  min-height: 84px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(20,40,80,.10);
+  background: rgba(245,248,255,.75);
+  place-items: center;
+}
+
+.page-products .productCard .pMedia img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.page-products .productCard .pPlaceholder{
+  font-size: 22px;
+  opacity: .75;
+}
+
+.page-products .productCard .pContent{
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.page-products .productCard .pHeader{
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.page-products .productCard .pTitleWrap{
+  text-align: start;
+}
+
+.page-products .productCard .pMeta{
+  justify-content: flex-start;
+}
+
+@media (max-width: 520px){
+  .page-products .productCard{ grid-template-columns: 1fr; }
+  .page-products .productCard .pMedia{ min-height: 170px; }
+}
