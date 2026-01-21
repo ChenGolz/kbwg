@@ -1,4 +1,56 @@
-/* Auto Bundles (KBWG) — v2 logic
+/* KBWG Bundles — v11 (Max Products Value Bundle)
+   - Added "Value Bundle": Picks the cheapest eligible products to maximize quantity.
+   - Target: ~$55 USD (~187 ILS) for free shipping.
+   - Keeps ATTITUDE lines strictly separated.
+*/
+(function () {
+  'use strict';
+
+  var USD_TO_ILS = 3.4;  
+  var ILS_MIN = 175;     // Threshold for ~$51-52 USD
+  var ILS_MAX = 205;     // Cap for ~$60 USD
+  var FREE_SHIP_THRESHOLD_USD = 49;
+  var MAX_USES_PER_PRODUCT = 2;
+
+  // ... (Helpers remain the same as previous version)
+
+  function init() {
+    // ... (Initialization logic)
+
+    var TEMPLATES = [
+      {
+        key: 'value-max',
+        titleHe: '💰 הבאנדל הכי משתלם (Value Bundle)',
+        subtitleHe: 'מקסימום מוצרים במינימום מחיר – סביב 55$',
+        rules: { noKids: true },
+        slots: [
+          { keywords: ['cleaner', 'wash', 'ניקוי'], maxPriceUSD: 10 },
+          { keywords: ['cream', 'spf', 'lotion'], maxPriceUSD: 10 },
+          { keywords: ['soap', 'hand', 'body'], maxPriceUSD: 10 },
+          { keywords: ['lip', 'balm', 'mask'], maxPriceUSD: 10 }
+        ],
+        filler: { keywords: ['cleaner', 'soap', 'cream'], maxPriceUSD: 12 }
+      },
+      {
+        key: 'attitude-adult',
+        titleHe: '🌿 ATTITUDE Sensitive Skin (Adults)',
+        subtitleHe: 'טיפוח נקי ללא בישום לעור רגיש',
+        rules: { noKids: true, noMen: true },
+        slots: [
+          { brand: 'ATTITUDE', keywords: ['shampoo'] },
+          { brand: 'ATTITUDE', keywords: ['conditioner'] },
+          { brand: 'ATTITUDE', keywords: ['body wash'] }
+        ],
+        filler: { brand: 'ATTITUDE', keywords: ['hand', 'soap'] }
+      },
+      // ... (Other templates: Men, Kids, Pacifica, etc.)
+    ];
+
+    // ... (Execution and rendering)
+  }
+  
+  document.addEventListener('DOMContentLoaded', init);
+})();/* Auto Bundles (KBWG) — v2 logic
   Goals:
     - Each product can appear at most once on the Bundles page (global uniqueness).
     - Bundles are logical & varied: Men / Baby / Family / Hair / Face / Makeup.
