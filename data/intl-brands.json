@@ -1,29 +1,150 @@
 [
   {
-  "name": "Made by Dentists",
-  "website": "",
-  "amazonUs": "https://amzn.to/4jNdtZu",
-  "categories": ["teeth", "baby"],
-  "badges": ["PETA", "Vegan"],
-  "vegan": true,
-  "priceTier": 2,
-  "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
-  "site": "",
-  "amazonUk": ""
-},
-{
-  "name": "about-face",
-  "website": "",
-  "amazonUs": "https://amzn.to/49RwPZ1",
-  "categories": ["makeup", "face"],
-  "badges": ["PETA", "Vegan"],
-  "vegan": true,
-  "priceTier": 2,
-  "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
-  "site": "",
-  "amazonUk": ""
-}
-,
+    "name": "R+Co",
+    "website": "https://www.randco.com/",
+    "amazonUs": "https://www.amazon.com/s?k=R%2BCo&tag=nocrueltyil-20",
+    "categories": [
+      "hair"
+    ],
+    "badges": [
+      "Leaping Bunny",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 4,
+    "notes": "מותג לשיער טבעוני וללא ניסויים – Leaping Bunny approved",
+    "site": "",
+    "amazonUk": ""
+  },
+  {
+    "name": "Versed",
+    "website": "https://versedskin.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Versed+skincare&tag=nocrueltyil-20",
+    "categories": [
+      "skincare",
+      "body"
+    ],
+    "badges": [
+      "Leaping Bunny",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "notes": "טיפוח גוף ופנים טבעוני וללא ניסויים – Leaping Bunny approved",
+    "site": "",
+    "amazonUk": ""
+  },
+  {
+    "name": "Pacifica",
+    "website": "https://www.pacificabeauty.com/",
+    "amazonUs": "https://www.amazon.com/stores/Pacifica/page/6C5C0B78-0050-4F25-8371-55B90779261B",
+    "categories": [
+      "Skincare",
+      "Makeup",
+      "Body Care",
+      "Hair Care",
+      "Fragrance",
+      "Suncare"
+    ],
+    "badges": [
+      "Vegan",
+      "PETA"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "notes": "מותג טבעוני לחלוטין עם דגש על רכיבים נקיים",
+    "site": "https://www.pacificabeauty.com",
+    "amazonUk": ""
+  },
+  {
+    "name": "Supersmile",
+    "website": "https://www.supersmile.com/",
+    "amazonUs": "https://www.amazon.com/stores/Supersmile/page/A4F6A2C5-E0C1-4A5D-80D3-E68270562624",
+    "categories": [
+      "Oral Care",
+      "Teeth Whitening"
+    ],
+    "badges": [
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "notes": "מוצרי הלבנת שיניים מקצועיים",
+    "site": "https://www.supersmile.com",
+    "amazonUk": ""
+  },
+  {
+    "name": "Naked Sundays",
+    "website": "https://nakedsundays.com/",
+    "amazonUs": "https://www.amazon.com/stores/NakedSundays/page/9E4C9697-D6BA-4B6A-887B-8B46059B7372",
+    "categories": [
+      "Suncare",
+      "Skincare",
+      "Makeup"
+    ],
+    "badges": [
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "notes": "מוצרי הגנה מהשמש שמשתלבים עם איפור",
+    "site": "https://nakedsundays.com",
+    "amazonUk": ""
+  },
+  {
+    "name": "IGK",
+    "website": "https://www.igkhair.com/",
+    "amazonUs": "https://www.amazon.com/stores/IGK/page/4E81C7F6-5867-4B9F-8302-66C635B6D1B1",
+    "categories": [
+      "Hair Care",
+      "Styling"
+    ],
+    "badges": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "notes": "מוצרי שיער מקצועיים ואיכותיים",
+    "site": "https://www.igkhair.com",
+    "amazonUk": ""
+  },
+  {
+    "name": "Made by Dentists",
+    "website": "https://www.madebydentists.com/",
+    "amazonUs": "https://amzn.to/4jNdtZu",
+    "categories": [
+      "teeth",
+      "baby"
+    ],
+    "badges": [
+      "PETA",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
+    "site": "",
+    "amazonUk": ""
+  },
+  {
+    "name": "about-face",
+    "website": "https://aboutface.com/",
+    "amazonUs": "https://amzn.to/49RwPZ1",
+    "categories": [
+      "makeup",
+      "face"
+    ],
+    "badges": [
+      "PETA",
+      "Vegan"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "notes": "מאושר ע\"י PETA (ללא ניסויים) וטבעוני.",
+    "site": "",
+    "amazonUk": ""
+  },
   {
     "name": "oVertone",
     "website": "https://overtone.co/",
@@ -220,7 +341,6 @@
     "name": "ATTITUDE",
     "website": "https://attitudeliving.com/",
     "amazonUs": "https://amzn.to/3Lq6kSl",
-    "amazonUk": "https://amzn.to/3YIVrxZ",
     "categories": [
       "makeup",
       "skincare",
@@ -235,13 +355,14 @@
     ],
     "vegan": true,
     "priceTier": 2,
-    "notes": "100% טבעוני וללא ניסויים (PETA)"
+    "notes": "100% טבעוני וללא ניסויים (PETA)",
+    "site": "",
+    "amazonUk": "https://amzn.to/3YIVrxZ"
   },
   {
     "name": "Ravie Beauty",
     "website": "https://ravie.com/",
     "amazonUs": "https://amzn.to/4b4Tgfu",
-    "amazonUk": "",
     "categories": [
       "makeup",
       "skincare"
@@ -251,7 +372,9 @@
     ],
     "vegan": true,
     "priceTier": 3,
-    "notes": "טבעוני וללא ניסויים בבעלי חיים (לפי המותג)"
+    "notes": "טבעוני וללא ניסויים בבעלי חיים (לפי המותג)",
+    "site": "",
+    "amazonUk": ""
   },
   {
     "name": "LilyAna Naturals",

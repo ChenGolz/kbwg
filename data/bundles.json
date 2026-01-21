@@ -1,85 +1,452 @@
 [
-
   {
-    "id": "bundle-baby",
-    "title": "קטנטנים נקיים, הורים רגועים",
-    "subtitle": "באנדל אמבטיה לתינוקות/ילדים · סך הכל כ־175 ₪",
+    "id": "bundle-hair-01",
+    "title": "שגרת שיער נקייה ומלאה",
+    "subtitle": "סך הכל כ־201 ₪",
     "tags": [
-      "תינוקות/ילדים",
-      "Amazon US · $49+",
-      "ללא בישום/עדין לעור"
+      "שיער",
+      "Amazon US",
+      "משלוח חינם $49+ / לישראל"
     ],
     "itemIds": [
-      "attitude-b07vc8bzb1",
-      "attitude-b0fj9vmk3k",
+      "attitude-b09s2xbshn",
+      "attitude-b097mm895y",
+      "attitude-b08yfcz7b7"
+    ],
+    "total_ils": 201
+  },
+  {
+    "id": "bundle-hair-02",
+    "title": "שגרת שיער נקייה ומלאה #2",
+    "subtitle": "סך הכל כ־201 ₪",
+    "tags": [
+      "שיער",
+      "Amazon US",
+      "משלוח חינם $49+ / לישראל"
+    ],
+    "itemIds": [
+      "attitude-b09s2xbshn",
+      "attitude-b097mm895y",
+      "attitude-b08yfcz7b7"
+    ],
+    "total_ils": 201
+  },
+  {
+    "id": "bundle-hair-03",
+    "title": "שגרת שיער נקייה ומלאה #3",
+    "subtitle": "סך הכל כ־191 ₪",
+    "tags": [
+      "שיער",
+      "Amazon US",
+      "משלוח חינם $49+ / לישראל"
+    ],
+    "itemIds": [
+      "attitude-b08yfby7xl",
+      "rco-b0ckc3nhmy"
+    ],
+    "total_ils": 191
+  },
+  {
+    "id": "bundle-hair-04",
+    "title": "שגרת שיער נקייה ומלאה #4",
+    "subtitle": "סך הכל כ־191 ₪",
+    "tags": [
+      "שיער",
+      "Amazon US",
+      "משלוח חינם $49+ / לישראל"
+    ],
+    "itemIds": [
+      "attitude-b08yfby7xl",
+      "rco-b0ckc3nhmy"
+    ],
+    "total_ils": 191
+  },
+  {
+    "id": "bundle-makeup-01",
+    "title": "ערכת איפור יומי מלאה",
+    "subtitle": "סך הכל כ־229 ₪",
+    "tags": [
+      "איפור",
+      "Amazon US",
+      "טבעוני"
+    ],
+    "itemIds": [
+      "alleyoop-b08xbz865d",
+      "versed-b09wjbd9km",
+      "ravie-b0fhk6cmpm-mocha",
+      "ravie-b0fhk5mrd8-fig"
+    ],
+    "total_ils": 229
+  },
+  {
+    "id": "bundle-makeup-02",
+    "title": "ערכת איפור יומי מלאה #2",
+    "subtitle": "סך הכל כ־229 ₪",
+    "tags": [
+      "איפור",
+      "Amazon US",
+      "טבעוני"
+    ],
+    "itemIds": [
+      "alleyoop-b08xbz865d",
+      "versed-b09wjbd9km",
+      "ravie-b0fhk6cmpm-mocha",
+      "ravie-b0fhk5mrd8-fig"
+    ],
+    "total_ils": 229
+  },
+  {
+    "id": "bundle-makeup-03",
+    "title": "ערכת איפור יומי מלאה #3",
+    "subtitle": "סך הכל כ־194 ₪",
+    "tags": [
+      "איפור",
+      "Amazon US",
+      "טבעוני"
+    ],
+    "itemIds": [
+      "ravie-b0fhk6cmpm",
+      "alleyoop-b0dffbhgb7",
+      "pacifica-b0bqfmtbgp"
+    ],
+    "total_ils": 194
+  },
+  {
+    "id": "bundle-makeup-04",
+    "title": "ערכת איפור יומי מלאה #4",
+    "subtitle": "סך הכל כ־194 ₪",
+    "tags": [
+      "איפור",
+      "Amazon US",
+      "טבעוני"
+    ],
+    "itemIds": [
+      "ravie-b0fhk6cmpm",
+      "alleyoop-b0dffbhgb7",
+      "pacifica-b0bqfmtbgp"
+    ],
+    "total_ils": 194
+  },
+  {
+    "id": "bundle-makeup-05",
+    "title": "ערכת איפור יומי מלאה #5",
+    "subtitle": "סך הכל כ־218 ₪",
+    "tags": [
+      "איפור",
+      "Amazon US",
+      "טבעוני"
+    ],
+    "itemIds": [
+      "alleyoop-b08xbd2cbt",
+      "alleyoop-b0bvgrlfkg"
+    ],
+    "total_ils": 218
+  },
+  {
+    "id": "bundle-makeup-06",
+    "title": "ערכת איפור יומי מלאה #6",
+    "subtitle": "סך הכל כ־218 ₪",
+    "tags": [
+      "איפור",
+      "Amazon US",
+      "טבעוני"
+    ],
+    "itemIds": [
+      "alleyoop-b08xbd2cbt",
+      "alleyoop-b0bvgrlfkg"
+    ],
+    "total_ils": 218
+  },
+  {
+    "id": "bundle-baby-01",
+    "title": "סט חובה לתינוק/ה",
+    "subtitle": "סך הכל כ־199 ₪",
+    "tags": [
+      "תינוקות/ילדים",
+      "Amazon US",
+      "עדין לעור"
+    ],
+    "itemIds": [
+      "attitude-b07rwp838s",
       "attitude-b07qttx153",
-      "attitude-b07j4khsmc",
-      "attitude-b07rwp838s"
+      "attitude-b07vc8bzb1",
+      "attitude-b07j4khsmc"
+    ],
+    "total_ils": 199
+  },
+  {
+    "id": "bundle-baby-02",
+    "title": "סט חובה לתינוק/ה #2",
+    "subtitle": "סך הכל כ־199 ₪",
+    "tags": [
+      "תינוקות/ילדים",
+      "Amazon US",
+      "עדין לעור"
+    ],
+    "itemIds": [
+      "attitude-b07rwp838s",
+      "attitude-b07qttx153",
+      "attitude-b07vc8bzb1",
+      "attitude-b07j4khsmc"
+    ],
+    "total_ils": 199
+  },
+  {
+    "id": "bundle-men-01",
+    "title": "שגרת טיפוח יומית לגבר",
+    "subtitle": "סך הכל כ־187 ₪",
+    "tags": [
+      "טיפוח לגבר",
+      "Amazon US",
+      "שגרה יומית"
+    ],
+    "itemIds": [
+      "lilyana-b00lv5ny3i",
+      "attitude-b0fqdx4wby"
+    ],
+    "total_ils": 187
+  },
+  {
+    "id": "bundle-men-02",
+    "title": "שגרת טיפוח יומית לגבר #2",
+    "subtitle": "סך הכל כ־187 ₪",
+    "tags": [
+      "טיפוח לגבר",
+      "Amazon US",
+      "שגרה יומית"
+    ],
+    "itemIds": [
+      "lilyana-b00lv5ny3i",
+      "attitude-b0fqdx4wby"
+    ],
+    "total_ils": 187
+  },
+  {
+    "id": "bundle-skincare-01",
+    "title": "שגרת טיפוח פנים מלאה",
+    "subtitle": "סך הכל כ־192 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "versed-b0b3f3lp9w",
+      "versed-b0bdj328wn",
+      "versed-b09nmlrbhz",
+      "versed-b09nmm9tw6",
+      "versed-b09pd38xrm"
+    ],
+    "total_ils": 192
+  },
+  {
+    "id": "bundle-skincare-02",
+    "title": "שגרת טיפוח פנים מלאה #2",
+    "subtitle": "סך הכל כ־192 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "versed-b0b3f3lp9w",
+      "versed-b0bdj328wn",
+      "versed-b09nmlrbhz",
+      "versed-b09nmm9tw6",
+      "versed-b09pd38xrm"
+    ],
+    "total_ils": 192
+  },
+  {
+    "id": "bundle-skincare-03",
+    "title": "שגרת טיפוח פנים מלאה #3",
+    "subtitle": "סך הכל כ־175 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "versed-b0bldxy8fb",
+      "versed-b09nmmhztj",
+      "versed-b0ffjkbz5f"
     ],
     "total_ils": 175
   },
   {
-    "id": "bundle-sensitive",
-    "title": "רגוע לעור ולקרקפת",
-    "subtitle": "שגרה עדינה ללא בישום · סך הכל כ־170 ₪",
+    "id": "bundle-skincare-04",
+    "title": "שגרת טיפוח פנים מלאה #4",
+    "subtitle": "סך הכל כ־175 ₪",
     "tags": [
-      "לעור רגיש",
-      "ללא בישום",
-      "Amazon US · $49+"
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
     ],
     "itemIds": [
+      "versed-b0bldxy8fb",
+      "versed-b09nmmhztj",
+      "versed-b0ffjkbz5f"
+    ],
+    "total_ils": 175
+  },
+  {
+    "id": "bundle-skincare-05",
+    "title": "שגרת טיפוח פנים מלאה #5",
+    "subtitle": "סך הכל כ־211 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "pacifica-b0bvwkld3n",
+      "pacifica-b09wh3kjrj",
+      "lilyana-b0d1w229g3"
+    ],
+    "total_ils": 211
+  },
+  {
+    "id": "bundle-skincare-06",
+    "title": "שגרת טיפוח פנים מלאה #6",
+    "subtitle": "סך הכל כ־211 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "pacifica-b0bvwkld3n",
+      "pacifica-b09wh3kjrj",
+      "lilyana-b0d1w229g3"
+    ],
+    "total_ils": 211
+  },
+  {
+    "id": "bundle-skincare-07",
+    "title": "שגרת טיפוח פנים מלאה #7",
+    "subtitle": "סך הכל כ־198 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "pacifica-b099738fkj",
+      "versed-b0cldwtfbd"
+    ],
+    "total_ils": 198
+  },
+  {
+    "id": "bundle-skincare-08",
+    "title": "שגרת טיפוח פנים מלאה #8",
+    "subtitle": "סך הכל כ־198 ₪",
+    "tags": [
+      "טיפוח פנים",
+      "Amazon US",
+      "שגרה מלאה"
+    ],
+    "itemIds": [
+      "pacifica-b099738fkj",
+      "versed-b0cldwtfbd"
+    ],
+    "total_ils": 198
+  },
+  {
+    "id": "bundle-body-01",
+    "title": "שגרת גוף מחזקת",
+    "subtitle": "סך הכל כ־242 ₪",
+    "tags": [
+      "טיפוח גוף",
+      "Amazon US",
+      "לחות/מיצוק"
+    ],
+    "itemIds": [
+      "versed-b0ct5ztjbs",
+      "attitude-b0c15qw2q1",
+      "attitude-b07mzcn118",
       "attitude-b07nf645hb",
-      "attitude-b097mm895y",
-      "attitude-b07vc8bzb1"
+      "attitude-b0fj9vmk3k"
     ],
-    "total_ils": 170
+    "total_ils": 242
   },
   {
-    "id": "bundle-hair",
-    "title": "שיער יבש? בואי נחזיר לו חיים",
-    "subtitle": "שמפו + מרכך + בוסט · סך הכל כ־169 ₪",
+    "id": "bundle-body-02",
+    "title": "שגרת גוף מחזקת #2",
+    "subtitle": "סך הכל כ־242 ₪",
     "tags": [
-      "שיער יבש/פגום",
-      "EWG Verified",
-      "Amazon US · $49+"
+      "טיפוח גוף",
+      "Amazon US",
+      "לחות/מיצוק"
     ],
     "itemIds": [
-      "attitude-b08yfby7xl",
-      "attitude-b08yfcz7b7",
-      "attitude-b09s2xbshn"
+      "versed-b0ct5ztjbs",
+      "attitude-b0c15qw2q1",
+      "attitude-b07mzcn118",
+      "attitude-b07nf645hb",
+      "attitude-b0fj9vmk3k"
     ],
-    "total_ils": 169
+    "total_ils": 242
   },
   {
-    "id": "bundle-mens",
-    "title": "גבר נקי בלי פשרות",
-    "subtitle": "שיער + גוף + היגיינה · סך הכל כ־172 ₪",
+    "id": "bundle-body-03",
+    "title": "שגרת גוף מחזקת #3",
+    "subtitle": "סך הכל כ־202 ₪",
     "tags": [
-      "טיפוח לגבר",
-      "Amazon US · $49+",
-      "EWG Verified"
+      "טיפוח גוף",
+      "Amazon US",
+      "לחות/מיצוק"
     ],
     "itemIds": [
-      "attitude-b0fqdx4wby",
-      "attitude-b0f7shjm5p",
-      "attitude-b09p5yn72x"
+      "versed-b0cnqd5qvt",
+      "attitude-b0f7shjm5p"
+    ],
+    "total_ils": 202
+  },
+  {
+    "id": "bundle-body-04",
+    "title": "שגרת גוף מחזקת #4",
+    "subtitle": "סך הכל כ־202 ₪",
+    "tags": [
+      "טיפוח גוף",
+      "Amazon US",
+      "לחות/מיצוק"
+    ],
+    "itemIds": [
+      "versed-b0cnqd5qvt",
+      "attitude-b0f7shjm5p"
+    ],
+    "total_ils": 202
+  },
+  {
+    "id": "bundle-mix-01",
+    "title": "באנדל השלמות לסל",
+    "subtitle": "סך הכל כ־172 ₪",
+    "tags": [
+      "מיקס",
+      "Amazon US",
+      "השלמת סל"
+    ],
+    "itemIds": [
+      "versed-b0bx1yxwv4",
+      "attitude-b09p5yn72x",
+      "made-by-dentists-b0f3jptkc4"
     ],
     "total_ils": 172
   },
   {
-    "id": "bundle-bathroom",
-    "title": "מילוי מדף האמבטיה",
-    "subtitle": "סבונים + שגרה יומית · סך הכל כ־171 ₪",
+    "id": "bundle-mix-02",
+    "title": "באנדל השלמות לסל #2",
+    "subtitle": "סך הכל כ־172 ₪",
     "tags": [
-      "משפחתי",
-      "Amazon US · $49+",
-      "ניחוחות רעננים"
+      "מיקס",
+      "Amazon US",
+      "השלמת סל"
     ],
     "itemIds": [
-      "attitude-b0f7t7xvhn",
-      "attitude-b0c15qw2q1",
-      "attitude-b0f7shjm5p"
+      "versed-b0bx1yxwv4",
+      "attitude-b09p5yn72x",
+      "made-by-dentists-b0f3jptkc4"
     ],
-    "total_ils": 171
+    "total_ils": 172
   }
 ]

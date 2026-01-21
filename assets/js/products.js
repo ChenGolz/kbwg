@@ -562,7 +562,7 @@ function normalizeProduct(p) {
   function formatFreeShipText(o) {
     if (!o || o.freeShipOver == null || Number.isNaN(o.freeShipOver)) return "";
     // This project stores Amazon free-shipping thresholds in USD.
-    // Display: "משלוח חינם לישראל מעל $X (Y ש\"ח לערך)"
+    // Display: "משלוח חינם לישראל מעל $X (Y ש\"ח )"
     const usd = o.freeShipOver;
     // Approximate conversion (kept simple + stable for UI copy).
     // Chosen so $49 ≈ ₪160 (as used across the site copy).

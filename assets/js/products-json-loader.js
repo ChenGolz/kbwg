@@ -101,7 +101,7 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
     })
     .finally(function () {
       // The main page logic expects window.PRODUCTS to exist.
-      loadScript('assets/js/products.js').catch(function (e) {
+      loadScript(resolveFromBase('assets/js/products.js')).catch(function (e) {
         console.error('[products-json-loader] Could not start products.js', e);
       });
     });

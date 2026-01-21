@@ -1,374 +1,1275 @@
 [
-{
-  "id": "made-by-dentists-b0f3jptkc4",
-  "brand": "Made by Dentists",
-  "name": "מברשת שיניים חשמלית לילדים (נטענת) עם טיימר – כולל 6 ראשים – דוגמת Cheetah",
-  "size": "כולל 6 ראשים",
-  "categories": ["teeth", "baby"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0F3JPTKC4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953400189",
-      "asin": "B0F3JPTKC4",
-      "currency": "USD",
-      "priceUSD": 26.98,
-      "freeShipOver": 49
-    }
-  ],
-  "image": "assets/img/products/B0F3JPTKC4.jpg",
-  "isKids": true
-},
-{
-  "id": "made-by-dentists-b0g49mqv9f",
-  "brand": "Made by Dentists",
-  "name": "ראשים חלופיים Sonic X – 6 ראשים (2×3) – סיבים רכים – מתאים רק למברשת Sonic X",
-  "size": "6 ראשים (2×3)",
-  "categories": ["teeth"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0G49MQV9F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953706015",
-      "asin": "B0G49MQV9F",
-      "currency": "USD",
-      "priceUSD": 19.99
-    }
-  ],
-  "image": "assets/img/products/B0G49MQV9F.jpg",
-  "isKids": false
-},
-{
-  "id": "made-by-dentists-b0g49mw8mw",
-  "brand": "Made by Dentists",
-  "name": "מברשת שיניים חשמלית Sonic X – נטענת – 2 מצבים + טיימר 2 דקות – כולל 6 ראשים (Today Was A Good Day)",
-  "size": "כולל 6 ראשים",
-  "categories": ["teeth", "baby"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0G49MW8MW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953706838",
-      "asin": "B0G49MW8MW",
-      "currency": "USD",
-      "priceUSD": 28.98
-    }
-  ],
-  "image": "assets/img/products/B0G49MW8MW.jpg",
-  "isKids": true
-},
-{
-  "id": "ravie-b0fhk6cmpm-mocha",
-  "brand": "Ravie Beauty",
-  "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Mocha",
-  "size": "0.32 oz",
-  "categories": ["makeup"],
-  "isVegan": true,
-  "isPeta": false,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0FHK6CMPM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.175JEPTPNVH65&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.175JEPTPNVH65_1768954454332",
-      "asin": "B0FHK6CMPM",
-      "currency": "USD",
-      "priceUSD": 18.0,
-      "freeShipOver": 49
-    }
-  ],
-  "image": "assets/img/products/B0FHK6CMPM.jpg",
-  "isKids": false
-},
-{
-  "id": "ravie-b0fhk5mrd8-fig",
-  "brand": "Ravie Beauty",
-  "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Fig",
-  "size": "0.32 oz",
-  "categories": ["makeup"],
-  "isVegan": true,
-  "isPeta": false,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0FHK5MRD8?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.22G6I4O7C72CX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.22G6I4O7C72CX_1768954541403",
-      "asin": "B0FHK5MRD8",
-      "currency": "USD",
-      "priceUSD": 18.0,
-      "freeShipOver": 49
-    }
-  ],
-  "image": "assets/img/products/B0FHK5MRD8.jpg",
-  "isKids": false
-},
-{
-  "id": "about-face-b0fc4hk4kp",
-  "brand": "about-face",
-  "name": "THE PERFORMER מייקאפ/פאונדיישן – MD3 Warm – כיסוי בינוני, עמיד ונושם",
-  "size": "1.08 oz",
-  "categories": ["makeup", "face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0FC4HK4KP?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1VAR88KOLOHR7&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1VAR88KOLOHR7_1768954701989",
-      "asin": "B0FC4HK4KP",
-      "currency": "USD",
-      "priceUSD": 25.0
-    }
-  ],
-  "image": "assets/img/products/B0FC4HK4KP.jpg",
-  "isKids": false
-}
+ 
+  {
+    "id": "rco-b0ckfjcskl",
+    "brand": "R+Co",
+    "name": "סט שמפו ומרכך משקם BLEU דה-לוקס – מעניק לחות, מחזק ומחזיר ברק לשיער פגום",
+    "size": "מארז שמפו + מרכך",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 250,
+    "priceMax": 300,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CKFJCSKL?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017702146",
+        "asin": "B0CKFJCSKL",
+        "currency": "USD",
+        "priceUSD": 88.20,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CKFJCSKL.jpg"
+  },
+
+  {
+    "id": "rco-b0d63kcbld",
+    "brand": "R+Co",
+    "name": "סט שמפו ומרכך ביוטין להענקת נפח לשיער דק",
+    "size": "מארז זוגי גדול",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 600,
+    "priceMax": 650,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D63KCBLD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017734296",
+        "asin": "B0D63KCBLD",
+        "currency": "USD",
+        "priceUSD": 205.20,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0D63KCBLD.jpg"
+  },
+
+  {
+    "id": "rco-b0ckc3nhmy",
+    "brand": "R+Co",
+    "name": "קרם עיצוב לשיער בייבוש טבעי – מעניק לחות ומרכך",
+    "size": "יחידה",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CKC3NHMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017760507",
+        "asin": "B0CKC3NHMY",
+        "currency": "USD",
+        "priceUSD": 36.00,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CKC3NHMY.jpg"
+  },
+
+  {
+    "id": "rco-b0ds2w61zj",
+    "brand": "R+Co",
+    "name": "פסטת עיצוב לשיער – אחיזה חזקה בגימור טבעי",
+    "size": "מארז זוגי",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 150,
+    "priceMax": 200,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DS2W61ZJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017780002",
+        "asin": "B0DS2W61ZJ",
+        "currency": "USD",
+        "priceUSD": 61.20,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DS2W61ZJ.jpg"
+  },
+
+  {
+    "id": "rco-b0djmyl8jd",
+    "brand": "R+Co",
+    "name": "ספריי נפח וטקסטורה לשיער – אידאלי לעיצוב בפן",
+    "size": "יחידה",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DJMYL8JD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017812842",
+        "asin": "B0DJMYL8JD",
+        "currency": "USD",
+        "priceUSD": 46.80,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DJMYL8JD.jpg"
+  },
+
+  {
+    "id": "versed-b09nmlrbhz",
+    "brand": "Versed",
+    "name": "ג׳ל עיניים מקרר להפחתת נפיחות וכהויות",
+    "size": "יחידה",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09NMLRBHZ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019734639",
+        "asin": "B09NMLRBHZ",
+        "currency": "USD",
+        "priceUSD": 11.94,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09NMLRBHZ.jpg"
+  },
+
+  {
+    "id": "versed-b09wjbd9km",
+    "brand": "Versed",
+    "name": "טיפות זוהר וברונזינג להארת העור",
+    "size": "יחידה",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09WJBD9KM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019763039",
+        "asin": "B09WJBD9KM",
+        "currency": "USD",
+        "priceUSD": 17.29,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09WJBD9KM.jpg"
+  },
+
+  {
+    "id": "versed-b09nmmhztj",
+    "brand": "Versed",
+    "name": "נוזל פילינג יומי להבהרת העור עם AHA וויטמין C",
+    "size": "120 מ״ל",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09NMMHZTJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019887061",
+        "asin": "B09NMMHZTJ",
+        "currency": "USD",
+        "priceUSD": 17.00,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09NMMHZTJ.jpg"
+  },
+
+  {
+    "id": "versed-b09pd38xrm",
+    "brand": "Versed",
+    "name": "קרם לחות עשיר לפנים לעור יבש",
+    "size": "45 מ״ל",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09PD38XRM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019912688",
+        "asin": "B09PD38XRM",
+        "currency": "USD",
+        "priceUSD": 14.49,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09PD38XRM.jpg"
+  },
+
+  {
+    "id": "versed-b0bx1yxwv4",
+    "brand": "Versed",
+    "name": "סכין דרמה-פלנינג לפילינג ביתי עדין",
+    "size": "יחידה",
+    "categories": ["tools"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BX1YXWV4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019938707",
+        "asin": "B0BX1YXWV4",
+        "currency": "USD",
+        "priceUSD": 11.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BX1YXWV4.jpg"
+  },
+
+  {
+    "id": "versed-b0cnqd5qvt",
+    "brand": "Versed",
+    "name": "קרם גוף עם רטינול לחידוש ומיצוק העור",
+    "size": "מארז 2 יחידות",
+    "categories": ["body"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CNQD5QVT?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019961240",
+        "asin": "B0CNQD5QVT",
+        "currency": "USD",
+        "priceUSD": 24.95,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CNQD5QVT.jpg"
+  },
+
+  {
+    "id": "versed-b09nmm9tw6",
+    "brand": "Versed",
+    "name": "מסכת פילינג לחידוש מרקם העור",
+    "size": "50 מ״ל",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09NMM9TW6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020070650",
+        "asin": "B09NMM9TW6",
+        "currency": "USD",
+        "priceUSD": 12.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09NMM9TW6.jpg"
+  },
+
+  {
+    "id": "versed-b0bdj328wn",
+    "brand": "Versed",
+    "name": "קרם לחות ויטמין C להבהרת העור",
+    "size": "60 מ״ל",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BDJ328WN?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020096670",
+        "asin": "B0BDJ328WN",
+        "currency": "USD",
+        "priceUSD": 9.59,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BDJ328WN.jpg"
+  },
+
+  {
+    "id": "versed-b0cldwtfbd",
+    "brand": "Versed",
+    "name": "סרום רטינול עדין ללילה לעור רגיש",
+    "size": "60 מ״ל",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CLDWTFBD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020118650",
+        "asin": "B0CLDWTFBD",
+        "currency": "USD",
+        "priceUSD": 35.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CLDWTFBD.jpg"
+  },
+
+  {
+    "id": "versed-b0b3f3lp9w",
+    "brand": "Versed",
+    "name": "קרם עיניים רטינואידי ללילה להפחתת קמטים",
+    "size": "יחידה",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0B3F3LP9W?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020144098",
+        "asin": "B0B3F3LP9W",
+        "currency": "USD",
+        "priceUSD": 9.08,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0B3F3LP9W.jpg"
+  },
+
+  {
+    "id": "versed-b0ct5ztjbs",
+    "brand": "Versed",
+    "name": "קרם גוף רטינול לחידוש העור",
+    "size": "200 גרם",
+    "categories": ["body"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CT5ZTJBS?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020166882",
+        "asin": "B0CT5ZTJBS",
+        "currency": "USD",
+        "priceUSD": 9.30,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CT5ZTJBS.jpg"
+  },
+
+  {
+    "id": "versed-b0cjkzfvsv",
+    "brand": "Versed",
+    "name": "ערכת טיפוח נסיעות – ניקוי, לחות ואביזר שיער",
+    "size": "מארז 3 מוצרים",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CJKZFVSV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020200637",
+        "asin": "B0CJKZFVSV",
+        "currency": "USD",
+        "priceUSD": 46.00,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CJKZFVSV.jpg"
+  },
+
+  {
+    "id": "versed-b0ffjkbz5f",
+    "brand": "Versed",
+    "name": "מסכת פילינג לחידוש והבהרת העור",
+    "size": "50 מ״ל",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FFJKBZ5F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020237349",
+        "asin": "B0FFJKBZ5F",
+        "currency": "USD",
+        "priceUSD": 18.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FFJKBZ5F.jpg"
+  },
+
+  {
+    "id": "versed-b0bldxy8fb",
+    "brand": "Versed",
+    "name": "סרום חומצה היאלורונית ללחות עמוקה",
+    "size": "יחידה",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BLDXY8FB?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020264311",
+        "asin": "B0BLDXY8FB",
+        "currency": "USD",
+        "priceUSD": 16.98,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BLDXY8FB.jpg"
+  }
+
+
 ,
-     {
-  "id": "lilyana-b07ztrd3ry",
-  "brand": "LilyAna Naturals",
-  "name": "סט מתנה טיפוח LilyAna – קרם רטינול, סרום ויטמין C, קרם עיניים וקרם לחות לפנים (אנטי-אייג׳ינג)",
-  "size": "סט מתנה (4 פריטים)",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 150,
-  "priceMax": 200,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B07ZTRD3RY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951501461",
-      "asin": "B07ZTRD3RY",
-      "currency": "USD",
-      "priceUSD": 59.99,
-      "freeShipToIL": true
-    }
-  ],
-  "image": "assets/img/products/B07ZTRD3RY.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b0c8qkqcjw",
-  "brand": "LilyAna Naturals",
-  "name": "סט מתנה ויטמין C של LilyAna – סט בהיר ומחדש (סרום ויטמין C + חומצה היאלורונית ועוד, 4 חלקים)",
-  "size": "סט מתנה (4 פריטים)",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 150,
-  "priceMax": 200,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0C8QKQCJW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951634139",
-      "asin": "B0C8QKQCJW",
-      "currency": "USD",
-      "priceUSD": 54.99,
-      "freeShipToIL": true
-    }
-  ],
-  "image": "assets/img/products/B0C8QKQCJW.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b0d1w229g3",
-  "brand": "LilyAna Naturals",
-  "name": "קרם עיניים LilyAna לעיגולים שחורים ונפיחות (לעור רגיש)",
-  "size": "1.7 oz",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0D1W229G3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951731419",
-      "asin": "B0D1W229G3",
-      "currency": "USD",
-      "priceUSD": 22.49,
-      "freeShipOver": 49
-    }
-  ],
-  "image": "assets/img/products/B0D1W229G3.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b08gty479f",
-  "brand": "LilyAna Naturals",
-  "name": "סרום ויטמין C לפנים – מארז כפול (עם חומצה היאלורונית וויטמין E)",
-  "size": "מארז כפול",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B08GTY479F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951818182",
-      "asin": "B08GTY479F",
-      "currency": "USD",
-      "priceUSD": 23.99
-    }
-  ],
-  "image": "assets/img/products/B08GTY479F.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b09h9hw2jr",
-  "brand": "LilyAna Naturals",
-  "name": "קרם רטינול אנטי-אייג׳ינג לפנים ולצוואר – לחותי (עם חומצה היאלורונית)",
-  "size": "—",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B09H9HW2JR?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951859295",
-      "asin": "B09H9HW2JR",
-      "currency": "USD",
-      "priceUSD": 15.99
-    }
-  ],
-  "image": "assets/img/products/B09H9HW2JR.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b00lv5ny3i",
-  "brand": "LilyAna Naturals",
-  "name": "קרם לחות לפנים ולצוואר – Rose & Pomegranate (מתאים לנשים וגברים)",
-  "size": "1.7 oz",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B00LV5NY3I?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951950071",
-      "asin": "B00LV5NY3I",
-      "currency": "USD",
-      "priceUSD": 22.99,
-      "freeShipOver": 49
-    }
-  ],
-  "image": "assets/img/products/B00LV5NY3I.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b00lv6vdg2",
-  "brand": "LilyAna Naturals",
-  "name": "קרם עיניים LilyAna לעיגולים שחורים ונפיחות",
-  "size": "1.7 oz",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B00LV6VDG2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952036729",
-      "asin": "B00LV6VDG2",
-      "currency": "USD",
-      "priceUSD": 18.16
-    }
-  ],
-  "image": "assets/img/products/B00LV6VDG2.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b08l463dz6",
-  "brand": "LilyAna Naturals",
-  "name": "פילינג פנים פחם פעיל – Charcoal Face Scrub (לבנדר + עץ התה)",
-  "size": "3 oz",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 0,
-  "priceMax": 50,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B08L463DZ6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952094726",
-      "asin": "B08L463DZ6",
-      "currency": "USD",
-      "priceUSD": 14.79
-    }
-  ],
-  "image": "assets/img/products/B08L463DZ6.jpg",
-  "isKids": false
-},
-{
-  "id": "lilyana-b08l44wgzg",
-  "brand": "LilyAna Naturals",
-  "name": "קרם עיניים רטינול (מפחית קמטוטים וקווים דקים)",
-  "size": "1.0 oz",
-  "categories": ["face"],
-  "isVegan": true,
-  "isPeta": true,
-  "isLB": false,
-  "priceMin": 50,
-  "priceMax": 100,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B08L44WGZG?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952161904",
-      "asin": "B08L44WGZG",
-      "currency": "USD",
-      "priceUSD": 19.79
-    }
-  ],
-  "image": "assets/img/products/B08L44WGZG.jpg",
-  "isKids": false
-}
-,
-     {
+  {
+    "id": "pacifica-b0bvwkld3n",
+    "brand": "Pacifica",
+    "name": "סט Glow Baby: ג׳ל ניקוי + סקראב אנזימטי (מארז 2)",
+    "size": "5 fl oz + 4 fl oz (סט 2)",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BVWKLD3N?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NAZ3CJ6HO2UN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NAZ3CJ6HO2UN_1768990804796",
+        "asin": "B0BVWKLD3N",
+        "currency": "USD",
+        "priceUSD": 20.5,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BVWKLD3N.jpg"
+  },
+  {
+    "id": "pacifica-b08p4t44q1",
+    "brand": "Pacifica",
+    "name": "ג׳ל ניקוי לפנים Glow Baby עם ויטמין C + AHA",
+    "size": "5 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08P4T44Q1?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NAZ3CJ6HO2UN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NAZ3CJ6HO2UN_1768990826536",
+        "asin": "B08P4T44Q1",
+        "currency": "USD",
+        "priceUSD": 9.97
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08P4T44Q1.jpg"
+  },
+  {
+    "id": "pacifica-b0bl65nt9q",
+    "brand": "Pacifica",
+    "name": "קרם פנים SPF 30 Glow Baby Super Lit (מינרלי/עם אבץ)",
+    "size": "1.7 fl oz",
+    "categories": [
+      "face",
+      "suncare"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BL65NT9Q?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NAZ3CJ6HO2UN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NAZ3CJ6HO2UN_1768990849099",
+        "asin": "B0BL65NT9Q",
+        "currency": "USD",
+        "priceUSD": 5.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BL65NT9Q.jpg"
+  },
+  {
+    "id": "pacifica-b0bqfmtbgp",
+    "brand": "Pacifica",
+    "name": "סט באלם לשפתיים לחותי – Glow Baby + ניחוחות נוספים (מארז 3)",
+    "size": "מארז 3",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BQFMTBGP?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NAZ3CJ6HO2UN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NAZ3CJ6HO2UN_1768990875655",
+        "asin": "B0BQFMTBGP",
+        "currency": "USD",
+        "priceUSD": 21.69,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BQFMTBGP.jpg"
+  },
+  {
+    "id": "pacifica-b099738fkj",
+    "brand": "Pacifica",
+    "name": "סט ג׳ל ניקוי Glow Baby – זוג מארזים (2×5 fl oz)",
+    "size": "5 fl oz ×2",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B099738FKJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NAZ3CJ6HO2UN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NAZ3CJ6HO2UN_1768990895344",
+        "asin": "B099738FKJ",
+        "currency": "USD",
+        "priceUSD": 24.0,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B099738FKJ.jpg"
+  },
+  {
+    "id": "pacifica-b09wh3kjrj",
+    "brand": "Pacifica",
+    "name": "ערכת ניסיון Glow Baby עם ויטמין C – סט מתנה (3 חלקים)",
+    "size": "סט (3 פריטים)",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09WH3KJRJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NAZ3CJ6HO2UN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NAZ3CJ6HO2UN_1768990921839",
+        "asin": "B09WH3KJRJ",
+        "currency": "USD",
+        "priceUSD": 20.8,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09WH3KJRJ.jpg"
+  },
+  {
+    "id": "supersmile-b0fx168q22",
+    "brand": "Supersmile",
+    "name": "משחת שיניים להלבנה מקצועית Supersmile – ללא פלואוריד",
+    "size": "—",
+    "categories": [
+      "teeth"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 150,
+    "priceMax": 200,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FX168Q22?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.DEFEVN05M8KX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.DEFEVN05M8KX_1768994400705",
+        "asin": "B0FX168Q22",
+        "currency": "USD",
+        "priceUSD": 50.0,
+        "freeShipToIsrael": true
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FX168Q22.jpg"
+  },
+  {
+    "id": "nakedsundays-b0crfb366v",
+    "brand": "Naked Sundays",
+    "name": "שמן לשפתיים עם SPF 50 Glow & Go – Watermelon",
+    "size": "4.5 ml",
+    "categories": [
+      "suncare",
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CRFB366V?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.9AKN52IF0V5K&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.9AKN52IF0V5K_1768995073637",
+        "asin": "B0CRFB366V",
+        "currency": "USD",
+        "priceUSD": 18.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CRFB366V.jpg"
+  },
+  {
+    "id": "igk-b091mk3x2t",
+    "brand": "IGK",
+    "name": "מרכך LEGENDARY Dream Hair – לחות וברק",
+    "size": "—",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B091MK3X2T?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995228332",
+        "asin": "B091MK3X2T",
+        "currency": "USD",
+        "priceUSD": 32.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B091MK3X2T.jpg"
+  },
+  {
+    "id": "igk-b0dlhgny6m",
+    "brand": "IGK",
+    "name": "ספריי GOOD BEHAVIOR 4‑ב‑1: ללא שטיפה, מתיר קשרים ומגן חום",
+    "size": "—",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DLHGNY6M?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995258209",
+        "asin": "B0DLHGNY6M",
+        "currency": "USD",
+        "priceUSD": 41.9
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DLHGNY6M.jpg"
+  },
+  {
+    "id": "igk-b0cp9wwjmn",
+    "brand": "IGK",
+    "name": "סט שמפו + מרכך GOOD BEHAVIOR Ultra Smooth (מארז זוגי)",
+    "size": "33.8 oz (מארז 2)",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 550,
+    "priceMax": 600,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CP9WWJMN?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995278906",
+        "asin": "B0CP9WWJMN",
+        "currency": "USD",
+        "priceUSD": 172.8
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CP9WWJMN.jpg"
+  },
+  {
+    "id": "igk-b0dsjpyfv3",
+    "brand": "IGK",
+    "name": "סרום לשיער Cash In לתיקון וחיזוק (מארז 2)",
+    "size": "1.7 oz ×2",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 200,
+    "priceMax": 250,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DSJPYFV3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995318788",
+        "asin": "B0DSJPYFV3",
+        "currency": "USD",
+        "priceUSD": 61.2,
+        "freeShipToIsrael": true
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DSJPYFV3.jpg"
+  },
+  {
+    "id": "igk-b0cm6t7513",
+    "brand": "IGK",
+    "name": "סט שמפו LEGENDARY Dream Hair + באלם לחות Mistress",
+    "size": "8 oz + 5 oz",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 150,
+    "priceMax": 200,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CM6T7513?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995343316",
+        "asin": "B0CM6T7513",
+        "currency": "USD",
+        "priceUSD": 48.6,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CM6T7513.jpg"
+  },
+  {
+    "id": "igk-b0dsjvn25l",
+    "brand": "IGK",
+    "name": "סט גלוס שקוף Expensive + סרום Cash In (מארז 2)",
+    "size": "4.2 oz + 1.7 oz (מארז 2)",
+    "categories": [
+      "hair"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 150,
+    "priceMax": 200,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DSJVN25L?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995374377",
+        "asin": "B0DSJVN25L",
+        "currency": "USD",
+        "priceUSD": 58.1,
+        "freeShipToIsrael": true
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DSJVN25L.jpg"
+  },
+  {
+    "id": "made-by-dentists-b0f3jptkc4",
+    "brand": "Made by Dentists",
+    "name": "מברשת שיניים חשמלית לילדים (נטענת) עם טיימר – כולל 6 ראשים – דוגמת Cheetah",
+    "size": "כולל 6 ראשים",
+    "categories": [
+      "teeth",
+      "baby"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0F3JPTKC4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953400189",
+        "asin": "B0F3JPTKC4",
+        "currency": "USD",
+        "priceUSD": 26.98,
+        "freeShipOver": 49
+      }
+    ],
+    "image": "assets/img/products/B0F3JPTKC4.jpg",
+    "isKids": true
+  },
+  {
+    "id": "made-by-dentists-b0g49mqv9f",
+    "brand": "Made by Dentists",
+    "name": "ראשים חלופיים Sonic X – 6 ראשים (2×3) – סיבים רכים – מתאים רק למברשת Sonic X",
+    "size": "6 ראשים (2×3)",
+    "categories": [
+      "teeth"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0G49MQV9F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953706015",
+        "asin": "B0G49MQV9F",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "image": "assets/img/products/B0G49MQV9F.jpg",
+    "isKids": false
+  },
+  {
+    "id": "made-by-dentists-b0g49mw8mw",
+    "brand": "Made by Dentists",
+    "name": "מברשת שיניים חשמלית Sonic X – נטענת – 2 מצבים + טיימר 2 דקות – כולל 6 ראשים (Today Was A Good Day)",
+    "size": "כולל 6 ראשים",
+    "categories": [
+      "teeth",
+      "baby"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0G49MW8MW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1YKGO0ZFJBXQU&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1YKGO0ZFJBXQU_1768953706838",
+        "asin": "B0G49MW8MW",
+        "currency": "USD",
+        "priceUSD": 28.98
+      }
+    ],
+    "image": "assets/img/products/B0G49MW8MW.jpg",
+    "isKids": true
+  },
+  {
+    "id": "ravie-b0fhk6cmpm-mocha",
+    "brand": "Ravie Beauty",
+    "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Mocha",
+    "size": "0.32 oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FHK6CMPM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.175JEPTPNVH65&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.175JEPTPNVH65_1768954454332",
+        "asin": "B0FHK6CMPM",
+        "currency": "USD",
+        "priceUSD": 18.0,
+        "freeShipOver": 49
+      }
+    ],
+    "image": "assets/img/products/B0FHK6CMPM.jpg",
+    "isKids": false
+  },
+  {
+    "id": "ravie-b0fhk5mrd8-fig",
+    "brand": "Ravie Beauty",
+    "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Fig",
+    "size": "0.32 oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FHK5MRD8?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.22G6I4O7C72CX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.22G6I4O7C72CX_1768954541403",
+        "asin": "B0FHK5MRD8",
+        "currency": "USD",
+        "priceUSD": 18.0,
+        "freeShipOver": 49
+      }
+    ],
+    "image": "assets/img/products/B0FHK5MRD8.jpg",
+    "isKids": false
+  },
+  {
+    "id": "about-face-b0fc4hk4kp",
+    "brand": "about-face",
+    "name": "THE PERFORMER מייקאפ/פאונדיישן – MD3 Warm – כיסוי בינוני, עמיד ונושם",
+    "size": "1.08 oz",
+    "categories": [
+      "makeup"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FC4HK4KP?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1VAR88KOLOHR7&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1VAR88KOLOHR7_1768954701989",
+        "asin": "B0FC4HK4KP",
+        "currency": "USD",
+        "priceUSD": 25.0
+      }
+    ],
+    "image": "assets/img/products/B0FC4HK4KP.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b07ztrd3ry",
+    "brand": "LilyAna Naturals",
+    "name": "סט מתנה טיפוח LilyAna – קרם רטינול, סרום ויטמין C, קרם עיניים וקרם לחות לפנים (אנטי-אייג׳ינג)",
+    "size": "סט מתנה (4 פריטים)",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 150,
+    "priceMax": 200,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B07ZTRD3RY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951501461",
+        "asin": "B07ZTRD3RY",
+        "currency": "USD",
+        "priceUSD": 59.99,
+        "freeShipToIsrael": true
+      }
+    ],
+    "image": "assets/img/products/B07ZTRD3RY.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b0c8qkqcjw",
+    "brand": "LilyAna Naturals",
+    "name": "סט מתנה ויטמין C של LilyAna – סט בהיר ומחדש (סרום ויטמין C + חומצה היאלורונית ועוד, 4 חלקים)",
+    "size": "סט מתנה (4 פריטים)",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 150,
+    "priceMax": 200,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0C8QKQCJW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951634139",
+        "asin": "B0C8QKQCJW",
+        "currency": "USD",
+        "priceUSD": 54.99,
+        "freeShipToIsrael": true
+      }
+    ],
+    "image": "assets/img/products/B0C8QKQCJW.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b0d1w229g3",
+    "brand": "LilyAna Naturals",
+    "name": "קרם עיניים LilyAna לעיגולים שחורים ונפיחות (לעור רגיש)",
+    "size": "1.7 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D1W229G3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951731419",
+        "asin": "B0D1W229G3",
+        "currency": "USD",
+        "priceUSD": 22.49,
+        "freeShipOver": 49
+      }
+    ],
+    "image": "assets/img/products/B0D1W229G3.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b08gty479f",
+    "brand": "LilyAna Naturals",
+    "name": "סרום ויטמין C לפנים – מארז כפול (עם חומצה היאלורונית וויטמין E)",
+    "size": "מארז כפול",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08GTY479F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951818182",
+        "asin": "B08GTY479F",
+        "currency": "USD",
+        "priceUSD": 23.99
+      }
+    ],
+    "image": "assets/img/products/B08GTY479F.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b09h9hw2jr",
+    "brand": "LilyAna Naturals",
+    "name": "קרם רטינול אנטי-אייג׳ינג לפנים ולצוואר – לחותי (עם חומצה היאלורונית)",
+    "size": "—",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09H9HW2JR?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951859295",
+        "asin": "B09H9HW2JR",
+        "currency": "USD",
+        "priceUSD": 15.99
+      }
+    ],
+    "image": "assets/img/products/B09H9HW2JR.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b00lv5ny3i",
+    "brand": "LilyAna Naturals",
+    "name": "קרם לחות לפנים ולצוואר – Rose & Pomegranate (מתאים לנשים וגברים)",
+    "size": "1.7 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B00LV5NY3I?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951950071",
+        "asin": "B00LV5NY3I",
+        "currency": "USD",
+        "priceUSD": 22.99,
+        "freeShipOver": 49
+      }
+    ],
+    "image": "assets/img/products/B00LV5NY3I.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b00lv6vdg2",
+    "brand": "LilyAna Naturals",
+    "name": "קרם עיניים LilyAna לעיגולים שחורים ונפיחות",
+    "size": "1.7 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B00LV6VDG2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952036729",
+        "asin": "B00LV6VDG2",
+        "currency": "USD",
+        "priceUSD": 18.16
+      }
+    ],
+    "image": "assets/img/products/B00LV6VDG2.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b08l463dz6",
+    "brand": "LilyAna Naturals",
+    "name": "פילינג פנים פחם פעיל – Charcoal Face Scrub (לבנדר + עץ התה)",
+    "size": "3 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08L463DZ6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952094726",
+        "asin": "B08L463DZ6",
+        "currency": "USD",
+        "priceUSD": 14.79
+      }
+    ],
+    "image": "assets/img/products/B08L463DZ6.jpg",
+    "isKids": false
+  },
+  {
+    "id": "lilyana-b08l44wgzg",
+    "brand": "LilyAna Naturals",
+    "name": "קרם עיניים רטינול (מפחית קמטוטים וקווים דקים)",
+    "size": "1.0 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08L44WGZG?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952161904",
+        "asin": "B08L44WGZG",
+        "currency": "USD",
+        "priceUSD": 19.79
+      }
+    ],
+    "image": "assets/img/products/B08L44WGZG.jpg",
+    "isKids": false
+  },
+  {
     "id": "overtone-B0F2GXVS7C",
     "brand": "oVertone",
     "name": "מסיכת פיגמנט לשיער חצי-קבועה בגוון סגול עז לכל סוגי השיער, עם חמאת שיאה ושמן קוקוס",
@@ -379,8 +1280,8 @@
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
+    "priceMin": 100,
+    "priceMax": 150,
     "offers": [
       {
         "store": "amazon-us",
@@ -394,7 +1295,7 @@
     "isKids": false,
     "image": "assets/img/products/B0F2GXVS7C.jpg"
   },
-   {
+  {
     "id": "overtone-B0BQZT4C7G",
     "brand": "oVertone",
     "name": "מרכך פיגמנט לשימוש יומיומי בגוון ורוד פטל: פיגמנט זמני עם שמן שיאה, קוקוס ואבוקדו, מעניק לחות, לכל סוגי השיער",
@@ -420,7 +1321,6 @@
     "isKids": false,
     "image": "assets/img/products/B0BQZT4C7G.jpg"
   },
- 
   {
     "id": "overtone-b0fh5r8wzj",
     "brand": "oVertone",
@@ -472,35 +1372,34 @@
     ],
     "isKids": false,
     "image": "assets/img/products/overtone-b0f3g1pq92.jpg"
-  }, 
-{
-  "id": "lilyana-b0d1w229g3",
-  "brand": "LilyAna Naturals",
-  "name": "קרם עיניים טבעוני לחידוש העור",
-  "size": "1.7 oz",
-  "categories": [
-    "face"
-  ],
-  "isVegan": true,
-  "isPeta": false,
-  "isLB": true,
-  "priceMin": 0,
-  "priceMax": 50,
-  "offers": [
-    {
-      "store": "amazon-us",
-      "storeLabel": "Amazon ארה\"ב",
-      "url": "https://www.amazon.com/dp/B0D1W229G3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NH3SC4GK2XVV&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NH3SC4GK2XVV_1768945804768",
-      "asin": "B0D1W229G3",
-      "currency": "USD",
-      "priceUSD": 22.49,
-      "freeShipOver": 49
-    }
-  ],
-  "image": "assets/img/products/lilyana-eye-cream.png",
-  "isKids": false
-}
-,
+  },
+  {
+    "id": "lilyana-b0d1w229g3",
+    "brand": "LilyAna Naturals",
+    "name": "קרם עיניים טבעוני לחידוש העור",
+    "size": "1.7 oz",
+    "categories": [
+      "face"
+    ],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D1W229G3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3NH3SC4GK2XVV&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3NH3SC4GK2XVV_1768945804768",
+        "asin": "B0D1W229G3",
+        "currency": "USD",
+        "priceUSD": 22.49,
+        "freeShipOver": 49
+      }
+    ],
+    "image": "assets/img/products/lilyana-eye-cream.png",
+    "isKids": false
+  },
   {
     "id": "alleyoop-b08xbd2cbt",
     "brand": "Alleyoop",
@@ -525,7 +1424,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": false
+    "isKids": false,
+    "image": "assets/img/products/B08XBD2CBT.jpg"
   },
   {
     "id": "alleyoop-b08xbz865d",
@@ -551,7 +1451,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": false
+    "isKids": false,
+    "image": "assets/img/products/B08XBZ865D.jpg"
   },
   {
     "id": "alleyoop-b0dffbhgb7",
@@ -577,7 +1478,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": false
+    "isKids": false,
+    "image": "assets/img/products/B0DFFBHGB7.jpg"
   },
   {
     "id": "alleyoop-b0bvgrlfkg",
@@ -603,7 +1505,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": false
+    "isKids": false,
+    "image": "assets/img/products/B0BVGRLFKG.jpg"
   },
   {
     "id": "attitude-b07qttx153",
@@ -617,8 +1520,8 @@
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
+    "priceMin": 0,
+    "priceMax": 50,
     "offers": [
       {
         "store": "amazon-us",
@@ -630,7 +1533,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": true
+    "isKids": true,
+    "image": "assets/img/products/B07QTTX153.jpg"
   },
   {
     "id": "attitude-b097mm895y",
@@ -655,7 +1559,9 @@
         "priceUSD": 20.56,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B097MM895Y.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b08yfcz7b7",
@@ -680,7 +1586,9 @@
         "priceUSD": 21.43,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B08YFCZ7B7.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b09p5yn72x",
@@ -705,7 +1613,9 @@
         "priceUSD": 13.15,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B09P5YN72X.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b07nf645hb",
@@ -730,7 +1640,9 @@
         "priceUSD": 17.6,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B07NF645HB.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b0f7t7xvhn",
@@ -743,8 +1655,8 @@
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
-    "priceMin": 100,
-    "priceMax": 150,
+    "priceMin": 150,
+    "priceMax": 200,
     "offers": [
       {
         "store": "amazon-us",
@@ -752,10 +1664,12 @@
         "url": "https://www.amazon.com/ATTITUDE-Natural-Protects-Watercress-Verified/dp/B0F7T7XVHN?tag=nocrueltyil-20",
         "asin": "B0F7T7XVHN",
         "currency": "USD",
-        "priceUSD": 6.39,
+        "priceUSD": 38.32,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B0F7T7XVHN.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b0c15qw2q1",
@@ -780,7 +1694,9 @@
         "priceUSD": 11.29,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B0C15QW2Q1.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b0f7shjm5p",
@@ -794,8 +1710,8 @@
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
-    "priceMin": 100,
-    "priceMax": 150,
+    "priceMin": 50,
+    "priceMax": 100,
     "offers": [
       {
         "store": "amazon-us",
@@ -803,11 +1719,13 @@
         "url": "https://www.amazon.com/ATTITUDE-Natural-Ingredients-Verified-Eucalyptus/dp/B0F7SHJM5P?tag=nocrueltyil-20",
         "asin": "B0F7SHJM5P",
         "currency": "USD",
-        "priceUSD": 6.03,
+        "priceUSD": 36.17,
         "freeShipOver": 49
       }
     ],
-    "isMen": true
+    "isMen": true,
+    "image": "assets/img/products/B0F7SHJM5P.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b07mzcn118",
@@ -832,7 +1750,9 @@
         "priceUSD": 12.19,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B07MZCN118.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b0fj9vmk3k",
@@ -855,11 +1775,12 @@
         "url": "https://www.amazon.com/ATTITUDE-Dermatologically-Mineral-Based-Ingredients-Watermelon/dp/B0FJ9VMK3K?tag=nocrueltyil-20",
         "asin": "B0FJ9VMK3K",
         "currency": "USD",
-        "priceUSD": 7.9,
+        "priceUSD": 23,
         "freeShipOver": 49
       }
     ],
-    "isKids": true
+    "isKids": true,
+    "image": "assets/img/products/B0FJ9VMK3K.jpg"
   },
   {
     "id": "attitude-b07rwp838s",
@@ -887,7 +1808,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": true
+    "isKids": true,
+    "image": "assets/img/products/B07RWP838S.jpg"
   },
   {
     "id": "attitude-b07j4khsmc",
@@ -914,7 +1836,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": true
+    "isKids": true,
+    "image": "assets/img/products/B07J4KHSMC.jpg"
   },
   {
     "id": "attitude-b0fqdx4wby",
@@ -928,8 +1851,8 @@
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
-    "priceMin": 100,
-    "priceMax": 150,
+    "priceMin": 0,
+    "priceMax": 50,
     "offers": [
       {
         "store": "amazon-us",
@@ -937,11 +1860,13 @@
         "url": "https://www.amazon.com/ATTITUDE-Conditioner-Ingredients-Verified-Eucalyptus/dp/B0FQDX4WBY?tag=nocrueltyil-20",
         "asin": "B0FQDX4WBY",
         "currency": "USD",
-        "priceUSD": 13.05,
+        "priceUSD": 33.63,
         "freeShipOver": 49
       }
     ],
-    "isMen": true
+    "isMen": true,
+    "image": "assets/img/products/B0FQDX4WBY.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b07vc8bzb1",
@@ -969,7 +1894,8 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": true
+    "isKids": true,
+    "image": "assets/img/products/B07VC8BZB1.jpg"
   },
   {
     "id": "attitude-b09s2xbshn",
@@ -994,7 +1920,9 @@
         "priceUSD": 18.99,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B09S2XBSHN.jpg",
+    "isKids": false
   },
   {
     "id": "attitude-b08yfby7xl",
@@ -1019,7 +1947,9 @@
         "priceUSD": 21.87,
         "freeShipOver": 49
       }
-    ]
+    ],
+    "image": "assets/img/products/B08YFBY7XL.jpg",
+    "isKids": false
   },
   {
     "id": "ravie-b0fhk6cmpm",
@@ -1045,6 +1975,7 @@
         "freeShipOver": 49
       }
     ],
-    "isKids": false
+    "isKids": false,
+    "image": "assets/img/products/B0FHK6CMPM.jpg"
   }
 ]
