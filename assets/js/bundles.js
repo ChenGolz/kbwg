@@ -196,7 +196,7 @@
       },
       {
         title:'שגרת ויטמין C Glow Baby',
-        subtitle:'הארה וטיפול יומיומי — רק פריטים עם “baby” בשם.',
+        subtitle:'הארה וטיפול יומיומי ',
         filter:function(p){ return containsBaby(p); }
       },
       {

@@ -568,7 +568,7 @@ function normalizeProduct(p) {
     // Chosen so $49 ≈ ₪160 (as used across the site copy).
     const ILS_PER_USD = 3.27;
     const ilsApprox = Math.round((usd * ILS_PER_USD) / 5) * 5;
-    return `משלוח חינם לישראל מעל $${usd} (${ilsApprox} ש"ח לערך)`;
+    return `משלוח חינם לישראל מעל ${ilsApprox} ש"ח`;
   }
 
   function formatSizeForIsrael(rawSize) {
