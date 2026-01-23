@@ -1,30 +1,1273 @@
 [
- 
   {
-    "id": "rco-b0ckfjcskl",
-    "brand": "R+Co",
-    "name": "סט שמפו ומרכך משקם BLEU דה-לוקס – מעניק לחות, מחזק ומחזיר ברק לשיער פגום",
-    "size": "מארז שמפו + מרכך",
-    "categories": ["hair"],
+    "id": "emani-b002y24nh8",
+    "brand": "Emani",
+    "name": "מייקאפ Youth Defense עם Hyaluronic Acid – כיסוי מלא ואנטי-אייג׳ינג – מגן ומבהיר גוון עור – Medium Light",
+    "size": "—",
+    "categories": ["makeup","face"],
     "isVegan": true,
     "isPeta": false,
-    "isLB": true,
-    "priceMin": 250,
-    "priceMax": 300,
+    "isLB": false,
+    "priceMin": 120,
+    "priceMax": 140,
     "offers": [
       {
         "store": "amazon-us",
         "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/dp/B0CKFJCSKL?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017702146",
-        "asin": "B0CKFJCSKL",
+        "url": "https://www.amazon.com/dp/B002Y24NH8?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769106886665",
+        "asin": "B002Y24NH8",
         "currency": "USD",
-        "priceUSD": 88.20,
+        "priceUSD": 36.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B002Y24NH8.jpg"
+  },
+
+  {
+    "id": "emani-b0f77j1qlp",
+    "brand": "Emani",
+    "name": "מייקאפ HydraWear להארה – כיסוי נבנה – לחות ארוכת טווח עם Hyaluronic Acid – ללא סיליקון – Golden Amber",
+    "size": "—",
+    "categories": ["makeup","face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 130,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0F77J1QLP?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769106926100",
+        "asin": "B0F77J1QLP",
+        "currency": "USD",
+        "priceUSD": 38.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0F77J1QLP.jpg"
+  },
+
+  {
+    "id": "emani-b07m82s9jr",
+    "brand": "Emani",
+    "name": "פלטת צלליות Quad – בטוחה לעיניים רגישות – 4 גוונים Venice Beach",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 120,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B07M82S9JR?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769106944427",
+        "asin": "B07M82S9JR",
+        "currency": "USD",
+        "priceUSD": 28.00,
+                "freeshipover": 49
+
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B07M82S9JR.jpg"
+  },
+
+  {
+    "id": "emani-b0019aadiy",
+    "brand": "Emani",
+    "name": "סומק וברונזר מינרלי – מעניק מראה שזוף טבעי – Malibu",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 120,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0019AADIY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769106980281",
+        "asin": "B0019AADIY",
+        "currency": "USD",
+        "priceUSD": 28.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0019AADIY.jpg"
+  },
+
+  {
+    "id": "emani-b00jdsa1xq",
+    "brand": "Emani",
+    "name": "פודרת קיבוע HD Bamboo – מינרלית, ללא טלק – לכל גווני העור",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 100,
+    "priceMax": 130,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B00JDSA1XQ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107002660",
+        "asin": "B00JDSA1XQ",
+        "currency": "USD",
+        "priceUSD": 29.50,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B00JDSA1XQ.jpg"
+  },
+
+  {
+    "id": "emani-b000j0zfds",
+    "brand": "Emani",
+    "name": "פריימר Perfect 10 – בסיס החלקה לעור רגיש – משמש גם כסרום לחות",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 100,
+    "priceMax": 130,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B000J0ZFDS?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107020953",
+        "asin": "B000J0ZFDS",
+        "currency": "USD",
+        "priceUSD": 29.97
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B000J0ZFDS.jpg"
+  },
+
+  {
+    "id": "emani-b002y1oedw",
+    "brand": "Emani",
+    "name": "מסקרה טבעית – נפח ואורך – בטוחה לעיניים רגישות – Midnight",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 60,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B002Y1OEDW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107044694",
+        "asin": "B002Y1OEDW",
+        "currency": "USD",
+        "priceUSD": 19.95
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B002Y1OEDW.jpg"
+  },
+
+  {
+    "id": "emani-b09ysxh8q5",
+    "brand": "Emani",
+    "name": "סרום Halo Collagen – פפטידים ואפקט אנטי-אייג׳ינג",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 130,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09YSXH8Q5?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107066435",
+        "asin": "B09YSXH8Q5",
+        "currency": "USD",
+        "priceUSD": 38.00,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09YSXH8Q5.jpg"
+  },
+
+  {
+    "id": "emani-b07q1k4ckd",
+    "brand": "Emani",
+    "name": "פריימר Miracle 7-ב-1 – ג׳ינסנג + Hyaluronic Acid – החלקת נקבוביות",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 130,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B07Q1K4CKD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107089046",
+        "asin": "B07Q1K4CKD",
+        "currency": "USD",
+        "priceUSD": 38.00,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B07Q1K4CKD.jpg"
+  },
+
+  {
+    "id": "emani-b0drdf25g6",
+    "brand": "Emani",
+    "name": "קרם עיניים Hello Bright Eyes – ויטמין C + קפאין – להפחתת כהויות ונפיחות",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 120,
+    "priceMax": 140,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DRDF25G6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107111275",
+        "asin": "B0DRDF25G6",
+        "currency": "USD",
+        "priceUSD": 32.00,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DRDF25G6.jpg"
+  },
+
+  {
+    "id": "emani-b0drkljwmc",
+    "brand": "Emani",
+    "name": "סרום Lash Builder – לחיזוק וצמיחת ריסים",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 130,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DRKLJWMC?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107134596",
+        "asin": "B0DRKLJWMC",
+        "currency": "USD",
+        "priceUSD": 38.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DRKLJWMC.jpg"
+  },
+
+  {
+    "id": "emani-b0075xafq4",
+    "brand": "Emani",
+    "name": "סרום לילה Sleep & Renew – פרוביוטיקה מותססת לאנטי-אייג׳ינג",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 150,
+    "priceMax": 180,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0075XAFQ4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1Z0EJ9EBLFTRD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1Z0EJ9EBLFTRD_1769107156104",
+        "asin": "B0075XAFQ4",
+        "currency": "USD",
+        "priceUSD": 48.00,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0075XAFQ4.jpg"
+  }
+
+,
+  {
+    "id": "madhippie-b00dkf7xpw",
+    "brand": "Mad Hippie",
+    "name": "סרום Vitamin C לפנים – עם Hyaluronic Acid, Ferulic Acid ו-Vitamin E – אנטי אייג'ינג וזוהר עור",
+    "size": "1.02 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B00DKF7XPW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106052470",
+        "asin": "B00DKF7XPW",
+        "currency": "USD",
+        "priceUSD": 27.99,
+                "freeshipover": 49
+
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B00DKF7XPW.jpg"
+  },
+  {
+    "id": "madhippie-b0848l7khv",
+    "brand": "Mad Hippie",
+    "name": "קרם לילה Triple C – קרם פנים מבהיר עם 3 סוגי Vitamin C – אנטי אייג'ינג",
+    "size": "2.1 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0848L7KHV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106079947",
+        "asin": "B0848L7KHV",
+        "currency": "USD",
+        "priceUSD": 27.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0848L7KHV.jpg"
+  },
+  {
+    "id": "madhippie-b0dsy9xhc5",
+    "brand": "Mad Hippie",
+    "name": "קרם Barrier עשיר במיוחד – Multi-Purpose Moisturizer עם Hyaluronic Acid, Niacinamide ו-Vitamin C – לעור יבש מאוד",
+    "size": "2 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 60,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DSY9XHC5?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106135798",
+        "asin": "B0DSY9XHC5",
+        "currency": "USD",
+        "priceUSD": 17.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DSY9XHC5.jpg"
+  },
+  {
+    "id": "madhippie-b005ixqlde",
+    "brand": "Mad Hippie",
+    "name": "סרום Vitamin C לפנים – עם Hyaluronic Acid, Ferulic Acid ו-Vitamin E – אנטי אייג'ינג וזוהר עור",
+    "size": "1.02 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B005IXQLDE?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106120909",
+        "asin": "B005IXQLDE",
+        "currency": "USD",
+        "priceUSD": 27.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B005IXQLDE.jpg"
+  },
+
+  {
+    "id": "functionofbeauty-b0chv2tsmw",
+    "brand": "Function of Beauty",
+    "name": "ערכת תוספי Booster לשיער גלי – שוטים לחיזוק, ברק ואנטי-פריז – לשדרוג שמפו/מרכך ומוצרי טיפוח",
+    "size": "—",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 30,
+    "priceMax": 40,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CHV2TSMW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1LCK8QE9DX4HD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1LCK8QE9DX4HD_1769106357204",
+        "asin": "B0CHV2TSMW",
+        "currency": "USD",
+        "priceUSD": 10.47
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CHV2TSMW.jpg"
+  },
+  {
+    "id": "functionofbeauty-b0chmytnh5",
+    "brand": "Function of Beauty",
+    "name": "סט שמפו + מרכך XL לשיער גלי – ללא סולפטים – קליל, אנטי-פריז, מחזק ומעניק לחות לשיער גלי טבעי",
+    "size": "—",
+    "categories": ["hair", "kit"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 110,
+    "priceMax": 130,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CHMYTNH5?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1LCK8QE9DX4HD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1LCK8QE9DX4HD_1769106384545",
+        "asin": "B0CHMYTNH5",
+        "currency": "USD",
+        "priceUSD": 34.32,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CHMYTNH5.jpg"
+  },
+  {
+    "id": "functionofbeauty-b0dn7pm4qx",
+    "brand": "Function of Beauty",
+    "name": "שמפו לשיער מתולתל/קפיצי – ללא סולפטים – אנטי-פריז, מגדיר תלתלים ומזין – עם Flaxseed Oil",
+    "size": "—",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 30,
+    "priceMax": 40,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DN7PM4QX?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1LCK8QE9DX4HD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1LCK8QE9DX4HD_1769106384546",
+        "asin": "B0DN7PM4QX",
+        "currency": "USD",
+        "priceUSD": 9.97
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DN7PM4QX.jpg"
+  },
+  {
+    "id": "functionofbeauty-b0dmtndhmy",
+    "brand": "Function of Beauty",
+    "name": "מוס לשיער גלי לעיצוב – אנטי-פריז, מוסיף נפח ומגדיר גלים – קצף קליל עם אחיזה גמישה",
+    "size": "—",
+    "categories": ["hair"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 40,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DMTNDHMY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1LCK8QE9DX4HD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1LCK8QE9DX4HD_1769106436137",
+        "asin": "B0DMTNDHMY",
+        "currency": "USD",
+        "priceUSD": 12.97
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DMTNDHMY.jpg"
+  },
+
+  {
+    "id": "blume-b0fhst1k1c",
+    "brand": "Blume",
+    "name": "שמן פנים Meltdown עם Blue Tansy – טיפול לאקנה והקטנת נקבוביות – סרום מרגיע עם Black Cumin Seed ו-Rosehip Oil",
+    "size": "1 fl oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 160,
+    "priceMax": 180,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FHST1K1C?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106490693",
+        "asin": "B0FHST1K1C",
+        "currency": "USD",
+        "priceUSD": 47.00,
         "freeShipOver": 49
       }
     ],
     "isKids": false,
-    "image": "assets/img/products/B0CKFJCSKL.jpg"
+    "image": "assets/img/products/B0FHST1K1C.jpg"
   },
+  {
+    "id": "blume-b08d9gzglk",
+    "brand": "Blume",
+    "name": "מדבקות פצעונים Buds עם Salicylic Acid – מדבקות הידרוקולואיד לספיחת שומן והאצת החלמה – טבעוניות ומתכלות",
+    "size": "24 יחידות",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 60,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08D9GZGLK?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106526280",
+        "asin": "B08D9GZGLK",
+        "currency": "USD",
+        "priceUSD": 15.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08D9GZGLK.jpg"
+  },
+  {
+    "id": "blume-b07gp3jzbv",
+    "brand": "Blume",
+    "name": "ג׳ל ניקוי פנים Daydreamer – ניקוי עדין ומרגיע עם Chamomile ו-Lavender – קרם ניקוי לעור רגיש (לנשים וגברים)",
+    "size": "4 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 60,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B07GP3JZBV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106544484",
+        "asin": "B07GP3JZBV",
+        "currency": "USD",
+        "priceUSD": 16.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B07GP3JZBV.jpg"
+  },
+  {
+    "id": "blume-b07gp658v5",
+    "brand": "Blume",
+    "name": "שמן רול-און Cloud 9 להקלה על כאבי מחזור – לתחושת הקלה בכאבים/נפיחות – עם Clary Sage, Peppermint ו-Bergamot",
+    "size": "9 ml",
+    "categories": ["body"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 60,
+    "priceMax": 70,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B07GP658V5?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106565650",
+        "asin": "B07GP658V5",
+        "currency": "USD",
+        "priceUSD": 18.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B07GP658V5.jpg"
+  },
+  {
+    "id": "blume-b08fht6pch",
+    "brand": "Blume",
+    "name": "סט טיפוח נסיעות Babies – מוצרים בגודל טיסה לטיפול באקנה וצלקות – כולל Meltdown Face Oil, Milky Fade Vitamin C Serum ו-Meltdown Gel Moisturizer",
+    "size": "סט (Travel Size)",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08FHT6PCH?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106575845",
+        "asin": "B08FHT6PCH",
+        "currency": "USD",
+        "priceUSD": 26.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08FHT6PCH.jpg"
+  },
+  {
+    "id": "blume-b08d9h6jkv",
+    "brand": "Blume",
+    "name": "קרם לחות ג׳ל Meltdown לעור נוטה לאקנה – ללא שמן – עם Niacinamide ו-Centella – לחות עד 72 שעות עם Ceramides ו-Squalane",
+    "size": "1.7 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08D9H6JKV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106602628",
+        "asin": "B08D9H6JKV",
+        "currency": "USD",
+        "priceUSD": 25.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08D9H6JKV.jpg"
+  },
+  {
+    "id": "blume-b0d2ln96r3",
+    "brand": "Blume",
+    "name": "מסנן קרינה מינרלי Sunburst SPF 50 – Broad Spectrum – מסנן עם Zinc Oxide ו-Niacinamide – לחותי ומרגיע לעור רגיש",
+    "size": "1.7 oz",
+    "categories": ["face", "suncare"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 120,
+    "priceMax": 140,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D2LN96R3?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3UDJHNQLRIU5A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3UDJHNQLRIU5A_1769106630406",
+        "asin": "B0D2LN96R3",
+        "currency": "USD",
+        "priceUSD": 36.00,
+        "freeshipover": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0D2LN96R3.jpg"
+  }
+,
+
+  {
+    "id": "tower28-b0dxxkm8wy",
+    "brand": "Tower 28",
+    "name": "מסקרה MakeWaves – נפח, עמידה, ללא גושים או התפוררות – מתאימה לעיניים רגישות – Drift Brown",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DXXKM8WY?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.124719MSYBRAX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.124719MSYBRAX_1769105935668",
+        "asin": "B0DXXKM8WY",
+        "currency": "USD",
+        "priceUSD": 20.00
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DXXKM8WY.jpg"
+  },
+
+  {
+    "id": "madhippie-b00dkf7xpw",
+    "brand": "Mad Hippie",
+    "name": "סרום Vitamin C לפנים – עם Hyaluronic Acid, Ferulic Acid ו-Vitamin E – אנטי אייג'ינג וזוהר עור",
+    "size": "1.02 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B00DKF7XPW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106052470",
+        "asin": "B00DKF7XPW",
+        "currency": "USD",
+        "priceUSD": 27.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B00DKF7XPW.jpg"
+  },
+
+  {
+    "id": "madhippie-b0848l7khv",
+    "brand": "Mad Hippie",
+    "name": "קרם לילה Triple C – קרם פנים מבהיר עם 3 סוגי Vitamin C – אנטי אייג'ינג",
+    "size": "2.1 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0848L7KHV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106079947",
+        "asin": "B0848L7KHV",
+        "currency": "USD",
+        "priceUSD": 27.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0848L7KHV.jpg"
+  },
+
+  {
+    "id": "madhippie-b0dsy9xhc5",
+    "brand": "Mad Hippie",
+    "name": "קרם Barrier עשיר במיוחד – Multi-Purpose Moisturizer עם Hyaluronic Acid, Niacinamide ו-Vitamin C – לעור יבש מאוד",
+    "size": "2 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 60,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DSY9XHC5?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106135798",
+        "asin": "B0DSY9XHC5",
+        "currency": "USD",
+        "priceUSD": 17.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DSY9XHC5.jpg"
+  },
+
+  {
+    "id": "madhippie-b005ixqlde",
+    "brand": "Mad Hippie",
+    "name": "סרום Vitamin C לפנים – עם Hyaluronic Acid, Ferulic Acid ו-Vitamin E – אנטי אייג'ינג וזוהר עור",
+    "size": "1.02 oz",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 90,
+    "priceMax": 110,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B005IXQLDE?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FLP8OWIZ7EWJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FLP8OWIZ7EWJ_1769106120909",
+        "asin": "B005IXQLDE",
+        "currency": "USD",
+        "priceUSD": 27.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B005IXQLDE.jpg"
+  }
+,
+
+  
+  {
+    "id": "grace-stella-b0d9pmvr92",
+    "brand": "grace & stella",
+    "name": "רולר להבהרת אזור מתחת לעיניים – סרום עיניים עם Retinol + Caffeine להפחתת נפיחות, כהויות וקמטוטים – טבעוני",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 30,
+    "priceMax": 40,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D9PMVR92?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.9NW8QDNR5ISZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.9NW8QDNR5ISZ_1769091046598",
+        "asin": "B0D9PMVR92",
+        "currency": "USD",
+        "priceUSD": 9.95
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0D9PMVR92.jpg"
+  },
+  {
+    "id": "botanic-tree-b0bch95w8y",
+    "brand": "Botanic Tree",
+    "name": "ג׳ל ניקוי פנים לגברים עם 10% Glycolic Acid + Activated Charcoal – ניקוי/סקראב לפנים",
+    "size": "6 fl oz",
+    "categories": ["face", "body"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BCH95W8Y?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1T3WTFT5VJSUD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1T3WTFT5VJSUD_1769092435308",
+        "asin": "B0BCH95W8Y",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BCH95W8Y.jpg"
+  },
+  {
+    "id": "elf-b0g1gzs1rv",
+    "brand": "e.l.f.",
+    "name": "טונר Thirst Burst Pore-fecting – לחותי ומפילינג לפנים, מחליק ומסייע במראה נקבוביות – עם Salicylic Acid – טבעוני וללא ניסויים",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 40,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0G1GZS1RV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.NN6TAI9YDGFQ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.NN6TAI9YDGFQ_1769093023415",
+        "asin": "B0G1GZS1RV",
+        "currency": "USD",
+        "priceUSD": 12.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0G1GZS1RV.jpg"
+  },
+  {
+    "id": "elf-b0g1h1jfqd",
+    "brand": "e.l.f.",
+    "name": "קרם לחות Holy Hydration! Barrier Goals – קרם עשיר לפנים להרגעה ולחות, מסייע להפחתת אדמומיות – טבעוני וללא ניסויים",
+    "size": "—",
+    "categories": ["face"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 40,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0G1H1JFQD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.NN6TAI9YDGFQ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.NN6TAI9YDGFQ_1769093049991",
+        "asin": "B0G1H1JFQD",
+        "currency": "USD",
+        "priceUSD": 13.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0G1H1JFQD.jpg"
+  },
+ 
+  {
+    "id": "the-humble-co-b0djpyp3hs",
+    "brand": "The Humble Co",
+    "name": "משחת שיניים להלבנה ללא פלואוריד – Peppermint – מארז 2",
+    "size": "מארז 2",
+    "categories": ["teeth"],
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DJPYP3HS?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6ZT5Y89DP8GJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6ZT5Y89DP8GJ_1769105126633",
+        "asin": "B0DJPYP3HS",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DJPYP3HS.jpg"
+  },
+  {
+    "id": "the-humble-co-b0djpyp4np",
+    "brand": "The Humble Co",
+    "name": "מי פה מרוכזים לריח פה – ללא פלואוריד – Spearmint",
+    "size": "—",
+    "categories": ["teeth"],
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DJPYP4NP?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6ZT5Y89DP8GJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6ZT5Y89DP8GJ_1769105210038",
+        "asin": "B0DJPYP4NP",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DJPYP4NP.jpg"
+  },
+  {
+    "id": "the-humble-co-b0dw6zb1bq",
+    "brand": "The Humble Co",
+    "name": "ראשים למברשת שיניים חשמלית מבמבוק – תואם Oral-B – סיבים רכים",
+    "size": "—",
+    "categories": ["teeth"],
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DW6ZB1BQ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6ZT5Y89DP8GJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6ZT5Y89DP8GJ_1769105233982",
+        "asin": "B0DW6ZB1BQ",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DW6ZB1BQ.jpg"
+  },
+  {
+    "id": "the-humble-co-b08j8gg4vb",
+    "brand": "The Humble Co",
+    "name": "מברשות שיניים מבמבוק – מארז 5 – סיבים Ultra Soft – ללא BPA",
+    "size": "מארז 5",
+    "categories": ["teeth"],
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 30,
+    "priceMax": 40,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08J8GG4VB?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6ZT5Y89DP8GJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6ZT5Y89DP8GJ_1769105257684",
+        "asin": "B08J8GG4VB",
+        "currency": "USD",
+        "priceUSD": 8.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08J8GG4VB.jpg"
+  },
+  {
+    "id": "the-humble-co-b0dw6v49br",
+    "brand": "The Humble Co",
+    "name": "רצועות להלבנת שיניים – עדינות לשיניים רגישות – ללא Peroxide – 14 טיפולים (28 יחידות)",
+    "size": "14 טיפולים (28 יחידות)",
+    "categories": ["teeth"],
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DW6V49BR?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6ZT5Y89DP8GJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6ZT5Y89DP8GJ_1769105287622",
+        "asin": "B0DW6V49BR",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DW6V49BR.jpg"
+  },
+  {
+    "id": "the-humble-co-b08dc34tls",
+    "brand": "The Humble Co",
+    "name": "חוט דנטלי בטעם קינמון – Vegan – מארז 4 – 220 יארד",
+    "size": "מארז 4",
+    "categories": ["teeth"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "priceMin": 40,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08DC34TLS?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6ZT5Y89DP8GJ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6ZT5Y89DP8GJ_1769105307764",
+        "asin": "B08DC34TLS",
+        "currency": "USD",
+        "priceUSD": 12.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08DC34TLS.jpg"
+  }
+,
+  {
+    "id": "alleyoop-b0cqrl3gpg",
+    "brand": "Alleyoop",
+    "name": "עט איפור 4-ב-1 Pen Pal – אייליינר, תוחם שפתיים, היילייטר ועיפרון גבות – נייד לתיקונים בדרכים – (In A Rouge Light)",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 60,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CQRL3GPG?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090189279",
+        "asin": "B0CQRL3GPG",
+        "currency": "USD",
+        "priceUSD": 15.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CQRL3GPG.jpg"
+  },
+  {
+    "id": "alleyoop-b0dfft6vzv",
+    "brand": "Alleyoop",
+    "name": "עיפרון גבות Swift All-In-1 – עם מחדד מובנה ומברשת – עמיד במים וללא מריחה – גימור טבעי – (Dark Brown)",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 60,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DFFT6VZV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090257505",
+        "asin": "B0DFFT6VZV",
+        "currency": "USD",
+        "priceUSD": 19.2,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DFFT6VZV.jpg"
+  },
+  {
+    "id": "alleyoop-b0dffb9rnc",
+    "brand": "Alleyoop",
+    "name": "קרם לחות עם גוון SPF 50 – מסנן קרינה מינרלי לפנים – מועשר בחוחובה – לחותי ומרגיע – (Gleam)",
+    "size": "—",
+    "categories": ["face", "suncare", "makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 120,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DFFB9RNC?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090284733",
+        "asin": "B0DFFB9RNC",
+        "currency": "USD",
+        "priceUSD": 38.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DFFB9RNC.jpg"
+  },
+  {
+    "id": "alleyoop-b0clpdg4cq",
+    "brand": "Alleyoop",
+    "name": "סט מברשות איפור קומפקטי 4-ב-1 – לפודרה, טשטוש, דיוק ומייקאפ – אידאלי לנסיעות –",
+    "size": "—",
+    "categories": ["tools", "makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 70,
+    "priceMax": 80,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CLPDG4CQ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090312090",
+        "asin": "B0CLPDG4CQ",
+        "currency": "USD",
+        "priceUSD": 19.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CLPDG4CQ.jpg"
+  },
+  {
+    "id": "alleyoop-b0bvgs6lzl",
+    "brand": "Alleyoop",
+    "name": "קונסילר Game Face – קליל, נבנה בשכבות, מעניק לחות – לכיסוי כהויות מתחת לעיניים –",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 70,
+    "priceMax": 90,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BVGS6LZL?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090340912",
+        "asin": "B0BVGS6LZL",
+        "currency": "USD",
+        "priceUSD": 22.1
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BVGS6LZL.jpg"
+  },
+  {
+    "id": "alleyoop-b0dffrcfp1",
+    "brand": "Alleyoop",
+    "name": "סט שפתונים לחותי Lip Goals – מארז 3 באלמים – מעניק לחות, ריכוך והגנה לשפתיים –",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 110,
+    "priceMax": 140,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DFFRCFP1?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090370946",
+        "asin": "B0DFFRCFP1",
+        "currency": "USD",
+        "priceUSD": 34.0,
+                "freeshipover": 49
+
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DFFRCFP1.jpg"
+  },
+  {
+    "id": "alleyoop-b0cwtdx1pl",
+    "brand": "Alleyoop",
+    "name": "סטיק צללית קרמית 11th Hour – עמיד במים – מרקם קרם-לאבקה – לא נמרח – גוון Smoky Amethyst Shimmer",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 60,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CWTDX1PL?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090390929",
+        "asin": "B0CWTDX1PL",
+        "currency": "USD",
+        "priceUSD": 16.0
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CWTDX1PL.jpg"
+  },
+  {
+    "id": "alleyoop-b0bvb13ysn",
+    "brand": "Alleyoop",
+    "name": "קרם פנים עם גוון SPF 50 – מסנן קרינה מינרלי יומי לפנים – לחותי ומגן – טבעוני (Shine)",
+    "size": "—",
+    "categories": ["face", "suncare", "makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 120,
+    "priceMax": 140,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BVB13YSN?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090417073",
+        "asin": "B0BVB13YSN",
+        "currency": "USD",
+        "priceUSD": 36.1
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BVB13YSN.jpg"
+  },
+  {
+    "id": "alleyoop-b08x9x3xn8",
+    "brand": "Alleyoop",
+    "name": "פלטת קרמים Stack The Odds – סומק, ברונזר, קונטור והיילייטר – קומפקטית לנסיעות –",
+    "size": "—",
+    "categories": ["makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 110,
+    "priceMax": 130,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08X9X3XN8?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.G4GTTKT6WJZ&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.G4GTTKT6WJZ_1769090438662",
+        "asin": "B08X9X3XN8",
+        "currency": "USD",
+        "priceUSD": 32.0,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08X9X3XN8.jpg"
+  }
+
+,
 
   {
     "id": "rco-b0d63kcbld",
@@ -44,8 +1287,8 @@
         "url": "https://www.amazon.com/dp/B0D63KCBLD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.29Y9YD1VHTET1&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.29Y9YD1VHTET1_1769017734296",
         "asin": "B0D63KCBLD",
         "currency": "USD",
-        "priceUSD": 205.20,
-        "freeShipOver": 49
+        "priceUSD": 205.20
+  
       }
     ],
     "isKids": false,
@@ -97,8 +1340,7 @@
         "asin": "B0DS2W61ZJ",
         "currency": "USD",
         "priceUSD": 61.20,
-        "freeShipOver": 49
-      }
+"freeShipToIsrael": true      }
     ],
     "isKids": false,
     "image": "assets/img/products/B0DS2W61ZJ.jpg"
@@ -148,8 +1390,7 @@
         "url": "https://www.amazon.com/dp/B09NMLRBHZ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019734639",
         "asin": "B09NMLRBHZ",
         "currency": "USD",
-        "priceUSD": 11.94,
-        "freeShipOver": 49
+        "priceUSD": 11.94
       }
     ],
     "isKids": false,
@@ -174,8 +1415,7 @@
         "url": "https://www.amazon.com/dp/B09WJBD9KM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019763039",
         "asin": "B09WJBD9KM",
         "currency": "USD",
-        "priceUSD": 17.29,
-        "freeShipOver": 49
+        "priceUSD": 17.29
       }
     ],
     "isKids": false,
@@ -200,8 +1440,7 @@
         "url": "https://www.amazon.com/dp/B09NMMHZTJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019887061",
         "asin": "B09NMMHZTJ",
         "currency": "USD",
-        "priceUSD": 17.00,
-        "freeShipOver": 49
+        "priceUSD": 17.00
       }
     ],
     "isKids": false,
@@ -226,8 +1465,7 @@
         "url": "https://www.amazon.com/dp/B09PD38XRM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019912688",
         "asin": "B09PD38XRM",
         "currency": "USD",
-        "priceUSD": 14.49,
-        "freeShipOver": 49
+        "priceUSD": 14.49
       }
     ],
     "isKids": false,
@@ -252,8 +1490,7 @@
         "url": "https://www.amazon.com/dp/B0BX1YXWV4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019938707",
         "asin": "B0BX1YXWV4",
         "currency": "USD",
-        "priceUSD": 11.99,
-        "freeShipOver": 49
+        "priceUSD": 11.99
       }
     ],
     "isKids": false,
@@ -278,8 +1515,7 @@
         "url": "https://www.amazon.com/dp/B0CNQD5QVT?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769019961240",
         "asin": "B0CNQD5QVT",
         "currency": "USD",
-        "priceUSD": 24.95,
-        "freeShipOver": 49
+        "priceUSD": 24.95
       }
     ],
     "isKids": false,
@@ -304,8 +1540,7 @@
         "url": "https://www.amazon.com/dp/B09NMM9TW6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020070650",
         "asin": "B09NMM9TW6",
         "currency": "USD",
-        "priceUSD": 12.99,
-        "freeShipOver": 49
+        "priceUSD": 12.99
       }
     ],
     "isKids": false,
@@ -330,8 +1565,7 @@
         "url": "https://www.amazon.com/dp/B0BDJ328WN?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020096670",
         "asin": "B0BDJ328WN",
         "currency": "USD",
-        "priceUSD": 9.59,
-        "freeShipOver": 49
+        "priceUSD": 9.59
       }
     ],
     "isKids": false,
@@ -356,8 +1590,7 @@
         "url": "https://www.amazon.com/dp/B0CLDWTFBD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020118650",
         "asin": "B0CLDWTFBD",
         "currency": "USD",
-        "priceUSD": 35.99,
-        "freeShipOver": 49
+        "priceUSD": 35.99
       }
     ],
     "isKids": false,
@@ -382,8 +1615,7 @@
         "url": "https://www.amazon.com/dp/B0B3F3LP9W?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020144098",
         "asin": "B0B3F3LP9W",
         "currency": "USD",
-        "priceUSD": 9.08,
-        "freeShipOver": 49
+        "priceUSD": 9.08
       }
     ],
     "isKids": false,
@@ -408,8 +1640,7 @@
         "url": "https://www.amazon.com/dp/B0CT5ZTJBS?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020166882",
         "asin": "B0CT5ZTJBS",
         "currency": "USD",
-        "priceUSD": 9.30,
-        "freeShipOver": 49
+        "priceUSD": 9.30
       }
     ],
     "isKids": false,
@@ -434,8 +1665,7 @@
         "url": "https://www.amazon.com/dp/B0CJKZFVSV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020200637",
         "asin": "B0CJKZFVSV",
         "currency": "USD",
-        "priceUSD": 46.00,
-        "freeShipOver": 49
+        "priceUSD": 46.00
       }
     ],
     "isKids": false,
@@ -460,8 +1690,7 @@
         "url": "https://www.amazon.com/dp/B0FFJKBZ5F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020237349",
         "asin": "B0FFJKBZ5F",
         "currency": "USD",
-        "priceUSD": 18.99,
-        "freeShipOver": 49
+        "priceUSD": 18.99
       }
     ],
     "isKids": false,
@@ -486,8 +1715,7 @@
         "url": "https://www.amazon.com/dp/B0BLDXY8FB?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.37JDUBA3OTAD0&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.37JDUBA3OTAD0_1769020264311",
         "asin": "B0BLDXY8FB",
         "currency": "USD",
-        "priceUSD": 16.98,
-        "freeShipOver": 49
+        "priceUSD": 16.98
       }
     ],
     "isKids": false,
@@ -731,7 +1959,8 @@
         "url": "https://www.amazon.com/dp/B091MK3X2T?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995228332",
         "asin": "B091MK3X2T",
         "currency": "USD",
-        "priceUSD": 32.0
+        "priceUSD": 32.0,
+        "freeshipover": 49
       }
     ],
     "isKids": false,
@@ -767,7 +1996,7 @@
     "id": "igk-b0cp9wwjmn",
     "brand": "IGK",
     "name": "סט שמפו + מרכך GOOD BEHAVIOR Ultra Smooth (מארז זוגי)",
-    "size": "33.8 oz (מארז 2)",
+    "size": "33.8 oz (סט מארז 2)",
     "categories": [
       "hair"
     ],
@@ -820,7 +2049,7 @@
     "id": "igk-b0cm6t7513",
     "brand": "IGK",
     "name": "סט שמפו LEGENDARY Dream Hair + באלם לחות Mistress",
-    "size": "8 oz + 5 oz",
+    "size": "8 oz + 5 oz סט",
     "categories": [
       "hair"
     ],
@@ -836,8 +2065,7 @@
         "url": "https://www.amazon.com/dp/B0CM6T7513?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3RQWWQ6OEP5KO&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3RQWWQ6OEP5KO_1768995343316",
         "asin": "B0CM6T7513",
         "currency": "USD",
-        "priceUSD": 48.6,
-        "freeShipOver": 49
+        "priceUSD": 48.6
       }
     ],
     "isKids": false,
@@ -847,7 +2075,7 @@
     "id": "igk-b0dsjvn25l",
     "brand": "IGK",
     "name": "סט גלוס שקוף Expensive + סרום Cash In (מארז 2)",
-    "size": "4.2 oz + 1.7 oz (מארז 2)",
+    "size": "4.2 oz + 1.7 oz (סט מארז 2)",
     "categories": [
       "hair"
     ],
@@ -951,33 +2179,7 @@
     "image": "assets/img/products/B0G49MW8MW.jpg",
     "isKids": true
   },
-  {
-    "id": "ravie-b0fhk6cmpm-mocha",
-    "brand": "Ravie Beauty",
-    "name": "תוחם שפתיים Soft Definition™ עמיד במים – גוון Mocha",
-    "size": "0.32 oz",
-    "categories": [
-      "makeup"
-    ],
-    "isVegan": true,
-    "isPeta": false,
-    "isLB": false,
-    "priceMin": 50,
-    "priceMax": 100,
-    "offers": [
-      {
-        "store": "amazon-us",
-        "storeLabel": "Amazon ארה\"ב",
-        "url": "https://www.amazon.com/dp/B0FHK6CMPM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.175JEPTPNVH65&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.175JEPTPNVH65_1768954454332",
-        "asin": "B0FHK6CMPM",
-        "currency": "USD",
-        "priceUSD": 18.0,
-        "freeShipOver": 49
-      }
-    ],
-    "image": "assets/img/products/B0FHK6CMPM.jpg",
-    "isKids": false
-  },
+ 
   {
     "id": "ravie-b0fhk5mrd8-fig",
     "brand": "Ravie Beauty",
@@ -1132,7 +2334,9 @@
         "url": "https://www.amazon.com/dp/B08GTY479F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768951818182",
         "asin": "B08GTY479F",
         "currency": "USD",
-        "priceUSD": 23.99
+        "priceUSD": 23.99,
+                "freeshipover": 49
+
       }
     ],
     "image": "assets/img/products/B08GTY479F.jpg",
@@ -1211,7 +2415,9 @@
         "url": "https://www.amazon.com/dp/B00LV6VDG2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952036729",
         "asin": "B00LV6VDG2",
         "currency": "USD",
-        "priceUSD": 18.16
+        "priceUSD": 18.16,
+                "freeshipover": 49
+
       }
     ],
     "image": "assets/img/products/B00LV6VDG2.jpg",
@@ -1237,7 +2443,8 @@
         "url": "https://www.amazon.com/dp/B08L463DZ6?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952094726",
         "asin": "B08L463DZ6",
         "currency": "USD",
-        "priceUSD": 14.79
+        "priceUSD": 14.79,
+        "freeshipover": 49
       }
     ],
     "image": "assets/img/products/B08L463DZ6.jpg",
@@ -1263,8 +2470,7 @@
         "url": "https://www.amazon.com/dp/B08L44WGZG?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33DFO9W0F0TLW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33DFO9W0F0TLW_1768952161904",
         "asin": "B08L44WGZG",
         "currency": "USD",
-        "priceUSD": 19.79
-      }
+        "priceUSD": 19.79      }
     ],
     "image": "assets/img/products/B08L44WGZG.jpg",
     "isKids": false
@@ -1289,7 +2495,8 @@
         "url": "https://www.amazon.com/dp/B0F2GXVS7C?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3FG1U70BL7O4A&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3FG1U70BL7O4A_1768950602090",
         "asin": "B0F2GXVS7C",
         "currency": "USD",
-        "priceUSD": 32.0
+        "priceUSD": 32.0,
+        "freeshipover": 49
       }
     ],
     "isKids": false,
@@ -1315,7 +2522,9 @@
         "url": "https://www.amazon.com/dp/B0BQZT4C7G?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1E5JURZY40GC2&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1E5JURZY40GC2_1768949575723",
         "asin": "B0BQZT4C7G",
         "currency": "USD",
-        "priceUSD": 18.0
+        "priceUSD": 18.0,
+                "freeshipover": 49
+
       }
     ],
     "isKids": false,
@@ -1610,8 +2819,7 @@
         "url": "https://www.amazon.com/ATTITUDE-Fluoride-Free-Mineral-Based-Cruelty-Free-16740/dp/B09P5YN72X?tag=nocrueltyil-20",
         "asin": "B09P5YN72X",
         "currency": "USD",
-        "priceUSD": 13.15,
-        "freeShipOver": 49
+        "priceUSD": 13.15
       }
     ],
     "image": "assets/img/products/B09P5YN72X.jpg",
@@ -1971,8 +3179,7 @@
         "url": "https://www.amazon.com/dp/B0FHK6CMPM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.175JEPTPNVH65&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.175JEPTPNVH65_1768941398724",
         "asin": "B0FHK6CMPM",
         "currency": "USD",
-        "priceUSD": 18.0,
-        "freeShipOver": 49
+        "priceUSD": 18.0
       }
     ],
     "isKids": false,
