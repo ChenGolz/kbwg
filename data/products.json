@@ -1,4 +1,671 @@
 [
+  {
+  "id": "vegan-mia-b0942sfpt9",
+  "brand": "Vegan Mia",
+  "name": "שמן רוזמרין אורגני לצמיחת שיער עם שמן קיק ועוד",
+  "size": "1 fl oz",
+  "categories": ["hair", "scalp", "treatment"],
+  "isVegan": true,
+  "isPeta": true,
+  "isLB": null,
+  "priceMin": 100,
+  "priceMax": 150,
+  "offers": [
+    {
+      "store": "amazon-us",
+      "storeLabel": "Amazon ארה\"ב",
+      "url": "https://www.amazon.com/dp/B0942SFPT9?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.2C5AAG21BL940&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.2C5AAG21BL940_1769255240183",
+      "asin": "B0942SFPT9",
+      "currency": "USD",
+      "priceUSD": 44.99,
+              "freeShipOver": 49
+    }
+  ],
+  "isKids": false,
+  "image": "assets/img/products/B0942SFPT9.jpg"
+}
+,
+  {
+    "id": "about-face-b0fbx37fk4",
+    "brand": "about-face",
+    "name": "צבע עיניים נוזלי מט Art of Darkness  צללית נוזלית עתירת פיגמנט, גימור מט עמיד לאורך זמן שחור מט",
+    "size": "0.32 ounces",
+    "categories": ["makeup", "eyes"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FBX37FK4?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.ZGH9RJ1KSYRB&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.ZGH9RJ1KSYRB_1769252086157",
+        "asin": "B0FBX37FK4",
+        "currency": "USD",
+        "priceUSD": 17,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FBX37FK4.jpg"
+  },
+  {
+    "id": "about-face-b0fbx3jyn2",
+    "brand": "about-face",
+    "name": "צבע עיניים Fractal Glitter Eye Above Santorini – צללית נוזלית עמידה בפני מריחה ועמידה לאורך זמן נצנוץ עז עם מרקם מוס ספיר",
+    "size": "0.13 oz",
+    "categories": ["makeup", "eyes"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FBX3JYN2?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.ZGH9RJ1KSYRB&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.ZGH9RJ1KSYRB_1769252086158",
+        "asin": "B0FBX3JYN2",
+        "currency": "USD",
+        "priceUSD": 18,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FBX3JYN2.jpg"
+  },
+  {
+    "id": "aesop-b08qfp7f8j",
+    "brand": "Aesop",
+    "name": "נר ארומטי פרחוני ותבלינים בניחוח רענן Aganice זמן בעירה של 65 שעות",
+    "size": "10.5 oz",
+    "categories": ["home","candles"],
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "priceMin": 300,
+    "priceMax": 350,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B08QFP7F8J?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3507VV7AJYFYE&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3507VV7AJYFYE_1769252319364",
+        "asin": "B08QFP7F8J",
+        "currency": "USD",
+        "priceUSD": 120
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B08QFP7F8J.jpg"
+  },
+  {
+    "id": "below-60-b0dw21ly6b",
+    "brand": "Below 60",
+    "name": "נר ריחני על בסיס שמן אתרי עשוי בעבודת יד משעוות סויה ללא פרפין  זמן בעירה 50 שעות תפוז וג'ינג'ר",
+    "size": "10oz",
+    "categories": ["home","candles"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DW21LY6B?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.6BM80WYFL58C&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.6BM80WYFL58C_1769252395660",
+        "asin": "B0DW21LY6B",
+        "currency": "USD",
+        "priceUSD": 29.99,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DW21LY6B.jpg"
+  },
+  {
+    "id": "elf-b0fpmhwq32",
+    "brand": "e.l.f.",
+    "name": "שמן שפתיים מלא זוהר שפתיים מלאות בגוון לגימור מלא ובוהק מועשר בשמן חוחובה",
+    "size": "0.25 Fl Oz",
+    "categories": ["makeup", "lips"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FPMHWQ32?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.YV2V9SG05PWM&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.YV2V9SG05PWM_1769252496712",
+        "asin": "B0FPMHWQ32",
+        "currency": "USD",
+        "priceUSD": 9
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FPMHWQ32.jpg"
+  },
+  {
+    "id": "freck-beauty-b0bn4j254r",
+    "brand": "Freck Beauty",
+    "name": "עט הנמשים המקורי XL  נמשים דמויי עור טבעיים ניתנים לבנייה ועמידים לאורך זמן עם פורמולה נקייה וטבעונית, כל גווני העור XL בהיר/בינוני",
+    "size": "0.46 ounces",
+    "categories": ["makeup", "face","freckles"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": null,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BN4J254R?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.KBK0UA1KN1E5&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.KBK0UA1KN1E5_1769252593520",
+        "asin": "B0BN4J254R",
+        "currency": "USD",
+        "priceUSD": 28,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BN4J254R.jpg"
+  },
+  {
+    "id": "good-light-b0dd4s5w4m",
+    "brand": "good light",
+    "name": "שמן אלפבית שמן פנים קליל ולא שומני עם פרוביוטיקה של המיקרוביום ושמן חוחובה סרום פרוביוטי קוריאני לטיפוח עור הפנים הצוואר והגוף שמן ויטמין C וויטמין E",
+    "size": "1 Fl. Oz",
+    "categories": ["face", "serum", "body"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DD4S5W4M?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1699UJQRDJKMD&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1699UJQRDJKMD_1769252670365",
+        "asin": "B0DD4S5W4M",
+        "currency": "USD",
+        "priceUSD": 28,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DD4S5W4M.jpg"
+  },
+  {
+    "id": "good-light-b0b8qkffr7",
+    "brand": "good light",
+    "name": "באלם ירח חדש באלם הכל באחד טיפול באקנה לפנים לחות לעור יבש, כוויות גילוח קרם צלקות היפרפיגמנטציה מיוצר עם חומצה היאלורונית ויטמין E וB5",
+    "size": "0.5 Fl. Oz",
+    "categories": ["acne", "treatment","face"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0B8QKFFR7?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3K8OXYMO9ZCYG&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3K8OXYMO9ZCYG_1769252672015",
+        "asin": "B0B8QKFFR7",
+        "currency": "USD",
+        "priceUSD": 15
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0B8QKFFR7.jpg"
+  },
+  {
+    "id": "grace-stella-b0fjsnwnlw",
+    "brand": "grace & stella",
+    "name": "סרום עיניים סרמיד וקפאין לעיניים נפוחות מבהיר מתחת לעיניים עם כדור מתכת מקרר מוצרי טיפוח בגודל נסיעות",
+    "size": "15 ml / 0.51 fl oz",
+    "categories": ["face", "serum"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": null,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FJSNWNLW?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1SDW9IS3EIQNC&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1SDW9IS3EIQNC_1769252673780",
+        "asin": "B0FJSNWNLW",
+        "currency": "USD",
+        "priceUSD": 7.96
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FJSNWNLW.jpg"
+  },
+  {
+    "id": "good-light-b0d42v53v5",
+    "brand": "good light",
+    "name": "פריימר ומסכת שפתיים לחות ועמידות לאורך זמן עם קולגן וחמאת זרעי מנגו לשפתיים מלאות ולחות cטעם פטל",
+    "size": "0.15 Fl. Oz",
+    "categories": ["makeup", "lips"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D42V53V5?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.36QQY7BCOPCNN&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.36QQY7BCOPCNN_1769252676361",
+        "asin": "B0D42V53V5",
+        "currency": "USD",
+        "priceUSD": 18,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0D42V53V5.jpg"
+  },
+  {
+    "id": "naked-sundays-b0d6wgfkvj",
+    "brand": "Naked Sundays",
+    "name": "סרום הגנה מפני השמש SPF 50 שקוף לפנים ג'ל מים בלתי נראה SPF לעור רגיש קרם הגנה יומי קליל ללא בישום",
+    "size": "30 ml",
+    "categories": ["sun", "face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": null,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0D6WGFKVJ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.1S691NS3RCZU3&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.1S691NS3RCZU3_1769253069036",
+        "asin": "B0D6WGFKVJ",
+        "currency": "USD",
+        "priceUSD": 22,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0D6WGFKVJ.jpg"
+  },
+  {
+    "id": "naked-sundays-b0fwrpxw8r",
+    "brand": "Naked Sundays",
+    "name": "סרום הגנה קליל עם גוון שקוף SPF 50 רכיבי טיפוח לעור לחות זוהר קורן טבעי",
+    "size": "40ml",
+    "categories": ["sun", "face", "makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": null,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FWRPXW8R?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3K78OR8KXY0ZX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3K78OR8KXY0ZX_1769253113307",
+        "asin": "B0FWRPXW8R",
+        "currency": "USD",
+        "priceUSD": 15
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FWRPXW8R.jpg"
+  },
+  {
+    "id": "naked-sundays-b0fwzxs63d",
+    "brand": "Naked Sundays",
+    "name": "סומק  SPF 50 סרום סומק קרם עם אבץ שאינו ננו לחות לעור וגימור זוהר",
+    "size": "40ml",
+    "categories": ["makeup", "face","serum","blush"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": null,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0FWZXS63D?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3K78OR8KXY0ZX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3K78OR8KXY0ZX_1769253143077",
+        "asin": "B0FWZXS63D",
+        "currency": "USD",
+        "priceUSD": 15
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0FWZXS63D.jpg"
+  },
+  {
+    "id": "naked-sundays-b0cqkgqfpf",
+    "brand": "Naked Sundays",
+    "name": "טיפות סרום צבועות מאירות SPF 50 - קרם הגנה יומיומי עם תחמוצת אבץ, לחות ומבהירה, עם פיגמנטים משפרים את העור",
+    "size": "40ml",
+    "categories": ["sun", "face", "makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": null,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CQKGQFPF?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3K78OR8KXY0ZX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3K78OR8KXY0ZX_1769253143078",
+        "asin": "B0CQKGQFPF",
+        "currency": "USD",
+        "priceUSD": 15,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CQKGQFPF.jpg"
+  },
+  {
+    "id": "naked-sundays-b0cx67mn53",
+    "brand": "Naked Sundays",
+    "name": "טיפות ברונזינג SPF 50 - סרום זוהר ברונזינג קרם הגנה לפנים, פורמולת תחמוצת אבץ לחות עם פיגמנטים משפרים את העור + הגנה רחבת טווח",
+    "size": "—",
+    "categories": ["sun", "face", "makeup"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": null,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CX67MN53?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3K78OR8KXY0ZX&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3K78OR8KXY0ZX_1769253177982",
+        "asin": "B0CX67MN53",
+        "currency": "USD",
+        "priceUSD": 15,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CX67MN53.jpg"
+  },
+  {
+    "id": "pacifica-b0dydrp18f",
+    "brand": "Pacifica",
+    "name": "טונר פנים לחות Happy Water – סרמידים טבעוניים, חומצה היאלורונית ואלקטרוליטים, מרענן ומרגיע לעור מאוזן, יופי נקי כל סוגי העור",
+    "size": "148ml",
+    "categories": ["face", "toner"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DYDRP18F?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33BST21CMGH6R&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33BST21CMGH6R_1769253250138",
+        "asin": "B0DYDRP18F",
+        "currency": "USD",
+        "priceUSD": 15.83,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DYDRP18F.jpg"
+  },
+  {
+    "id": "pacifica-b09m7qvtfs",
+    "brand": "Pacifica",
+    "name": "מסכה מתחת לעיניים טבעונית עם ג'לי לחות - מסכות מתחת לעיניים וקמטי חיוך לקמטוטים ונפיחות,  ללא בישום ",
+    "size": "10ml",
+    "categories": ["face", "mask"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 0,
+    "priceMax": 50,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09M7QVTFS?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.33BST21CMGH6R&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.33BST21CMGH6R_1769253308640",
+        "asin": "B09M7QVTFS",
+        "currency": "USD",
+        "priceUSD": 4.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09M7QVTFS.jpg"
+  },
+  {
+    "id": "piperwai-b011sm7igm",
+    "brand": "PiperWai",
+    "name": "קרם דאודורנט טבעי עם פחם פעיל | הגנה מפני זיעה 24 שעות, טבעוני, ללא אלומיניום לנשים וגברים | מוצר חיוני לנסיעות ",
+    "size": "50g",
+    "categories": ["body", "deodorant"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": null,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B011SM7IGM?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.3Q5483CWFWSC5&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.3Q5483CWFWSC5_1769253377951",
+        "asin": "B011SM7IGM",
+        "currency": "USD",
+        "priceUSD": 18.99
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B011SM7IGM.jpg"
+  },
+  {
+    "id": "tower-28-b09ygl9fcv",
+    "brand": "Tower 28",
+    "name": "ג'לי שפתיים חלבי של ShineOn, שקדים, ליפגלוס טבעוני לא דביק, לחותי בטעם שוקולד חלבי, משמש ושמן זרעי פטל, לחות, ניקיון",
+    "size": "1.13 ounces",
+    "categories": ["makeup", "lips"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": false,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09YGL9FCV?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.2EAB1I2JT7DRW&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.2EAB1I2JT7DRW_1769253475235",
+        "asin": "B09YGL9FCV",
+        "currency": "USD",
+        "priceUSD": 16
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09YGL9FCV.jpg"
+  },
+  {
+    "id": "summer-fridays-b0c5gtrpfq",
+    "brand": "Summer Fridays",
+    "name": "קרם לחות עם גוון  גוון עור עם חומצה היאלורונית - מסייע להפחית גוון עור לא אחיד - כיסוי שקוף עד בהיר - גוון 1 - בהיר עם תת גוון אפרסק ניטרלי",
+    "size": "1 fl oz",
+    "categories": ["makeup", "face"],
+    "isVegan": true,
+    "isPeta": true,
+    "isLB": null,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0C5GTRPFQ?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254753803",
+        "asin": "B0C5GTRPFQ",
+        "currency": "USD",
+        "priceUSD": 42,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0C5GTRPFQ.jpg"
+  },
+  {
+    "id": "summer-fridays-b09s2k1r7x",
+    "brand": "Summer Fridays",
+    "name": "באלם מזין + קרם לחות לגוף מועשר בשמן קלנדולה + ויטמין E המסייע בהפחתת מראה סימני מתיחה ועור יבש",
+    "size": "5 fl oz",
+    "categories": ["body", "moisturizer"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B09S2K1R7X?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254753804",
+        "asin": "B09S2K1R7X",
+        "currency": "USD",
+        "priceUSD": 29,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B09S2K1R7X.jpg"
+  },
+  {
+    "id": "summer-fridays-b0dy1wsw83",
+    "brand": "Summer Fridays",
+    "name": "מוצרי יסוד של Jet Lag™ של Summer Fridays - סט טיפוח עור מיני לחותי עם מסכת Jet Lag™, רטיות עיניים, סרום פנים לחות עמוקה ותרסיס לחות - ערכת טיפוח עור בגודל נסיעות וסט מתנה (4 יחידות)",
+    "size": "4 count",
+    "categories": ["face", "set"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0DY1WSW83?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254784908",
+        "asin": "B0DY1WSW83",
+        "currency": "USD",
+        "priceUSD": 34,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0DY1WSW83.jpg"
+  },
+  {
+    "id": "summer-fridays-b0byp81hn8",
+    "brand": "Summer Fridays",
+    "name": "שפתון חמאת שפתיים צבוע של Summer Fridays - שפתון טבעוני מרכך ללחות, ברק והידרציה מיידית - טיפוח עור שקוף ומרגיע - סוכר חום (0.5 אונקיות)",
+    "size": "0.5 oz",
+    "categories": ["makeup", "lips"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": null,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0BYP81HN8?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254806188",
+        "asin": "B0BYP81HN8",
+        "currency": "USD",
+        "priceUSD": 24
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0BYP81HN8.jpg"
+  },
+  {
+    "id": "summer-fridays-b0f19yy96z",
+    "brand": "Summer Fridays",
+    "name": "רטיות ג'ט לג מתחת לעיניים של קיץ שישי - מסכות עיניים הידרוג'ל לחות ומרגיעות עם קפאין ופפטידים להרגעה ורענון של האזור שמתחת לעיניים (6 זוגות)",
+    "size": "6 pairs",
+    "categories": ["face", "mask"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0F19YY96Z?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254825288",
+        "asin": "B0F19YY96Z",
+        "currency": "USD",
+        "priceUSD": 24,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0F19YY96Z.jpg"
+  },
+  {
+    "id": "summer-fridays-b0crx7917v",
+    "brand": "Summer Fridays",
+    "name": "שמן שפתיים חלום של Summer Fridays - שמן שפתיים צבוע עם כיסוי לחותי שקוף, ברק גבוה ולחות עמוקה - פורמולה לא דביקה לרכות לאורך זמן - סומק",
+    "size": "—",
+    "categories": ["makeup", "lips"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 50,
+    "priceMax": 100,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0CRX7917V?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254843239",
+        "asin": "B0CRX7917V",
+        "currency": "USD",
+        "priceUSD": 26
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0CRX7917V.jpg"
+  },
+  {
+    "id": "summer-fridays-b0f3m2rg7p",
+    "brand": "Summer Fridays",
+    "name": "טיפות ברונזינג - פורמולה לחותית דמוית סרום עם חומצה היאלורונית - איפור היברידי עם יתרונות טיפוח לעור - מסייע בתמיכה במחסום עור בריא - גימור רך וטל",
+    "size": "1 fl oz",
+    "categories": ["makeup", "face"],
+    "isVegan": true,
+    "isPeta": null,
+    "isLB": true,
+    "priceMin": 100,
+    "priceMax": 150,
+    "offers": [
+      {
+        "store": "amazon-us",
+        "storeLabel": "Amazon ארה\"ב",
+        "url": "https://www.amazon.com/dp/B0F3M2RG7P?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.AAEL70PFN8KI&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.AAEL70PFN8KI_1769254843240",
+        "asin": "B0F3M2RG7P",
+        "currency": "USD",
+        "priceUSD": 32,
+        "freeShipOver": 49
+      }
+    ],
+    "isKids": false,
+    "image": "assets/img/products/B0F3M2RG7P.jpg"
+  }
+,
+
    {
       "id": "tower-28-b0cbt1s4sj",
       "brand": "Tower 28",
@@ -2379,7 +3046,7 @@
   {
     "id": "versed-b09r2bd3yr",
     "brand": "Versed",
-    "name": "Versed Mood Lighting Luminizing Glow Drops, Sheer Bronzed – Liquid Highlight וBronzing Drops עם Illuminating Light-Reflecting Pigments – Antioxidants ומלחלח",
+    "name": "טיפות זוהרות מאירות, בגוון שקופ בגוון ברונזה - Liquid Highlight וטיפות ברונזה עם פיגמנטים מחזירי אור מאירים - נוגדי חמצון ומלחם",
     "size": "—",
     "categories": [
       "makeup",
@@ -2406,7 +3073,7 @@
   {
     "id": "ravie-beauty-b0g2cv9l1c",
     "brand": "Ravie Beauty",
-    "name": "Ravie Beauty Soft Definition אייליינר מברשת – אלכסונית, רכה במיוחד דיוק מברשת ל Smudging, טשטוש וNatural Eye Definition",
+    "name": "Soft Definition אייליינר מברשת – אלכסונית, רכה במיוחד דיוק מברשת ל Smudging, טשטוש וNatural Eye Definition",
     "size": "—",
     "categories": [
       "makeup"
@@ -2485,7 +3152,7 @@
   {
     "id": "pacifica-b098r9qwz6",
     "brand": "Pacifica",
-    "name": "Pacifica Beauty Salty Waves Texturizing שמפו + Texturizing מרכך | ל לכל סוגי השיער | Perfect ו Effortless Beach שיער | 100% טבעוני וללא ניסויים בבעלי חיים | Sulfate +",
+    "name": "Beauty Salty Waves Texturizing שמפו + Texturizing מרכך | לכל סוגי השיער | שיער מושלם וחסר מאמץ | סולפט +",
     "size": "—",
     "categories": [
       "hair"
@@ -2512,8 +3179,8 @@
   {
     "id": "pacifica-b09rqcdrf4",
     "brand": "Pacifica",
-    "name": "Pacifica קרקפת Detox Tonic – קרקפת Exfoliator עם Glycolic וSalicylic Acid ל Clarifying Build Up וPurifying – Infused עם Rosemary to Support an Itchy, Dry Head – טבעוני",
-    "size": "—",
+    "name": "טוניק לניקוי רעלים לקרקפת - פילינג לקרקפת עם רוזמרין וסיידר תפוחים, שטיפת שיער עם חומצה סליצילית להבהרת צבירת שיער",
+    "size": "5oz",
     "categories": [
       "hair"
     ],
@@ -2538,7 +3205,7 @@
   {
     "id": "pacifica-b0df4lccl9",
     "brand": "Pacifica",
-    "name": "Pacifica Banana Cream Beachy מרקם Foam שמפו – Texturizing Foaming שמפו ל Beachy Waves, Adds נפח וTousled Look, Sulfate-Free Deep נקי Beauty טבעוני",
+    "name": "שמפו קצף עם מרקם חוף בננה קרם - שמפו קצף מעניק מרקם לגלים חוף, מוסיף נפח ומראה פרוע, ניקוי עמוק ללא סולפטים",
     "size": "—",
     "categories": [
       "hair"
@@ -2564,8 +3231,8 @@
   {
     "id": "pacifica-b0df4mzthg",
     "brand": "Pacifica",
-    "name": "Pacifica Banana Cream Beachy מרקם מרכך – Texturizing שיער טיפול ל Natural Beachy Waves, מלחלח וAdds Tousled Body, ל לכל סוגי השיער נקי Beauty",
-    "size": "—",
+    "name": "מרכך בננה קרם לכל סוגי השיער",
+    "size": "8 Fl Oz",
     "categories": [
       "hair"
     ],
@@ -2590,8 +3257,8 @@
   {
     "id": "pacifica-b084f3k4mj",
     "brand": "Pacifica",
-    "name": "Pacifica Coconut Milk שיער Detangler Spray – Leave In מרכך Spray, Detangling Elixir Suitable ל All Types, Fine ו Curly שיער Products, מחליק, מלחלח, ו Anti-",
-    "size": "—",
+    "name": "ספריי מרכך ללא שטיפה לשיער בחלב קוקוס, אליקסיר להסרת קשרים מתאים לכל סוגי השיער, מוצרי שיער עדין ומתולתל, החלקה, לחות ומונע קרזול",
+    "size": "207ml",
     "categories": [
       "hair"
     ],
@@ -2617,8 +3284,8 @@
   {
     "id": "pacifica-b07hlj7mhl",
     "brand": "Pacifica",
-    "name": "Pacifica Pineapple Swirl Curl Defining Cream – Curl Cream ל Curly שיער, Curly שיער Products עם Coconut Oil ו Hyaluronic Acid, Styling ל Bouncy Waves Without",
-    "size": "—",
+    "name": "קרם תלתלים אננס סווירל - קרם תלתלים לשיער מתולתל, מוצרי שיער מתולתל עם שמן קוקוס וחומצה היאלורונית, עיצוב לגלים קופצניים ללא קראנצ'יות",
+    "size": "4 Oz",
     "categories": [
       "hair"
     ],
@@ -2991,7 +3658,7 @@
   {
     "id": "pacifica-b09rk3r511",
     "brand": "Pacifica",
-    "name": "Pacifica Beauty רב פעמי Smile Line מסכה, טיפוח עור, Silicone מסכה, ל קמטוטים ו קמטים, Lift ו Firm, Pair עם סרום, Storage Tin Included, טיפוח עור, Smile Line",
+    "name": "מסכת חיוך רב פעמית, טיפוח עור, מסכת סיליקון, לקמטוטים וקמטוטים, הרמה ומיצוק, בשילוב עם סרום, קופסת אחסון כלולה, טיפוח עור, 2 יחידות",
     "size": "—",
     "categories": [
       "face",
@@ -3073,7 +3740,7 @@
   {
     "id": "pacifica-b0bf61634t",
     "brand": "Pacifica",
-    "name": "Pacifica רב פעמי מסכה סט – Silicone Undereye וBrow מסכה סט ל Forehead וUnder Eye, Anti-Wrinkle, ממצק, Pair עם סרום, טבעוני וללא ניסויים בבעלי חיים, 3 Pieces",
+    "name": "סט 3 מסכות רב פעמיות - סט מסכות סיליקון לגבות ומצח, נגד קמטים, ממצק, בשילוב עם סרום",
     "size": "3 Pieces",
     "categories": [
       "makeup",
@@ -3101,11 +3768,11 @@
   {
     "id": "pacifica-b0dc84nfrw",
     "brand": "Pacifica",
-    "name": "Pacifica Stellar Gaze מסקרה (Supernova Black, Glass Vial) – אורך וStrength Formula עם Coconut וVitamin B, Sustainable Packaging, טבעוני",
-    "size": "—",
+    "name": "מסקרה Stellar Gaze (סופרנובה שחורה, בקבוקון זכוכית) – פורמולה לאורך ועוצמה עם קוקוס וויטמין B",
+    "size": "7g",
     "categories": [
       "makeup",
-      "hair"
+      "mascara"
     ],
     "isVegan": true,
     "isPeta": true,
@@ -3156,11 +3823,11 @@
   {
     "id": "pacifica-b00bbfpx8w",
     "brand": "Pacifica",
-    "name": "Pacifica פנים קרם לחות Lotion – Dreamy Youth יום ולילה קרם פנים, יומי טיפוח עור, Grapeseed Oil, Peptides, מלחלח, לפנים Lotion, טיפוח עור, ל עור יבש, טבעוני, 1.7 fl oz",
+    "name": "קרם לחות לפנים - קרם פנים Dreamy Youth ליום וללילה, טיפוח עור יומי, שמן זרעי ענבים, פפטידים, לחות, קרם פנים, טיפוח עור, לעור יבש, טבעוני,",
     "size": "1.7 fl oz",
     "categories": [
-      "hair",
-      "body"
+      "face",
+      "facecream"
     ],
     "isVegan": true,
     "isPeta": true,
@@ -3184,11 +3851,11 @@
   {
     "id": "pacifica-b09bggmqdd",
     "brand": "Pacifica",
-    "name": "Pacifica קרם פנים – טבעוני Ceramide Barrier Cream w/Niacinamide וShea Butter – מלחלח יומי פנים קרם לחות ללא בישום ל Sensitive עור, טבעוני, נקי Beau",
-    "size": "—",
+    "name": "קרם פנים - קרם מגן טבעוני עם ניאצינאמיד וחמאת שיאה - קרם לחות יומי לפנים ללא בישום לעור רגיש, טבעוני, יופי נקי נבדק על ידי אלרגנים ודרמטולוגים",
+    "size": "50ml",
     "categories": [
       "face",
-      "hair"
+      "facecream"
     ],
     "isVegan": true,
     "isPeta": true,
@@ -3202,7 +3869,7 @@
         "url": "https://www.amazon.com/dp/B09BGGMQDD?ref=t_ac_view_request_product_image&campaignId=amzn1.campaign.HQADB0YJX2LP&linkCode=tr1&tag=nocrueltyil-20&linkId=amzn1.campaign.HQADB0YJX2LP_1769180001959",
         "asin": "B09BGGMQDD",
         "currency": "USD",
-        "priceUSD": 16.84,
+        "priceUSD": 17.15,
                  "freeShipOver": 49
       }
     ],
@@ -4373,8 +5040,8 @@
   {
     "id": "odacite-b08tpk6x2b",
     "brand": "Odacité",
-    "name": "ODACITE פנים Sculpting כלי ולפנים Acupressure Massage Pen – Mon Ami טיפוח עור Tools – Muscle Scraper ל פנים Lifting ו אנטי-אייג׳ינג Wand Targets נפיחות, קמטים",
-    "size": "—",
+    "name": "כלי לפיסול פנים ועט עיסוי אקופרסורה לפנים - כלי טיפוח לעור מון אמי - מגרד שרירים להרמת פנים ושרביט אנטי אייג'ינג מכוון לנפיחות, קמטים ועיגולים כהים מתחת לעיניים",
+    "size": "1.38 ounces",
     "categories": [
       "face",
       "makeup"
@@ -5415,7 +6082,7 @@
   {
     "id": "pacifica-b0bvwkld3n",
     "brand": "Pacifica",
-    "name": "סט Glow Baby: ג׳ל ניקוי + סקראב אנזימטי (מארז 2)",
+    "name": "סט זוהר: ג׳ל ניקוי + סקראב אנזימטי (מארז 2)",
     "size": "5 fl oz + 4 fl oz (סט 2)",
     "categories": [
       "face"
@@ -5442,7 +6109,7 @@
   {
     "id": "pacifica-b08p4t44q1",
     "brand": "Pacifica",
-    "name": "ג׳ל ניקוי לפנים Glow Baby עם ויטמין C + AHA",
+    "name": "ג׳ל ניקוי לפנים זוהר עם ויטמין C + AHA",
     "size": "5 oz",
     "categories": [
       "face"
@@ -5468,7 +6135,7 @@
   {
     "id": "pacifica-b0bl65nt9q",
     "brand": "Pacifica",
-    "name": "קרם פנים SPF 30 Glow Baby Super Lit (מינרלי/עם אבץ)",
+    "name": "קרם פנים SPF 30 זוהר Super Lit (מינרלי/עם אבץ)",
     "size": "1.7 fl oz",
     "categories": [
       "face",
@@ -5495,7 +6162,7 @@
   {
     "id": "pacifica-b0bqfmtbgp",
     "brand": "Pacifica",
-    "name": "סט באלם לשפתיים לחותי – Glow Baby + ניחוחות נוספים (מארז 3)",
+    "name": "סט באלם לשפתיים לחותי – זוהר + ניחוחות נוספים (מארז 3)",
     "size": "מארז 3",
     "categories": [
       "makeup",
@@ -5523,7 +6190,7 @@
   {
     "id": "pacifica-b099738fkj",
     "brand": "Pacifica",
-    "name": "סט ג׳ל ניקוי Glow Baby – זוג מארזים (2×5 fl oz)",
+    "name": "סט ג׳ל ניקוי זוהר – זוג מארזים (2×5 fl oz)",
     "size": "5 fl oz ×2",
     "categories": [
       "face"
@@ -5550,7 +6217,7 @@
   {
     "id": "pacifica-b09wh3kjrj",
     "brand": "Pacifica",
-    "name": "ערכת ניסיון Glow Baby עם ויטמין C – סט מתנה (3 חלקים)",
+    "name": "ערכת ניסיון זוהר עם ויטמין C – סט מתנה (3 חלקים)",
     "size": "סט (3 פריטים)",
     "categories": [
       "face"
