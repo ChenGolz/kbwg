@@ -8,7 +8,30 @@
 
   const brandSelect = qs("#brandSelect");
   const storeSelect = qs("#storeSelect");
-  const typeSelect = qs("#typeSelect"); // ✅ סוג מוצר (קבוצות + תתי-קטגוריות)
+  
+
+  // Card title layout: Brand -> short title (big) -> details (small, clamped)
+  (function injectCardTitleStyles() {
+    const STYLE_ID = "productCardTitleStyles";
+    if (document.getElementById(STYLE_ID)) return;
+    const style = document.createElement("style");
+    style.id = STYLE_ID;
+    style.textContent = `
+      .pNameSub{
+        font-size: 0.88em;
+        line-height: 1.25;
+        margin-top: 4px;
+        opacity: 0.9;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    `;
+    document.head.appendChild(style);
+  })();
+
+const typeSelect = qs("#typeSelect"); // ✅ סוג מוצר (קבוצות + תתי-קטגוריות)
   const sortSel = qs("#sort");
   const clearBtn = qs("#clearFilters");
   const priceMinInput = qs("#priceMin");
@@ -95,6 +118,187 @@ const onlyIsrael = qs("#onlyIsrael");
     result = result.replace(/\s+/g, " ").trim();
     return result;
   }
+
+  // ✅ חלוקת שם המוצר ל"כותרת קצרה" + תיאור
+  // הכותרת הקצרה מיועדת להציג סוג מוצר ברור (למשל: "סרום לשיער", "צללית נוזלית", "תוחם שפתיים")
+  // והתיאור מציג את שאר המידע בטקסט קטן יותר.
+  function getCardTitleParts(p) {
+    const full = cleanupProductName(p.name || "", p.brand || "");
+    const shortTitle = deriveShortTitle(p, full);
+    const details = deriveDetails(p, full, shortTitle);
+    return {
+      shortTitle: shortTitle || full,
+      details: details || ""
+    };
+  }
+
+  function deriveShortTitle(p, fullName) {
+    const text = String(fullName || "").trim();
+    if (!text) return "";
+
+    const lower = text.toLowerCase();
+    const cats = Array.isArray(p.categories)
+      ? p.categories.map((c) => String(c).toLowerCase())
+      : [];
+
+    const hasCat = (k) => cats.includes(k);
+    const hasHeb = (re) => re.test(text);
+    const hasEng = (re) => re.test(lower);
+
+    // --- helper: area for titles like "סרום לשיער" ---
+    const areaKey = (() => {
+      if (hasCat("lips") || hasHeb(/שפת/i) || lower.includes("lip")) return "lips";
+      if (hasCat("eyes") || hasHeb(/עינ|ריס|גבה/i) || lower.includes("eye") || lower.includes("brow")) return "eyes";
+      if (hasCat("scalp") || hasHeb(/קרקפת/i) || lower.includes("scalp")) return "scalp";
+      if (hasCat("hair") || hasHeb(/שיער/i) || lower.includes("hair")) return "hair";
+      if (hasCat("teeth") || hasHeb(/שינ/i) || lower.includes("tooth")) return "teeth";
+      if (hasCat("face") || hasHeb(/פנים/i) || lower.includes("face")) return "face";
+      if (hasCat("body") || hasHeb(/גוף/i) || lower.includes("body")) return "body";
+      return "";
+    })();
+
+    // --- MAKEUP: prioritize lips before eyes (fix lip liner -> not eyeliner) ---
+    if (hasCat("makeup") || hasCat("eyes") || hasCat("face")) {
+      // Lip liner / תוחם שפתיים
+      if (/(lip\s*liner|lipliner)/i.test(lower) || /תוחם\s*שפת|עיפרון\s*שפת/i.test(text)) {
+        return "תוחם שפתיים";
+      }
+      // Lip products
+      if (
+        /(lipstick|lip\s*balm|lip\s*gloss|lip\s*oil)/i.test(lower) ||
+        /שפתון|באלם\s*שפתיים|שמן\s*שפתיים|גלוס|שפתיים/i.test(text)
+      ) {
+        if (/(lip\s*balm)/i.test(lower) || /באלם/i.test(text)) return "באלם לשפתיים";
+        if (/(lip\s*gloss|gloss)/i.test(lower) || /גלוס/i.test(text)) return "גלוס";
+        if (/(lip\s*oil)/i.test(lower) || /שמן\s*שפתיים/i.test(text)) return "שמן לשפתיים";
+        return "שפתון";
+      }
+
+      // Eyeshadow / eye paint
+      if (/(eyeshadow|eye\s*paint|shadow)/i.test(lower) || /צללית/i.test(text)) {
+        if (/(liquid)/i.test(lower) || /נוזל|נוזלי|נוזלית/i.test(text)) return "צללית נוזלית";
+        if (/(stick)/i.test(lower) || /סטיק/i.test(text)) return "צללית סטיק";
+        if (/(cream)/i.test(lower) || /קרם/i.test(text)) return "צללית קרם";
+        return "צללית";
+      }
+
+      // Eyeliner (only if NOT lips)
+      if (/(eyeliner)/i.test(lower) || /אייליינר|תוחם\s*עינ/i.test(text)) {
+        return "אייליינר";
+      }
+
+      // Mascara / lashes
+      if (/(mascara)/i.test(lower) || /מסקרה/i.test(text)) {
+        return "מסקרה";
+      }
+
+      // Brows
+      if (/(brow)/i.test(lower) || /גבות|גבה/i.test(text)) {
+        return "מוצר לגבות";
+      }
+
+      // Base
+      if (/(foundation)/i.test(lower) || /מייקאפ/i.test(text)) return "מייקאפ";
+      if (/(concealer)/i.test(lower) || /קונסילר/i.test(text)) return "קונסילר";
+      if (/(blush)/i.test(lower) || /סומק/i.test(text)) return "סומק";
+      if (/(bronzer)/i.test(lower) || /ברונזר/i.test(text)) return "ברונזר";
+      if (/(palette)/i.test(lower) || /פלטה/i.test(text)) return "פלטה";
+
+      // Tools
+      if (/(brush|sponge|applicator)/i.test(lower) || /מברש|ספוג|אביזר/i.test(text)) return "אביזרי איפור";
+    }
+
+    // Sunscreen
+    if (/קרם\s*הגנה|sunscreen|\bspf\b/i.test(lower) || /קרם\s*הגנה|SPF/i.test(text)) {
+      if (areaKey === "lips") return "שפתון SPF";
+      return "קרם הגנה";
+    }
+
+    // Tooth / oral
+    if (/משחת\s*שיניים|toothpaste/i.test(lower) || /משחת\s*שיניים/i.test(text)) return "משחת שיניים";
+    if (/whitening/i.test(lower) || /הלבנת\s*שיניים/i.test(text)) return "הלבנת שיניים";
+
+    // Hair
+    if (/שמפו|shampoo/i.test(lower) || /שמפו/i.test(text)) return "שמפו";
+    if (/מרכך|conditioner/i.test(lower) || /מרכך/i.test(text)) return "מרכך";
+    if (/מסכה/i.test(text) || /mask/i.test(lower)) {
+      if (areaKey === "hair") return "מסכה לשיער";
+      return "מסכה";
+    }
+    if (/שמן/i.test(text) || /\boil\b/i.test(lower)) {
+      if (areaKey === "hair") return "שמן לשיער";
+      if (areaKey === "lips") return "שמן לשפתיים";
+      return "שמן";
+    }
+
+    // Serum
+    if (/\bserum\b/i.test(lower) || /סרום/i.test(text) || /אמפול/i.test(text)) {
+      if (areaKey === "hair") return "סרום לשיער";
+      if (areaKey === "scalp") return "סרום לקרקפת";
+      if (areaKey === "eyes") return "סרום לעיניים";
+      if (areaKey === "lips") return "סרום לשפתיים";
+      if (areaKey === "face") return "סרום לפנים";
+      if (areaKey === "body") return "סרום לגוף";
+      return "סרום";
+    }
+
+    // Cream / moisturizer
+    if (/קרם|moisturizer|cream|lotion/i.test(lower) || /קרם|לחות/i.test(text)) {
+      if (areaKey === "face") return "קרם פנים";
+      if (areaKey === "body") return "קרם גוף";
+      if (/לילה|night/i.test(lower) || /לילה/i.test(text)) return "קרם לילה";
+      return "קרם";
+    }
+
+    // Cleanser / soap / wash
+    if (/cleanser|wash|soap/i.test(lower) || /סבון|ניקוי|קצף/i.test(text)) {
+      if (areaKey === "face") return "ניקוי פנים";
+      return "ניקוי";
+    }
+
+    // Scrub / exfoliation
+    if (/scrub|exfoli|peel/i.test(lower) || /פילינג|סקראב|קילוף/i.test(text)) {
+      if (areaKey === "face") return "פילינג לפנים";
+      return "פילינג";
+    }
+
+    // Fallback: first 2-3 words (Hebrew-friendly)
+    const firstSeg = text.split(/[\|–—-]/)[0].split(",")[0].trim();
+    const words = firstSeg.split(/\s+/).filter(Boolean);
+    return words.slice(0, Math.min(3, words.length)).join(" ");
+  }
+
+  function deriveDetails(p, fullName, shortTitle) {
+    let details = String(fullName || "").trim();
+    if (!details) return "";
+    const title = String(shortTitle || "").trim();
+    if (!title) return details;
+
+    // remove exact shortTitle if it appears in the string
+    const esc = title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const titleRe = new RegExp("\\s*" + esc + "\\s*", "g");
+    if (titleRe.test(details)) {
+      details = details.replace(titleRe, " ");
+    } else {
+      // if title is synthetic (e.g., "סרום לשיער") remove the core type word
+      if (title.includes("סרום")) details = details.replace(/\bסרום\b/g, " ").replace(/\bserum\b/gi, " ");
+      if (title === "שמפו") details = details.replace(/\bשמפו\b/g, " ").replace(/\bshampoo\b/gi, " ");
+      if (title === "מרכך") details = details.replace(/\bמרכך\b/g, " ").replace(/\bconditioner\b/gi, " ");
+      if (title.includes("קרם הגנה")) details = details.replace(/קרם\s*הגנה/g, " ").replace(/\bsunscreen\b/gi, " ").replace(/\bspf\b/gi, " ");
+      if (title.startsWith("קרם")) details = details.replace(/\bקרם\b/g, " ").replace(/\bcream\b/gi, " ");
+      if (title.includes("צללית")) details = details.replace(/צללית/g, " ").replace(/\bshadow\b/gi, " ").replace(/\beyeshadow\b/gi, " ");
+      if (title.includes("אייליינר")) details = details.replace(/אייליינר/g, " ").replace(/\beyeliner\b/gi, " ");
+      if (title.includes("תוחם שפתיים")) details = details.replace(/תוחם\s*שפתיים/g, " ").replace(/lip\s*liner/gi, " ");
+    }
+
+    details = details
+      .replace(/\s{2,}/g, " ")
+      .replace(/^[\-–—:|]+\s*/g, "")
+      .trim();
+
+    return details;
+  }
+
 
 function normalizeProduct(p) {
     const offers = Array.isArray(p?.offers) ? p.offers : [];
@@ -215,15 +419,58 @@ function normalizeProduct(p) {
     "mens-care": "גברים"
   };
 
+  // סדר עדיפות לקטגוריה ראשית (כדי להימנע מ"אחר" כשיש רמזים ברורים)
+  const CATEGORY_PRIORITY = [
+    "makeup",
+    "hair",
+    "body",
+    "sun",
+    "teeth",
+    "fragrance",
+    "baby",
+    "mens-care",
+    "face"
+  ];
+
+  // מיפוי קטגוריות "טכניות" למשהו שמציגים באתר
+  const CATEGORY_SYNONYMS = {
+    skincare: "face",
+    cleanser: "face",
+    clean: "face",
+    facewash: "face",
+    face_wash: "face",
+    soap: "body",
+    suncare: "sun",
+    spf: "sun",
+    oral: "teeth",
+    dental: "teeth"
+  };
+
   function getPrimaryCategoryKey(p) {
     const cats = getCatsRaw(p);
-    return cats[0] || "";
+    if (!cats.length) return "";
+
+    // 1) קודם כל ננרמל מילים נפוצות (skincare/soap/spf וכו')
+    const normed = cats.map((c) => CATEGORY_SYNONYMS[c] || c).filter(Boolean);
+
+    // 2) אם יש קטגוריה מועדפת — ניקח אותה
+    for (const key of CATEGORY_PRIORITY) {
+      if (normed.includes(key)) return key;
+    }
+
+    // 3) אם יש גם body וגם skincare — נעדיף body (למשל סבון)
+    if (normed.includes("body")) return "body";
+    if (normed.includes("face")) return "face";
+
+    // 4) אין התאמה — לא נחזיר "אחר" (פשוט אין קטגוריה)
+    return "";
   }
 
   function getCategoryLabelFromProduct(p) {
-    if (p.categoryLabel) return p.categoryLabel;
+    if (p.categoryLabel && p.categoryLabel !== "אחר") return p.categoryLabel;
     const key = getPrimaryCategoryKey(p);
-    return CATEGORY_LABELS[key] || "אחר";
+    // ❌ לא מציגים "אחר" בכלל
+    return key ? (CATEGORY_LABELS[key] || "") : "";
   }
 
   // Helper לבדיקת מילים בשם/תיאור
@@ -306,14 +553,15 @@ function normalizeProduct(p) {
 
     if (isMen) return "טיפוח לגבר";
 
-    return "אחר";
+    // ברירת מחדל (לא מציגים "אחר")
+    return "טיפוח לפנים";
   }
 
   // ✅ קביעת "תת-סוג" לפי הקבוצה + מילים בשם
   // (למשל "קרם פנים", "סרום", "מסכה לשיער", "שפתיים", "עיניים" וכו׳)
   function getTypeDisplayLabel(p) {
     const group = getTypeGroupLabel(p);
-    const name = (p.productTypeLabel || p.name || "").trim();
+    const name = (p.name || p.productTypeLabel || "").trim();
     if (!name) return "";
     const lower = name.toLowerCase();
 
@@ -532,7 +780,8 @@ function normalizeProduct(p) {
       return "טיפוח לגבר";
     }
 
-    return "אחר";
+    // לא מחזירים "אחר" כדי שלא יוצג כטקסט מיותר
+    return "";
   }
 
   function getCats(p) {
@@ -714,8 +963,7 @@ function normalizeProduct(p) {
         "עיצוב שיער",
         "הגנה מהשמש",
         "בשמים",
-        "טיפוח לגבר",
-        "אחר"
+        "טיפוח לגבר"
       ];
 
       groupOrder.forEach((groupLabel) => {
@@ -934,17 +1182,23 @@ function normalizeProduct(p) {
 
       const titleWrap = document.createElement("div");
       titleWrap.className = "pTitleWrap";
-
       const brand = document.createElement("div");
       brand.className = "pBrand";
       brand.textContent = p.brand || "";
 
-      const name = document.createElement("div");
-      name.className = "pName";
-      name.textContent = cleanupProductName(p.name || "", p.brand || "");
+      const parts = getCardTitleParts(p);
+
+      const shortTitle = document.createElement("div");
+      shortTitle.className = "pName";
+      shortTitle.textContent = parts.shortTitle || cleanupProductName(p.name || "", p.brand || "");
+
+      const details = document.createElement("div");
+      details.className = "pNameSub";
+      details.textContent = parts.details || "";
 
       titleWrap.appendChild(brand);
-      titleWrap.appendChild(name);
+      titleWrap.appendChild(shortTitle);
+      if (parts.details) titleWrap.appendChild(details);
 
       const meta = document.createElement("div");
       meta.className = "pMeta";
