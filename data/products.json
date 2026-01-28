@@ -2978,8 +2978,8 @@
     "isVegan": true,
     "isPeta": true,
     "isLB": false,
-    "priceMin": 0,
-    "priceMax": 50,
+    "priceMin": 100,
+    "priceMax": 150,
     "offers": [
       {
         "store": "amazon-us",
